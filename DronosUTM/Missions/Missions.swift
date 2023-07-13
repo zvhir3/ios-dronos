@@ -31,18 +31,43 @@ class Missions: UIViewController {
           return scrollView
       }()
       
-      override func viewDidLoad() {
-          super.viewDidLoad()
-          
-          setupUI()
-          fetchMissions()
-      }
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+        
+            setupUI()
+            fetchMissions()
+            
+        }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            
-           // Hide the navigation bar
-           navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        // Set the title of the view controller
+        title = "Missions"
+        
+        // Customize the appearance of the navigation bar
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.fromHex(0x1e293b)
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().backIndicatorImage = UIImage()
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
+        
+        // Create the red view for the bottom safe area
+        let bottomSafeAreaView = UIView()
+        bottomSafeAreaView.backgroundColor = UIColor.red
+        
+        // Add the red view to the main window
+        view.addSubview(bottomSafeAreaView)
+        bottomSafeAreaView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bottomSafeAreaView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomSafeAreaView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomSafeAreaView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomSafeAreaView.topAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
        }
 
       
@@ -157,23 +182,23 @@ class Missions: UIViewController {
         // Create and configure the missionId label
         let missionIdLabel = UILabel()
         missionIdLabel.text = "\(mission.missionId)"
-        missionIdLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        missionIdLabel.font = UIFont(name: "Barlow-SemiBold", size: 14)
         missionIdLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // Create and configure the name label
         let nameLabel = UILabel()
         nameLabel.text = "Name: \(mission.name)"
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        nameLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // Create and configure the schedule label
         let scheduleLabel = UILabel()
         if let startDate = mission.schedules.first?.startDate {
             scheduleLabel.text = "Schedule: \(startDate) - \(mission.schedules.first?.endDate ?? "")"
-            scheduleLabel.font = UIFont.boldSystemFont(ofSize: 12)
+            scheduleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         } else {
             scheduleLabel.text = "Schedule: N/A"
-            scheduleLabel.font = UIFont.boldSystemFont(ofSize: 12)
+            scheduleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         }
         scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
         
