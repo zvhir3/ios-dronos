@@ -223,6 +223,7 @@
 				53ECE273233DB7B400E278CD /* MainScreen */,
 				B29803BC2A5EAAC700A94612 /* Components */,
 				B2F62B5B2A5F9F780001A3B2 /* UXSDK */,
+				53ECE276233DB88300E278CD /* Helpers */,
 			);
 			path = DronosUTM;
 			sourceTree = "<group>";
@@ -272,7 +273,6 @@
 			children = (
 				53EDD5F12346F384002E28AF /* ProductCommunication */,
 				53EDD5F22346F3FC002E28AF /* DefaultLayout */,
-				53ECE276233DB88300E278CD /* Helpers */,
 				53EDD5F42346F425002E28AF /* MapWidget */,
 				53EDD5F52346F43E002E28AF /* CustomWidget */,
 				53EDD5F72346F45D002E28AF /* PanelsCatalog */,
