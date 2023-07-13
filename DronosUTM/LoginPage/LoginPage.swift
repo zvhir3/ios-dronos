@@ -14,6 +14,10 @@ struct LoginPage: View {
         NavigationView {
             ZStack {
                 Color.black // Set the background color to black
+                if (isLoggedIn) {
+                    MapBox()
+                }
+                else {
                 VStack {
                     Image("logo")
                         .resizable()
@@ -25,9 +29,9 @@ struct LoginPage: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 30)
                     VStack(alignment: .leading, spacing: 10) {
-                    Text("Email")
-                        .font(.headline)
-                    TextField("Email", text: $email)
+                        Text("Email")
+                            .font(.headline)
+                        TextField("Email", text: $email)
                             .padding()
                             .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
                             .font(.body)
@@ -37,10 +41,10 @@ struct LoginPage: View {
                             .border(Color.clear, width: 0)
                         Spacer()
                             .frame(height: 10)
-                    Text("Password")
-                        .font(.headline)
-                    
-                    SecureField("Password", text: $password)
+                        Text("Password")
+                            .font(.headline)
+                        
+                        SecureField("Password", text: $password)
                             .padding()
                             .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
                             .font(.body)
@@ -48,35 +52,36 @@ struct LoginPage: View {
                             .cornerRadius(10)
                             .frame(height: 49)
                             .border(Color.clear, width: 0)
-                    
-                    Spacer()
-                        .frame(height: 20)
-                    NavigationLink(
-                        destination: MapBox(),
-                        isActive: $isLoggedIn,
-                        label: {
-                            Text("Login")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color(red: 0, green: 240/255, blue: 255/255, opacity: 0.2))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color(red: 142/255, green: 249/255, blue: 249/255), lineWidth: 2)
-                                )
-                        })
-                    .onTapGesture {
-                        let data = LoginData(email: email, password: password)
-                        //                            isLoggedIn = APIService.login(data);
-                        APIService.login(data) { result in
-                            isLoggedIn = result
-                        }
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        Button(action: {
+                            let data = LoginData(email: email, password: password)
+                            //                            isLoggedIn = APIService.login(data);
+                            APIService.login(data) { result in
+                                isLoggedIn = result
+                                print("sini", isLoggedIn)
+                                print("ada token tak", UserDefaults.standard.object(forKey: "token"))
+                            }
+                            print("Button tapped")}) {
+                                Text("Login")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color(red: 0, green: 240/255, blue: 255/255, opacity: 0.2))
+                                //                            .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color(red: 142/255, green: 249/255, blue: 249/255), lineWidth: 2)
+                                    )
+                                    .buttonStyle(PlainButtonStyle())
+                            }
+                            .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
-                }
                 }
                 .padding()
+            }
             }
             .edgesIgnoringSafeArea(.all)
         }
@@ -86,3 +91,28 @@ struct LoginPage: View {
     
    
 }
+
+//                    NavigationLink(
+//                        destination: Splashscreen(),
+//                        isActive: $isLoggedIn,
+//                        label: {
+//                            Text("Login")
+//                                .font(.headline)
+//                                .foregroundColor(.white)
+//                                .padding()
+//                                .frame(maxWidth: .infinity)
+//                                .background(Color(red: 0, green: 240/255, blue: 255/255, opacity: 0.2))
+//                                .overlay(
+//                                    RoundedRectangle(cornerRadius: 8)
+//                                        .stroke(Color(red: 142/255, green: 249/255, blue: 249/255), lineWidth: 2)
+//                                )
+//                        })
+//                    .onTapGesture {
+//                        let data = LoginData(email: email, password: password)
+//                        //                            isLoggedIn = APIService.login(data);
+//                        APIService.login(data) { result in
+//                            isLoggedIn = result
+//                            print("sini", isLoggedIn)
+//                        }
+//                    }
+//                    .buttonStyle(PlainButtonStyle())
