@@ -1,5 +1,7 @@
 # Dronos UTM (iOS)
 
+![Mockup](https://raw.githubusercontent.com/Aerodyne-Group/DronosUTM-iOS/main/mockup.png?token=GHSAT0AAAAAACE43GDIGFJZ4XTC7VZ2UIECZFPPOLQ)
+
 Mobile version for Dronos UTM.
 This project is mainly using  [MapBox SDK](https://docs.mapbox.com/ios/maps) and [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
 
