@@ -19,6 +19,34 @@ class APIService {
         task.resume()
     }
     
+    // login EP
+    static func login(_ data: LoginData, completion: @escaping (Bool) -> Void) {
+        let url = URL(string: "https://dev-api.dronos.ai/account/auth/login")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body = ["email": data.email, "password": data.password]
+        let jsonData = try! JSONSerialization.data(withJSONObject: body)
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data,
+                   let response = response as? HTTPURLResponse,
+                   (response.statusCode == 200 || response.statusCode == 201) {
+                    // Successful login
+                    print("Login successful!", data)
+                    completion(true)
+                } else {
+                    // Login failed
+                    print("Login failed!")
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
     func postData(url: URL, body: [String: Any], completion: @escaping (Result<Data, Error>) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

@@ -342,7 +342,7 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 3Q52QH9BF2;
+						DevelopmentTeam = H3Y2UKTAZ9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -612,7 +612,7 @@
 			baseConfigurationReference = DA877DEDB7DA07E361440993 /* Pods-DronosUTM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3Q52QH9BF2;
+				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -640,7 +640,7 @@
 			baseConfigurationReference = 768E93E62BC6C08834700599 /* Pods-DronosUTM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3Q52QH9BF2;
+				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
