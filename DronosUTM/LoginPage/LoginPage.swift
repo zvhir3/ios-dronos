@@ -62,11 +62,12 @@ struct LoginPage: View {
                                 let data = LoginData(email: email, password: password)
                                 //                            isLoggedIn = APIService.login(data);
                                 APIService.login(data) { result in
-                                    isLoggedIn = result
-                                    print("sini", isLoggedIn)
-                                    if (isLoggedIn) {
+//                                    isLoggedIn = result
+                                    print("sini", result)
+                                    if (result) {
                                         print("masuk tak sini sebenarnya")
-                                        showAlert = isLoggedIn;
+                                        showAlert = result;
+                                        
                                     }
                                     print("ada token tak", UserDefaults.standard.object(forKey: "token"))
                                 }
@@ -90,6 +91,14 @@ struct LoginPage: View {
                             }
                             
                             .buttonStyle(PlainButtonStyle())
+                        }.alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Status"),
+                                message: Text("Login successful"),
+                                dismissButton: .default(Text("OK")) {
+                                    isLoggedIn = true
+                                }
+                            )
                         }
 //                    }
                     .padding()
