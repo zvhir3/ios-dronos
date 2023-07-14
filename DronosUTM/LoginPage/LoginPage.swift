@@ -19,7 +19,7 @@ struct LoginPage: View {
                     MapBox()
                 }
                 else {
-                    ScrollView {
+//                    ScrollView {
                     VStack {
                         Image("logo")
                             .resizable()
@@ -91,7 +91,7 @@ struct LoginPage: View {
                             
                             .buttonStyle(PlainButtonStyle())
                         }
-                    }
+//                    }
                     .padding()
                 }
             }
