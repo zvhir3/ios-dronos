@@ -37,19 +37,19 @@ class APIService {
                    (response.statusCode == 200 || response.statusCode == 201) {
                     // Successful login
                     print("Login successful!", data)
-//                    let newToken = data.token
-//                    UserDefaults.standard.set(newToken, forKey: "token")
+                    //                    let newToken = data.token
+                    //                    UserDefaults.standard.set(newToken, forKey: "token")
                     if let responseData = try? JSONSerialization.jsonObject(with: data, options: []),
                        let tokenFull = (responseData as? [String: Any])?["token"] as? String {
-                       let prefix = "Bearer "
-                       let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
+                        let prefix = "Bearer "
+                        let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
                         // Access the token from the response data and save it to UserDefaults
                         UserDefaults.standard.set(token, forKey: "token")
                         completion(true)
                     } else {
                         completion(false)
                     }
-//                    completion(false)
+                    //                    completion(false)
                 } else {
                     // Login failed
                     print("Login failed!")

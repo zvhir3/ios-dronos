@@ -19,7 +19,7 @@ struct LoginPage: View {
                     MapBox()
                 }
                 else {
-//                    ScrollView {
+                    //                    ScrollView {
                     VStack {
                         Image("logo")
                             .resizable()
@@ -62,7 +62,7 @@ struct LoginPage: View {
                                 let data = LoginData(email: email, password: password)
                                 //                            isLoggedIn = APIService.login(data);
                                 APIService.login(data) { result in
-//                                    isLoggedIn = result
+                                    //                                    isLoggedIn = result
                                     print("sini", result)
                                     if (result) {
                                         print("masuk tak sini sebenarnya")
@@ -100,10 +100,10 @@ struct LoginPage: View {
                                 }
                             )
                         }
-//                    }
-                    .padding()
+                        //                    }
+                        .padding()
+                    }
                 }
-            }
             }
             .edgesIgnoringSafeArea(.all)
         }
@@ -111,30 +111,4 @@ struct LoginPage: View {
         .accentColor(.white) // Set the accent color for navigation elements
     }
     
-   
 }
-
-//                    NavigationLink(
-//                        destination: Splashscreen(),
-//                        isActive: $isLoggedIn,
-//                        label: {
-//                            Text("Login")
-//                                .font(.headline)
-//                                .foregroundColor(.white)
-//                                .padding()
-//                                .frame(maxWidth: .infinity)
-//                                .background(Color(red: 0, green: 240/255, blue: 255/255, opacity: 0.2))
-//                                .overlay(
-//                                    RoundedRectangle(cornerRadius: 8)
-//                                        .stroke(Color(red: 142/255, green: 249/255, blue: 249/255), lineWidth: 2)
-//                                )
-//                        })
-//                    .onTapGesture {
-//                        let data = LoginData(email: email, password: password)
-//                        //                            isLoggedIn = APIService.login(data);
-//                        APIService.login(data) { result in
-//                            isLoggedIn = result
-//                            print("sini", isLoggedIn)
-//                        }
-//                    }
-//                    .buttonStyle(PlainButtonStyle())
