@@ -9,6 +9,7 @@ struct LoginPage: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLoggedIn: Bool = false
+    @State private var showAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -18,52 +19,62 @@ struct LoginPage: View {
                     MapBox()
                 }
                 else {
-                VStack {
-                    Image("logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150, height: 150)
-                    
-                    Text("Dronos UTM") // Add a title
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 30)
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Email")
-                            .font(.headline)
-                        TextField("Email", text: $email)
-                            .padding()
-                            .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
-                            .font(.body)
-                            .background(Color(red: 142/255, green: 249/255, blue: 249/255, opacity: 0.2))
-                            .cornerRadius(10)
-                            .frame(height: 49)
-                            .border(Color.clear, width: 0)
-                        Spacer()
-                            .frame(height: 10)
-                        Text("Password")
-                            .font(.headline)
+                    ScrollView {
+                    VStack {
+                        Image("logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 150, height: 150)
                         
-                        SecureField("Password", text: $password)
-                            .padding()
-                            .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
-                            .font(.body)
-                            .background(Color(red: 142/255, green: 249/255, blue: 249/255, opacity: 0.2))
-                            .cornerRadius(10)
-                            .frame(height: 49)
-                            .border(Color.clear, width: 0)
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        Button(action: {
-                            let data = LoginData(email: email, password: password)
-                            //                            isLoggedIn = APIService.login(data);
-                            APIService.login(data) { result in
-                                isLoggedIn = result
-                                print("sini", isLoggedIn)
-                                print("ada token tak", UserDefaults.standard.object(forKey: "token"))
+                        Text("Dronos UTM") // Add a title
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 30)
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Email")
+                                .font(.headline)
+                            TextField("Email", text: $email)
+                                .padding()
+                                .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
+                                .font(.body)
+                                .background(Color(red: 142/255, green: 249/255, blue: 249/255, opacity: 0.2))
+                                .cornerRadius(10)
+                                .frame(height: 49)
+                                .border(Color.clear, width: 0)
+                            
+                            Spacer()
+                                .frame(height: 10)
+                            Text("Password")
+                                .font(.headline)
+                            
+                            SecureField("Password", text: $password)
+                                .padding()
+                                .foregroundColor(Color(red: 0, green: 240/255, blue: 255/255))
+                                .font(.body)
+                                .background(Color(red: 142/255, green: 249/255, blue: 249/255, opacity: 0.2))
+                                .cornerRadius(10)
+                                .frame(height: 49)
+                                .border(Color.clear, width: 0)
+                            
+                            Spacer()
+                                .frame(height: 20)
+                            Button(action: {
+                                let data = LoginData(email: email, password: password)
+                                //                            isLoggedIn = APIService.login(data);
+                                APIService.login(data) { result in
+                                    isLoggedIn = result
+                                    print("sini", isLoggedIn)
+                                    if (isLoggedIn) {
+                                        print("masuk tak sini sebenarnya")
+                                        showAlert = isLoggedIn;
+                                    }
+                                    print("ada token tak", UserDefaults.standard.object(forKey: "token"))
+                                }
+                                print("Button tapped")
+                                
                             }
-                            print("Button tapped")}) {
+                            )
+                            {
                                 Text("Login")
                                     .font(.headline)
                                     .foregroundColor(.white)
@@ -77,10 +88,12 @@ struct LoginPage: View {
                                     )
                                     .buttonStyle(PlainButtonStyle())
                             }
+                            
                             .buttonStyle(PlainButtonStyle())
+                        }
                     }
+                    .padding()
                 }
-                .padding()
             }
             }
             .edgesIgnoringSafeArea(.all)

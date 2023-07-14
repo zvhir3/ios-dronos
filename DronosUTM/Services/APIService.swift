@@ -45,7 +45,7 @@ class APIService {
                        let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
                         // Access the token from the response data and save it to UserDefaults
                         UserDefaults.standard.set(token, forKey: "token")
-                        completion(false)
+                        completion(true)
                     } else {
                         completion(false)
                     }

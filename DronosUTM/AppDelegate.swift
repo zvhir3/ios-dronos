@@ -53,10 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func isLoggedIn() -> Bool {
-        if let token = UserDefaults.standard.string(forKey: "token") {
-            // Check if the token exists
-            return !token.isEmpty
-        }
+        
+//        if let token = UserDefaults.standard.string(forKey: "token") {
+//
+//            // Check if the token exists
+//            return !token.isEmpty
+//        }
         return false
     }
 }

@@ -32,10 +32,30 @@
 		B2AD6EEA2A5FC84500BE1EB4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EE92A5FC84500BE1EB4 /* APIService.swift */; };
 		B2AD6EEF2A5FC9E500BE1EB4 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EEE2A5FC9E500BE1EB4 /* AccountService.swift */; };
 		B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EF02A5FCA3D00BE1EB4 /* MQTTService.swift */; };
+		B2AD6EF52A5FE2DD00BE1EB4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */; };
+		B2AD6F2D2A5FF4FF00BE1EB4 /* Barlow-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1B2A5FF4FE00BE1EB4 /* Barlow-ExtraBold.ttf */; };
+		B2AD6F2E2A5FF4FF00BE1EB4 /* Barlow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1C2A5FF4FE00BE1EB4 /* Barlow-BlackItalic.ttf */; };
+		B2AD6F2F2A5FF4FF00BE1EB4 /* Barlow-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1D2A5FF4FE00BE1EB4 /* Barlow-ExtraLight.ttf */; };
+		B2AD6F302A5FF4FF00BE1EB4 /* Barlow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1E2A5FF4FE00BE1EB4 /* Barlow-Light.ttf */; };
+		B2AD6F312A5FF4FF00BE1EB4 /* Barlow-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1F2A5FF4FE00BE1EB4 /* Barlow-BoldItalic.ttf */; };
+		B2AD6F322A5FF4FF00BE1EB4 /* Barlow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F202A5FF4FE00BE1EB4 /* Barlow-Bold.ttf */; };
+		B2AD6F332A5FF4FF00BE1EB4 /* Barlow-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F212A5FF4FE00BE1EB4 /* Barlow-Black.ttf */; };
+		B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F222A5FF4FE00BE1EB4 /* Barlow-SemiBold.ttf */; };
+		B2AD6F352A5FF4FF00BE1EB4 /* Barlow-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F232A5FF4FE00BE1EB4 /* Barlow-Thin.ttf */; };
+		B2AD6F362A5FF4FF00BE1EB4 /* Barlow-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F242A5FF4FF00BE1EB4 /* Barlow-Italic.ttf */; };
+		B2AD6F372A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F252A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf */; };
+		B2AD6F382A5FF4FF00BE1EB4 /* Barlow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F262A5FF4FF00BE1EB4 /* Barlow-Medium.ttf */; };
+		B2AD6F392A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F272A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf */; };
+		B2AD6F3A2A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F282A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf */; };
+		B2AD6F3B2A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F292A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf */; };
+		B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */; };
+		B2AD6F3D2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */; };
+		B2AD6F3E2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */; };
 		B2E42EB72A5E83EC00D78AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC302070D8CB00EFBA30 /* MainViewController.swift */; };
 		B2E42EB92A5E849800D78AD1 /* MapBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EB82A5E849800D78AD1 /* MapBox.swift */; };
 		B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */; };
 		B2E42EBF2A5E8FAC00D78AD1 /* Missions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBE2A5E8FAC00D78AD1 /* Missions.swift */; };
+		E7FD91A62A60F81400E10672 /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E7FD91A52A60F81400E10672 /* gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,10 +104,32 @@
 		B2AD6EE92A5FC84500BE1EB4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B2AD6EEE2A5FC9E500BE1EB4 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		B2AD6EF02A5FCA3D00BE1EB4 /* MQTTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTService.swift; sourceTree = "<group>"; };
+		B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B2AD6F1B2A5FF4FE00BE1EB4 /* Barlow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B2AD6F1C2A5FF4FE00BE1EB4 /* Barlow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F1D2A5FF4FE00BE1EB4 /* Barlow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B2AD6F1E2A5FF4FE00BE1EB4 /* Barlow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Light.ttf"; sourceTree = "<group>"; };
+		B2AD6F1F2A5FF4FE00BE1EB4 /* Barlow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F202A5FF4FE00BE1EB4 /* Barlow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Bold.ttf"; sourceTree = "<group>"; };
+		B2AD6F212A5FF4FE00BE1EB4 /* Barlow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Black.ttf"; sourceTree = "<group>"; };
+		B2AD6F222A5FF4FE00BE1EB4 /* Barlow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-SemiBold.ttf"; sourceTree = "<group>"; };
+		B2AD6F232A5FF4FE00BE1EB4 /* Barlow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Thin.ttf"; sourceTree = "<group>"; };
+		B2AD6F242A5FF4FF00BE1EB4 /* Barlow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Italic.ttf"; sourceTree = "<group>"; };
+		B2AD6F252A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-LightItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F262A5FF4FF00BE1EB4 /* Barlow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Medium.ttf"; sourceTree = "<group>"; };
+		B2AD6F272A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F282A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F292A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
+		B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		B2E42EB82A5E849800D78AD1 /* MapBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBox.swift; sourceTree = "<group>"; };
 		B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		B2E42EBE2A5E8FAC00D78AD1 /* Missions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missions.swift; sourceTree = "<group>"; };
 		DA877DEDB7DA07E361440993 /* Pods-DronosUTM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DronosUTM.debug.xcconfig"; path = "Target Support Files/Pods-DronosUTM/Pods-DronosUTM.debug.xcconfig"; sourceTree = "<group>"; };
+		E7FD91A52A60F81400E10672 /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gitignore; path = ../../../../../Downloads/gitignore; sourceTree = "<group>"; };
+		E7FD91A72A60F82400E10672 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
+		E7FD91A82A60F82900E10672 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = gitignore; path = ../../../../../Downloads/gitignore; sourceTree = "<group>"; };
 		FBC9D1EB0E1663B10A976FE4 /* Pods-UXSDKSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UXSDKSwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-UXSDKSwiftSample/Pods-UXSDKSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				53ECE277233DB8B500E278CD /* Helpers.swift */,
+				B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -231,6 +274,7 @@
 				B2AD6EE82A5FC82700BE1EB4 /* Services */,
 				53ECE276233DB88300E278CD /* Helpers */,
 				B2F62B5B2A5F9F780001A3B2 /* UXSDK */,
+				B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */,
 			);
 			path = DronosUTM;
 			sourceTree = "<group>";
@@ -269,6 +313,32 @@
 			path = SQLiteServices;
 			sourceTree = "<group>";
 		};
+		B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E7FD91A82A60F82900E10672 /* gitignore */,
+				B2AD6F212A5FF4FE00BE1EB4 /* Barlow-Black.ttf */,
+				B2AD6F1C2A5FF4FE00BE1EB4 /* Barlow-BlackItalic.ttf */,
+				B2AD6F202A5FF4FE00BE1EB4 /* Barlow-Bold.ttf */,
+				B2AD6F1F2A5FF4FE00BE1EB4 /* Barlow-BoldItalic.ttf */,
+				B2AD6F1B2A5FF4FE00BE1EB4 /* Barlow-ExtraBold.ttf */,
+				B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */,
+				B2AD6F1D2A5FF4FE00BE1EB4 /* Barlow-ExtraLight.ttf */,
+				B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */,
+				B2AD6F242A5FF4FF00BE1EB4 /* Barlow-Italic.ttf */,
+				B2AD6F1E2A5FF4FE00BE1EB4 /* Barlow-Light.ttf */,
+				B2AD6F252A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf */,
+				B2AD6F262A5FF4FF00BE1EB4 /* Barlow-Medium.ttf */,
+				B2AD6F272A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf */,
+				B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */,
+				B2AD6F222A5FF4FE00BE1EB4 /* Barlow-SemiBold.ttf */,
+				B2AD6F282A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf */,
+				B2AD6F232A5FF4FE00BE1EB4 /* Barlow-Thin.ttf */,
+				B2AD6F292A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B2E42EB22A5E819500D78AD1 /* MapBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */,
+				E7FD91A52A60F81400E10672 /* gitignore */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -296,6 +367,7 @@
 		B2F62B5B2A5F9F780001A3B2 /* UXSDK */ = {
 			isa = PBXGroup;
 			children = (
+				E7FD91A72A60F82400E10672 /* gitignore */,
 				53EDD5F12346F384002E28AF /* ProductCommunication */,
 				53EDD5F22346F3FC002E28AF /* DefaultLayout */,
 				53EDD5F42346F425002E28AF /* MapWidget */,
@@ -372,14 +444,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AD6F322A5FF4FF00BE1EB4 /* Barlow-Bold.ttf in Resources */,
+				B2AD6F312A5FF4FF00BE1EB4 /* Barlow-BoldItalic.ttf in Resources */,
+				B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */,
 				A452DC3C2070D8CC00EFBA30 /* DefaultLayout.storyboard in Resources */,
+				B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */,
 				A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */,
+				B2AD6F362A5FF4FF00BE1EB4 /* Barlow-Italic.ttf in Resources */,
+				B2AD6F382A5FF4FF00BE1EB4 /* Barlow-Medium.ttf in Resources */,
+				B2AD6F352A5FF4FF00BE1EB4 /* Barlow-Thin.ttf in Resources */,
+				B2AD6F3E2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf in Resources */,
+				E7FD91A62A60F81400E10672 /* gitignore in Resources */,
+				B2AD6F3D2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf in Resources */,
 				A452DC3B2070D8CC00EFBA30 /* Main.storyboard in Resources */,
+				B2AD6F2F2A5FF4FF00BE1EB4 /* Barlow-ExtraLight.ttf in Resources */,
+				B2AD6F2D2A5FF4FF00BE1EB4 /* Barlow-ExtraBold.ttf in Resources */,
+				B2AD6F392A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf in Resources */,
+				B2AD6F3B2A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf in Resources */,
 				A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */,
+				B2AD6F372A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf in Resources */,
 				A452DC442070D8CC00EFBA30 /* PanelsCollections.storyboard in Resources */,
 				A452DC472070D8CC00EFBA30 /* Widgets.storyboard in Resources */,
+				B2AD6F302A5FF4FF00BE1EB4 /* Barlow-Light.ttf in Resources */,
+				B2AD6F332A5FF4FF00BE1EB4 /* Barlow-Black.ttf in Resources */,
+				B2AD6F3A2A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf in Resources */,
 				53C8811121507142003F4561 /* MapWidget.storyboard in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
+				B2AD6F2E2A5FF4FF00BE1EB4 /* Barlow-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +570,7 @@
 				B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */,
 				B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */,
 				B29803BE2A5EAAF300A94612 /* TextEditor.swift in Sources */,
+				B2AD6EF52A5FE2DD00BE1EB4 /* Colors.swift in Sources */,
 				A452DC3E2070D8CC00EFBA30 /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				B2AD6EEF2A5FC9E500BE1EB4 /* AccountService.swift in Sources */,
 				A452DC482070D8CC00EFBA30 /* WidgetsViewController.swift in Sources */,
