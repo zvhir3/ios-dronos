@@ -17,14 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if isLoggedIn() {
             rootView = AnyView(MapBox())
         } else {
-            rootView = AnyView(LoginPage())
+            rootView = AnyView(
+                LoginPage()
+                .transition(.move(edge: .trailing))
+                .animation(.easeInOut(duration: 0.5))
+            )
         }
         
         // Use the SwiftUI view as the root view controller
         if #available(iOS 14.0, *) {
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
-                let splashScreen = Splashscreen() // Replace with your actual splash screen view
+                let splashScreen = Splashscreen().transition(.move(edge: .trailing))
+                    .animation(.easeInOut(duration: 0.5)) // Replace with your actual splash screen view
                 let splashViewController = UIHostingController(rootView: splashScreen)
                 window.rootViewController = splashViewController
                 self.window = window
@@ -37,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         } else {
             let window = UIWindow(frame: UIScreen.main.bounds)
-            let splashScreen = Splashscreen() // Replace with your actual splash screen view
+            let splashScreen = Splashscreen().transition(.move(edge: .trailing))
+                .animation(.easeInOut(duration: 0.5)) // Replace with your actual splash screen view
             let splashViewController = UIHostingController(rootView: splashScreen)
             window.rootViewController = splashViewController
             self.window = window
@@ -54,11 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func isLoggedIn() -> Bool {
         
-        if let token = UserDefaults.standard.string(forKey: "token") {
-
-            // Check if the token exists
-            return !token.isEmpty
-        }
+//        if let token = UserDefaults.standard.string(forKey: "token") {
+//
+//            // Check if the token exists
+//            return !token.isEmpty
+//        }
         return false
     }
 }

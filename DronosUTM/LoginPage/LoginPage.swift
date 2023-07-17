@@ -10,16 +10,17 @@ struct LoginPage: View {
     @State private var password: String = ""
     @State private var isLoggedIn: Bool = false
     @State private var showAlert: Bool = false
+    @State private var keyboardOffset: CGFloat = 0
     
     var body: some View {
         NavigationView {
             ZStack {
                 Color.black // Set the background color to black
-                if (isLoggedIn) {
+                if isLoggedIn {
                     MapBox()
-                }
-                else {
-                    //                    ScrollView {
+                        .transition(.move(edge: .trailing))
+                        .animation(.easeInOut(duration: 0.5))
+                } else {
                     VStack {
                         Image("logo")
                             .resizable()
@@ -30,6 +31,7 @@ struct LoginPage: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .padding(.bottom, 30)
+                        
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Email")
                                 .font(.headline)
@@ -44,6 +46,7 @@ struct LoginPage: View {
                             
                             Spacer()
                                 .frame(height: 10)
+                            
                             Text("Password")
                                 .font(.headline)
                             
@@ -58,57 +61,51 @@ struct LoginPage: View {
                             
                             Spacer()
                                 .frame(height: 20)
+                            
                             Button(action: {
                                 let data = LoginData(email: email, password: password)
-                                //                            isLoggedIn = APIService.login(data);
                                 APIService.login(data) { result in
-                                    //                                    isLoggedIn = result
                                     print("sini", result)
-                                    if (result) {
+                                    if result {
                                         print("masuk tak sini sebenarnya")
-                                        showAlert = result;
+                                        showAlert = result
                                         
                                     }
                                     print("ada token tak", UserDefaults.standard.object(forKey: "token"))
                                 }
                                 print("Button tapped")
-                                
-                            }
-                            )
-                            {
+                            }) {
                                 Text("Login")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding()
                                     .frame(maxWidth: .infinity)
                                     .background(Color(red: 0, green: 240/255, blue: 255/255, opacity: 0.2))
-                                //                            .cornerRadius(10)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color(red: 142/255, green: 249/255, blue: 249/255), lineWidth: 2)
                                     )
                                     .buttonStyle(PlainButtonStyle())
                             }
-                            
                             .buttonStyle(PlainButtonStyle())
-                        }.alert(isPresented: $showAlert) {
-                            Alert(
-                                title: Text("Status"),
-                                message: Text("Login successful"),
-                                dismissButton: .default(Text("OK")) {
-                                    isLoggedIn = true
-                                }
-                            )
                         }
-                        //                    }
                         .padding()
                     }
+                    .padding(.bottom, keyboardOffset) // Adjust the bottom padding based on the keyboard offset
+                    .animation(.easeInOut) // Apply animation to the view when it adjusts to the keyboard
+                    
                 }
             }
             .edgesIgnoringSafeArea(.all)
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
+                guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+                keyboardOffset = keyboardFrame.height / 2.5 // Update the keyboard offset to adjust the view's layout
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                keyboardOffset = 0 // Reset the keyboard offset when the keyboard is dismissed
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle to support earlier iOS versions
         .accentColor(.white) // Set the accent color for navigation elements
     }
-    
 }

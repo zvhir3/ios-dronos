@@ -17,7 +17,6 @@
 				8D350B39628F91152BEEB43F1C1BD53F /* PBXTargetDependency */,
 			);
 			name = MapboxCoreMaps;
-			productName = MapboxCoreMaps;
 		};
 		5638B5E625AB73DE90E61BF1C58289AD /* MapboxCommon */ = {
 			isa = PBXAggregateTarget;
@@ -28,7 +27,6 @@
 			dependencies = (
 			);
 			name = MapboxCommon;
-			productName = MapboxCommon;
 		};
 		5D3E3CBA78F85458ED1795C0DED527B9 /* DJI-UXSDK-iOS */ = {
 			isa = PBXAggregateTarget;
@@ -38,7 +36,6 @@
 			dependencies = (
 			);
 			name = "DJI-UXSDK-iOS";
-			productName = "DJI-UXSDK-iOS";
 		};
 		6D72D25C203F68284F9FF3A11DEB60C9 /* DJI-SDK-iOS */ = {
 			isa = PBXAggregateTarget;
@@ -48,7 +45,6 @@
 			dependencies = (
 			);
 			name = "DJI-SDK-iOS";
-			productName = "DJI-SDK-iOS";
 		};
 		B4924905BC24FF7BAA9A38E024E03EB1 /* DJIFlySafeDatabaseResource */ = {
 			isa = PBXAggregateTarget;
@@ -58,7 +54,6 @@
 			dependencies = (
 			);
 			name = DJIFlySafeDatabaseResource;
-			productName = DJIFlySafeDatabaseResource;
 		};
 		F20E041B920E9DD7BA087321915E730F /* MapboxMobileEvents */ = {
 			isa = PBXAggregateTarget;
@@ -69,7 +64,6 @@
 			dependencies = (
 			);
 			name = MapboxMobileEvents;
-			productName = MapboxMobileEvents;
 		};
 /* End PBXAggregateTarget section */
 
@@ -801,7 +795,7 @@
 		3485C358A5072FA9F22979C594DBF777 /* Encodable+ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Encodable+ToJSON.swift"; path = "Sources/MapboxMaps/Foundation/Extensions/Encodable+ToJSON.swift"; sourceTree = "<group>"; };
 		34E5790949726847FE60B1CB80F3C984 /* ViewportState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewportState.swift; path = Sources/MapboxMaps/Viewport/ViewportState.swift; sourceTree = "<group>"; };
 		3579E59FFCEEBA39E7E02D6F5A0AD222 /* SimpleCameraAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleCameraAnimator.swift; path = Sources/MapboxMaps/Camera/SimpleCameraAnimator.swift; sourceTree = "<group>"; };
-		35B6961BD6A417FC6CC6059085FD1938 /* MapboxMaps.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = MapboxMaps.json; path = Sources/MapboxMaps/MapboxMaps.json; sourceTree = "<group>"; };
+		35B6961BD6A417FC6CC6059085FD1938 /* MapboxMaps.json */ = {isa = PBXFileReference; includeInIndex = 1; name = MapboxMaps.json; path = Sources/MapboxMaps/MapboxMaps.json; sourceTree = "<group>"; };
 		363A1B6D644E4F6839DDC4937A162F74 /* DJIStreamCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJIStreamCommon.h; path = DJIWidget/VideoPreviewer/DJIStreamCommon.h; sourceTree = "<group>"; };
 		36A9955D4AC5723D7CC10EE65AA9716A /* ResourceBundle-MapboxMapsResources-MapboxMaps-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MapboxMapsResources-MapboxMaps-Info.plist"; sourceTree = "<group>"; };
 		37D9E24F0748C5039A0D7A38BB727C12 /* DJILiveViewRenderHSBFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJILiveViewRenderHSBFilter.h; path = DJIWidget/VideoPreviewer/Render/HSBFilter/DJILiveViewRenderHSBFilter.h; sourceTree = "<group>"; };
@@ -830,7 +824,7 @@
 		44979635DF408CA632D6316F190451B6 /* CompassDirectionLong.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = CompassDirectionLong.strings; path = "zh-Hant.lproj/CompassDirectionLong.strings"; sourceTree = "<group>"; };
 		4529375AEE6356BEF62888F2213E2269 /* CompassDirectionLong.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = CompassDirectionLong.strings; path = vi.lproj/CompassDirectionLong.strings; sourceTree = "<group>"; };
 		45F6CEB383091FAA7CE9597A930EB5B9 /* CompassDirectionShort.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = CompassDirectionShort.strings; path = lt.lproj/CompassDirectionShort.strings; sourceTree = "<group>"; };
-		4606AB51570B3D8A0375C0F774449BB0 /* MapboxMobileEvents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = MapboxMobileEvents.xcframework; sourceTree = "<group>"; };
+		4606AB51570B3D8A0375C0F774449BB0 /* MapboxMobileEvents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MapboxMobileEvents.xcframework; sourceTree = "<group>"; };
 		46CADD74B775D47F4CF0FE18DF6BDE00 /* DJIVideoPreviewSmoothHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJIVideoPreviewSmoothHelper.h; path = DJIWidget/RTMPProcessor/DJIVideoPreviewSmoothHelper.h; sourceTree = "<group>"; };
 		46D0C7B058FF92A1BE1AA3CCAD81E04B /* DJILiveViewRenderLookupFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DJILiveViewRenderLookupFilter.m; path = DJIWidget/VideoPreviewer/Render/LookupFilter/DJILiveViewRenderLookupFilter.m; sourceTree = "<group>"; };
 		470EA95D4B566024DA0E3B36071219B6 /* DJIPixelCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJIPixelCache.h; path = DJIWidget/VideoPreviewer/Helper/DJIImageCache/DJIPixelCache.h; sourceTree = "<group>"; };
@@ -840,7 +834,7 @@
 		48DC234A34CEC1DA5E44A4CCD036025F /* DJIH264FrameRawLayerDumper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DJIH264FrameRawLayerDumper.m; path = DJIWidget/VideoPreviewer/Helper/DJIH264FrameRawLayerDumper.m; sourceTree = "<group>"; };
 		491BFCBA5042AE6FE60822E70FA99E91 /* DJILiveViewRenderPicutre.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJILiveViewRenderPicutre.h; path = DJIWidget/VideoPreviewer/Render/Texture/DJILiveViewRenderPicutre.h; sourceTree = "<group>"; };
 		49C51B1029BF4A6603B1867A99CCD409 /* CameraAnimatorsRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraAnimatorsRunner.swift; path = Sources/MapboxMaps/Camera/CameraAnimatorsRunner.swift; sourceTree = "<group>"; };
-		49D72909FAE466E6430869174A25C094 /* MapboxCoreMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = MapboxCoreMaps.xcframework; sourceTree = "<group>"; };
+		49D72909FAE466E6430869174A25C094 /* MapboxCoreMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MapboxCoreMaps.xcframework; sourceTree = "<group>"; };
 		4A02FFF4FBEA58C183DE83E3CC544414 /* DJIImageCalibrateColorConverter_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJIImageCalibrateColorConverter_Private.h; path = DJIWidget/VideoPreviewer/Helper/ImageCalibrate/DJIImageCalibrateColorConverter_Private.h; sourceTree = "<group>"; };
 		4A035CBF9653BA6E6D9380C09AD26199 /* CompassDirectionShort.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = CompassDirectionShort.strings; path = "zh-Hant.lproj/CompassDirectionShort.strings"; sourceTree = "<group>"; };
 		4A5D565FB8771E31A2F0569DFA8647FC /* LocationPermissionsDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPermissionsDelegate.swift; path = Sources/MapboxMaps/Location/LocationPermissionsDelegate.swift; sourceTree = "<group>"; };
@@ -894,9 +888,9 @@
 		5BD8C7BF66173F8A5110CA091CA195B1 /* TileRegionLoadOptions+MapboxMaps.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TileRegionLoadOptions+MapboxMaps.swift"; path = "Sources/MapboxMaps/Offline/TileRegionLoadOptions+MapboxMaps.swift"; sourceTree = "<group>"; };
 		5C2F2CFE1B6F0C7891216BCFC1AC6107 /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Sources/MapboxMaps/Style/Types/Value.swift; sourceTree = "<group>"; };
 		5C5B5C8E216E08EBF8AADD977097B522 /* ZoomPinchBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomPinchBehavior.swift; path = Sources/MapboxMaps/Gestures/GestureHandlers/PinchBehaviors/ZoomPinchBehavior.swift; sourceTree = "<group>"; };
-		5C9DB677A759AF9551E5C00DAEF2CA16 /* MapboxCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = MapboxCommon.xcframework; sourceTree = "<group>"; };
+		5C9DB677A759AF9551E5C00DAEF2CA16 /* MapboxCommon.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MapboxCommon.xcframework; sourceTree = "<group>"; };
 		5CD1827B52DB68520369DD80CD448BA8 /* FillExtrusionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillExtrusionLayer.swift; path = Sources/MapboxMaps/Style/Generated/Layers/FillExtrusionLayer.swift; sourceTree = "<group>"; };
-		5D51D94BAC94481BBB235E840AA0BDB4 /* djiffremux.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = djiffremux.c; path = DJIWidget/VideoLiveCamera/RecordVideo/VideoWriter/Context/Muxer/djiffremux.c; sourceTree = "<group>"; };
+		5D51D94BAC94481BBB235E840AA0BDB4 /* djiffremux.c */ = {isa = PBXFileReference; includeInIndex = 1; name = djiffremux.c; path = DJIWidget/VideoLiveCamera/RecordVideo/VideoWriter/Context/Muxer/djiffremux.c; sourceTree = "<group>"; };
 		5D96F058F9016540FD256E08830522B9 /* Atmosphere.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Atmosphere.swift; path = Sources/MapboxMaps/Style/Generated/Atmosphere.swift; sourceTree = "<group>"; };
 		5DFA8B0E6228B493EB26F5EDF943A0DA /* Viewport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Viewport.swift; path = Sources/MapboxMaps/Viewport/Viewport.swift; sourceTree = "<group>"; };
 		5E5A19512E44014E21CFA4F36B89F3BC /* OptionalInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalInterpolator.swift; path = Sources/MapboxMaps/Foundation/Interpolators/OptionalInterpolator.swift; sourceTree = "<group>"; };
@@ -1073,7 +1067,7 @@
 		9CD1A1807BA58650C3EB88BF7F59AF53 /* ResourceOptionsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResourceOptionsManager.swift; path = Sources/MapboxMaps/Foundation/ResourceOptionsManager.swift; sourceTree = "<group>"; };
 		9CFBCE2EEA77ADBAE10459920FA332A3 /* OverviewViewportStateOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverviewViewportStateOptions.swift; path = Sources/MapboxMaps/Viewport/States/Overview/OverviewViewportStateOptions.swift; sourceTree = "<group>"; };
 		9D918F262A7334B1D1262A9A1EA34259 /* DJIImageCalibrationFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DJIImageCalibrationFrame.h; path = DJIWidget/VideoPreviewer/Helper/DJIImageCalibrationFrame/DJIImageCalibrationFrame.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E256510916B9944F566419498DD8A50 /* DefaultViewportTransitionAnimationSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultViewportTransitionAnimationSpec.swift; path = Sources/MapboxMaps/Viewport/Transitions/Default/DefaultViewportTransitionAnimationSpec.swift; sourceTree = "<group>"; };
 		9E26F3D73F24FDC40641805734AC64F0 /* AnnotationOrchestrator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnnotationOrchestrator.swift; path = Sources/MapboxMaps/Annotations/AnnotationOrchestrator.swift; sourceTree = "<group>"; };
 		9E386DA4BD3964FFCD0E7344B3274923 /* RadianCoordinate2D.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadianCoordinate2D.swift; path = Sources/Turf/RadianCoordinate2D.swift; sourceTree = "<group>"; };
@@ -1145,7 +1139,7 @@
 		B7F873715F7FDD1D015BB59840292BB9 /* OffsetGeometryCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OffsetGeometryCalculator.swift; path = Sources/MapboxMaps/Annotations/OffsetGeometryCalculator.swift; sourceTree = "<group>"; };
 		B854DFB9F27A0E21A5C5911EA1F7C05C /* QuickZoomGestureHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickZoomGestureHandler.swift; path = Sources/MapboxMaps/Gestures/GestureHandlers/QuickZoomGestureHandler.swift; sourceTree = "<group>"; };
 		B95201A5A4BBB1C59F1FA417A4856F9C /* Turf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Turf.h; path = Sources/Turf/Turf.h; sourceTree = "<group>"; };
-		BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DJIWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DJIWidget; path = DJIWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3AC9142FD5ACF6082A9237CB043371 /* FollowPuckViewportStateOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FollowPuckViewportStateOptions.swift; path = Sources/MapboxMaps/Viewport/States/FollowPuck/FollowPuckViewportStateOptions.swift; sourceTree = "<group>"; };
 		BA7330D2C8233D7E6DACDECB8820082F /* StyleProjection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleProjection.swift; path = Sources/MapboxMaps/Style/StyleProjection.swift; sourceTree = "<group>"; };
 		BAB57A36FDA79F4C07F411684B7E3231 /* Turf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Turf.swift; path = Sources/Turf/Turf.swift; sourceTree = "<group>"; };
@@ -1646,6 +1640,7 @@
 				7CE8F9BB3563679136A1C8F647F36C1A /* Resources */,
 				BAB21297B99D85477FA788715F35E595 /* Support Files */,
 			);
+			name = MapboxMaps;
 			path = MapboxMaps;
 			sourceTree = "<group>";
 		};
@@ -1663,6 +1658,7 @@
 				59F573A33729482A55F6924CF6B5F74B /* Frameworks */,
 				BD8BB8DC46197C1C095B74EDF7AEB7BD /* Support Files */,
 			);
+			name = MapboxCommon;
 			path = MapboxCommon;
 			sourceTree = "<group>";
 		};
@@ -1713,6 +1709,7 @@
 				845BBD0DDD26DD7267A325FB7FBC08C8 /* Resources */,
 				19F67E4058DB1BA1C99C56CF2A367B0C /* Support Files */,
 			);
+			name = DJIFlySafeDatabaseResource;
 			path = DJIFlySafeDatabaseResource;
 			sourceTree = "<group>";
 		};
@@ -1828,6 +1825,7 @@
 				52AD5A712E48F67811C9C484D21139B0 /* Frameworks */,
 				D391B9BB5B362F2E4DEF68A789F74EDC /* Support Files */,
 			);
+			name = MapboxCoreMaps;
 			path = MapboxCoreMaps;
 			sourceTree = "<group>";
 		};
@@ -1858,6 +1856,7 @@
 				BAB57A36FDA79F4C07F411684B7E3231 /* Turf.swift */,
 				C27A3D9FCF344F69F3DF79FC6ED29F61 /* Support Files */,
 			);
+			name = Turf;
 			path = Turf;
 			sourceTree = "<group>";
 		};
@@ -1914,7 +1913,7 @@
 		CB4B8318B92E36E8E3A37839291532D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget.framework */,
+				BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget */,
 				602D37F1122E18D1C3396A244114DB74 /* iOS-Color-Picker */,
 				6E6CD80661687B39BD2D45E45AA724F7 /* MapboxMaps */,
 				78E842809B0D2FC3FFAEF6BA28FD31EF /* MapboxMaps-MapboxMapsResources */,
@@ -2128,6 +2127,7 @@
 				A987BA1D26A3BFED13B7E0EBE50E5260 /* Frameworks */,
 				FB09E0A335F1E130CA45166C7B1DABF1 /* Support Files */,
 			);
+			name = DJIWidget;
 			path = DJIWidget;
 			sourceTree = "<group>";
 		};
@@ -2137,6 +2137,7 @@
 				C75F7DCBD4769CE7C3935D3262C79155 /* Frameworks */,
 				8B78518687D4746766C5237E10E4A2E4 /* Support Files */,
 			);
+			name = "DJI-SDK-iOS";
 			path = "DJI-SDK-iOS";
 			sourceTree = "<group>";
 		};
@@ -2157,6 +2158,7 @@
 				4E107BC5A78C7A22C01DBAAA88CB4DD5 /* Frameworks */,
 				A4B9353F968B6D43CEB05D7248BE98FA /* Support Files */,
 			);
+			name = "DJI-UXSDK-iOS";
 			path = "DJI-UXSDK-iOS";
 			sourceTree = "<group>";
 		};
@@ -2166,6 +2168,7 @@
 				3B772F6428381D4C1D7FAE49470047D0 /* Frameworks */,
 				EA55FFEAC6D477943FC37AB15F0ABECB /* Support Files */,
 			);
+			name = MapboxMobileEvents;
 			path = MapboxMobileEvents;
 			sourceTree = "<group>";
 		};
@@ -2196,6 +2199,7 @@
 				5DD029F6CCD6CD690F8C1C30238D09BF /* Resources */,
 				74AD6321A39D99F9DD134ECFF7D2BF82 /* Support Files */,
 			);
+			name = "iOS-Color-Picker";
 			path = "iOS-Color-Picker";
 			sourceTree = "<group>";
 		};
@@ -2394,7 +2398,7 @@
 			);
 			name = DJIWidget;
 			productName = DJIWidget;
-			productReference = BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget.framework */;
+			productReference = BA024A645CFB876FEE6846E789E1E2CB /* DJIWidget */;
 			productType = "com.apple.product-type.framework";
 		};
 		5C3D7074D979311BD41B13DF134C8433 /* MapboxMaps-MapboxMapsResources */ = {
@@ -3438,7 +3442,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DJIWidget/DJIWidget-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DJIWidget/DJIWidget-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DJIWidget/DJIWidget.modulemap";
 				PRODUCT_MODULE_NAME = DJIWidget;
@@ -3477,7 +3481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3632,7 +3636,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3646,7 +3650,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3756,7 +3760,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3820,7 +3825,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3877,7 +3882,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DJIWidget/DJIWidget-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DJIWidget/DJIWidget-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DJIWidget/DJIWidget.modulemap";
 				PRODUCT_MODULE_NAME = DJIWidget;
