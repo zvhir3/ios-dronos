@@ -65,15 +65,11 @@ struct LoginPage: View {
                             Button(action: {
                                 let data = LoginData(email: email, password: password)
                                 APIService.login(data) { result in
-                                    print("sini", result)
                                     if result {
-                                        print("masuk tak sini sebenarnya")
                                         showAlert = result
                                         
                                     }
-                                    print("ada token tak", UserDefaults.standard.object(forKey: "token"))
                                 }
-                                print("Button tapped")
                             }) {
                                 Text("Login")
                                     .font(.headline)
@@ -88,6 +84,14 @@ struct LoginPage: View {
                                     .buttonStyle(PlainButtonStyle())
                             }
                             .buttonStyle(PlainButtonStyle())
+                        }.alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Status"),
+                                message: Text("Login successful"),
+                                dismissButton: .default(Text("OK")) {
+                                    isLoggedIn = true
+                                }
+                            )
                         }
                         .padding()
                     }
