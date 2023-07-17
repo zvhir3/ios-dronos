@@ -14,7 +14,6 @@
 		73DFCA26533189E3D7DC6D48 /* Pods_DronosUTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288FC6C5D6AFD0052F54C4F2 /* Pods_DronosUTM.framework */; };
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
 		A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DC262070D8CB00EFBA30 /* Assets.xcassets */; };
-		A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */; };
 		A452DC3B2070D8CC00EFBA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC292070D8CB00EFBA30 /* Main.storyboard */; };
 		A452DC3C2070D8CC00EFBA30 /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC2B2070D8CB00EFBA30 /* DefaultLayout.storyboard */; };
 		A452DC3D2070D8CC00EFBA30 /* DefaultLayoutCustomization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A452DC2C2070D8CB00EFBA30 /* DefaultLayoutCustomization.storyboard */; };
@@ -83,7 +82,6 @@
 		868A4ED01E01FA53006FEE33 /* DronosUTM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DronosUTM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A452DC262070D8CB00EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A452DC282070D8CB00EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A452DC2A2070D8CB00EFBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A452DC2B2070D8CB00EFBA30 /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
 		A452DC2C2070D8CB00EFBA30 /* DefaultLayoutCustomization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayoutCustomization.storyboard; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			children = (
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
-				A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
 				B29803C32A5EAC1B00A94612 /* Splashscreen */,
 				B2E42EBA2A5E8E3100D78AD1 /* LoginPage */,
@@ -446,7 +443,6 @@
 				B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */,
 				A452DC3C2070D8CC00EFBA30 /* DefaultLayout.storyboard in Resources */,
 				B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */,
-				A452DC3A2070D8CC00EFBA30 /* LaunchScreen.storyboard in Resources */,
 				B2AD6F362A5FF4FF00BE1EB4 /* Barlow-Italic.ttf in Resources */,
 				B2AD6F382A5FF4FF00BE1EB4 /* Barlow-Medium.ttf in Resources */,
 				B2AD6F352A5FF4FF00BE1EB4 /* Barlow-Thin.ttf in Resources */,
@@ -583,14 +579,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A452DC272070D8CB00EFBA30 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A452DC282070D8CB00EFBA30 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		A452DC292070D8CB00EFBA30 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

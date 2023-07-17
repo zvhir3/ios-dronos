@@ -78,6 +78,7 @@ class Missions: UIViewController {
           // Create and configure the title label
           let titleLabel = UILabel()
           titleLabel.text = "Today's Missions"
+          titleLabel.textColor = UIColor.fromHex(0xffffff)
           titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
           titleLabel.translatesAutoresizingMaskIntoConstraints = false
           
@@ -182,12 +183,14 @@ class Missions: UIViewController {
         // Create and configure the missionId label
         let missionIdLabel = UILabel()
         missionIdLabel.text = "\(mission.missionId)"
+        missionIdLabel.textColor = UIColor.fromHex(0xffffff)
         missionIdLabel.font = UIFont(name: "Barlow-SemiBold", size: 14)
         missionIdLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // Create and configure the name label
         let nameLabel = UILabel()
         nameLabel.text = "Name: \(mission.name)"
+        nameLabel.textColor = UIColor.fromHex(0xffffff)
         nameLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -195,9 +198,11 @@ class Missions: UIViewController {
         let scheduleLabel = UILabel()
         if let startDate = mission.schedules.first?.startDate {
             scheduleLabel.text = "Schedule: \(startDate) - \(mission.schedules.first?.endDate ?? "")"
+            scheduleLabel.textColor = UIColor.fromHex(0xffffff)
             scheduleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         } else {
             scheduleLabel.text = "Schedule: N/A"
+            scheduleLabel.textColor = UIColor.fromHex(0xffffff)
             scheduleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
         }
         scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
