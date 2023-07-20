@@ -63,6 +63,7 @@ extension UIControl {
     func parseHexColor() {
         print ("Return hex color")
     }
+
 }
 
 typealias ControlActionClosure = () -> Void
@@ -77,4 +78,6 @@ public final class ControlAction {
         action()
     }
 }
+
+
 
