@@ -19,18 +19,14 @@ class ViewController: UIViewController {
         for coordinate in coordinates {
             let options = ViewAnnotationOptions(
                 geometry: Point(coordinate),
-                width: 1,
-                height: 1,
+                width: 30,
+                height: 30,
                 allowOverlap: false,
                 anchor: .center
             )
             
-            // Create an image view for the icon
-            if let url = URL(string: "https://w7.pngwing.com/pngs/361/830/png-transparent-map-pin-3d-icon.png"),
-               let data = try? Data(contentsOf: url),
-               let originalImage = UIImage(data: data),
-               let resizedImage = originalImage.resized(to: CGSize(width: 30, height: 30)) {
-                let iconImageView = UIImageView(image: resizedImage.withRenderingMode(.alwaysOriginal))
+            if let iconImage = UIImage(named: "HomePoint") {
+                let iconImageView = UIImageView(image: iconImage.withRenderingMode(.alwaysOriginal))
                 iconImageView.contentMode = .center
                 try? mapView.viewAnnotations.add(iconImageView, options: options)
             }
@@ -62,7 +58,10 @@ class ViewController: UIViewController {
         let coordinates: [CLLocationCoordinate2D] = [
             CLLocationCoordinate2D(latitude: 3.058438, longitude: 101.688452),
             CLLocationCoordinate2D(latitude: 3.115537525738141, longitude: 101.76028890808064),
+            CLLocationCoordinate2D(latitude: 2.910410783314061, longitude: 101.64281056194741),
+            CLLocationCoordinate2D(latitude: 2.994087871757453, longitude: 101.65903050627021),
             CLLocationCoordinate2D(latitude: 3.058438, longitude: 101.688452)
+           
         ]
         self.addViewAnnotations(coordinates: coordinates)
         

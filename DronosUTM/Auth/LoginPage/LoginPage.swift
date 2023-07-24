@@ -8,7 +8,7 @@ struct LoginData {
 struct LoginPage: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isLoggedIn: Bool = false
+    @State private var isLoggedIn: Bool = true
     @State private var showAlert: Bool = false
     @State private var keyboardOffset: CGFloat = 0
     
