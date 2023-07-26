@@ -39,13 +39,14 @@ class ViewController: UIViewController {
         let centerCoordinate = CLLocationCoordinate2D(latitude: 2.901207768844617, longitude: 101.65212468944911)
         
         let mapInitOptions = MapInitOptions(
-            resourceOptions: ResourceOptions(accessToken: "pk.eyJ1IjoienZoaXI5OCIsImEiOiJjbDd5NmhmcHQwd3E2M25uM2xqNWpta2JrIn0.7WhQqynHwXzSI3O12u-nXA"),
-            cameraOptions: CameraOptions(center: centerCoordinate, zoom: 12),
-            styleURI: StyleURI(rawValue: "mapbox://styles/intuitivebadger/ckzz2zvzy010o14l8wocirazx")
+            resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
+            cameraOptions: CameraOptions(center: centerCoordinate, zoom: 2),
+            styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
         )
         
         mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
         view.addSubview(mapView)
         
         let missionsButton = UIButton(type: .system)
