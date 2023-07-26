@@ -1,7 +1,7 @@
 import SwiftUI
 import MapboxMaps
 
-struct MapBox: UIViewControllerRepresentable {
+struct Launchpad: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UINavigationController {
         let viewController = ViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
                 anchor: .center
             )
             
-            if let iconImage = UIImage(named: "HomePoint") {
+            if let iconImage = UIImage(named: "Pin") {
                 let iconImageView = UIImageView(image: iconImage.withRenderingMode(.alwaysOriginal))
                 iconImageView.contentMode = .center
                 try? mapView.viewAnnotations.add(iconImageView, options: options)
@@ -55,15 +55,20 @@ class ViewController: UIViewController {
         missionsButton.addTarget(self, action: #selector(openMissionsPage), for: .touchUpInside)
         view.addSubview(missionsButton)
         
-        let coordinates: [CLLocationCoordinate2D] = [
-            CLLocationCoordinate2D(latitude: 3.058438, longitude: 101.688452),
-            CLLocationCoordinate2D(latitude: 3.115537525738141, longitude: 101.76028890808064),
-            CLLocationCoordinate2D(latitude: 2.910410783314061, longitude: 101.64281056194741),
-            CLLocationCoordinate2D(latitude: 2.994087871757453, longitude: 101.65903050627021),
-            CLLocationCoordinate2D(latitude: 3.058438, longitude: 101.688452)
-           
-        ]
-        self.addViewAnnotations(coordinates: coordinates)
+       
+        APIService.fetchMissions { [weak self] missions in
+            DispatchQueue.main.async {
+                for mission in missions {
+                    print("###########")
+                    if let coordinates = self?.convertToCLLocationCoordinates(coordinates: mission.area.coordinate) {
+                        print(coordinates)
+                        self?.addViewAnnotations(coordinates: coordinates)
+                    } else {
+                        print("Coordinates are nil or invalid.")
+                    }
+                }
+            }
+        }
         
         NSLayoutConstraint.activate([
             missionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -75,6 +80,23 @@ class ViewController: UIViewController {
         let missionsViewController = Missions()
         navigationController?.pushViewController(missionsViewController, animated: true)
     }
+    
+
+    
+    func convertToCLLocationCoordinates(coordinates: [APIService.Coordinate]) -> [CLLocationCoordinate2D] {
+        var convertedCoordinates: [CLLocationCoordinate2D] = []
+        for coordinate in coordinates {
+            if let latitude = Double(coordinate.latitude), let longitude = Double(coordinate.longitude) {
+                let convertedCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                convertedCoordinates.append(convertedCoordinate)
+            } else {
+                // Handle conversion error, if necessary
+                print("Error converting coordinate: \(coordinate)")
+            }
+        }
+        return convertedCoordinates
+    }
+
 }
 
 extension UIImage {

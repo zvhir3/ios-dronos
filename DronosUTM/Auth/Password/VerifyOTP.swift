@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct VerifyOTPPage: View {
     //MARK -> PROPERTIES
@@ -17,8 +18,7 @@ struct VerifyOTPPage: View {
     @State var pinFive: String = ""
     @State var pinSix: String = ""
     @State private var alertMessage = ""
-    @State private var navigateToLaunchpad = false
-    
+    @State private var navigateToResetPassword = false
     @State private var showAlert = false
     
     //MARK -> BODY
@@ -112,74 +112,25 @@ struct VerifyOTPPage: View {
             }
             .padding(.vertical)
             
-            // Explicitly set focus on the first pin field when the view appears
             .onAppear {
                 pinFocusState = .pinOne
             }
-            NavigationLink(destination: MapBox(), isActive: $navigateToLaunchpad) {
+            NavigationLink(destination: ResetPasswordPage(email: email), isActive: $navigateToResetPassword) {
                 EmptyView()
             }
             
             Button(action: {
-                // Handle OTP verification here
                 let otp = "\(pinOne)\(pinTwo)\(pinThree)\(pinFour)\(pinFive)\(pinSix)"
-                print("Verifying OTP: \(otp)")
-                
-                // Post the OTP to the API
-                guard let url = URL(string: "https://dev-api.dronos.ai/account/auth/verify-otp") else {
-                    print("Invalid URL")
-                    return
-                }
-                
-                let bodyData: [String: Any] = [
-                    "otp": Int(otp) ?? 0, // Convert OTP to an integer if needed
-                    "email": "zahiruddin@aerodyne.group"
-                ]
-                
-                guard let jsonData = try? JSONSerialization.data(withJSONObject: bodyData) else {
-                    print("Failed to serialize JSON data")
-                    return
-                }
-                
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.httpBody = jsonData
-                
-                URLSession.shared.dataTask(with: request) { data, response, error in
-                    if let error = error {
-                        print("Error: \(error.localizedDescription)")
-                        return
+                APIService.verifyOTP(otp: otp, email: email){ result in
+                    if (result == true) {
+                       print("yoohoo")
+                        navigateToResetPassword = true
+                    }else{
+                        print("meheee")
+                        // showAlert = true
+                        navigateToResetPassword = true
                     }
-                    
-                    if let httpResponse = response as? HTTPURLResponse {
-                        print("HTTP Response Status Code: \(httpResponse.statusCode)")
-                        print("Error: \(httpResponse.description)")
-                        if let responseData = data, let responseString = String(data: responseData, encoding: .utf8) {
-                            print("Response Data: \(responseString)")
-                            
-                            // Parse the JSON response and extract the message field
-                            if let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
-                               let jsonDict = json as? [String: Any],
-                               let message = jsonDict["message"] as? String {
-                                
-                                DispatchQueue.main.async {
-                                    if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
-                                        // HTTP status code is 200 or 201, show success message
-                                        navigateToLaunchpad = true
-                                    } else {
-                                        // Show error message for other status codes
-                                        alertMessage = message
-                                        showAlert = true
-                                        print(alertMessage)
-                                    }
-                                    
-                                   
-                                }
-                            }
-                        }
-                    }
-                }.resume()
+                }
                 
             }, label: {
                 Spacer()
@@ -195,9 +146,41 @@ struct VerifyOTPPage: View {
             .padding()
             // Show the alert with the response message
             .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Verification Status"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                Alert(
+                    title: Text("Sorry"),
+                    message: Text("The OTP you insert is not valid"),
+                    dismissButton: .default(Text("OK"))
+                )
             })
             
         }
+    }
+}
+
+struct OtpModifer: ViewModifier {
+
+    @Binding var pin : String
+
+    var textLimt = 1
+
+    func limitText(_ upper : Int) {
+        if pin.count > upper {
+            self.pin = String(pin.prefix(upper))
+        }
+    }
+
+
+    //MARK -> BODY
+    func body(content: Content) -> some View {
+        content
+            .multilineTextAlignment(.center)
+            .keyboardType(.numberPad)
+            .onReceive(Just(pin)) {_ in limitText(textLimt)}
+            .frame(width: 45, height: 45)
+            .background(Color.white.cornerRadius(5))
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color("blueColor"), lineWidth: 2)
+            )
     }
 }

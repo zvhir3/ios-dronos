@@ -1,6 +1,324 @@
 import Foundation
 
 class APIService {
+    
+    // Login API
+    static func login(_ data: LoginData, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.loginEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body = ["email": data.email, "password": data.password]
+        let jsonData = try! JSONSerialization.data(withJSONObject: body)
+        request.httpBody = jsonData
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data,
+                   let response = response as? HTTPURLResponse,
+                   (response.statusCode == 200 || response.statusCode == 201) {
+                    // Successful login
+                    print("Login successful!", data)
+                    // let newToken = data.token
+                    // UserDefaults.standard.set(newToken, forKey: "token")
+                    if let responseData = try? JSONSerialization.jsonObject(with: data, options: []),
+                       let tokenFull = (responseData as? [String: Any])?["token"] as? String {
+                        let prefix = "Bearer "
+                        let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
+                        // Access the token from the response data and save it to UserDefaults
+                        UserDefaults.standard.set(token, forKey: "token")
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                } else {
+                    // Login failed
+                    print("Login failed!")
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
+    // Forgot Password API
+    static func forgotPassword(email: String, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.forgotPasswordEndpoint
+        let requestBody: [String: String] = ["email": email]
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
+        } catch {
+            print("Error creating request body: \(error)")
+            return
+        }
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Failed to send OTP!", error)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Status Code: \(httpResponse.statusCode)")
+                
+                if httpResponse.statusCode == 201 {
+                    print("OTP successfully sent!")
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                } else {
+                    print("Failed to send OTP!")
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
+                }
+            }
+        }.resume()
+    }
+    
+    // Verify OTP API
+    static func verifyOTP(otp: String, email: String, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.verifyOtpEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let bodyData: [String: Any] = [
+            "otp": String(otp),
+            "email": email
+        ]
+        
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: bodyData) else {
+            print("Failed to serialize JSON data")
+            completion(false)
+            return
+        }
+        
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Response Status Code: \(httpResponse.statusCode)")
+                print("Error: \(httpResponse.description)")
+                if let responseData = data, let responseString = String(data: responseData, encoding: .utf8) {
+                    print("Response Data: \(responseString)")
+                    if let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                       let jsonDict = json as? [String: Any],
+                       let  _ = jsonDict["message"] as? String {
+                        
+                        DispatchQueue.main.async {
+                            if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
+                                print("Verified")
+                                completion(true)
+                            } else {
+                                print("Unverified")
+                                completion(false)
+                            }
+                        }
+                    }
+                } else {
+                    print("Failed")
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
+    
+    // Reset Password API
+    static func resetPassword( email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.resetPasswordEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let _: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Response Status Code: \(httpResponse.statusCode)")
+                print("Error: \(httpResponse.description)")
+                if let responseData = data, let responseString = String(data: responseData, encoding: .utf8) {
+                    print("Response Data: \(responseString)")
+                    if let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                       let jsonDict = json as? [String: Any],
+                       let  _ = jsonDict["message"] as? String {
+                        
+                        DispatchQueue.main.async {
+                            if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
+                                print("Reset successfully")
+                                completion(true)
+                            } else {
+                                print("Failed to reset")
+                                completion(false)
+                            }
+                        }
+                    }
+                }
+            }
+        }.resume()
+    }
+    
+    // Fetch Mission API
+    
+    struct Mission: Decodable {
+        let missionId: String
+        let name: String
+        let schedules: [Schedule]
+        let location: String
+        let area: Area
+    }
+    
+    struct Area: Decodable {
+        let coordinate: [Coordinate]
+    }
+    
+    struct Coordinate: Decodable {
+        let latitude: String
+        let longitude: String
+        
+        var latitudeDouble: Double {
+            return Double(latitude) ?? 0.0
+        }
+        
+        var longitudeDouble: Double {
+            return Double(longitude) ?? 0.0
+        }
+    }
+    
+    struct Schedule: Decodable {
+        let startDate: String
+        let endDate: String
+        let startTime: Int
+        let endTime: Int
+    }
+    
+    static func fetchMissions(completion: @escaping ([Mission]) -> Void) {
+        let urlString = Constants.baseURL + Constants.fetchMissionEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion([])
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                if let error = error {
+                    print("Error fetching missions: \(error)")
+                }
+                completion([])
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
+                guard let records = jsonData["records"] as? [[String: Any]] else {
+                    print("Error extracting 'records' from the JSON")
+                    completion([])
+                    return
+                }
+                
+                let missions = try records.map { record -> Mission in
+                    let missionId = record["missionId"] as? String ?? ""
+                    let name = record["name"] as? String ?? ""
+                    let location = record["location"] as? String ?? ""
+                   
+                    guard let areaDict = record["area"] as? [String: Any] else {
+                        print("Error extracting 'area' from the record")
+                        return Mission(missionId: missionId, name: name, schedules: [], location: location, area: Area(coordinate: []))
+                    }
+                    
+                    let areaData = try JSONSerialization.data(withJSONObject: areaDict, options: [])
+                    let area = try decoder.decode(Area.self, from: areaData)
+                    
+                    let schedulesDict = record["schedules"] as? [[String: Any]] ?? []
+                    let schedules = try schedulesDict.map { scheduleDict -> Schedule in
+                        let startDate = scheduleDict["startDate"] as? String ?? ""
+                        let endDate = scheduleDict["endDate"] as? String ?? ""
+                        let startTime = scheduleDict["startTime"] as? Int ?? 0
+                        let endTime = scheduleDict["endTime"] as? Int ?? 0
+                        return Schedule(startDate: startDate, endDate: endDate, startTime: startTime, endTime: endTime)
+                    }
+                    print("############################################")
+                    print("Mission ID: \(missionId)")
+                    print("Name: \(name)")
+                    print("Location: \(location)")
+                    
+                    for schedule in schedules {
+                        print("\n")
+                        print("Start Date: \(schedule.startDate)")
+                        print("Start Time: \(schedule.startTime)")
+                        print("End Date: \(schedule.endDate)")
+                        print("End Date: \(schedule.endTime)")
+                    }
+                    for coordinate in area.coordinate {
+                        print("\n")
+                        print("Latitude: \(coordinate.latitude)")
+                        print("Longitude: \(coordinate.longitude)")
+                    }
+                    print("\n")
+                    print("############################################")
+                    return Mission(missionId: missionId, name: name, schedules: schedules, location: location, area: area)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(missions)
+                }
+            } catch {
+                print("Error decoding mission data: \(error)")
+                completion([])
+            }
+        }
+        
+        task.resume()
+    }
+
+    
     func getData(url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -17,46 +335,6 @@ class APIService {
         }
         
         task.resume()
-    }
-    
-    // login EP
-    static func login(_ data: LoginData, completion: @escaping (Bool) -> Void) {
-        let url = URL(string: "https://dev-api.dronos.ai/account/auth/login")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body = ["email": data.email, "password": data.password]
-        let jsonData = try! JSONSerialization.data(withJSONObject: body)
-        request.httpBody = jsonData
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let data = data,
-                   let response = response as? HTTPURLResponse,
-                   (response.statusCode == 200 || response.statusCode == 201) {
-                    // Successful login
-                    print("Login successful!", data)
-                    //                    let newToken = data.token
-                    //                    UserDefaults.standard.set(newToken, forKey: "token")
-                    if let responseData = try? JSONSerialization.jsonObject(with: data, options: []),
-                       let tokenFull = (responseData as? [String: Any])?["token"] as? String {
-                        let prefix = "Bearer "
-                        let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
-                        // Access the token from the response data and save it to UserDefaults
-                        UserDefaults.standard.set(token, forKey: "token")
-                        completion(true)
-                    } else {
-                        completion(false)
-                    }
-                    //                    completion(false)
-                } else {
-                    // Login failed
-                    print("Login failed!")
-                    completion(false)
-                }
-            }
-        }.resume()
     }
     
     func postData(url: URL, body: [String: Any], completion: @escaping (Result<Data, Error>) -> Void) {
