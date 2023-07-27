@@ -7,12 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Start the registration at the launch of the app. This can be retriggered at any time from the main view.
-        // DJI App key needs to be registered in the Info.plist before calling this method.
+     
         ProductCommunicationService.shared.registerWithProduct()
-        
-        // Create the appropriate view based on the login status
+
         let rootView: AnyView
         if isLoggedIn() {
             rootView = AnyView(Launchpad())
@@ -36,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             window.rootViewController = UIHostingController(rootView: rootView)
         }
+        
+        UINavigationBar.appearance().barTintColor = .red
         
         return true
     }

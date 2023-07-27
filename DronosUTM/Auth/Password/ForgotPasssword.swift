@@ -16,6 +16,17 @@ struct ForgotPasswordPage: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 30)
             
+            
+            TextField("Registered Email", text: $email)
+                .padding()
+                .foregroundColor(Color(UIColor.systemTeal))
+                .font(.body)
+                .background(Color(UIColor.systemTeal).opacity(0.2))
+                .cornerRadius(10)
+                .frame(height: 49)
+                .border(Color.clear, width: 0)
+                .padding(.horizontal)
+            
             TextField("Registered Email", text: $email)
                 .padding()
                 .foregroundColor(Color(UIColor.systemTeal))

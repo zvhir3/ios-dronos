@@ -23,28 +23,29 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
-
-import UIKit
+//import UIKit
 import DJIUXSDK
 
-// We subclass the DUXRootViewController to inherit all its behavior and add
-// a couple of widgets in the storyboard.
 class DefaultLayoutViewController: DUXDefaultLayoutViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
     }
     
-    @IBAction func close () {
-        self.dismiss(animated: true) {
-            
-        }
+    @IBAction func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    // Override supported interface orientations
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape // Only support landscape orientation
     }
     
     // We are going to add focus adjustment to the default view.
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hide the navigation bar for this view controller
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

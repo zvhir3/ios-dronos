@@ -14,8 +14,10 @@ struct Launchpad: UIViewControllerRepresentable {
 
 class ViewController: UIViewController {
     private var mapView: MapView!
+    private var centerCoordinate: CLLocationCoordinate2D?
+    private var missionIDToPinImageView: [String: UIImageView] = [:]
     
-    private func addViewAnnotations(coordinates: [CLLocationCoordinate2D]) {
+    private func addViewAnnotations(coordinates: [CLLocationCoordinate2D], missionID: String) {
         for coordinate in coordinates {
             let options = ViewAnnotationOptions(
                 geometry: Point(coordinate),
@@ -28,15 +30,22 @@ class ViewController: UIViewController {
             if let iconImage = UIImage(named: "Pin") {
                 let iconImageView = UIImageView(image: iconImage.withRenderingMode(.alwaysOriginal))
                 iconImageView.contentMode = .center
+                
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pinImageTapped))
+                iconImageView.isUserInteractionEnabled = true
+                iconImageView.addGestureRecognizer(tapGestureRecognizer)
+                
+                // Associate mission ID with the pin image view
+                missionIDToPinImageView[missionID] = iconImageView
+                
                 try? mapView.viewAnnotations.add(iconImageView, options: options)
             }
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let centerCoordinate = CLLocationCoordinate2D(latitude: 2.901207768844617, longitude: 101.65212468944911)
         
         let mapInitOptions = MapInitOptions(
             resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
@@ -47,42 +56,73 @@ class ViewController: UIViewController {
         mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
+        mapView.ornaments.logoView.isHidden = true
+        mapView.ornaments.attributionButton.isHidden = true
+        mapView.ornaments.scaleBarView.isHidden = true
         view.addSubview(mapView)
         
-        let missionsButton = UIButton(type: .system)
-        missionsButton.setTitle("Missions", for: .normal)
-        missionsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        missionsButton.translatesAutoresizingMaskIntoConstraints = false
-        missionsButton.addTarget(self, action: #selector(openMissionsPage), for: .touchUpInside)
-        view.addSubview(missionsButton)
+        // Create a list icon and set it as the left bar button item
+        let listIcon = UIImage(systemName: "equal")
+        let listButton = UIBarButtonItem(image: listIcon, style: .plain, target: self, action: #selector(missionIconTapped))
+        navigationItem.leftBarButtonItem = listButton
         
-       
+        // Create a profile icon and set it as the right bar button item
+        let profileIcon = UIImage(systemName: "person")
+        let profileButton = UIBarButtonItem(image: profileIcon, style: .plain, target: self, action: #selector(profileIconTapped))
+        navigationItem.rightBarButtonItem = profileButton
+        
         APIService.fetchMissions { [weak self] missions in
             DispatchQueue.main.async {
-                for mission in missions {
-                    print("###########")
-                    if let coordinates = self?.convertToCLLocationCoordinates(coordinates: mission.area.coordinate) {
-                        print(coordinates)
-                        self?.addViewAnnotations(coordinates: coordinates)
-                    } else {
-                        print("Coordinates are nil or invalid.")
+                if let firstMission = missions.first {
+                    self?.centerCoordinate = CLLocationCoordinate2D(
+                        latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
+                        longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
+                    
+                    for mission in missions {
+                        if let coordinates = self?.convertToCLLocationCoordinates(coordinates: mission.area.coordinate) {
+                            // Pass the mission ID along with coordinates
+                            self?.addViewAnnotations(coordinates: coordinates, missionID: mission.missionId)
+                        } else {
+                            print("Coordinates are nil or invalid.")
+                        }
+                    }
+                    
+                    // After fetching missions, set the new camera position
+                    if let centerCoordinate = self?.centerCoordinate {
+                        let newCamera = CameraOptions(center: centerCoordinate, zoom: 5, pitch: 45)
+                        self?.mapView.camera.ease(to: newCamera, duration: 5.0)
                     }
                 }
             }
         }
-        
-        NSLayoutConstraint.activate([
-            missionsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            missionsButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
-        ])
     }
     
-    @objc private func openMissionsPage() {
+    @objc private func pinImageTapped(sender: UITapGestureRecognizer) {
+           // Retrieve the mission ID associated with the pin image view
+           if let missionID = missionIDToPinImageView.first(where: { $0.value == sender.view })?.key {
+               print("Text, Mission ID: \(missionID)")
+
+               // Create the SwiftUI "ViewMission" view and pass the mission ID to it
+               let viewMissionView = ViewMissionView(missionID: missionID)
+
+               // Push the "ViewMission" view using SwiftUI's navigation
+               if let hostingController = self.parent {
+                   hostingController.navigationController?.pushViewController(UIHostingController(rootView: viewMissionView), animated: true)
+               }
+           }
+       }
+    
+    @objc private func missionIconTapped() {
+        print("Mission icon tapped")
         let missionsViewController = Missions()
         navigationController?.pushViewController(missionsViewController, animated: true)
     }
     
-
+    @objc private func profileIconTapped() {
+        print("Profile icon tapped")
+        let profilePageHostingController = UIHostingController(rootView: ProfilePage())
+        navigationController?.present(profilePageHostingController, animated: true, completion: nil)
+    }
     
     func convertToCLLocationCoordinates(coordinates: [APIService.Coordinate]) -> [CLLocationCoordinate2D] {
         var convertedCoordinates: [CLLocationCoordinate2D] = []
@@ -97,7 +137,7 @@ class ViewController: UIViewController {
         }
         return convertedCoordinates
     }
-
+    
 }
 
 extension UIImage {

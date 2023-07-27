@@ -38,14 +38,9 @@ struct LoginPage: View {
                             Text("Email")
                                 .font(.headline)
                                 .foregroundColor(.white)
-                            TextField("Email", text: $email)
-                                .padding()
-                                .foregroundColor(Color(UIColor.fromHex(0x00F0FF)))
-                                .font(.body)
-                                .background(Color(UIColor.fromHex(0x8EF9F9, opacity: 0.2)))
-                                .cornerRadius(10)
-                                .frame(height: 49)
-                                .border(Color.clear, width: 0)
+                            
+                            TextEditor(text: $email)
+                                .textEditorStyle()
                             
                             Spacer()
                                 .frame(height: 10)
@@ -70,7 +65,7 @@ struct LoginPage: View {
                                 let data = LoginData(email: email, password: password)
                                 APIService.login(data) { result in
                                     if (result == true) {
-                                       isLoggedIn = true
+                                        isLoggedIn = true
                                     }else{
                                         showAlert = true
                                         title = "Login Failed"

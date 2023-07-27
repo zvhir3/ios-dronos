@@ -2,19 +2,10 @@ import UIKit
 
 class Missions: UIViewController {
     
-    struct Mission: Decodable {
-        let missionId: String
-        let name: String
-        let schedules: [Schedule]
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
-    
-    struct Schedule: Decodable {
-        let startDate: String
-        let endDate: String
-        let startTime: Int
-        let endTime: Int
-    }
-    
+
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -69,7 +60,6 @@ class Missions: UIViewController {
                     let cardView = self?.createCardView(mission: mission)
                     if let cardView = cardView {
                         self?.stackView.addArrangedSubview(cardView)
-                        
                         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self?.cardTapped(_:)))
                         cardView.addGestureRecognizer(tapGestureRecognizer)
                     }
@@ -81,17 +71,8 @@ class Missions: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.fromHex(0x14181f)
         
-        let titleLabel = UILabel()
-        titleLabel.text = "Today's Missions"
-        titleLabel.textColor = UIColor.fromHex(0xffffff)
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let connectedDroneLabel = UILabel()
-        connectedDroneLabel.text = "Connected Drone: -"
-        connectedDroneLabel.textColor = UIColor.fromHex(0xffffff)
-        connectedDroneLabel.font = UIFont.boldSystemFont(ofSize: 12)
-        connectedDroneLabel.translatesAutoresizingMaskIntoConstraints = false
+        let titleLabel = UILabel.makeTitleLabel(text: "Today's Missions")
+        let connectedDroneLabel = UILabel.makeConnectedDroneLabel(text: "Connected Drone: -")
         
         view.addSubview(scrollView)
         scrollView.addSubview(connectedDroneLabel)
@@ -103,7 +84,6 @@ class Missions: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
             connectedDroneLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
             connectedDroneLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: connectedDroneLabel.topAnchor, constant: 16),
@@ -118,6 +98,23 @@ class Missions: UIViewController {
     
     private func createCardView(mission: APIService.Mission) -> UIView {
         
+        let scheduleText = mission.schedules.map { schedule in
+            return "Start Date: \(schedule.startDate)\(schedule.startTime) End Date: \(schedule.endDate) \(schedule.endTime)"
+        }.joined(separator: "\n")
+
+        let coordinateText = mission.area.coordinate.map { coordinate in
+            return "Coordinate: \(coordinate.latitudeDouble),\(coordinate.longitudeDouble)"
+        }.joined(separator: "")
+        
+        let missionIdLabel = UILabel.makeLabel(text: "\(mission.missionId)", textColor: UIColor.fromHex(0xffffff))
+        let nameLabel = UILabel.makeLabel(text: "Name: \(mission.name)", textColor: UIColor.fromHex(0xffffff))
+        let locationLabel = UILabel.makeLabel(text: "Location: \(mission.location)", textColor: UIColor.fromHex(0xffffff))
+        let scheduleLabel = UILabel.makeLabel(text: "\(scheduleText)", textColor: UIColor.fromHex(0xffffff))
+        let coordinateLabel = UILabel.makeLabel(text: "Coordinate: \(coordinateText)", textColor: UIColor.fromHex(0xffffff))
+        
+        coordinateLabel.translatesAutoresizingMaskIntoConstraints = false
+        scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         let cardView = UIView()
         cardView.backgroundColor = .lightGray
         cardView.layer.cornerRadius = 8
@@ -131,52 +128,6 @@ class Missions: UIViewController {
         cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
         cardView.translatesAutoresizingMaskIntoConstraints = false
         cardView.isUserInteractionEnabled = true
-        
-        let missionIdLabel = UILabel()
-        missionIdLabel.text = "\(mission.missionId)"
-        missionIdLabel.textColor = UIColor.fromHex(0xffffff)
-        missionIdLabel.font = UIFont(name: "Barlow-SemiBold", size: 14)
-        missionIdLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let nameLabel = UILabel()
-        nameLabel.text = "Name: \(mission.name)"
-        nameLabel.textColor = UIColor.fromHex(0xffffff)
-        nameLabel.font = UIFont(name: "Barlow-Regular", size: 14)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let locationLabel = UILabel()
-        locationLabel.text = "Location: \(mission.location)"
-        locationLabel.textColor = UIColor.fromHex(0xffffff)
-        locationLabel.font = UIFont(name: "Barlow-Regular", size: 14)
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        let scheduleLabel = UILabel()
-        let scheduleText = mission.schedules.map { schedule in
-            return "Start Date: \(schedule.startDate)\(schedule.startTime) End Date: \(schedule.endDate) \(schedule.endTime)"
-        }.joined(separator: "\n")
-        
-        print(scheduleText)
-
-        scheduleLabel.text = "\(scheduleText)"
-        scheduleLabel.textColor = UIColor.fromHex(0xffffff)
-        scheduleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
-        
-        let coordinateLabel = UILabel()
-        let coordinateText = mission.area.coordinate.map { coordinate in
-            return "Coordinate: \(coordinate.latitudeDouble),\(coordinate.longitudeDouble)"
-        }.joined(separator: "")
-        
-        print(coordinateText)
-
-        coordinateLabel.text = "\(coordinateText)"
-        coordinateLabel.textColor = UIColor.fromHex(0xffffff)
-        coordinateLabel.font = UIFont(name: "Barlow-Regular", size: 14)
-        
-        
-        
-        coordinateLabel.translatesAutoresizingMaskIntoConstraints = false
-        scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(missionIdLabel)
         cardView.addSubview(nameLabel)
         cardView.addSubview(locationLabel)
@@ -194,14 +145,14 @@ class Missions: UIViewController {
             coordinateLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
             scheduleLabel.topAnchor.constraint(equalTo: coordinateLabel.bottomAnchor, constant: 8),
             scheduleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            scheduleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -32)
+            scheduleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16)
         ])
         
         return cardView
     }
     
     @objc private func cardTapped(_ sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "DefaultLayout", bundle: nil)
         if let mainViewController = storyboard.instantiateInitialViewController() {
             present(mainViewController, animated: true, completion: nil)
         }
