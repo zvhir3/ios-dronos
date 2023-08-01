@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tQx-qe-VBD">
-    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tQx-qe-VBD">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pSs-yY-CJj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bGf-VD-sPI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-Gm-x3r">
-                                <rect key="frame" x="20" y="44" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-Gm-x3r">
+                                <rect key="frame" x="79" y="44" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="U4b-Gm-x3r" secondAttribute="height" multiplier="1:1" id="Smb-RB-hSl"/>
                                     <constraint firstAttribute="width" constant="30" id="wWl-P1-3qq"/>
@@ -31,8 +31,8 @@
                                     <action selector="close" destination="tQx-qe-VBD" eventType="touchUpInside" id="btG-bf-mOw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-7z-zJs">
-                                <rect key="frame" x="73" y="44" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-7z-zJs">
+                                <rect key="frame" x="132" y="44" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="MWE-x5-0ws"/>
                                     <constraint firstAttribute="height" constant="30" id="rYH-sh-ay5"/>

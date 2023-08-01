@@ -16,6 +16,17 @@ struct ForgotPasswordPage: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 30)
             
+            
+            TextField("Registered Email", text: $email)
+                .padding()
+                .foregroundColor(Color(UIColor.systemTeal))
+                .font(.body)
+                .background(Color(UIColor.systemTeal).opacity(0.2))
+                .cornerRadius(10)
+                .frame(height: 49)
+                .border(Color.clear, width: 0)
+                .padding(.horizontal)
+            
             TextField("Registered Email", text: $email)
                 .padding()
                 .foregroundColor(Color(UIColor.systemTeal))
@@ -27,8 +38,18 @@ struct ForgotPasswordPage: View {
                 .padding(.horizontal)
             
             Button(action: {
-                // Call the API to request a password reset
-                resetPassword()
+                APIService.forgotPassword(email: email) { success in
+                    if success {
+                        alertTitle = "OTP successfully sent!"
+                        alertMessage = "Check your email and proceed to the next step."
+                        alertButton = "Proceed"
+                    } else {
+                        alertTitle = "Hmm are you sure?"
+                        alertMessage = "Seems that the email is invalid."
+                        alertButton = "Retry"
+                    }
+                    showAlert = true
+                }
             }) {
                 Text("Reset Password")
                     .font(.headline)
@@ -57,7 +78,7 @@ struct ForgotPasswordPage: View {
                 )
             }
             NavigationLink(
-                destination: VerifyOTPPage(email: email), // Replace NextPage with the actual destination view
+                destination: VerifyOTPPage(email: email),
                 isActive: $otpSent,
                 label: { EmptyView() }
             )
@@ -66,52 +87,5 @@ struct ForgotPasswordPage: View {
         }
     }
     
-    private func resetPassword() {
-        // Create the request URL
-        let baseUrl = "https://dev-api.dronos.ai/account" // Replace with your actual base URL
-        let endpoint = "/auth/forgot-password"
-        let urlString = baseUrl + endpoint
-        
-        // Create the request body
-        let requestBody: [String: String] = ["email": email]
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
-        } catch {
-            print("Error creating request body: \(error)")
-            return
-        }
-        
-        // Send the API request
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard data != nil else {
-                print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                print("Status Code: \(httpResponse.statusCode)")
-                
-                if httpResponse.statusCode == 201 {
-                    alertTitle = "OTP successfully sent!"
-                    alertMessage = "Check your email and proceed to the next step."
-                    alertButton = "Proceed"
-                } else {
-                    alertTitle = "Hmm are you sure?"
-                    alertMessage = "Seems that the email is invalid."
-                    alertButton = "Retry"
-                }
-                showAlert = true
-            }
-        }.resume()
-    }
+    
 }

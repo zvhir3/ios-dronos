@@ -10,16 +10,18 @@ struct LoginPage: View {
     @State private var password: String = ""
     @State private var isLoggedIn: Bool = true
     @State private var showAlert: Bool = false
+    @State private var title: String = ""
+    @State private var message: String = ""
     @State private var keyboardOffset: CGFloat = 0
     
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black // Set the background color to black
+                Color.black
                 if isLoggedIn {
-                    MapBox()
+                    Launchpad()
                         .transition(.move(edge: .trailing))
-                        .animation(.easeInOut(duration: 0.5))
+                        .animation(.easeInOut(duration: 0.5), value: true)
                 } else {
                     VStack {
                         Image("logo")
@@ -27,7 +29,7 @@ struct LoginPage: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 150, height: 150)
                         
-                        Text("Dronos UTM") // Add a title
+                        Text("Dronos UTM")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding(.bottom, 30)
@@ -35,20 +37,17 @@ struct LoginPage: View {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Email")
                                 .font(.headline)
-                            TextField("Email", text: $email)
-                                .padding()
-                                .foregroundColor(Color(UIColor.fromHex(0x00F0FF)))
-                                .font(.body)
-                                .background(Color(UIColor.fromHex(0x8EF9F9, opacity: 0.2)))
-                                .cornerRadius(10)
-                                .frame(height: 49)
-                                .border(Color.clear, width: 0)
+                                .foregroundColor(.white)
+                            
+                            TextEditor(text: $email)
+                                .textEditorStyle()
                             
                             Spacer()
                                 .frame(height: 10)
                             
                             Text("Password")
                                 .font(.headline)
+                                .foregroundColor(.white)
                             
                             SecureField("Password", text: $password)
                                 .padding()
@@ -65,9 +64,12 @@ struct LoginPage: View {
                             Button(action: {
                                 let data = LoginData(email: email, password: password)
                                 APIService.login(data) { result in
-                                    if result {
-                                        showAlert = result
-                                        
+                                    if (result == true) {
+                                        isLoggedIn = true
+                                    }else{
+                                        showAlert = true
+                                        title = "Login Failed"
+                                        message = "Please make sure your email and password is correct"
                                     }
                                 }
                             }) {
@@ -84,32 +86,38 @@ struct LoginPage: View {
                                     .buttonStyle(PlainButtonStyle())
                             }
                             .buttonStyle(PlainButtonStyle())
+                            NavigationLink(destination: ForgotPasswordPage()) {
+                                Text("Forgot Password")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         }.alert(isPresented: $showAlert) {
                             Alert(
-                                title: Text("Status"),
-                                message: Text("Login successful"),
-                                dismissButton: .default(Text("OK")) {
-                                    isLoggedIn = true
-                                }
+                                title: Text(title),
+                                message: Text(message),
+                                dismissButton: .default(Text("OK"))
                             )
                         }
                         .padding()
                     }
-                    .padding(.bottom, keyboardOffset) // Adjust the bottom padding based on the keyboard offset
-                    .animation(.easeInOut) // Apply animation to the view when it adjusts to the keyboard
-                    
+                    .padding(.bottom, keyboardOffset)
+                    .animation(.easeInOut, value: true)
                 }
             }
             .edgesIgnoringSafeArea(.all)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                 guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-                keyboardOffset = keyboardFrame.height / 2.5 // Update the keyboard offset to adjust the view's layout
+                keyboardOffset = keyboardFrame.height / 2.5
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                keyboardOffset = 0 // Reset the keyboard offset when the keyboard is dismissed
+                keyboardOffset = 0
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle to support earlier iOS versions
-        .accentColor(.white) // Set the accent color for navigation elements
+        .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(.white)
     }
 }
