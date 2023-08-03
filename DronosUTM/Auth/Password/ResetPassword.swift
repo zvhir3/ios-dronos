@@ -49,11 +49,11 @@ struct ResetPasswordPage: View {
                             .padding(.bottom, 20)
                             
                             SecureField("New Password", text: $newPassword)
-                                .loginSecureFieldStyle()
+                                .secureFieldStyle()
                                 .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
                             
                             SecureField("Confirm New Password", text: $confirmPassword)
-                                .loginSecureFieldStyle()
+                                .secureFieldStyle()
                                 .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
                                 .padding(.bottom, 15)
                             

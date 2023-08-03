@@ -10,15 +10,8 @@ import SwiftUI
 
 extension TextField {
     func textEditorStyle() -> some View {
-        self
-        //            .padding()
-        //            .foregroundColor(Color(UIColor.fromHex(0x00F0FF)))
-        //            .font(.body)
-        //            .background(Color(UIColor.fromHex(0x8EF9F9, opacity: 0.2)))
-        //            .cornerRadius(10)
-        //            .frame(height: 49)
-        //            .border(Color.clear, width: 0)
         
+        self
             .padding(.horizontal, 60)
             .padding(.vertical, 5)
             .foregroundColor(Color.white)
@@ -35,21 +28,61 @@ extension TextField {
                 }
             )
     }
+    
+    func textEditorStyleActive() -> some View {
+        self
+            .padding(.horizontal, 20)
+            .padding(.vertical, 5)
+            .frame(width: 342, height: 48, alignment: .leading)
+            .background(.white.opacity(0.1))
+            .cornerRadius(15)
+            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 11)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .inset(by: 0.5)
+                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .inset(by: 0.5)
+            )
+    }
 }
 
 extension SecureField {
-    func loginSecureFieldStyle() -> some View {
+    
+    func secureFieldStyleActive() -> some View {
         self
-        //            .padding()
-        //            .foregroundColor(Color(UIColor.fromHex(0x00F0FF)))
-        //            .font(.body)
-        //            .background(Color(UIColor.fromHex(0x8EF9F9, opacity: 0.2)))
-        //            .cornerRadius(10)
-        //            .frame(height: 49)
-        //            .border(Color.clear, width: 0)
+            .padding(.horizontal, 20)
+            .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
+            .padding(.vertical, 5)
+            .frame(width: 342, height: 48, alignment: .leading)
+            .background(.white.opacity(0.1))
+            .cornerRadius(15)
+            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 11)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .inset(by: 0.5)
+                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+            )
+            .overlay(
+                HStack{
+                    Image("pass-active") // SF Symbol for a magnifying glass
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20) // Position the icon
+                    Spacer()
+                    Image("visibility_off") // SF Symbol for a magnifying glass
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20) // Position the icon
+                }
+            )
+    }
+    func secureFieldStyle() -> some View {
+        self
             .padding(.horizontal, 60)
             .foregroundColor(Color.white)
             .padding(.vertical, 5)
+            .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
             .frame(width: .infinity, height: 48, alignment: .leading)
             .background(Color.white.opacity(0.1))
             .cornerRadius(15)
@@ -66,4 +99,6 @@ extension SecureField {
                 }
             )
     }
+    
+    
 }

@@ -26,77 +26,80 @@ struct LoginPage: View {
                         .transition(.move(edge: .trailing))
                         .animation(.easeInOut(duration: 0.5), value: true)
                 } else {
-                    GeometryReader { geometry in
+                    VStack {
+                        Spacer()
                         VStack {
-                            
-                            Spacer()
-                            VStack {
+                            //                                keyboardOffset == 0.0 ? VStack : ScrollView
+                            VStack(alignment: .leading) {
                                 Text("Hi there,")
-                                    .font(
-                                        Font.custom("Barlow", size: 32)
-                                            .weight(.bold)
-                                    )
+                                    .font(.system(size: 32, weight: .bold))
                                     .foregroundColor(Color(red: 0.13, green: 0.58, blue: 0.67))
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
-                                    .padding(.top, 20)
+                                //                                        .padding(.top, 10)
                                 
                                 Text("Welcome back!")
-                                    .font(
-                                        Font.custom("Barlow", size: 32)
-                                            .weight(.bold)
-                                    )
+                                    .font(.system(size: 32, weight: .bold))
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    .padding(.bottom, 10)
                                 
                                 Text("Log in into your account to access all features.")
-                                    .font(
-                                        Font.custom("Barlow", size: 15)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.1)
+                                    .font(.system(size: 15, weight: .medium))
                                     .foregroundColor(.white.opacity(0.6))
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    .padding(.bottom, 15)
+                                
+                                Text("Email")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
                                 
                                 
-                                //                                keyboardOffset == 0.0 ? VStack : ScrollView
-                                VStack(alignment: .leading) {
-                                    
-                                    Text("Email")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                    
-                                    
-                                    TextField("Email", text: $email)
-                                        .textEditorStyle()
-                                    
-                                    Spacer()
-                                        .frame(height: 10)
-                                    
-                                    Text("Password")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                        .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
-                                    
-                                    SecureField("Password", text: $password)
-                                        .loginSecureFieldStyle()
-                                        .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
-                                    
-                                    HStack {
-                                        Spacer() // This will push the NavigationLink to the right
-                                        NavigationLink(destination: ForgotPasswordPage().navigationBarBackButtonHidden(true)) {
-                                            Text("Forgot Password")
-                                                .font(.headline)
-                                                .foregroundColor(.white)
-                                                .padding()
-                                                .frame(maxWidth: .infinity, alignment: .trailing)
-                                        }
-                                        .buttonStyle(PlainButtonStyle())
+                                TextField("Email", text: $email)
+                                    .textEditorStyle()
+                                
+                                //                                    Spacer()
+                                //                                        .frame(height: 10)
+                                
+                                Text("Password")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
+                                
+                                SecureField("Password", text: $password)
+                                    .secureFieldStyle()
+                                    .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
+                                
+                                
+                                
+                                HStack {
+                                    Spacer() // This will push the NavigationLink to the right
+                                    NavigationLink(destination: ForgotPasswordPage().navigationBarBackButtonHidden(true)) {
+                                        Text("Forgot Password")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .frame(maxWidth: .infinity, alignment: .trailing)
                                     }
-                                    
-                                    Spacer()
-                                        .frame(height: 10)
-                                    
-                                    Button(action: {
+                                    .buttonStyle(PlainButtonStyle())
+                                }
+                                
+                                //                                    Spacer()
+                                //                                        .frame(height: 10)
+                                
+                                Button(action: {
+                                    if email.isEmpty || password.isEmpty {
+                                        showAlert = true
+                                        title = "Validation Error"
+                                        message = "Email or password cannot be empty."
+                                    } else if !isValidEmail(email) {
+                                        showAlert = true
+                                        title = "Validation Error"
+                                        message = "Please enter a valid email address."
+                                    } else if !isValidPassword(password) {
+                                        showAlert = true
+                                        title = "Validation Error"
+                                        message = "Password must contain at least one uppercase, one digit, one symbol, and be at least 8 characters long."
+                                    }  else {
                                         let data = LoginData(email: email, password: password)
                                         APIService.login(data) { result in
                                             if (result == true) {
@@ -107,55 +110,55 @@ struct LoginPage: View {
                                                 message = "Please make sure your email and password is correct"
                                             }
                                         }
-                                    }) {
-                                        Text("Login")
-                                            .frame(maxWidth: .infinity, minHeight: 58, maxHeight: 58, alignment: .center)
-                                            .background(.black.opacity(0.15))
-                                            .background(Color(red: 0.13, green: 0.58, blue: 0.67))
-                                            .cornerRadius(15)
-                                            .foregroundColor(.white)
-                                            .buttonStyle(PlainButtonStyle())
                                     }
-                                    .buttonStyle(PlainButtonStyle())
-                                    
-                                    HStack(alignment: .center, spacing: 2) {
-                                        Text("Don’t have an account?")
-                                            .font(
-                                                Font.custom("Barlow", size: 12)
-                                                    .weight(.medium)
-                                            )
-                                            .multilineTextAlignment(.center)
-                                            .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
-                                        Text("Register")
-                                            .font(
-                                                Font.custom("Barlow", size: 12)
-                                                    .weight(.bold)
-                                            )
-                                            .multilineTextAlignment(.center)
-                                            .foregroundColor(Color(red: 0.13, green: 0.58, blue: 0.67))
-                                    }
-                                    .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    
-                                }.alert(isPresented: $showAlert) {
-                                    Alert(
-                                        title: Text(title),
-                                        message: Text(message),
-                                        dismissButton: .default(Text("OK"))
-                                    )
+                                }) {
+                                    Text("Login")
+                                        .frame(maxWidth: .infinity, minHeight: 58, maxHeight: 58, alignment: .center)
+                                        .background(.black.opacity(0.15))
+                                        .background(Color(red: 0.13, green: 0.58, blue: 0.67))
+                                        .cornerRadius(15)
+                                        .foregroundColor(.white)
+                                        .buttonStyle(PlainButtonStyle())
                                 }
-                                //                                }
-                                .padding()
-                                .frame(height: 700)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                HStack(alignment: .center, spacing: 2) {
+                                    Text("Don’t have an account?")
+                                        .font(
+                                            Font.custom("Barlow", size: 12)
+                                                .weight(.medium)
+                                        )
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+                                    Text("Register")
+                                        .font(
+                                            Font.custom("Barlow", size: 12)
+                                                .weight(.bold)
+                                        )
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(Color(red: 0.13, green: 0.58, blue: 0.67))
+                                }
+                                .padding(0)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                
+                            }.alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text(title),
+                                    message: Text(message),
+                                    dismissButton: .default(Text("OK"))
+                                )
                             }
-                            .padding(.bottom, keyboardOffset)
-                            .animation(.easeInOut, value: true)
-                            .padding(.horizontal, 32)
-                            .padding(.top, 8)
-                            .background(Color(red: 0.13, green: 0.15, blue: 0.2).opacity(0.6))
-                            .cornerRadius(28)
-                            .frame(width: .infinity)
+                            //                                }
+                            .padding()
+                            .frame(height: 600)
                         }
+                        .padding(.bottom, keyboardOffset)
+                        .animation(.easeInOut, value: true)
+                        .padding(.horizontal, 32)
+                        //                            .padding(.top, 8)
+                        .background(Color(red: 0.13, green: 0.15, blue: 0.2).opacity(0.6))
+                        .cornerRadius(28)
+                        .frame(width: .infinity)
                     }
                 }
             }
@@ -174,8 +177,22 @@ struct LoginPage: View {
     }
 }
 
-struct LoginPage_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPage()
-    }
+//struct LoginPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginPage()
+//    }
+//}
+
+func isValidEmail(_ email: String) -> Bool {
+    let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let pred = NSPredicate(format:"SELF MATCHES %@", regex)
+    return pred.evaluate(with: email)
+}
+
+func isValidPassword(_ password: String) -> Bool {
+    // Password requirements: at least one uppercase,
+    // one symbol, at least 8 characters total
+    let regex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{8,}"
+    let pred = NSPredicate(format:"SELF MATCHES %@", regex)
+    return pred.evaluate(with: password)
 }
