@@ -12,6 +12,8 @@ struct LoginPage: View {
     @State private var password: String = ""
     @State private var isLoggedIn: Bool = false
     @State private var showAlert: Bool = false
+    @State private var invalidEmail: Bool = false
+    @State private var isInvalidPass: Bool = false
     @State private var title: String = ""
     @State private var message: String = ""
     @State private var keyboardOffset: CGFloat = 0
@@ -31,7 +33,6 @@ struct LoginPage: View {
                     VStack {
                         Spacer()
                         VStack {
-                            //                                keyboardOffset == 0.0 ? VStack : ScrollView
                             VStack(alignment: .leading) {
                                 Text("Hi there,")
                                     .font(.system(size: 32, weight: .bold))
@@ -65,8 +66,11 @@ struct LoginPage: View {
                                                 RoundedRectangle(cornerRadius: 15)
                                                     .inset(by: 0.5)
                                                     .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-                                            ) :
-                                            AnyView(
+                                            ) : invalidEmail ? AnyView(
+                                                RoundedRectangle(cornerRadius: 15)
+                                            .inset(by: 0.5)
+                                            .stroke(.black.opacity(0.2), lineWidth: 1)
+                                            ) : AnyView(
                                                 HStack {
                                                     Image("emailIcon") // SF Symbol for a magnifying glass
                                                         .foregroundColor(.white)
@@ -90,6 +94,21 @@ struct LoginPage: View {
                                     .overlay(
                                         isSecureFieldFocused ?
                                         AnyView(
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 15)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                                HStack{
+                                                    Image("pass-active") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                    Spacer()
+                                                    Image("visibility_off") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                }
+                                            }
+                                        ) : isInvalidPass ? AnyView(
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 15)
                                                     .inset(by: 0.5)
@@ -140,12 +159,10 @@ struct LoginPage: View {
                                         title = "Validation Error"
                                         message = "Email or password cannot be empty."
                                     } else if !isValidEmail(email) {
-                                        showAlert = true
-                                        title = "Validation Error"
-                                        message = "Please enter a valid email address."
+                                        invalidEmail = true
+                                        message = "Email must be the right format"
                                     } else if !isValidPassword(password) {
-                                        showAlert = true
-                                        title = "Validation Error"
+                                        isInvalidPass = true
                                         message = "Password must contain at least one uppercase, one digit, one symbol, and be at least 8 characters long."
                                     }  else {
                                         let data = LoginData(email: email, password: password)
@@ -198,7 +215,7 @@ struct LoginPage: View {
                             }
                             //                                }
                             .padding()
-                            .frame(height: 600)
+                            .frame(height: keyboardOffset == 0.0 ? 600 : 500)
                         }
                         .padding(.bottom, keyboardOffset)
                         .animation(.easeInOut, value: true)
