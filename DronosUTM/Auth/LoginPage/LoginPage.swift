@@ -15,6 +15,8 @@ struct LoginPage: View {
     @State private var title: String = ""
     @State private var message: String = ""
     @State private var keyboardOffset: CGFloat = 0
+    @FocusState private var isTextFieldFocused: Bool
+    @FocusState private var isSecureFieldFocused: Bool
     
     var body: some View {
         NavigationView {
@@ -56,6 +58,23 @@ struct LoginPage: View {
                                 
                                 TextField("Email", text: $email)
                                     .textEditorStyle()
+                                    .focused($isTextFieldFocused)
+                                    .overlay(
+                                        isTextFieldFocused ?
+                                            AnyView(
+                                                RoundedRectangle(cornerRadius: 15)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                            ) :
+                                            AnyView(
+                                                HStack {
+                                                    Image("emailIcon") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                    Spacer()
+                                                }
+                                            )
+                                    )
                                 
                                 //                                    Spacer()
                                 //                                        .frame(height: 10)
@@ -67,7 +86,36 @@ struct LoginPage: View {
                                 
                                 SecureField("Password", text: $password)
                                     .secureFieldStyle()
-                                    .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
+                                    .focused($isSecureFieldFocused)
+                                    .overlay(
+                                        isSecureFieldFocused ?
+                                        AnyView(
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 15)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                                HStack{
+                                                    Image("pass-active") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                    Spacer()
+                                                    Image("visibility_off") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                }
+                                            }
+                                        ) : AnyView(
+                                            HStack{
+                                                Image("passwordIcon") // SF Symbol for a magnifying glass
+                                                    .foregroundColor(.white)
+                                                    .padding(.horizontal, 20) // Position the icon
+                                                Spacer()
+                                                Image("visibility_off") // SF Symbol for a magnifying glass
+                                                    .foregroundColor(.white)
+                                                    .padding(.horizontal, 20) // Position the icon
+                                            }
+                                            )
+                                    )
                                 
                                 
                                 
@@ -165,7 +213,7 @@ struct LoginPage: View {
             .edgesIgnoringSafeArea(.all)
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                 guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-                keyboardOffset = keyboardFrame.height / 1.5
+                keyboardOffset = keyboardFrame.height / 4
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
                 keyboardOffset = 0

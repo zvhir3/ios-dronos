@@ -19,14 +19,6 @@ extension TextField {
             .background(Color.white.opacity(0.1))
             .cornerRadius(15)
             .shadow(color: .black.opacity(0.25), radius: 1, x: 1, y: 1)
-            .overlay(
-                HStack{
-                    Image("emailIcon") // SF Symbol for a magnifying glass
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20) // Position the icon
-                    Spacer()
-                }
-            )
     }
     
     func textEditorStyleActive() -> some View {
@@ -37,15 +29,7 @@ extension TextField {
             .background(.white.opacity(0.1))
             .cornerRadius(15)
             .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 11)
-            .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .inset(by: 0.5)
-                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .inset(by: 0.5)
-            )
+            
     }
 }
 
@@ -60,22 +44,7 @@ extension SecureField {
             .background(.white.opacity(0.1))
             .cornerRadius(15)
             .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 11)
-            .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .inset(by: 0.5)
-                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-            )
-            .overlay(
-                HStack{
-                    Image("pass-active") // SF Symbol for a magnifying glass
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20) // Position the icon
-                    Spacer()
-                    Image("visibility_off") // SF Symbol for a magnifying glass
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20) // Position the icon
-                }
-            )
+            
     }
     func secureFieldStyle() -> some View {
         self
@@ -87,17 +56,6 @@ extension SecureField {
             .background(Color.white.opacity(0.1))
             .cornerRadius(15)
             .shadow(color: .black.opacity(0.25), radius: 1, x: 1, y: 1)
-            .overlay(
-                HStack{
-                    Image("passwordIcon") // SF Symbol for a magnifying glass
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20) // Position the icon
-                    Spacer()
-                    Image("visibility_off") // SF Symbol for a magnifying glass
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20) // Position the icon
-                }
-            )
     }
     
     
