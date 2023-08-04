@@ -126,10 +126,7 @@ class APIService {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("HTTP Response Status Code: \(httpResponse.statusCode)")
-                print("Error: \(httpResponse.description)")
                 if let responseData = data, let responseString = String(data: responseData, encoding: .utf8) {
-                    print("Response Data: \(responseString)")
                     if let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
                        let jsonDict = json as? [String: Any],
                        let  _ = jsonDict["message"] as? String {
@@ -143,6 +140,11 @@ class APIService {
                                 completion(false)
                             }
                         }
+                        
+                    }
+                    else {
+                        print("sini errr")
+                        completion(false)
                     }
                 } else {
                     print("Failed")

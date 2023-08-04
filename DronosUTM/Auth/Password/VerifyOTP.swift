@@ -17,6 +17,7 @@ struct VerifyOTPPage: View {
     @State var pinFour: String = ""
     @State var pinFive: String = ""
     @State var pinSix: String = ""
+    @State private var alertButton: String = ""
     @State private var alertMessage = ""
     @State private var navigateToResetPassword = false
     @State private var showAlert = false
@@ -159,8 +160,10 @@ struct VerifyOTPPage: View {
                                         navigateToResetPassword = true
                                     }else{
                                         print("meheee")
-                                        // showAlert = true
+                                         showAlert = true
                                         navigateToResetPassword = true
+                                        alertMessage = "Please enter the right PIN"
+                                        alertButton = "Retry"
                                     }
                                 }
                                 
@@ -212,11 +215,11 @@ struct VerifyOTPPage: View {
     }
 }
 
-struct VerifyOTPPage_Previews: PreviewProvider {
-    static var previews: some View {
-        VerifyOTPPage(email: "nad")
-    }
-}
+//struct VerifyOTPPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VerifyOTPPage(email: "nad")
+//    }
+//}
 
 
 struct OtpModifer: ViewModifier {
