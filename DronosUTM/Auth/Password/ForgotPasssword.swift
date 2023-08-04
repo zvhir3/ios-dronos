@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ForgotPasswordPage: View {
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    //    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var email: String = ""
     @State private var showAlert: Bool = false
     @State private var alertTitle: String = ""
@@ -9,6 +9,8 @@ struct ForgotPasswordPage: View {
     @State private var alertButton: String = ""
     @State private var otpSent: Bool = false
     @State private var keyboardOffset: CGFloat = 0
+    @FocusState private var isTextFieldFocused: Bool
+    @State private var invalidEmail: Bool = false
     
     var body: some View {
         NavigationView {
@@ -27,7 +29,7 @@ struct ForgotPasswordPage: View {
                                         .frame(width: 203, height: 216)
                                         .clipped()
                                 )
-//                            Spacer().frame(height: 20)
+                            //                            Spacer().frame(height: 20)
                         }
                         
                         VStack {
@@ -42,8 +44,45 @@ struct ForgotPasswordPage: View {
                                 .frame(maxWidth: .infinity, alignment: .topLeading)
                                 .fixedSize(horizontal: false, vertical: true)
                             Spacer().frame(height: 20)
-                            TextField("Email Address", text: $email)
+                            TextField("Email", text: $email)
                                 .textEditorStyle()
+                                .focused($isTextFieldFocused)
+                                .overlay(
+                                    invalidEmail ? AnyView(
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 15)
+                                                .inset(by: 0.5)
+                                                .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
+                                            HStack {
+                                                Image("email-err") // SF Symbol for a magnifying glass
+                                                    .foregroundColor(.white)
+                                                    .padding(.horizontal, 20) // Position the icon
+                                                Spacer()
+                                            }
+                                        }
+                                    ) :
+                                        isTextFieldFocused ?
+                                    AnyView(
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 15)
+                                                .inset(by: 0.5)
+                                                .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                            HStack {
+                                                Image("email-active") // SF Symbol for a magnifying glass
+                                                    .foregroundColor(.white)
+                                                    .padding(.horizontal, 20) // Position the icon
+                                                Spacer()
+                                            }
+                                        }
+                                    ) : AnyView(
+                                        HStack {
+                                            Image("emailIcon") // SF Symbol for a magnifying glass
+                                                .foregroundColor(.white)
+                                                .padding(.horizontal, 20) // Position the icon
+                                            Spacer()
+                                        }
+                                    )
+                                )
                             Spacer().frame(height: 40)
                             HStack(alignment: .center, spacing: 10) { Text("CREATE ACCOUNT")
                                     .font(.system(size: 18, weight: .medium))
@@ -60,18 +99,29 @@ struct ForgotPasswordPage: View {
                                     .stroke(Color(red: 0.79, green: 0.78, blue: 0.81).opacity(0.15), lineWidth: 2)
                             )
                             HStack(alignment: .center, spacing: 10) { Button(action: {
-                                APIService.forgotPassword(email: email) { success in
-                                    if success {
-                                        alertTitle = "OTP successfully sent!"
-                                        alertMessage = "Check your email and proceed to the next step."
-                                        alertButton = "Proceed"
-                                    } else {
-                                        alertTitle = "Hmm are you sure?"
-                                        alertMessage = "Seems that the email is invalid."
-                                        alertButton = "Retry"
-                                    }
+                                if !isValidEmail(email) {
+                                    invalidEmail = true
                                     showAlert = true
+                                    invalidEmail = true
+                                    alertTitle = "Validation Error"
+                                    alertMessage = "Email must be the right format"
+                                    alertButton = "Retry"
+                                } else {
+                                    invalidEmail = false
+                                    APIService.forgotPassword(email: email) { success in
+                                        if success {
+                                            alertTitle = "OTP successfully sent!"
+                                            alertMessage = "Check your email and proceed to the next step."
+                                            alertButton = "Proceed"
+                                        } else {
+                                            alertTitle = "Hmm are you sure?"
+                                            alertMessage = "Seems that the email is invalid."
+                                            alertButton = "Retry"
+                                        }
+                                        showAlert = true
+                                    }
                                 }
+                                
                             }) {
                                 Text("SEND PASSCODE")
                                     .font(.system(size: 18, weight: .medium))
@@ -143,7 +193,6 @@ struct ForgotPasswordPage: View {
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                 guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
                 keyboardOffset = keyboardFrame.height / 2
-                print("sini dia", keyboardOffset)
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
                 keyboardOffset = 0
@@ -156,8 +205,14 @@ struct ForgotPasswordPage: View {
     
 }
 
-struct ForgotPasswordPage_Previews: PreviewProvider {
-    static var previews: some View {
-        ForgotPasswordPage()
-    }
-}
+//func isValidEmail(_ email: String) -> Bool {
+//    let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//    let pred = NSPredicate(format:"SELF MATCHES %@", regex)
+//    return pred.evaluate(with: email)
+//}
+
+//struct ForgotPasswordPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ForgotPasswordPage()
+//    }
+//}

@@ -23,6 +23,8 @@ struct LoginPage: View {
     var body: some View {
         NavigationView {
             ZStack {
+                GifImage("bg")
+                    .edgesIgnoringSafeArea(.all)
                 if isLoggedIn {
                     Launchpad()
                         .transition(.move(edge: .trailing))
@@ -59,35 +61,40 @@ struct LoginPage: View {
                                     .focused($isTextFieldFocused)
                                     .overlay(
                                         invalidEmail ? AnyView(
-                                            RoundedRectangle(cornerRadius: 15)
-                                        .inset(by: 0.5)
-                                        .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
-                                        ) :
-                                        isTextFieldFocused ?
-                                            AnyView(
-                                                ZStack {
-                                                    RoundedRectangle(cornerRadius: 15)
-                                                        .inset(by: 0.5)
-                                                        .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-                                                    HStack {
-                                                        Image("email-active") // SF Symbol for a magnifying glass
-                                                            .foregroundColor(.white)
-                                                            .padding(.horizontal, 20) // Position the icon
-                                                        Spacer()
-                                                    }
-                                                }
-                                            ) : AnyView(
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 15)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
                                                 HStack {
-                                                    Image("emailIcon") // SF Symbol for a magnifying glass
+                                                    Image("email-err") // SF Symbol for a magnifying glass
                                                         .foregroundColor(.white)
                                                         .padding(.horizontal, 20) // Position the icon
                                                     Spacer()
                                                 }
-                                            )
+                                            }
+                                        ) :
+                                            isTextFieldFocused ?
+                                        AnyView(
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 15)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                                HStack {
+                                                    Image("email-active") // SF Symbol for a magnifying glass
+                                                        .foregroundColor(.white)
+                                                        .padding(.horizontal, 20) // Position the icon
+                                                    Spacer()
+                                                }
+                                            }
+                                        ) : AnyView(
+                                            HStack {
+                                                Image("emailIcon") // SF Symbol for a magnifying glass
+                                                    .foregroundColor(.white)
+                                                    .padding(.horizontal, 20) // Position the icon
+                                                Spacer()
+                                            }
+                                        )
                                     )
-                                
-                                //                                    Spacer()
-                                //                                        .frame(height: 10)
                                 
                                 Text("Password")
                                     .font(.headline)
@@ -101,8 +108,8 @@ struct LoginPage: View {
                                         isInvalidPass ? AnyView(
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 15)
-                                                .inset(by: 0.5)
-                                                .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
+                                                    .inset(by: 0.5)
+                                                    .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
                                                 HStack{
                                                     Image("pass-err") // SF Symbol for a magnifying glass
                                                         .foregroundColor(.white)
@@ -114,7 +121,7 @@ struct LoginPage: View {
                                                 }
                                             }
                                         ) :
-                                        isSecureFieldFocused ?
+                                            isSecureFieldFocused ?
                                         AnyView(
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 15)
@@ -140,7 +147,7 @@ struct LoginPage: View {
                                                     .foregroundColor(.white)
                                                     .padding(.horizontal, 20) // Position the icon
                                             }
-                                            )
+                                        )
                                     )
                                 
                                 
@@ -158,11 +165,6 @@ struct LoginPage: View {
                                 }
                                 
                                 Button(action: {
-//                                    if email.isEmpty || password.isEmpty {
-//                                        showAlert = true
-//                                        title = "Validation Error"
-//                                        message = "Email or password cannot be empty."
-//                                    }
                                     if !isValidEmail(email) {
                                         showAlert = true
                                         invalidEmail = true
