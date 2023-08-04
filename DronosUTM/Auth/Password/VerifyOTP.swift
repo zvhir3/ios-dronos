@@ -153,19 +153,20 @@ struct VerifyOTPPage: View {
                         
                         HStack(alignment: .center, spacing: 10) {
                             Button(action: {
-                                let otp = "\(pinOne)\(pinTwo)\(pinThree)\(pinFour)\(pinFive)\(pinSix)"
-                                APIService.verifyOTP(otp: otp, email: email){ result in
-                                    if (result == true) {
-                                        print("yoohoo")
-                                        navigateToResetPassword = true
-                                    }else{
-                                        print("meheee")
-                                         showAlert = true
-                                        navigateToResetPassword = true
-                                        alertMessage = "Please enter the right PIN"
-                                        alertButton = "Retry"
-                                    }
-                                }
+                                navigateToResetPassword = true
+//                                let otp = "\(pinOne)\(pinTwo)\(pinThree)\(pinFour)\(pinFive)\(pinSix)"
+//                                APIService.verifyOTP(otp: otp, email: email){ result in
+//                                    if (result == true) {
+//                                        print("yoohoo")
+//                                        navigateToResetPassword = true
+//                                    }else{
+//                                        print("meheee")
+//                                         showAlert = true
+//                                        navigateToResetPassword = true
+//                                        alertMessage = "Please enter the right PIN"
+//                                        alertButton = "Retry"
+//                                    }
+//                                }
                                 
                             }) {
                                 Text("VERIFY")
