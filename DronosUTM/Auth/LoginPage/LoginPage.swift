@@ -23,8 +23,6 @@ struct LoginPage: View {
     var body: some View {
         NavigationView {
             ZStack {
-                //                Color.white
-                //                BackgroundVideoView(videoURL: Bundle.main.url(forResource: "video", withExtension: "mp4")!)
                 if isLoggedIn {
                     Launchpad()
                         .transition(.move(edge: .trailing))
@@ -38,7 +36,6 @@ struct LoginPage: View {
                                     .font(.system(size: 32, weight: .bold))
                                     .foregroundColor(Color(red: 0.13, green: 0.58, blue: 0.67))
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
-                                //                                        .padding(.top, 10)
                                 
                                 Text("Welcome back!")
                                     .font(.system(size: 32, weight: .bold))
@@ -61,15 +58,24 @@ struct LoginPage: View {
                                     .textEditorStyle()
                                     .focused($isTextFieldFocused)
                                     .overlay(
+                                        invalidEmail ? AnyView(
+                                            RoundedRectangle(cornerRadius: 15)
+                                        .inset(by: 0.5)
+                                        .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
+                                        ) :
                                         isTextFieldFocused ?
                                             AnyView(
-                                                RoundedRectangle(cornerRadius: 15)
-                                                    .inset(by: 0.5)
-                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-                                            ) : invalidEmail ? AnyView(
-                                                RoundedRectangle(cornerRadius: 15)
-                                            .inset(by: 0.5)
-                                            .stroke(.black.opacity(0.2), lineWidth: 1)
+                                                ZStack {
+                                                    RoundedRectangle(cornerRadius: 15)
+                                                        .inset(by: 0.5)
+                                                        .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                                    HStack {
+                                                        Image("email-active") // SF Symbol for a magnifying glass
+                                                            .foregroundColor(.white)
+                                                            .padding(.horizontal, 20) // Position the icon
+                                                        Spacer()
+                                                    }
+                                                }
                                             ) : AnyView(
                                                 HStack {
                                                     Image("emailIcon") // SF Symbol for a magnifying glass
@@ -92,14 +98,13 @@ struct LoginPage: View {
                                     .secureFieldStyle()
                                     .focused($isSecureFieldFocused)
                                     .overlay(
-                                        isSecureFieldFocused ?
-                                        AnyView(
+                                        isInvalidPass ? AnyView(
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 15)
-                                                    .inset(by: 0.5)
-                                                    .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
+                                                .inset(by: 0.5)
+                                                .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
                                                 HStack{
-                                                    Image("pass-active") // SF Symbol for a magnifying glass
+                                                    Image("pass-err") // SF Symbol for a magnifying glass
                                                         .foregroundColor(.white)
                                                         .padding(.horizontal, 20) // Position the icon
                                                     Spacer()
@@ -108,7 +113,9 @@ struct LoginPage: View {
                                                         .padding(.horizontal, 20) // Position the icon
                                                 }
                                             }
-                                        ) : isInvalidPass ? AnyView(
+                                        ) :
+                                        isSecureFieldFocused ?
+                                        AnyView(
                                             ZStack {
                                                 RoundedRectangle(cornerRadius: 15)
                                                     .inset(by: 0.5)
@@ -150,21 +157,27 @@ struct LoginPage: View {
                                     .buttonStyle(PlainButtonStyle())
                                 }
                                 
-                                //                                    Spacer()
-                                //                                        .frame(height: 10)
-                                
                                 Button(action: {
-                                    if email.isEmpty || password.isEmpty {
+//                                    if email.isEmpty || password.isEmpty {
+//                                        showAlert = true
+//                                        title = "Validation Error"
+//                                        message = "Email or password cannot be empty."
+//                                    }
+                                    if !isValidEmail(email) {
                                         showAlert = true
-                                        title = "Validation Error"
-                                        message = "Email or password cannot be empty."
-                                    } else if !isValidEmail(email) {
                                         invalidEmail = true
+                                        title = "Validation Error"
                                         message = "Email must be the right format"
-                                    } else if !isValidPassword(password) {
+                                    }
+                                    
+                                    if !isValidPassword(password) {
+                                        showAlert = true
                                         isInvalidPass = true
+                                        title = "Validation Error"
                                         message = "Password must contain at least one uppercase, one digit, one symbol, and be at least 8 characters long."
-                                    }  else {
+                                    }
+                                    
+                                    if isValidEmail(email) && isValidPassword(password) {
                                         let data = LoginData(email: email, password: password)
                                         APIService.login(data) { result in
                                             if (result == true) {
