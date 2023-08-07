@@ -25,7 +25,10 @@ struct GifImage: UIViewRepresentable {
             characterEncodingName: "UTF-8",
             baseURL: url.deletingLastPathComponent()
         )
-//        webView.scrollView.isScrollEnabled = false
+        webView.scrollView.isScrollEnabled = false
+        webView.scrollView.bounces = false
+                webView.contentMode = .scaleAspectFit
+                webView.clipsToBounds = true
 
         return webView
     }
@@ -34,4 +37,14 @@ struct GifImage: UIViewRepresentable {
         uiView.reload()
     }
 
+}
+
+struct GifImage_Previews: PreviewProvider {
+    static var previews: some View {
+        GifImage("bg")
+//    .scaledToFill()
+//    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//    .edgesIgnoringSafeArea(.all)
+//    .background(Color.red)
+    }
 }

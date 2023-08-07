@@ -63,6 +63,7 @@
 		B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EB82A5E849800D78AD1 /* Launchpad.swift */; };
 		B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */; };
 		B2E42EBF2A5E8FAC00D78AD1 /* MissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */; };
+		E7A4193E2A80A24E0004B30D /* giphy2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7A4193D2A80A24E0004B30D /* giphy2.gif */; };
 		E7D27A5F2A7CA66500D52FA1 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D27A5E2A7CA66500D52FA1 /* GifImage.swift */; };
 		E7D27A622A7CA89500D52FA1 /* bg.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7D27A612A7CA89500D52FA1 /* bg.gif */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,7 @@
 		B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionList.swift; sourceTree = "<group>"; };
 		DA877DEDB7DA07E361440993 /* Pods-DronosUTM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DronosUTM.debug.xcconfig"; path = "Target Support Files/Pods-DronosUTM/Pods-DronosUTM.debug.xcconfig"; sourceTree = "<group>"; };
+		E7A4193D2A80A24E0004B30D /* giphy2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy2.gif; sourceTree = "<group>"; };
 		E7D27A5E2A7CA66500D52FA1 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		E7D27A612A7CA89500D52FA1 /* bg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bg.gif; sourceTree = "<group>"; };
 		E7FD91A72A60F82400E10672 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		53ECE276233DB88300E278CD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E7A4193D2A80A24E0004B30D /* giphy2.gif */,
 				E7D27A612A7CA89500D52FA1 /* bg.gif */,
 				B21A48792A7219C8000A147B /* HorizontalView.swift */,
 				53ECE277233DB8B500E278CD /* Helpers.swift */,
@@ -493,6 +496,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A4193E2A80A24E0004B30D /* giphy2.gif in Resources */,
 				B2AD6F322A5FF4FF00BE1EB4 /* Barlow-Bold.ttf in Resources */,
 				B2AD6F312A5FF4FF00BE1EB4 /* Barlow-BoldItalic.ttf in Resources */,
 				B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */,

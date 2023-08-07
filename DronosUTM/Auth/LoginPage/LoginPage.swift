@@ -23,8 +23,15 @@ struct LoginPage: View {
     var body: some View {
         NavigationView {
             ZStack {
-                GifImage("bg")
-                    .edgesIgnoringSafeArea(.all)
+//                GifImage("bg")
+//                GifImage("bg")
+////                    .scaledToFill()
+//                    .edgesIgnoringSafeArea(.all)
+//                GifImage("bg")
+//        //    .scaledToFill()
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .edgesIgnoringSafeArea(.all)
+//            .background(Color.red)
                 if isLoggedIn {
                     Launchpad()
                         .transition(.move(edge: .trailing))
@@ -257,11 +264,11 @@ struct LoginPage: View {
     }
 }
 
-//struct LoginPage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginPage()
-//    }
-//}
+struct LoginPage_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginPage()
+    }
+}
 
 func isValidEmail(_ email: String) -> Bool {
     let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
