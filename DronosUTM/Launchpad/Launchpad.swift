@@ -5,7 +5,7 @@ struct Launchpad: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UITabBarController {
         let tabBarController = UITabBarController()
         let viewController = ViewController()
-        let missionsViewController = Missions()
+        let missionsViewController = UIHostingController(rootView: MissionsView())
         let profilePageHostingController = UIHostingController(rootView: ProfilePage())
         
         viewController.title = "Missions"
@@ -175,7 +175,7 @@ class ViewController: UIViewController {
     
     @objc private func missionIconTapped() {
         print("Mission icon tapped")
-        let missionsViewController = Missions()
+        let missionsViewController = UIHostingController(rootView: MissionsView())
         navigationController?.pushViewController(missionsViewController, animated: true)
     }
     

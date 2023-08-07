@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chevron">
+<mask id="mask0_1423_24054" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect id="Bounding box" width="24" height="24" fill="white"/>
+</mask>
+<g mask="url(#mask0_1423_24054)">
+<g id="arrow_back_ios_new">
+<path d="M16 2L6 12L7.76359 13.7636L9.55 12L17.775 3.775L16 2Z" fill="white"/>
+<path d="M16 22L17.775 20.225L10.9456 13.3956L9.1649 15.1649L16 22Z" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
