@@ -1,9 +1,6 @@
 
 
 import SwiftUI
-
-var isEmptyMission: Bool = false
-
 struct Mission: Identifiable {
     let id = UUID()
     let missionId: String
@@ -76,14 +73,8 @@ class MissionsViewModel: ObservableObject {
         
         APIService.fetchMissions { serviceMissions in
             DispatchQueue.main.async {
-                if !serviceMissions.isEmpty {
+               
                     self.missions = serviceMissions.map(Mission.init(from:))
-                    isEmptyMission = false
-                } else {
-                    // Handle empty array response
-                    print("The response array is empty")
-                    isEmptyMission = true
-                }
             }
         }
         
