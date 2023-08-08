@@ -74,6 +74,7 @@
 		B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */; };
 		B2E42EBF2A5E8FAC00D78AD1 /* MissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */; };
 		E7772B7D2A81F8B3003E6936 /* CustomRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7772B7C2A81F8B3003E6936 /* CustomRadius.swift */; };
+		E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7772B7E2A8201D4003E6936 /* TimeFormatter.swift */; };
 		E7A4193E2A80A24E0004B30D /* giphy2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7A4193D2A80A24E0004B30D /* giphy2.gif */; };
 		E7D27A5F2A7CA66500D52FA1 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D27A5E2A7CA66500D52FA1 /* GifImage.swift */; };
 		E7D27A622A7CA89500D52FA1 /* bg.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7D27A612A7CA89500D52FA1 /* bg.gif */; };
@@ -167,6 +168,7 @@
 		B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionList.swift; sourceTree = "<group>"; };
 		E7772B7C2A81F8B3003E6936 /* CustomRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadius.swift; sourceTree = "<group>"; };
+		E7772B7E2A8201D4003E6936 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		E7A4193D2A80A24E0004B30D /* giphy2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy2.gif; sourceTree = "<group>"; };
 		E7D27A5E2A7CA66500D52FA1 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		E7D27A612A7CA89500D52FA1 /* bg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bg.gif; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */,
 				E7D27A5E2A7CA66500D52FA1 /* GifImage.swift */,
 				E7772B7C2A81F8B3003E6936 /* CustomRadius.swift */,
+				E7772B7E2A8201D4003E6936 /* TimeFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				B282E6EC2A80A24D008B822E /* MyBatteryWidget.swift in Sources */,
 				B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */,
 				B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */,
+				E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */,
 				B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */,
 				B2E2C4992A78DB7600186BC6 /* Dense.swift in Sources */,
 				B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */,

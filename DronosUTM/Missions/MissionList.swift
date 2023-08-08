@@ -175,6 +175,29 @@ struct Mission: Identifiable {
         self.location = serviceMission.location
         self.schedules = serviceMission.schedules.map(Schedule.init(from:))
     }
+    
+    var status: String {
+            let formatter = ISO8601DateFormatter()
+            
+            let startDate = formatter.date(from: schedules.first?.startDate ?? "") ?? Date()
+            let endDate = formatter.date(from: schedules.first?.endDate ?? "") ?? Date()
+            
+            let currentTime = Calendar.current.dateComponents([.hour, .minute], from: Date())
+            let startTime = Calendar.current.dateComponents([.hour, .minute], from: formatDateTime(schedules.first?.startTime ?? 0))
+            let endTime = Calendar.current.dateComponents([.hour, .minute], from: formatDateTime(schedules.first?.endTime ?? 0))
+            
+            let today = Date()
+
+            if today > endDate {
+                return "Completed"
+            } else if today < startDate {
+                return "Scheduled"
+            } else if today < endDate && today > startDate && currentTime.hour! > startTime.hour! && currentTime.minute! > startTime.minute! && currentTime.hour! < endTime.hour! && currentTime.minute! < endTime.minute! {
+                return "Active"
+            } else {
+                return "Unknown"
+            }
+        }
 }
 
 struct Schedule: Hashable {
@@ -295,11 +318,12 @@ struct MissionsView: View {
                                                 HStack {
                                                     Spacer().frame(width: 340 / 1.19)
                                                     HStack {
-                                                        Text("COMPLETED")
-                                                            .font(Font.custom("Barlow", size: 8))
+                                                        Text(mission.status)
+                                                            .font(.system(size: 8))
                                                             .kerning(0.4)
                                                             .multilineTextAlignment(.center)
                                                             .foregroundColor(Color(red: 0.4, green: 0.84, blue: 0.65))
+                                                            .textCase(.uppercase)
                                                     }
                                                     .padding(.horizontal, 8)
                                                     .padding(.vertical, 2)
@@ -330,10 +354,6 @@ struct MissionsView: View {
                 .foregroundColor(.white)
                 
             }.ignoresSafeArea(.all)
-            
-            //            .background(Color(red: 34/255.0, green: 38/255.0, blue: 50/255.0, opacity: 0.8))
-            //            .ignoresSafeArea()
-            //            .frame(width: 900)
                 .onAppear {
                     viewModel.fetchMissions()
                 }
@@ -367,14 +387,11 @@ struct MissionCardView: View {
                 .font(.system(size: 12))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .topLeading)
-            
-            Text("08:30 AM - 12:00 PM")
-                .font(.system(size: 10))
-                .foregroundColor(Color(red: 0.69, green: 0.75, blue: 0.77))
-            //            ForEach(mission.schedules, id: \.self) { schedule in
-            //                Text("Start Date: \(schedule.startDate) \(schedule.startTime)")
-            //                Text("End Date: \(schedule.endDate) \(schedule.endTime)")
-            //            }
+            ForEach(mission.schedules, id: \.self) { schedule in
+                Text("\(formatTime(schedule.startTime)) - \(formatTime(schedule.endTime))")
+                    .font(.system(size: 10))
+                    .foregroundColor(Color(red: 0.69, green: 0.75, blue: 0.77))
+            }
         }
         .padding(.leading, 8)
         .padding(.trailing, 20)
@@ -383,9 +400,7 @@ struct MissionCardView: View {
         .background(Color(red: 0.22, green: 0.25, blue: 0.3).opacity(0.8))
         .background(.white.opacity(0.05))
         .cornerRadius(10)
-//        .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 11)
-        
-        //        }
+        .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 11)
     }
 }
 
