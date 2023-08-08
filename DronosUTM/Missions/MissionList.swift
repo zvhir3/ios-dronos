@@ -164,17 +164,40 @@ import SwiftUI
 
 struct Mission: Identifiable {
     let id = UUID()
-    let missionId: Int
+    let missionId: String
     let name: String
     let location: String
     let schedules: [Schedule]
+    
+    init(from serviceMission: APIService.Mission) {
+        self.missionId = serviceMission.missionId
+        self.name = serviceMission.name
+        self.location = serviceMission.location
+        self.schedules = serviceMission.schedules.map(Schedule.init(from:))
+    }
 }
 
 struct Schedule: Hashable {
     let startDate: String
-    let startTime: String
+    let startTime: Int
     let endDate: String
-    let endTime: String
+    let endTime: Int
+    
+    init(from serviceSchedule: APIService.Schedule) {
+        self.startDate = serviceSchedule.startDate
+        self.startTime = serviceSchedule.startTime
+        self.endDate = serviceSchedule.endDate
+        self.endTime = serviceSchedule.endTime
+    }
+}
+
+struct Area: Hashable {
+    let coordinate: [Coordinate]
+}
+
+struct Coordinate: Hashable {
+    let latitude: String
+    let longitude: String
 }
 
 class MissionsViewModel: ObservableObject {
@@ -183,13 +206,13 @@ class MissionsViewModel: ObservableObject {
     
     
     func fetchMissions() {
-        // Implement your logic to fetch missions here
-        // For demonstration purposes, let's use some dummy data
-        let dummyMissions = [
-            Mission(missionId: 1, name: "Mission 1", location: "Location 1", schedules: []),
-            Mission(missionId: 2, name: "Mission 2", location: "Location 2", schedules: [])
-        ]
-        missions = dummyMissions
+        
+        APIService.fetchMissions { serviceMissions in
+            DispatchQueue.main.async {
+                self.missions = serviceMissions.map(Mission.init(from:))
+            }
+        }
+        
     }
 }
 
@@ -232,83 +255,142 @@ struct MissionsView: View {
                         .cornerRadius(10)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 25)
-                        
-                        VStack(alignment: .center, spacing: 8) { }
-                            .padding(0)
-                            .frame(width: 50, height: 48, alignment: .center)
-                            .background(.white.opacity(0.1))
-                            .cornerRadius(4)
-                            .shadow(color: .black.opacity(0.25), radius: 1, x: 1, y: 1)
-                            .overlay(
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 4)
-                                        .inset(by: 0.29)
-                                        .stroke(.white.opacity(0.1), lineWidth: 0.58)
-                                    
-                                    Image("filter-icon") // SF Symbol for a magnifying glass
-                                        .resizable() // Add this
-                                        .frame(width: 20, height: 20) // Specify the size you want here
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal, 10)
-                                    
-                                }
-                            )
+                        //
+                        //                        VStack(alignment: .center, spacing: 8) { }
+                        //                            .padding(0)
+                        //                            .frame(width: 50, height: 48, alignment: .center)
+                        //                            .background(.white.opacity(0.1))
+                        //                            .cornerRadius(4)
+                        //                            .shadow(color: .black.opacity(0.25), radius: 1, x: 1, y: 1)
+                        //                            .overlay(
+                        //                                ZStack {
+                        //                                    RoundedRectangle(cornerRadius: 4)
+                        //                                        .inset(by: 0.29)
+                        //                                        .stroke(.white.opacity(0.1), lineWidth: 0.58)
+                        //
+                        //                                    Image("filter-icon") // SF Symbol for a magnifying glass
+                        //                                        .resizable() // Add this
+                        //                                        .frame(width: 20, height: 20) // Specify the size you want here
+                        //                                        .foregroundColor(.white)
+                        //                                        .padding(.horizontal, 10)
+                        //
+                        //                                }
+                        //                            )
                     }
                     
                     .padding(.horizontal, 24)
                     .padding(.vertical, 0)
                     .frame(maxWidth: .infinity, alignment: .top)
                     
-                    NavigationView {
-                        ScrollView {
-                            ForEach(viewModel.missions) { mission in
-                                NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
-                                    .animation(.easeInOut(duration: 0.5), value: true)) {
-                                    MissionCardView(mission: mission)
+                    //                    NavigationView {
+                    ScrollView {
+                        ForEach(viewModel.missions) { mission in
+                            NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
+                                .animation(.easeInOut(duration: 0.5), value: true)) {
+                                    ZStack(alignment: .top) {
+                                        
+                                        MissionCardView(mission: mission)
+                                            .padding(.bottom, 10)
+                                        VStack(spacing: -32) {
+                                                HStack {
+                                                    Spacer().frame(width: 340 / 1.19)
+                                                    HStack {
+                                                        Text("COMPLETED")
+                                                            .font(Font.custom("Barlow", size: 8))
+                                                            .kerning(0.4)
+                                                            .multilineTextAlignment(.center)
+                                                            .foregroundColor(Color(red: 0.4, green: 0.84, blue: 0.65))
+                                                    }
+                                                    .padding(.horizontal, 8)
+                                                    .padding(.vertical, 2)
+                                                    .background(Color(red: 0.4, green: 0.84, blue: 0.65).opacity(0.2))
+                                                    .clipShape(RoundedCorners(topLeft: 4, bottomLeft: 4))
+                                                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+                                                }
+                                                .padding(.top, 10)
+                                            HStack {
+                                                Spacer().frame(width: 345)
+                                                // Add the image here
+                                                Image("status-img")
+                                                    .resizable() // Add this if your image is not appearing
+                                            }
+                                        }
+
+                                       
+                                        
+                                    }
+                                   
+                                    
                                 }
-                            }
-                        }
                         }
                     }
-                    .padding(.top, 90)
-                    .foregroundColor(.white)
-                    
-                }.ignoresSafeArea(.all)
-                
-                //            .background(Color(red: 34/255.0, green: 38/255.0, blue: 50/255.0, opacity: 0.8))
-                //            .ignoresSafeArea()
-                //            .frame(width: 900)
-                    .onAppear {
-                        viewModel.fetchMissions()
-                    }
-                    .navigationBarHidden(false)
-            }
-        }
-    }
-    
-    struct MissionCardView: View {
-        let mission: Mission
-        
-        var body: some View {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Mission ID: \(mission.missionId)")
-                Text("Name: \(mission.name)")
-                Text("Location: \(mission.location)")
-                ForEach(mission.schedules, id: \.self) { schedule in
-                    Text("Start Date: \(schedule.startDate) \(schedule.startTime)")
-                    Text("End Date: \(schedule.endDate) \(schedule.endTime)")
+                    //                        }
                 }
-            }
-            .padding()
-            .background(Color.gray)
-            .cornerRadius(8)
-            .shadow(color: Color.blue, radius: 2, x: 0, y: 0)
-            .padding(.horizontal)
+                .padding(.top, 90)
+                .foregroundColor(.white)
+                
+            }.ignoresSafeArea(.all)
+            
+            //            .background(Color(red: 34/255.0, green: 38/255.0, blue: 50/255.0, opacity: 0.8))
+            //            .ignoresSafeArea()
+            //            .frame(width: 900)
+                .onAppear {
+                    viewModel.fetchMissions()
+                }
+                .navigationBarHidden(false)
         }
     }
+}
+
+struct MissionCardView: View {
+    let mission: Mission
     
-    struct MissionsView_Previews: PreviewProvider {
-        static var previews: some View {
-            MissionsView()
+    var body: some View {
+        //        ZStack {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 4) {
+                Text(mission.name)
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(.white)
+                
+                Image("dot")
+                    .resizable() // Add this
+                    .frame(width: 5, height: 5)
+                
+                Text("MSN 54048 9384E ")
+                    .font(.system(size: 10))
+                    .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
+            }
+            .padding(0)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Text(mission.location)
+                .font(.system(size: 12))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+            
+            Text("08:30 AM - 12:00 PM")
+                .font(.system(size: 10))
+                .foregroundColor(Color(red: 0.69, green: 0.75, blue: 0.77))
+            //            ForEach(mission.schedules, id: \.self) { schedule in
+            //                Text("Start Date: \(schedule.startDate) \(schedule.startTime)")
+            //                Text("End Date: \(schedule.endDate) \(schedule.endTime)")
+            //            }
         }
+        .padding(.leading, 8)
+        .padding(.trailing, 20)
+        .padding(.vertical, 12)
+        .frame(width: 340, alignment: .topLeading)
+        .background(Color(red: 0.22, green: 0.25, blue: 0.3).opacity(0.8))
+        .background(.white.opacity(0.05))
+        .cornerRadius(10)
+//        .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 11)
+        
+        //        }
     }
+}
+
+struct MissionsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MissionsView()
+    }
+}
