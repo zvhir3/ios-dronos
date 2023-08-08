@@ -87,6 +87,10 @@ struct MissionsView: View {
     @State private var date = Date()
     @State private var showingDatePicker: Bool = false
 //    @State private var isEmptyMission: Bool = false
+    
+    init() {
+        UINavigationBar.appearance().backgroundColor = .clear
+    }
     var body: some View {
         NavigationView {
             ZStack {
@@ -121,7 +125,7 @@ struct MissionsView: View {
                         //                        .background(Color(UIColor.fromHex(0x879AA6)))
                         .background(.white.opacity(0.1))
                         .cornerRadius(10)
-                        .padding(.horizontal, 5)
+//                        .padding(.horizontal, 5)
                         .padding(.vertical, 25)
                         
                         VStack(alignment: .center, spacing: 8) {
@@ -147,7 +151,7 @@ struct MissionsView: View {
                         )
                     }
                     
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 20)
                     .padding(.vertical, 0)
                     .frame(maxWidth: .infinity, alignment: .top)
                     ScrollView {
@@ -161,14 +165,15 @@ struct MissionsView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         } else {
                             ForEach(viewModel.missions) { mission in
-                                NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
-                                    .animation(.easeInOut(duration: 0.5), value: true)) {
+//                                NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
+//                                    .animation(.easeInOut(duration: 0.5), value: true)) {
                                         ZStack(alignment: .top) {
                                             MissionCardView(mission: mission)
                                                 .padding(.bottom, 10)
+                                                .padding(.horizontal, 20)
                                             VStack(spacing: -32) {
                                                 HStack {
-                                                    Spacer().frame(width: 340 / 1.19)
+                                                    Spacer().frame(width: UIScreen.main.bounds.width / 1.35)
                                                     HStack {
                                                         Text(mission.status)
                                                             .font(.system(size: 8))
@@ -185,14 +190,15 @@ struct MissionsView: View {
                                                 }
                                                 .padding(.top, 10)
                                                 HStack {
-                                                    Spacer().frame(width: 345)
+                                                    Spacer().frame(width: UIScreen.main.bounds.width / 1.10)
                                                     // Add the image here
                                                     Image("status-img")
                                                         .resizable() // Add this if your image is not appearing
                                                 }
                                             }
                                         }
-                                    }
+//                                    }
+//                                    .background(Color.clear)
                             }
                         }
 
@@ -245,16 +251,15 @@ struct MissionCardView: View {
         .padding(.leading, 8)
         .padding(.trailing, 20)
         .padding(.vertical, 12)
-        .frame(width: 340, alignment: .topLeading)
+        .frame(width: .infinity, alignment: .topLeading)
         .background(Color(red: 0.22, green: 0.25, blue: 0.3).opacity(0.8))
         .background(.white.opacity(0.05))
-        .cornerRadius(10)
         .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 11)
     }
 }
 
-//struct MissionsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MissionsView()
-//    }
-//}
+struct MissionsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MissionsView()
+    }
+}

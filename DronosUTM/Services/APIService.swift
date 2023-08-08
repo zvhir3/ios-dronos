@@ -223,11 +223,11 @@ class APIService {
         let longitude: String
         
         var latitudeDouble: Double {
-            return Double(latitude) ?? 0.0
+            return Double(latitude ?? "") ?? 0.0
         }
         
         var longitudeDouble: Double {
-            return Double(longitude) ?? 0.0
+            return Double(longitude ?? "") ?? 0.0
         }
     }
     
@@ -276,7 +276,8 @@ class APIService {
                     }
                     
                     let areaData = try JSONSerialization.data(withJSONObject: areaDict, options: [])
-                    let area = try decoder.decode(Area.self, from: areaData)
+                    var area = try decoder.decode(Area.self, from: areaData)
+                    
                     
                     let schedulesDict = record["schedules"] as? [[String: Any]] ?? []
                     let schedules = try schedulesDict.map { scheduleDict -> Schedule in
@@ -286,25 +287,7 @@ class APIService {
                         let endTime = scheduleDict["endTime"] as? Int ?? 0
                         return Schedule(startDate: startDate, endDate: endDate, startTime: startTime, endTime: endTime)
                     }
-                    print("############################################")
-                    print("Mission ID: \(missionId)")
-                    print("Name: \(name)")
-                    print("Location: \(location)")
                     
-                    for schedule in schedules {
-                        print("\n")
-                        print("Start Date: \(schedule.startDate)")
-                        print("Start Time: \(schedule.startTime)")
-                        print("End Date: \(schedule.endDate)")
-                        print("End Date: \(schedule.endTime)")
-                    }
-                    for coordinate in area.coordinate {
-                        print("\n")
-                        print("Latitude: \(coordinate.latitude)")
-                        print("Longitude: \(coordinate.longitude)")
-                    }
-                    print("\n")
-                    print("############################################")
                     return Mission(missionId: missionId, name: name, schedules: schedules, location: location, area: area)
                 }
                 
