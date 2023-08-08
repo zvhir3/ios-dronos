@@ -259,51 +259,56 @@ struct MissionsView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: .infinity, alignment: .top)
                     
-                    ScrollView {
-                        ForEach(viewModel.missions) { mission in
-                            MissionCardView(mission: mission)
+                    NavigationView {
+                        ScrollView {
+                            ForEach(viewModel.missions) { mission in
+                                NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
+                                    .animation(.easeInOut(duration: 0.5), value: true)) {
+                                    MissionCardView(mission: mission)
+                                }
+                            }
+                        }
                         }
                     }
-                }
-                .padding(.top, 90)
-                .foregroundColor(.white)
+                    .padding(.top, 90)
+                    .foregroundColor(.white)
+                    
+                }.ignoresSafeArea(.all)
                 
-            }.ignoresSafeArea(.all)
-            
-            //            .background(Color(red: 34/255.0, green: 38/255.0, blue: 50/255.0, opacity: 0.8))
-            //            .ignoresSafeArea()
-            //            .frame(width: 900)
-                .onAppear {
-                    viewModel.fetchMissions()
-                }
-                .navigationBarHidden(false)
-        }
-    }
-}
-
-struct MissionCardView: View {
-    let mission: Mission
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Mission ID: \(mission.missionId)")
-            Text("Name: \(mission.name)")
-            Text("Location: \(mission.location)")
-            ForEach(mission.schedules, id: \.self) { schedule in
-                Text("Start Date: \(schedule.startDate) \(schedule.startTime)")
-                Text("End Date: \(schedule.endDate) \(schedule.endTime)")
+                //            .background(Color(red: 34/255.0, green: 38/255.0, blue: 50/255.0, opacity: 0.8))
+                //            .ignoresSafeArea()
+                //            .frame(width: 900)
+                    .onAppear {
+                        viewModel.fetchMissions()
+                    }
+                    .navigationBarHidden(false)
             }
         }
-        .padding()
-        .background(Color.gray)
-        .cornerRadius(8)
-        .shadow(color: Color.blue, radius: 2, x: 0, y: 0)
-        .padding(.horizontal)
     }
-}
-
-struct MissionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionsView()
+    
+    struct MissionCardView: View {
+        let mission: Mission
+        
+        var body: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Mission ID: \(mission.missionId)")
+                Text("Name: \(mission.name)")
+                Text("Location: \(mission.location)")
+                ForEach(mission.schedules, id: \.self) { schedule in
+                    Text("Start Date: \(schedule.startDate) \(schedule.startTime)")
+                    Text("End Date: \(schedule.endDate) \(schedule.endTime)")
+                }
+            }
+            .padding()
+            .background(Color.gray)
+            .cornerRadius(8)
+            .shadow(color: Color.blue, radius: 2, x: 0, y: 0)
+            .padding(.horizontal)
+        }
     }
-}
+    
+    struct MissionsView_Previews: PreviewProvider {
+        static var previews: some View {
+            MissionsView()
+        }
+    }
