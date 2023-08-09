@@ -19,6 +19,7 @@
 		B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */; };
 		B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */; };
 		B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AC2A68EDEA00A983E8 /* Constants.swift */; };
+		B261364C2A821FE300ABBE45 /* DroneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B261364B2A821FE300ABBE45 /* DroneConnector.swift */; };
 		B282E6E62A80A24D008B822E /* DefaultLayoutCustomization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B282E6D32A80A24D008B822E /* DefaultLayoutCustomization.storyboard */; };
 		B282E6E72A80A24D008B822E /* DefaultLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282E6D42A80A24D008B822E /* DefaultLayoutViewController.swift */; };
 		B282E6E82A80A24D008B822E /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B282E6D52A80A24D008B822E /* DefaultLayout.storyboard */; };
@@ -112,6 +113,7 @@
 		B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasssword.swift; sourceTree = "<group>"; };
 		B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 		B257D6AC2A68EDEA00A983E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B261364B2A821FE300ABBE45 /* DroneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneConnector.swift; sourceTree = "<group>"; };
 		B282E6D32A80A24D008B822E /* DefaultLayoutCustomization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayoutCustomization.storyboard; sourceTree = "<group>"; };
 		B282E6D42A80A24D008B822E /* DefaultLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLayoutViewController.swift; sourceTree = "<group>"; };
 		B282E6D52A80A24D008B822E /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				B2E2C4A22A78DC1100186BC6 /* BottomsheetInteractive.swift */,
 				B2E2C49E2A78DBD500186BC6 /* BottomSheetTransition.swift */,
 				B2E2C4982A78DB7600186BC6 /* Dense.swift */,
+				B261364B2A821FE300ABBE45 /* DroneConnector.swift */,
 				B2E2C4A02A78DBF400186BC6 /* BottomsheetPresentation.swift */,
 				B2E2C4962A78DB5500186BC6 /* Sparse.swift */,
 				B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */,
@@ -508,7 +511,7 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = H3Y2UKTAZ9;
+						DevelopmentTeam = YL63RT553M;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -686,6 +689,7 @@
 				B28FFA292A7CAA800067CA22 /* FloatingActionButton.swift in Sources */,
 				B289FA802A80A50E004BC2F3 /* MainViewController.swift in Sources */,
 				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
+				B261364C2A821FE300ABBE45 /* DroneConnector.swift in Sources */,
 				B2E2C49F2A78DBD500186BC6 /* BottomSheetTransition.swift in Sources */,
 				B282E6EF2A80A24D008B822E /* ProductCommunicationService.swift in Sources */,
 				B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */,
@@ -813,7 +817,7 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
+				DEVELOPMENT_TEAM = YL63RT553M;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "";
@@ -845,7 +849,7 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
+				DEVELOPMENT_TEAM = YL63RT553M;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "";

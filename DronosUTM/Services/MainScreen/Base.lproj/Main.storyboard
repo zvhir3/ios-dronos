@@ -436,14 +436,6 @@ They can also be customized in how they look and behave.</string>
             </objects>
             <point key="canvasLocation" x="-739" y="609"/>
         </scene>
-        <!--PanelsCollections-->
-        <scene sceneID="vrm-5b-B9J">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PanelsCollections" id="QkK-mE-vMc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yc-uX-pRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-732" y="814"/>
-        </scene>
         <!--Widgets-->
         <scene sceneID="qVs-eA-9gs">
             <objects>
