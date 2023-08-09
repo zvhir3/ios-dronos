@@ -152,9 +152,9 @@ class Missions: UIViewController {
     }
     
     @objc private func cardTapped(_ sender: UITapGestureRecognizer) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        if let mainViewController = storyboard.instantiateInitialViewController() {
-//            present(mainViewController, animated: true, completion: nil)
-//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainViewController = storyboard.instantiateInitialViewController() {
+            present(mainViewController, animated: true, completion: nil)
+        }
     }
 }

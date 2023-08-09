@@ -42,28 +42,28 @@ struct Launchpad: UIViewControllerRepresentable {
         // Set the selected icon color to white
         tabBarController.tabBar.tintColor = UIColor.white
         
-//        // Create the floating action button
-//        let floatingActionButton = FloatingActionButton()
-//        floatingActionButton.tapHandler = {
-//            // Handle the tap event for the floating action button here
-//            print("Floating action button tapped!")
-//        }
-//        
-//        // Add the floating action button to the tab bar
-//        tabBarController.tabBar.addSubview(floatingActionButton)
-//        
-//        // Position the floating action button
-//        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            floatingActionButton.centerXAnchor.constraint(equalTo: tabBarController.tabBar.centerXAnchor),
-//            floatingActionButton.bottomAnchor.constraint(equalTo: tabBarController.tabBar.bottomAnchor, constant: -16)
-//        ])
-//        
-//        // Adjust the button size if needed
-//        floatingActionButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
-//        floatingActionButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//        
-//        
+        //        // Create the floating action button
+        //        let floatingActionButton = FloatingActionButton()
+        //        floatingActionButton.tapHandler = {
+        //            // Handle the tap event for the floating action button here
+        //            print("Floating action button tapped!")
+        //        }
+        //
+        //        // Add the floating action button to the tab bar
+        //        tabBarController.tabBar.addSubview(floatingActionButton)
+        //
+        //        // Position the floating action button
+        //        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+        //        NSLayoutConstraint.activate([
+        //            floatingActionButton.centerXAnchor.constraint(equalTo: tabBarController.tabBar.centerXAnchor),
+        //            floatingActionButton.bottomAnchor.constraint(equalTo: tabBarController.tabBar.bottomAnchor, constant: -16)
+        //        ])
+        //
+        //        // Adjust the button size if needed
+        //        floatingActionButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        //        floatingActionButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        //
+        //
         return tabBarController
     }
     
@@ -170,8 +170,271 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+        // Create the floating action button
+        let floatingActionButton = UIButton(type: .custom)
+        floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
+        floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
+        
+        // Add the floating action button to the view
+        view.addSubview(floatingActionButton)
+        
+        // Position the floating action button
+        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
+            floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
+        ])
+        
+        // Define coordinates for the first polygon
+        let ringCoords1 = [
+            CLLocationCoordinate2DMake( 2.791022, 101.617583),
+            CLLocationCoordinate2DMake(2.950794, 101.895892),
+            CLLocationCoordinate2DMake( 2.8988322803233366, 101.64227583014568),
+        ]
+        
+        // Calculate the center coordinate for the first polygon
+        if let centerCoordinate1 = calculateCenterCoordinate(for: ringCoords1) {
+            print("Center Coordinate for Polygon 1: \(centerCoordinate1)")
+        } else {
+            print("Invalid coordinates for Polygon 1.")
+        }
+        
+        // Create the Ring and Polygon for the first polygon
+        let ring1 = Ring(coordinates: ringCoords1)
+        let polygon1 = Polygon(outerRing: ring1)
+        
+        // Create a new polygon annotation for the first polygon
+        var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
+        polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+        polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+        
+        // Define coordinates for the second polygon
+        let coordinates = [
+            [
+                [
+                    101.45481976,
+                    3.1194105
+                ],
+                [
+                    101.45481194,
+                    3.1266476
+                ],
+                [
+                    101.45474977,
+                    3.13129999
+                ],
+                [
+                    101.45472662,
+                    3.13404009
+                ],
+                [
+                    101.45097263,
+                    3.13383449
+                ],
+                [
+                    101.45082316,
+                    3.13631802
+                ],
+                [
+                    101.45167009,
+                    3.13766639
+                ],
+                [
+                    101.45280014,
+                    3.13778881
+                ],
+                [
+                    101.45394309,
+                    3.13756001
+                ],
+                [
+                    101.4548547,
+                    3.13991572
+                ],
+                [
+                    101.45695708,
+                    3.14489794
+                ],
+                [
+                    101.45796465,
+                    3.14714812
+                ],
+                [
+                    101.45815602,
+                    3.14736691
+                ],
+                [
+                    101.4596411,
+                    3.14920435
+                ],
+                [
+                    101.46135446,
+                    3.15167497
+                ],
+                [
+                    101.46266058,
+                    3.1533284
+                ],
+                [
+                    101.46424742,
+                    3.15454856
+                ],
+                [
+                    101.46532209,
+                    3.1553614
+                ],
+                [
+                    101.46743347,
+                    3.15705385
+                ],
+                [
+                    101.46867626,
+                    3.15789532
+                ],
+                [
+                    101.46910542,
+                    3.15806441
+                ],
+                [
+                    101.47052866,
+                    3.15815507
+                ],
+                [
+                    101.47116606,
+                    3.15852979
+                ],
+                [
+                    101.47309867,
+                    3.16047212
+                ],
+                [
+                    101.47169907,
+                    3.16132684
+                ],
+                [
+                    101.47095346,
+                    3.16190234
+                ],
+                [
+                    101.4696393,
+                    3.16276223
+                ],
+                [
+                    101.46826617,
+                    3.16379552
+                ],
+                [
+                    101.46720632,
+                    3.16450515
+                ],
+                [
+                    101.46632335,
+                    3.1651142
+                ],
+                [
+                    101.46420596,
+                    3.16660705
+                ],
+                [
+                    101.4631755,
+                    3.16735375
+                ],
+                [
+                    101.46254777,
+                    3.16781179
+                ],
+                [
+                    101.46123224,
+                    3.16872998
+                ],
+                [
+                    101.45757395,
+                    3.17142833
+                ],
+                [
+                    101.45500284,
+                    3.17314801
+                ],
+                [
+                    101.45257612,
+                    3.17484169
+                ],
+                [
+                    101.4439094,
+                    3.18083729
+                ],
+                [
+                    101.43876369,
+                    3.18433617
+                ],
+                [
+                    101.4331006,
+                    3.1882981
+                ],
+                [
+                    101.42771247,
+                    3.19201251
+                ]
+            ]
+        ]
+        
+        // Convert the provided coordinates to CLLocationCoordinate2D
+        let ringCoords2: [CLLocationCoordinate2D] = coordinates[0].map { CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0]) }
+        
+        // Calculate the center coordinate for the second polygon
+        if let centerCoordinate2 = calculateCenterCoordinate(for: ringCoords2) {
+            print("Center Coordinate for Polygon 2: \(centerCoordinate2)")
+        } else {
+            print("Invalid coordinates for Polygon 2.")
+        }
+        
+        // Create the Ring and Polygon for the second polygon
+        let ring2 = Ring(coordinates: ringCoords2)
+        let polygon2 = Polygon(outerRing: ring2)
+        
+        // Create a new polygon annotation for the second polygon
+        var polygonAnnotation2 = PolygonAnnotation(polygon: polygon2)
+        polygonAnnotation2.fillColor = StyleColor(UIColor(hue: 0.0472, saturation: 1, brightness: 0.94, alpha: 0.2))
+        polygonAnnotation2.fillOutlineColor = StyleColor(UIColor(hue: 0.0472, saturation: 1, brightness: 0.94, alpha: 1.0))
+        
+        // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
+        let polygonAnnotationManager = mapView.annotations.makePolygonAnnotationManager()
+        
+        // Add the polygons to the map as annotations.
+        polygonAnnotationManager.annotations = [polygonAnnotation1, polygonAnnotation2]
     }
     
+    func calculateCenterCoordinate(for coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D? {
+        guard !coordinates.isEmpty else {
+            return nil
+        }
+        
+        var sumLat: CLLocationDegrees = 0
+        var sumLon: CLLocationDegrees = 0
+        
+        for coordinate in coordinates {
+            sumLat += coordinate.latitude
+            sumLon += coordinate.longitude
+        }
+        
+        let count = Double(coordinates.count)
+        let centerLat = sumLat / count
+        let centerLon = sumLon / count
+        
+        return CLLocationCoordinate2D(latitude: centerLat, longitude: centerLon)
+    }
+    
+    @objc private func floatingActionButtonTapped() {
+           // Handle the tap event for the floating action button here
+           print("Floating action button tapped!")
+        // Present the DenseContentSheetViewController
+        let viewController = DroneConnectorViewController()
+        viewController.preferredSheetSizing = .large
+        self.present(viewController, animated: true)
+       }
     
     @objc private func missionIconTapped() {
         print("Mission icon tapped")
@@ -181,10 +444,15 @@ class ViewController: UIViewController {
     
     @objc private func profileIconTapped() {
         print("Profile icon tapped")
-        let profilePageHostingController = UIHostingController(rootView: ProfilePage())
-        navigationController?.present(profilePageHostingController, animated: true, completion: nil)
+        
+        let profilePage = ProfilePage() // Create an instance of the SwiftUI view
+        
+        if let viewController = UIApplication.shared.windows.first?.rootViewController {
+            let hostingController = UIHostingController(rootView: profilePage)
+            viewController.present(hostingController, animated: true, completion: nil)
+        }
     }
-    
+   
     func convertToCLLocationCoordinates(coordinates: [APIService.Coordinate]) -> [CLLocationCoordinate2D] {
         var convertedCoordinates: [CLLocationCoordinate2D] = []
         for coordinate in coordinates {
@@ -209,179 +477,3 @@ extension UIImage {
         }
     }
 }
-
-//import UIKit
-//
-//final class LaunchpadViewController: UIViewController {
-//
-//    private let stackView = UIStackView()
-//
-//    override func loadView() {
-//        view = UIView()
-//
-//        let sparseContentFitButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = SparseContentSheetViewController()
-//            viewController.preferredSheetSizing = .fit
-//            self.present(viewController, animated: true)
-//        }))
-//        sparseContentFitButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        sparseContentFitButton.setTitle("Sparse content - fit", for: .normal)
-//
-//        let sparseContentSmallButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = SparseContentSheetViewController()
-//            viewController.preferredSheetSizing = .small
-//            self.present(viewController, animated: true)
-//        }))
-//        sparseContentSmallButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        sparseContentSmallButton.setTitle("Sparse content - small", for: .normal)
-//
-//        let sparseContentMediumButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = SparseContentSheetViewController()
-//            viewController.preferredSheetSizing = .medium
-//            self.present(viewController, animated: true)
-//        }))
-//        sparseContentMediumButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        sparseContentMediumButton.setTitle("Sparse content - medium", for: .normal)
-//
-//        let sparseContentLargeButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = SparseContentSheetViewController()
-//            viewController.preferredSheetSizing = .large
-//            self.present(viewController, animated: true)
-//        }))
-//        sparseContentLargeButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        sparseContentLargeButton.setTitle("Sparse content - large", for: .normal)
-//
-//        let sparseContentFillButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = SparseContentSheetViewController()
-//            viewController.preferredSheetSizing = .fill
-//            self.present(viewController, animated: true)
-//        }))
-//        sparseContentFillButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        sparseContentFillButton.setTitle("Sparse content - fill", for: .normal)
-//
-//        let sparseContentStackView = UIStackView(arrangedSubviews: [
-//            sparseContentFitButton,
-//            sparseContentSmallButton,
-//            sparseContentMediumButton,
-//            sparseContentLargeButton,
-//            sparseContentFillButton
-//        ])
-//        sparseContentStackView.axis = .vertical
-//        sparseContentStackView.spacing = 8
-//
-//        let denseContentFitButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = DenseContentSheetViewController()
-//            viewController.preferredSheetSizing = .fit
-//            self.present(viewController, animated: true)
-//        }))
-//        denseContentFitButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        denseContentFitButton.setTitle("Dense content - fit", for: .normal)
-//
-//        let denseContentSmallButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = DenseContentSheetViewController()
-//            viewController.preferredSheetSizing = .small
-//            self.present(viewController, animated: true)
-//        }))
-//        denseContentSmallButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        denseContentSmallButton.setTitle("Dense content - small", for: .normal)
-//
-//        let denseContentMediumButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = DenseContentSheetViewController()
-//            viewController.preferredSheetSizing = .medium
-//            viewController.panToDismissEnabled = false
-//            self.present(viewController, animated: true)
-//        }))
-//        denseContentMediumButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        denseContentMediumButton.setTitle("Dense content - medium", for: .normal)
-//
-//        let denseContentLargeButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = DenseContentSheetViewController()
-//            viewController.preferredSheetSizing = .large
-//            self.present(viewController, animated: true)
-//        }))
-//        denseContentLargeButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        denseContentLargeButton.setTitle("Dense content - large", for: .normal)
-//
-//        let denseContentFillButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = DenseContentSheetViewController()
-//            viewController.preferredSheetSizing = .fill
-//            self.present(viewController, animated: true)
-//        }))
-//        denseContentFillButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        denseContentFillButton.setTitle("Dense content - fill", for: .normal)
-//
-//        let denseContentStackView = UIStackView(arrangedSubviews: [
-//            denseContentFitButton,
-//            denseContentSmallButton,
-//            denseContentMediumButton,
-//            denseContentLargeButton,
-//            denseContentFillButton
-//        ])
-//        denseContentStackView.axis = .vertical
-//        denseContentStackView.spacing = 8
-//
-//        let expandingContentFitButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = ExpandingContentSheetViewController()
-//            viewController.preferredSheetSizing = .fit
-//            viewController.panToDismissEnabled = false
-//            self.present(viewController, animated: true)
-//        }))
-//        expandingContentFitButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        expandingContentFitButton.setTitle("Expanding content - fit", for: .normal)
-//
-//        let tableContentMediumButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = TableContentSheetViewController()
-//            viewController.preferredSheetSizing = .medium
-//            self.present(viewController, animated: true)
-//        }))
-//        tableContentMediumButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        tableContentMediumButton.setTitle("Table content - medium", for: .normal)
-//
-//        let lifecycleDependentContentLargeButton = UIButton(type: .system, primaryAction: .init(handler: { _ in
-//            let viewController = LifecycleDependentContentSheetViewController()
-//            viewController.preferredSheetSizing = .large
-//            self.present(viewController, animated: true)
-//        }))
-//        lifecycleDependentContentLargeButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
-//        lifecycleDependentContentLargeButton.setTitle("Lifecycle dependent content - large", for: .normal)
-//
-//        let miscContentStackView = UIStackView(arrangedSubviews: [
-//            expandingContentFitButton,
-//            tableContentMediumButton,
-//            lifecycleDependentContentLargeButton
-//        ])
-//        miscContentStackView.axis = .vertical
-//        miscContentStackView.spacing = 8
-//
-//        let axis: NSLayoutConstraint.Axis = traitCollection.verticalSizeClass == .compact
-//            ? .horizontal
-//            : .vertical
-//
-//        stackView.addArrangedSubview(sparseContentStackView)
-//        stackView.addArrangedSubview(denseContentStackView)
-//        stackView.addArrangedSubview(miscContentStackView)
-//        stackView.axis = axis
-//        stackView.spacing = 16
-//
-//        view.addSubview(stackView)
-//
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//        ])
-//
-//        view.backgroundColor = .systemBackground
-//    }
-//
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        let axis: NSLayoutConstraint.Axis = traitCollection.verticalSizeClass == .compact
-//            ? .horizontal
-//            : .vertical
-//
-//        stackView.axis = axis
-//    }
-//}
