@@ -17,24 +17,26 @@ struct ProfilePage: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("profile")
-                       .resizable()
-                    
+                VStack {
+                    Image("profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width, alignment: .top)
+                    Spacer()
+                }
                 VStack {
                     Spacer()
                     Text("ALVIN LIM")
-                               .font(
-                               Font.custom("Barlow", size: 20)
-                               .weight(.medium)
-                               )
-                               .kerning(4)
-                               .multilineTextAlignment(.center)
-                               .foregroundColor(.white)
-                               .frame(width: 389, alignment: .center)
+                        .font(
+                            Font.custom("Barlow", size: 20)
+                                .weight(.medium)
+                        )
+                        .kerning(4)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .frame(width: 389, alignment: .center)
                     VStack {
                         VStack(alignment: .leading) {
-                           
-                            
                             Text("Email")
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -133,6 +135,36 @@ struct ProfilePage: View {
                                         }
                                     )
                                 )
+                                .padding(.bottom, 80)
+                            Text("LOGOUT")
+                                .font(
+                                    Font.custom("Barlow", size: 16)
+                                        .weight(.semibold)
+                                )
+                                .kerning(7.4)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(red: 0, green: 0.94, blue: 1))
+                                .frame(maxWidth: .infinity, alignment: .top)
+                                .padding(.bottom, 30)
+                            HStack(alignment: .center, spacing: 0) {
+                                Spacer()
+                                Image("aerodyne")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding(.trailing, 8)
+                                Text("DRON")
+                                    .font(
+                                        Font.custom("Barlow", size: 16)
+                                            .weight(.bold)
+                                    )
+                                    .foregroundColor(.white)
+                                Text("OS")
+                                    .font(
+                                        Font.custom("Barlow", size: 16)
+                                    )
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
                         }.alert(isPresented: $showAlert) {
                             Alert(
                                 title: Text(title),
@@ -140,47 +172,16 @@ struct ProfilePage: View {
                                 dismissButton: .default(Text("OK"))
                             )
                         }
-                        //                                }
-                        .padding()
-                        .frame(height: keyboardOffset == 0.0 ? 400 : 400)
+//                        .background(Color(.red))
+                        .padding(.top, -100)
+                        .frame(height: 500)
                         
-                        Text("LOGOUT")
-                            .font(
-                            Font.custom("Barlow", size: 16)
-                            .weight(.semibold)
-                            )
-                            .kerning(7.4)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0, green: 0.94, blue: 1))
-                            .frame(maxWidth: .infinity, alignment: .top)
-                        
-                        HStack(spacing: 0) {
-                            Image("aerodyne")
-                                   .resizable()
-                                   .frame(width: 20, height: 20)
-                                   .padding(.trailing, 8)
-                            Text("DRON")
-                                .font(
-                                    Font.custom("Barlow", size: 16)
-                                        .weight(.bold)
-                                )
-                                .foregroundColor(.white)
-                            Text("OS")
-                                .font(
-                                    Font.custom("Barlow", size: 16)
-                                )
-                                .foregroundColor(.white)
-                        }
-   
-                       
-                     
                     }
-                    .padding(.bottom, keyboardOffset)
+//                    .background(Color(.yellow))
                     .animation(.easeInOut, value: true)
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, 20)
                     .background(Color(red: 0.13, green: 0.15, blue: 0.2).opacity(1))
-                    .cornerRadius(28)
-                    .frame(width: .infinity)
+                    .cornerRadius(20)
                 }
             }
             .edgesIgnoringSafeArea(.all)

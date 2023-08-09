@@ -256,6 +256,7 @@
 				B29803BC2A5EAAC700A94612 /* Components */,
 				B2AD6EE82A5FC82700BE1EB4 /* Services */,
 				B289FA7B2A80A50E004BC2F3 /* MainScreen */,
+				B2D526062A8374EE00993A02 /* DroneConnecter */,
 				53ECE276233DB88300E278CD /* Helpers */,
 				B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */,
 				B282E6D12A80A24D008B822E /* UXSDK */,
@@ -433,6 +434,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B2D526062A8374EE00993A02 /* DroneConnecter */ = {
+			isa = PBXGroup;
+			children = (
+				B261364B2A821FE300ABBE45 /* DroneConnector.swift */,
+			);
+			path = DroneConnecter;
+			sourceTree = "<group>";
+		};
 		B2E2C4A42A78E15700186BC6 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,7 +451,6 @@
 				B2E2C4A22A78DC1100186BC6 /* BottomsheetInteractive.swift */,
 				B2E2C49E2A78DBD500186BC6 /* BottomSheetTransition.swift */,
 				B2E2C4982A78DB7600186BC6 /* Dense.swift */,
-				B261364B2A821FE300ABBE45 /* DroneConnector.swift */,
 				B2E2C4A02A78DBF400186BC6 /* BottomsheetPresentation.swift */,
 				B2E2C4962A78DB5500186BC6 /* Sparse.swift */,
 				B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */,
@@ -836,7 +844,7 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test299;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -867,7 +875,7 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test299;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

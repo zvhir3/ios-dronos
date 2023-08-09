@@ -132,9 +132,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
         let mapInitOptions = MapInitOptions(
             resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
-            cameraOptions: CameraOptions(center: centerCoordinate, zoom: 2),
+            cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
             styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
         )
         
@@ -153,23 +154,52 @@ class ViewController: UIViewController {
                         latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
                         longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
                     
-                    for mission in missions {
-                        if let coordinates = self?.convertToCLLocationCoordinates(coordinates: mission.area.coordinate) {
-                            // Pass the mission ID along with coordinates
-                            self?.addViewAnnotations(coordinates: coordinates, missionID: mission.missionId)
-                        } else {
-                            print("Coordinates are nil or invalid.")
-                        }
-                    }
-                    
                     // After fetching missions, set the new camera position
                     if let centerCoordinate = self?.centerCoordinate {
-                        let newCamera = CameraOptions(center: centerCoordinate, zoom: 5, pitch: 45)
-                        self?.mapView.camera.ease(to: newCamera, duration: 5.0)
+                        let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
+                        self?.mapView.camera.ease(to: newCamera, duration: 4.0)
                     }
+                    
+                    var ringCoords1: [CLLocationCoordinate2D] = []
+
+                    for mission in missions {
+                        var isFirstCoordinate = true
+                        
+                        for coordinate in mission.area.coordinate {
+                            let latitude = coordinate.latitudeDouble
+                            let longitude = coordinate.longitudeDouble
+                            ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                            
+                            if isFirstCoordinate {
+                                let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                                self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
+                                isFirstCoordinate = false
+                            }
+                        }
+                    }
+
+                    
+                    // Create the Ring and Polygon for the first polygon
+                    let ring1 = Ring(coordinates: ringCoords1)
+                    let polygon1 = Polygon(outerRing: ring1)
+                    
+                    // Create a new polygon annotation for the first polygon
+                    var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
+                    polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+                    polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+                    
+                    // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
+                    let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
+                    
+                    // Add the polygons to the map as annotations.
+                    polygonAnnotationManager?.annotations = [polygonAnnotation1]
+
+                  
                 }
             }
         }
+        
+        
         
         // Create the floating action button
         let floatingActionButton = UIButton(type: .custom)
@@ -188,223 +218,7 @@ class ViewController: UIViewController {
             floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
         ])
         
-        // Define coordinates for the first polygon
-        let ringCoords1 = [
-            CLLocationCoordinate2DMake( 2.791022, 101.617583),
-            CLLocationCoordinate2DMake(2.950794, 101.895892),
-            CLLocationCoordinate2DMake( 2.8988322803233366, 101.64227583014568),
-        ]
         
-        // Calculate the center coordinate for the first polygon
-        if let centerCoordinate1 = calculateCenterCoordinate(for: ringCoords1) {
-            print("Center Coordinate for Polygon 1: \(centerCoordinate1)")
-        } else {
-            print("Invalid coordinates for Polygon 1.")
-        }
-        
-        // Create the Ring and Polygon for the first polygon
-        let ring1 = Ring(coordinates: ringCoords1)
-        let polygon1 = Polygon(outerRing: ring1)
-        
-        // Create a new polygon annotation for the first polygon
-        var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
-        polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
-        polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
-        
-        // Define coordinates for the second polygon
-        let coordinates = [
-            [
-                [
-                    101.45481976,
-                    3.1194105
-                ],
-                [
-                    101.45481194,
-                    3.1266476
-                ],
-                [
-                    101.45474977,
-                    3.13129999
-                ],
-                [
-                    101.45472662,
-                    3.13404009
-                ],
-                [
-                    101.45097263,
-                    3.13383449
-                ],
-                [
-                    101.45082316,
-                    3.13631802
-                ],
-                [
-                    101.45167009,
-                    3.13766639
-                ],
-                [
-                    101.45280014,
-                    3.13778881
-                ],
-                [
-                    101.45394309,
-                    3.13756001
-                ],
-                [
-                    101.4548547,
-                    3.13991572
-                ],
-                [
-                    101.45695708,
-                    3.14489794
-                ],
-                [
-                    101.45796465,
-                    3.14714812
-                ],
-                [
-                    101.45815602,
-                    3.14736691
-                ],
-                [
-                    101.4596411,
-                    3.14920435
-                ],
-                [
-                    101.46135446,
-                    3.15167497
-                ],
-                [
-                    101.46266058,
-                    3.1533284
-                ],
-                [
-                    101.46424742,
-                    3.15454856
-                ],
-                [
-                    101.46532209,
-                    3.1553614
-                ],
-                [
-                    101.46743347,
-                    3.15705385
-                ],
-                [
-                    101.46867626,
-                    3.15789532
-                ],
-                [
-                    101.46910542,
-                    3.15806441
-                ],
-                [
-                    101.47052866,
-                    3.15815507
-                ],
-                [
-                    101.47116606,
-                    3.15852979
-                ],
-                [
-                    101.47309867,
-                    3.16047212
-                ],
-                [
-                    101.47169907,
-                    3.16132684
-                ],
-                [
-                    101.47095346,
-                    3.16190234
-                ],
-                [
-                    101.4696393,
-                    3.16276223
-                ],
-                [
-                    101.46826617,
-                    3.16379552
-                ],
-                [
-                    101.46720632,
-                    3.16450515
-                ],
-                [
-                    101.46632335,
-                    3.1651142
-                ],
-                [
-                    101.46420596,
-                    3.16660705
-                ],
-                [
-                    101.4631755,
-                    3.16735375
-                ],
-                [
-                    101.46254777,
-                    3.16781179
-                ],
-                [
-                    101.46123224,
-                    3.16872998
-                ],
-                [
-                    101.45757395,
-                    3.17142833
-                ],
-                [
-                    101.45500284,
-                    3.17314801
-                ],
-                [
-                    101.45257612,
-                    3.17484169
-                ],
-                [
-                    101.4439094,
-                    3.18083729
-                ],
-                [
-                    101.43876369,
-                    3.18433617
-                ],
-                [
-                    101.4331006,
-                    3.1882981
-                ],
-                [
-                    101.42771247,
-                    3.19201251
-                ]
-            ]
-        ]
-        
-        // Convert the provided coordinates to CLLocationCoordinate2D
-        let ringCoords2: [CLLocationCoordinate2D] = coordinates[0].map { CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0]) }
-        
-        // Calculate the center coordinate for the second polygon
-        if let centerCoordinate2 = calculateCenterCoordinate(for: ringCoords2) {
-            print("Center Coordinate for Polygon 2: \(centerCoordinate2)")
-        } else {
-            print("Invalid coordinates for Polygon 2.")
-        }
-        
-        // Create the Ring and Polygon for the second polygon
-        let ring2 = Ring(coordinates: ringCoords2)
-        let polygon2 = Polygon(outerRing: ring2)
-        
-        // Create a new polygon annotation for the second polygon
-        var polygonAnnotation2 = PolygonAnnotation(polygon: polygon2)
-        polygonAnnotation2.fillColor = StyleColor(UIColor(hue: 0.0472, saturation: 1, brightness: 0.94, alpha: 0.2))
-        polygonAnnotation2.fillOutlineColor = StyleColor(UIColor(hue: 0.0472, saturation: 1, brightness: 0.94, alpha: 1.0))
-        
-        // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
-        let polygonAnnotationManager = mapView.annotations.makePolygonAnnotationManager()
-        
-        // Add the polygons to the map as annotations.
-        polygonAnnotationManager.annotations = [polygonAnnotation1, polygonAnnotation2]
     }
     
     func calculateCenterCoordinate(for coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D? {
@@ -428,13 +242,13 @@ class ViewController: UIViewController {
     }
     
     @objc private func floatingActionButtonTapped() {
-           // Handle the tap event for the floating action button here
-           print("Floating action button tapped!")
+        // Handle the tap event for the floating action button here
+        print("Floating action button tapped!")
         // Present the DenseContentSheetViewController
         let viewController = DroneConnectorViewController()
         viewController.preferredSheetSizing = .large
         self.present(viewController, animated: true)
-       }
+    }
     
     @objc private func missionIconTapped() {
         print("Mission icon tapped")
@@ -452,7 +266,7 @@ class ViewController: UIViewController {
             viewController.present(hostingController, animated: true, completion: nil)
         }
     }
-   
+    
     func convertToCLLocationCoordinates(coordinates: [APIService.Coordinate]) -> [CLLocationCoordinate2D] {
         var convertedCoordinates: [CLLocationCoordinate2D] = []
         for coordinate in coordinates {
