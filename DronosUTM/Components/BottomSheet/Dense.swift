@@ -182,9 +182,9 @@ final class DenseContentSheetViewController: BottomSheetController {
         var cards: [UIView] = []
         
         
-        var itu = [DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01")]
+//        var itu = [DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01")] --> kalau nak hardcoded data
 
-        for (idx, drone) in itu.enumerated() {
+        for (idx, drone) in missionDetail.drones.enumerated() {
             let card = createCardDrone(drones: drone)
             scrollView.addSubview(card)
             cards.append(card)
@@ -204,7 +204,7 @@ final class DenseContentSheetViewController: BottomSheetController {
             ])
         }
         
-        let totalRows = ceil(CGFloat(itu.count) / CGFloat(columnCount))
+        let totalRows = ceil(CGFloat(missionDetail.drones.count) / CGFloat(columnCount))
         scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: (cardHeight + spacing) * totalRows + spacing)
         
         return droneView
