@@ -422,7 +422,7 @@ final class DenseContentSheetViewController: BottomSheetController {
 
         // Constraints for hView
         NSLayoutConstraint.activate([
-            hView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            hView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
             hView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
             hView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             hView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12)
@@ -434,7 +434,7 @@ final class DenseContentSheetViewController: BottomSheetController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: hView.leadingAnchor, constant: 12).isActive = true // Left padding for the image
+//        imageView.leadingAnchor.constraint(equalTo: hView.leadingAnchor, constant: 8).isActive = true // Left padding for the image
         hView.addArrangedSubview(imageView)
 
         let stackView = UIStackView()
