@@ -165,7 +165,7 @@ struct MissionsView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         } else {
                             ForEach(viewModel.missions) { mission in
-//                                NavigationLink(destination: Launchpad().transition(.move(edge: .trailing))
+//                                NavigationLink(destination: DenseContentSheetViewController(mission: mission).transition(.move(edge: .trailing))
 //                                    .animation(.easeInOut(duration: 0.5), value: true)) {
                                         ZStack(alignment: .top) {
                                             MissionCardView(mission: mission)
@@ -258,8 +258,8 @@ struct MissionCardView: View {
     }
 }
 
-struct MissionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MissionsView()
-    }
-}
+//struct MissionsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MissionsView()
+//    }
+//}

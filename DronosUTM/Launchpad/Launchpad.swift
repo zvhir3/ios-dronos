@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     private var centerCoordinate: CLLocationCoordinate2D?
     private var missionIDToPinImageView: [String: UIImageView] = [:]
     var missionIDToCoordinates: [String: CLLocationCoordinate2D] = [:]
+    var missionDetails: [String: APIService.Mission] = [:]
     
     private func addViewAnnotations(coordinates: [CLLocationCoordinate2D], missionID: String) {
         for coordinate in coordinates {
@@ -101,6 +102,8 @@ class ViewController: UIViewController {
                 // Associate text "abc" with the pin image view
                 missionIDToCoordinates[missionID] = coordinate
                 
+                
+                
                 try? mapView.viewAnnotations.add(iconImageView, options: options)
             }
         }
@@ -112,6 +115,8 @@ class ViewController: UIViewController {
         if let missionID = missionIDToPinImageView.first(where: { $0.value == sender.view })?.key {
             print("Text, Mission ID: \(missionID)")
             
+            let missionDetail = missionDetails[missionID]
+            
             // Retrieve the text associated with the mission ID
             if let coordinate = missionIDToCoordinates[missionID] {
                 print("Text: \(coordinate)")
@@ -122,7 +127,8 @@ class ViewController: UIViewController {
                 
                 // Present the DenseContentSheetViewController
                 let viewController = DenseContentSheetViewController()
-                viewController.preferredSheetSizing = .large
+                viewController.missionDetail = missionDetail
+
                 self.present(viewController, animated: true)
             }
             
@@ -131,7 +137,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let mapInitOptions = MapInitOptions(
             resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
             cameraOptions: CameraOptions(center: centerCoordinate, zoom: 2),
@@ -154,9 +160,11 @@ class ViewController: UIViewController {
                         longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
                     
                     for mission in missions {
+                        self?.missionDetails[mission.missionId] = mission
                         if let coordinates = self?.convertToCLLocationCoordinates(coordinates: mission.area.coordinate) {
                             // Pass the mission ID along with coordinates
                             self?.addViewAnnotations(coordinates: coordinates, missionID: mission.missionId)
+                            
                         } else {
                             print("Coordinates are nil or invalid.")
                         }
@@ -428,13 +436,13 @@ class ViewController: UIViewController {
     }
     
     @objc private func floatingActionButtonTapped() {
-           // Handle the tap event for the floating action button here
-           print("Floating action button tapped!")
+        // Handle the tap event for the floating action button here
+        print("Floating action button tapped!")
         // Present the DenseContentSheetViewController
         let viewController = DroneConnectorViewController()
         viewController.preferredSheetSizing = .large
         self.present(viewController, animated: true)
-       }
+    }
     
     @objc private func missionIconTapped() {
         print("Mission icon tapped")
@@ -452,7 +460,7 @@ class ViewController: UIViewController {
             viewController.present(hostingController, animated: true, completion: nil)
         }
     }
-   
+    
     func convertToCLLocationCoordinates(coordinates: [APIService.Coordinate]) -> [CLLocationCoordinate2D] {
         var convertedCoordinates: [CLLocationCoordinate2D] = []
         for coordinate in coordinates {
