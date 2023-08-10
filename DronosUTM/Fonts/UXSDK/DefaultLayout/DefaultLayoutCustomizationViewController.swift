@@ -78,5 +78,6 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
 //        let topic = "your-topic"
 //        let message = "Hello, MQTT!"
 //        mqtt.publish(topic, withString: message)
+        
     }
 }
