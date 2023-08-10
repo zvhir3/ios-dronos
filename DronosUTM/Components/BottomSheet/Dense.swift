@@ -116,8 +116,9 @@ final class DenseContentSheetViewController: BottomSheetController {
         // Create and add the content views for each tab
         contentView1 = createContentViewMission()
         contentView2 = createContentViewOperator()
+        contentView3 = createContentViewDrone()
 //        contentView2 = createContentView(with: "Content for Tab 2")
-        contentView3 = createContentView(with: "Content for Tab 3")
+//        contentView3 = createContentView(with: "Content for Tab 3")
         contentView4 = createContentView(with: "Content for Tab 4")
         
         // Show the initial content view based on the initially selected segment
@@ -130,9 +131,86 @@ final class DenseContentSheetViewController: BottomSheetController {
         showContentView(at: segmentedControl.selectedSegmentIndex)
     }
     
-    func createContentViewOperator() -> UIView {
-       
+    // DRONE LIST LOGIC
+    func createContentViewDrone() -> UIView {
+        let droneView = UIView()
+        droneView.isHidden = true
         
+        let titleLabel = UILabel()
+        titleLabel.textColor = UIColor(red: 0.933, green: 0.957, blue: 0.969, alpha: 1)
+        titleLabel.font = UIFont(name: "Barlow-Regular", size: 14)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 2.26
+        titleLabel.attributedText = NSMutableAttributedString(string: "EQUIPMENT DETAIL", attributes: [NSAttributedString.Key.kern: 4, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        
+        droneView.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leadingAnchor.constraint(equalTo: droneView.leadingAnchor, constant: 16).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: droneView.topAnchor, constant: 0).isActive = true
+        
+        // Add the separator line
+        let separatorView = UIView()
+        separatorView.backgroundColor = UIColor(red: 0.376, green: 0.431, blue: 0.475, alpha: 0.5)
+        droneView.addSubview(separatorView)
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.leadingAnchor.constraint(equalTo: droneView.leadingAnchor, constant: 16).isActive = true
+        separatorView.trailingAnchor.constraint(equalTo: droneView.trailingAnchor, constant: -16).isActive = true
+        separatorView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16).isActive = true
+        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        
+        let scrollView = UIScrollView()
+        droneView.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.leadingAnchor.constraint(equalTo: droneView.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: droneView.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 8).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: droneView.bottomAnchor, constant: -8).isActive = true
+        
+        blurEffectView.contentView.addSubview(droneView)
+        droneView.translatesAutoresizingMaskIntoConstraints = false
+        droneView.leadingAnchor.constraint(equalTo: blurEffectView.contentView.leadingAnchor).isActive = true
+        droneView.trailingAnchor.constraint(equalTo: blurEffectView.contentView.trailingAnchor).isActive = true
+        droneView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8).isActive = true // Add some spacing between
+        droneView.bottomAnchor.constraint(equalTo: blurEffectView.contentView.bottomAnchor, constant: -16).isActive = true
+        
+        let columnCount = 2
+        let spacing: CGFloat = 16
+        let cardWidth: CGFloat = 180
+        let cardHeight: CGFloat = 180
+
+        var cards: [UIView] = []
+        
+        
+        var itu = [DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01"), DronosUTM.APIService.Drones(model: "Matrice M200", name: "Drone 01")]
+
+        for (idx, drone) in itu.enumerated() {
+            let card = createCardDrone(drones: drone)
+            scrollView.addSubview(card)
+            cards.append(card)
+            card.translatesAutoresizingMaskIntoConstraints = false
+            
+            let rowIndex = idx / columnCount
+            let columnIndex = idx % columnCount
+            
+            let xOffset = CGFloat(columnIndex) * (cardWidth + spacing)
+            let yOffset = CGFloat(rowIndex) * (cardHeight + spacing)
+
+            NSLayoutConstraint.activate([
+                card.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16 + xOffset),
+                card.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10 + yOffset),
+                card.widthAnchor.constraint(equalToConstant: cardWidth),
+                card.heightAnchor.constraint(equalToConstant: cardHeight)
+            ])
+        }
+        
+        let totalRows = ceil(CGFloat(itu.count) / CGFloat(columnCount))
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: (cardHeight + spacing) * totalRows + spacing)
+        
+        return droneView
+    }
+    // OPERATOR LIST LOGIC
+    func createContentViewOperator() -> UIView {
         let operatorView = UIView()
         operatorView.isHidden = true
         
@@ -157,8 +235,6 @@ final class DenseContentSheetViewController: BottomSheetController {
         separatorView.trailingAnchor.constraint(equalTo: operatorView.trailingAnchor, constant: -16).isActive = true
         separatorView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16).isActive = true
         separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
-        print("naddy sini", missionDetail)
         
         let scrollView = UIScrollView()
         operatorView.addSubview(scrollView)
@@ -194,6 +270,8 @@ final class DenseContentSheetViewController: BottomSheetController {
     }
     
     
+    
+    // SCHEDULE LIST LOGIC
     func createContentViewMission() -> UIView {
         let contentView = UIView()
         contentView.isHidden = true // Initially hide the content view
@@ -279,8 +357,7 @@ final class DenseContentSheetViewController: BottomSheetController {
         scrollView.topAnchor.constraint(equalTo: titleLabel1.bottomAnchor, constant: 8).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
         
-//        print("naddddy", upcoming, todaySchedules)
-        // Add three cards
+        
         var card1 = UIView()
         for (idx, schedule) in todaySchedules.enumerated() {
             let adjustedIdx = idx + 1
@@ -404,6 +481,7 @@ final class DenseContentSheetViewController: BottomSheetController {
         return badge
     }
     
+    // OPERATOR LIST CARD
     func createCardOperator() -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = UIColor(red: 0.22, green: 0.25, blue: 0.3, alpha: 0.8)
@@ -459,7 +537,78 @@ final class DenseContentSheetViewController: BottomSheetController {
         return containerView
     }
     
+    // DRONE LIST CARD
+    func createCardDrone(drones: APIService.Drones) -> UIView {
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor(red: 0.22, green: 0.25, blue: 0.3, alpha: 0.8)
+        containerView.layer.cornerRadius = 10
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.25
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 11)
+        containerView.layer.shadowRadius = 10
+//        containerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        containerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        stackView.spacing = 3
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(stackView)
+        
+        // Constraints for the stack view
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12)
+        ])
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "drone-img")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        stackView.addArrangedSubview(imageView)
+        
+        
+        let droneModel = UILabel()
+        droneModel.text = drones.model
+        droneModel.font = UIFont.systemFont(ofSize: 10)
+        droneModel.textColor = UIColor(red: 0.69, green: 0.75, blue: 0.77, alpha: 1.0)
+        stackView.addArrangedSubview(droneModel)
+        
+        let droneName = UILabel()
+        droneName.text = drones.name
+        droneName.font = UIFont.systemFont(ofSize: 10)
+        droneName.textColor = UIColor(red: 0.69, green: 0.75, blue: 0.77, alpha: 1.0)
+        droneName.translatesAutoresizingMaskIntoConstraints = false
+
+        let padding: CGFloat = 7 // Adjust as needed
+
+        // Container view
+        let badgeView = UIView()
+        badgeView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
+        badgeView.layer.cornerRadius = 6 // Adjust as needed for the desired corner radius
+        badgeView.clipsToBounds = true
+
+        // Add the label to the container
+        badgeView.addSubview(droneName)
+        stackView.addArrangedSubview(badgeView)
+
+        // Constraints for padding
+        NSLayoutConstraint.activate([
+            droneName.topAnchor.constraint(equalTo: badgeView.topAnchor, constant: padding),
+            droneName.bottomAnchor.constraint(equalTo: badgeView.bottomAnchor, constant: -padding),
+            droneName.leadingAnchor.constraint(equalTo: badgeView.leadingAnchor, constant: padding),
+            droneName.trailingAnchor.constraint(equalTo: badgeView.trailingAnchor, constant: -padding)
+        ])
+        
+        return containerView
+    }
     
+    // SCHEDULE LIST CARD
     func createCard(schedule: APIService.Schedule, missionId: String, idx: String) -> UIView {
         
         let containerView = UIView()
