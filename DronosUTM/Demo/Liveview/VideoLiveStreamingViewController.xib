@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,8 +60,8 @@
                         <constraint firstAttribute="height" constant="36" id="oNd-Ym-qQk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
+                    <color key="highlightedColor" systemColor="darkTextColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Init" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z3-EG-WhL" userLabel="LiveState">
                     <rect key="frame" x="222" y="46" width="316" height="36"/>
@@ -73,7 +71,7 @@
                         <constraint firstAttribute="height" constant="36" id="VAE-Gx-u4j"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AudioGain:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yma-vn-nlc" userLabel="AudioLevelLabel">
@@ -84,8 +82,8 @@
                         <constraint firstAttribute="height" constant="37" id="JYZ-y4-4d8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
+                    <color key="highlightedColor" systemColor="darkTextColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-nA-E61">
                     <rect key="frame" x="559" y="53" width="117" height="21"/>
@@ -104,6 +102,7 @@
                     </connections>
                 </switch>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="aEf-nA-E61" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="33" id="7vG-yS-LDq"/>
@@ -122,11 +121,13 @@
                 <constraint firstItem="xna-WH-aYO" firstAttribute="leading" secondItem="mgK-XL-xmZ" secondAttribute="trailing" constant="30" id="pZh-CY-KM8"/>
                 <constraint firstItem="C9Q-cy-46g" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="32" id="yjb-ui-How"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="220.8984375" y="147.65625"/>
         </view>
     </objects>
     <resources>
-        <image name="btn" width="16" height="34"/>
+        <image name="btn" width="100" height="100"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -16,6 +16,8 @@
 		B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487B2A722A1D000A147B /* AppFlow.swift */; };
 		B21A487E2A7250F2000A147B /* ViewMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487D2A7250F2000A147B /* ViewMission.swift */; };
 		B21A48812A725567000A147B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48802A725567000A147B /* Profile.swift */; };
+		B2417E0D2A85CB0B0040C99F /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */; };
+		B2417E0F2A85CB170040C99F /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2417E0E2A85CB170040C99F /* LiveView.storyboard */; };
 		B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */; };
 		B24CC25C2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1062A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib */; };
 		B24CC25D2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1072A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m */; };
@@ -183,6 +185,8 @@
 		B24CC3062A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3022A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m */; };
 		B24CC3072A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3032A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m */; };
 		B24CC3082A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */; };
+		B24CC3102A84C26300FE7C60 /* DJIRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC30E2A84C26300FE7C60 /* DJIRootViewController.xib */; };
+		B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC30F2A84C26300FE7C60 /* DJIRootViewController.m */; };
 		B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */; };
 		B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */; };
 		B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AC2A68EDEA00A983E8 /* Constants.swift */; };
@@ -277,6 +281,8 @@
 		B21A487B2A722A1D000A147B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B21A487D2A7250F2000A147B /* ViewMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMission.swift; sourceTree = "<group>"; };
 		B21A48802A725567000A147B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		B2417E0E2A85CB170040C99F /* LiveView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveView.storyboard; sourceTree = "<group>"; };
 		B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentSelectionViewController.h; sourceTree = "<group>"; };
 		B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalActionsTableViewController.m; sourceTree = "<group>"; };
 		B24CC1062A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalRotationInSpeedViewController.xib; sourceTree = "<group>"; };
@@ -561,6 +567,10 @@
 		B24CC3032A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIDecodeImageCalibrateControlLogic.m; sourceTree = "<group>"; };
 		B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VideoPreviewerSDKAdapter+Lightbridge2.m"; sourceTree = "<group>"; };
 		B24CC3052A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPreviewerSDKAdapter.h; sourceTree = "<group>"; };
+		B24CC30B2A84BBD400FE7C60 /* DronosUTM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DronosUTM-Bridging-Header.h"; sourceTree = "<group>"; };
+		B24CC30D2A84C26300FE7C60 /* DJIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIRootViewController.h; sourceTree = "<group>"; };
+		B24CC30E2A84C26300FE7C60 /* DJIRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DJIRootViewController.xib; sourceTree = "<group>"; };
+		B24CC30F2A84C26300FE7C60 /* DJIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIRootViewController.m; sourceTree = "<group>"; };
 		B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasssword.swift; sourceTree = "<group>"; };
 		B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 		B257D6AC2A68EDEA00A983E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -697,6 +707,7 @@
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				B257D6AC2A68EDEA00A983E8 /* Constants.swift */,
 				B21A487B2A722A1D000A147B /* AppFlow.swift */,
+				B24CC30B2A84BBD400FE7C60 /* DronosUTM-Bridging-Header.h */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
 				B24CC1012A84B40100FE7C60 /* Demo */,
@@ -727,6 +738,7 @@
 		B24CC1012A84B40100FE7C60 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				B24CC30C2A84C26300FE7C60 /* Startup */,
 				B24CC2FF2A84B4C100FE7C60 /* VideoPreviewerAdapter */,
 				B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */,
 				B24CC1032A84B40100FE7C60 /* Gimbal */,
@@ -827,6 +839,8 @@
 				B24CC1142A84B40100FE7C60 /* VideoLiveStreamingViewController.h */,
 				B24CC1152A84B40100FE7C60 /* VideoLiveStreamingViewController.xib */,
 				B24CC1162A84B40100FE7C60 /* VideoLiveStreamingViewController.m */,
+				B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */,
+				B2417E0E2A85CB170040C99F /* LiveView.storyboard */,
 			);
 			path = Liveview;
 			sourceTree = "<group>";
@@ -1559,6 +1573,16 @@
 			path = VideoPreviewerAdapter;
 			sourceTree = "<group>";
 		};
+		B24CC30C2A84C26300FE7C60 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC30D2A84C26300FE7C60 /* DJIRootViewController.h */,
+				B24CC30E2A84C26300FE7C60 /* DJIRootViewController.xib */,
+				B24CC30F2A84C26300FE7C60 /* DJIRootViewController.m */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
 		B257D6A62A68DB5400A983E8 /* Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -1855,6 +1879,7 @@
 				B282E6EE2A80A24D008B822E /* Widgets.storyboard in Resources */,
 				B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */,
 				B24CC2A02A84B40100FE7C60 /* PipelineTableViewCell.xib in Resources */,
+				B2417E0F2A85CB170040C99F /* LiveView.storyboard in Resources */,
 				B282E6F32A80A24D008B822E /* gitignore in Resources */,
 				B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */,
 				B24CC2BC2A84B40200FE7C60 /* FCFlightLimitationViewController.xib in Resources */,
@@ -1916,6 +1941,7 @@
 				B24CC2822A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib in Resources */,
 				B24CC2972A84B40100FE7C60 /* DemoGetSetViewController.xib in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
+				B24CC3102A84C26300FE7C60 /* DJIRootViewController.xib in Resources */,
 				B2AD6F2E2A5FF4FF00BE1EB4 /* Barlow-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2040,6 +2066,7 @@
 				B21A48812A725567000A147B /* Profile.swift in Sources */,
 				B2E2C4972A78DB5500186BC6 /* Sparse.swift in Sources */,
 				B24CC2EC2A84B40200FE7C60 /* BatterySelfDischargeViewController.m in Sources */,
+				B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */,
 				B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */,
 				B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */,
 				B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */,
@@ -2056,6 +2083,7 @@
 				B24CC2672A84B40100FE7C60 /* UpgradeManagerViewController.m in Sources */,
 				B24CC2AC2A84B40100FE7C60 /* RCGimbalControlViewController.m in Sources */,
 				B24CC2E92A84B40200FE7C60 /* DJILimitSpaceOverlay.m in Sources */,
+				B2417E0D2A85CB0B0040C99F /* LiveViewController.swift in Sources */,
 				E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */,
 				B24CC2EA2A84B40200FE7C60 /* DJIMapView.m in Sources */,
 				B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */,
@@ -2300,7 +2328,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2332,7 +2361,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

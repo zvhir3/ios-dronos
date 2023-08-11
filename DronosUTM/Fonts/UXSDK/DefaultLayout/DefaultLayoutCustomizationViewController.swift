@@ -36,6 +36,29 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
     
     var oldContentViewController: DUXFPVViewController?
     
+    var fpvViewController: DUXFPVViewController!
+    
+    var isLiveStreaming = false
+    
+    var timer: Timer?
+    
+    @IBOutlet weak var startStopButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fpvViewController = DUXFPVViewController()
+        
+        // Initialize MQTT client
+        //        mqtt = CocoaMQTT(clientID: "your-client-id", host: "your-mqtt-broker-host", port: 1883)
+        //        mqtt.delegate = self // Set the delegate if needed
+        //        mqtt.connect()
+        //        let topic = "your-topic"
+        //        let message = "Hello, MQTT!"
+        //        mqtt.publish(topic, withString: message)
+        
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
     }
@@ -55,29 +78,45 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
     
     // Toggle for the content view for our button.  This will swap between our red view controller and the fpv view controller.
     @IBAction func switchContent(_ sender: UIButton) {
-        if (isContentViewSwitched) {
-            isContentViewSwitched = false
-            self.contentViewController = self.oldContentViewController
-        } else {
-            isContentViewSwitched = true
-            let newContentViewController = UIViewController()
-            newContentViewController.view.backgroundColor = UIColor.red
-            self.oldContentViewController = self.contentViewController as? DUXFPVViewController
-            self.contentViewController = newContentViewController
-        }
-        
-    }
+           if isLiveStreaming {
+               // Stop live streaming
+               stopLiveStreaming(button: sender)
+           } else {
+               // Start live streaming
+               startLiveStreaming(button: sender)
+           }
+       }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Initialize MQTT client
-//        mqtt = CocoaMQTT(clientID: "your-client-id", host: "your-mqtt-broker-host", port: 1883)
-//        mqtt.delegate = self // Set the delegate if needed
-//        mqtt.connect()
-//        let topic = "your-topic"
-//        let message = "Hello, MQTT!"
-//        mqtt.publish(topic, withString: message)
-        
-    }
+    
+    func startLiveStreaming(button: UIButton) {
+          isLiveStreaming = true
+          button.setTitleColor(.red, for: .normal)
+          button.layer.borderWidth = 2.0
+          button.layer.borderColor = UIColor.red.cgColor
+          button.setTitle("Stop Live", for: .normal)
+          
+          // Start the timer to print to terminal every second
+          timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(printToTerminal), userInfo: nil, repeats: true)
+      }
+      
+      func stopLiveStreaming(button: UIButton) {
+          isLiveStreaming = false
+          button.setTitleColor(.green, for: .normal)
+          button.layer.borderWidth = 2.0
+          button.layer.borderColor = UIColor.green.cgColor
+          button.setTitle("Go Live", for: .normal)
+          
+          // Stop the timer
+          timer?.invalidate()
+          timer = nil
+      }
+      
+      @objc func printToTerminal() {
+          print("Live streaming is active...")
+      }
+      
+    
+    
+    
+    
 }

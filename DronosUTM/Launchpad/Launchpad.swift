@@ -84,7 +84,7 @@ class ViewController: UIViewController {
                 width: 30,
                 height: 30,
                 allowOverlap: false,
-                anchor: .center
+                anchor: .bottom
             )
             
             if let iconImage = UIImage(named: "Pin") {
@@ -142,64 +142,55 @@ class ViewController: UIViewController {
         mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
-        mapView.ornaments.logoView.isHidden = true
-        mapView.ornaments.attributionButton.isHidden = true
+        //        mapView.ornaments.logoView.isHidden = true
+        //        mapView.ornaments.attributionButton.isHidden = true
         mapView.ornaments.scaleBarView.isHidden = true
         view.addSubview(mapView)
         
         APIService.fetchMissions { [weak self] missions in
             DispatchQueue.main.async {
-                if let firstMission = missions.first {
-                    self?.centerCoordinate = CLLocationCoordinate2D(
-                        latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
-                        longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
+                for mission in missions {
                     
-                    // After fetching missions, set the new camera position
-                    if let centerCoordinate = self?.centerCoordinate {
+                    var isFirstCoordinate = true
+                    var ringCoords: [CLLocationCoordinate2D] = []
+                    
+                    for coordinate in mission.area.coordinate {
+                        let latitude = Double(coordinate.latitude) ?? 0.0
+                        let longitude = Double(coordinate.longitude) ?? 0.0
+                        ringCoords.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                        
+                        // Add pin image on first coordinate of every mission
+                        if isFirstCoordinate {
+                            let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                            self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
+                            isFirstCoordinate = false
+                        }
+                    }
+                    
+                    // Draw mission area on map
+                    let ring = Ring(coordinates: ringCoords)
+                    let polygon = Polygon(outerRing: ring)
+                    
+                    var polygonAnnotation = PolygonAnnotation(polygon: polygon)
+                    polygonAnnotation.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+                    polygonAnnotation.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+                    
+                    let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
+                    polygonAnnotationManager?.annotations.append(polygonAnnotation)
+                    
+                    // Fly Ease to first coordinate of first mission
+                    if let firstMission = missions.first,
+                       let firstCoordinate = firstMission.area.coordinate.first {
+                        let latitude = Double(firstCoordinate.latitude) ?? 0.0
+                        let longitude = Double(firstCoordinate.longitude) ?? 0.0
+                        let centerCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                        
                         let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
                         self?.mapView.camera.ease(to: newCamera, duration: 4.0)
                     }
-                    
-                    var ringCoords1: [CLLocationCoordinate2D] = []
-
-                    for mission in missions {
-                        var isFirstCoordinate = true
-                        
-                        for coordinate in mission.area.coordinate {
-                            let latitude = coordinate.latitudeDouble
-                            let longitude = coordinate.longitudeDouble
-                            ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                            
-                            if isFirstCoordinate {
-                                let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                                self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
-                                isFirstCoordinate = false
-                            }
-                        }
-                    }
-
-                    
-                    // Create the Ring and Polygon for the first polygon
-                    let ring1 = Ring(coordinates: ringCoords1)
-                    let polygon1 = Polygon(outerRing: ring1)
-                    
-                    // Create a new polygon annotation for the first polygon
-                    var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
-                    polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
-                    polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
-                    
-                    // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
-                    let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
-                    
-                    // Add the polygons to the map as annotations.
-                    polygonAnnotationManager?.annotations = [polygonAnnotation1]
-
-                  
                 }
             }
         }
-        
-        
         
         // Create the floating action button
         let floatingActionButton = UIButton(type: .custom)
@@ -244,7 +235,14 @@ class ViewController: UIViewController {
     @objc private func floatingActionButtonTapped() {
         // Handle the tap event for the floating action button here
         print("Floating action button tapped!")
-        // Present the DenseContentSheetViewController
+        
+        // Instantiate the view controller from the storyboard
+        //        let storyboard = UIStoryboard(name: "LiveView", bundle: nil)
+        //        let viewController = storyboard.instantiateViewController(withIdentifier: "LiveViewStoryboard")
+        //
+        //       // Present the view controller
+        //        self.present(viewController, animated: true)
+        
         let viewController = DroneConnectorViewController()
         viewController.preferredSheetSizing = .large
         self.present(viewController, animated: true)
