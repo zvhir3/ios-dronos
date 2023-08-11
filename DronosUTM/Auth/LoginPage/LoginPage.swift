@@ -23,22 +23,10 @@ struct LoginPage: View {
     var body: some View {
         NavigationView {
             ZStack {
-//                GifImage("bg")
-//                GifImage("bg")
-////                    .scaledToFill()
-//                    .edgesIgnoringSafeArea(.all)
-//                GifImage("bg")
-//        //    .scaledToFill()
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            .edgesIgnoringSafeArea(.all)
-//            .background(Color.red)
                 if isLoggedIn {
                     Launchpad()
                         .transition(.move(edge: .trailing))
                         .animation(.easeInOut(duration: 0.5), value: true)
-//                    let viewController = DenseContentSheetViewController()
-////                    viewController.preferredSheetSizing = .large
-//                    self.present(viewController, animated: true)
                 } else {
                     VStack {
                         Spacer()
@@ -60,10 +48,6 @@ struct LoginPage: View {
                                     .foregroundColor(.white.opacity(0.6))
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
                                     .padding(.bottom, 15)
-                                
-                                Text("Email")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
                                 
                                 
                                 TextField("Email", text: $email)
@@ -105,11 +89,6 @@ struct LoginPage: View {
                                             }
                                         )
                                     )
-                                
-                                Text("Password")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
                                 
                                 SecureField("Password", text: $password)
                                     .secureFieldStyle()
