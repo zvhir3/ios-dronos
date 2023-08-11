@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     private var centerCoordinate: CLLocationCoordinate2D?
     private var missionIDToPinImageView: [String: UIImageView] = [:]
     var missionIDToCoordinates: [String: CLLocationCoordinate2D] = [:]
+    var missionDetails: [String: APIService.Mission] = [:]
     
     private func addViewAnnotations(coordinates: [CLLocationCoordinate2D], missionID: String) {
         for coordinate in coordinates {
@@ -101,6 +102,8 @@ class ViewController: UIViewController {
                 // Associate text "abc" with the pin image view
                 missionIDToCoordinates[missionID] = coordinate
                 
+                
+                
                 try? mapView.viewAnnotations.add(iconImageView, options: options)
             }
         }
@@ -112,6 +115,8 @@ class ViewController: UIViewController {
         if let missionID = missionIDToPinImageView.first(where: { $0.value == sender.view })?.key {
             print("Text, Mission ID: \(missionID)")
             
+            let missionDetail = missionDetails[missionID]
+            
             // Retrieve the text associated with the mission ID
             if let coordinate = missionIDToCoordinates[missionID] {
                 print("Text: \(coordinate)")
@@ -122,7 +127,8 @@ class ViewController: UIViewController {
                 
                 // Present the DenseContentSheetViewController
                 let viewController = DenseContentSheetViewController()
-                viewController.preferredSheetSizing = .large
+                viewController.missionDetail = missionDetail
+
                 self.present(viewController, animated: true)
             }
             
@@ -131,8 +137,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
+
         let mapInitOptions = MapInitOptions(
             resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
             cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
@@ -188,6 +194,46 @@ class ViewController: UIViewController {
                         let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
                         self?.mapView.camera.ease(to: newCamera, duration: 4.0)
                     }
+<<<<<<< HEAD
+=======
+                    
+                    var ringCoords1: [CLLocationCoordinate2D] = []
+
+                    for mission in missions {
+
+                        var isFirstCoordinate = true
+                        
+                        for coordinate in mission.area.coordinate {
+                            let latitude = coordinate.latitudeDouble
+                            let longitude = coordinate.longitudeDouble
+                            ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                            
+                            if isFirstCoordinate {
+                                let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                                self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
+                                isFirstCoordinate = false
+                            }
+                        }
+                    }
+
+                    
+                    // Create the Ring and Polygon for the first polygon
+                    let ring1 = Ring(coordinates: ringCoords1)
+                    let polygon1 = Polygon(outerRing: ring1)
+                    
+                    // Create a new polygon annotation for the first polygon
+                    var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
+                    polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+                    polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+                    
+                    // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
+                    let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
+                    
+                    // Add the polygons to the map as annotations.
+                    polygonAnnotationManager?.annotations = [polygonAnnotation1]
+
+                  
+>>>>>>> d55ab44d127bff8ad8cdb566bf8c724c9726b410
                 }
             }
         }

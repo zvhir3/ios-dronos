@@ -212,6 +212,7 @@ class APIService {
         let schedules: [Schedule]
         let location: String
         let area: Area
+        let drones: [Drones]
     }
     
     struct Area: Decodable {
@@ -236,6 +237,11 @@ class APIService {
         let endDate: String
         let startTime: Int
         let endTime: Int
+    }
+    
+    struct Drones: Decodable {
+        let model: String
+        let name: String
     }
     
     static func fetchMissions(completion: @escaping ([Mission]) -> Void) {
@@ -272,7 +278,7 @@ class APIService {
                    
                     guard let areaDict = record["area"] as? [String: Any] else {
                         print("Error extracting 'area' from the record")
-                        return Mission(missionId: missionId, name: name, schedules: [], location: location, area: Area(coordinate: []))
+                        return Mission(missionId: missionId, name: name, schedules: [], location: location, area: Area(coordinate: []), drones: [])
                     }
                     
                     let areaData = try JSONSerialization.data(withJSONObject: areaDict, options: [])
@@ -288,7 +294,20 @@ class APIService {
                         return Schedule(startDate: startDate, endDate: endDate, startTime: startTime, endTime: endTime)
                     }
                     
-                    return Mission(missionId: missionId, name: name, schedules: schedules, location: location, area: area)
+                    let dronesDict = record["drones"] as? [[String: Any]] ?? []
+
+                    let drones = dronesDict.compactMap { singleDroneDict -> Drones? in
+                        if let droneIdDict = singleDroneDict["droneId"] as? [String: Any],
+                           let catalogDict = droneIdDict["catalogId"] as? [String: Any] {
+                            let droneModel = catalogDict["model"] as? String ?? ""
+                            let droneName = catalogDict["name"] as? String ?? ""
+                            return Drones(model: droneModel, name: droneName)
+                        }
+                        return nil
+                    }
+                    
+                    
+                    return Mission(missionId: missionId, name: name, schedules: schedules, location: location, area: area, drones: drones)
                 }
                 
                 DispatchQueue.main.async {
