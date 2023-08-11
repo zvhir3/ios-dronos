@@ -16,6 +16,173 @@
 		B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487B2A722A1D000A147B /* AppFlow.swift */; };
 		B21A487E2A7250F2000A147B /* ViewMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487D2A7250F2000A147B /* ViewMission.swift */; };
 		B21A48812A725567000A147B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48802A725567000A147B /* Profile.swift */; };
+		B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */; };
+		B24CC25C2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1062A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib */; };
+		B24CC25D2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1072A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m */; };
+		B24CC25E2A84B40100FE7C60 /* GimbalPushInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC10A2A84B40100FE7C60 /* GimbalPushInfoViewController.m */; };
+		B24CC25F2A84B40100FE7C60 /* GimbalCapabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC10E2A84B40100FE7C60 /* GimbalCapabilityViewController.xib */; };
+		B24CC2602A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1102A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.m */; };
+		B24CC2612A84B40100FE7C60 /* GimbalCapabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1112A84B40100FE7C60 /* GimbalCapabilityViewController.m */; };
+		B24CC2622A84B40100FE7C60 /* VideoLiveStreamingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1152A84B40100FE7C60 /* VideoLiveStreamingViewController.xib */; };
+		B24CC2632A84B40100FE7C60 /* VideoLiveStreamingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1162A84B40100FE7C60 /* VideoLiveStreamingViewController.m */; };
+		B24CC2642A84B40100FE7C60 /* UpgradeManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1192A84B40100FE7C60 /* UpgradeManagerViewController.xib */; };
+		B24CC2652A84B40100FE7C60 /* UpgradeComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC11B2A84B40100FE7C60 /* UpgradeComponentViewController.xib */; };
+		B24CC2662A84B40100FE7C60 /* UpgradeComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC11C2A84B40100FE7C60 /* UpgradeComponentViewController.m */; };
+		B24CC2672A84B40100FE7C60 /* UpgradeManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC11E2A84B40100FE7C60 /* UpgradeManagerViewController.m */; };
+		B24CC2682A84B40100FE7C60 /* DemoSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1202A84B40100FE7C60 /* DemoSelectView.xib */; };
+		B24CC2692A84B40100FE7C60 /* WaypointV2PointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1232A84B40100FE7C60 /* WaypointV2PointConfigViewController.m */; };
+		B24CC26A2A84B40100FE7C60 /* MobileRemoteControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1252A84B40100FE7C60 /* MobileRemoteControllerViewController.xib */; };
+		B24CC26B2A84B40100FE7C60 /* MobileRemoteControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1272A84B40100FE7C60 /* MobileRemoteControllerViewController.m */; };
+		B24CC26C2A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1282A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m */; };
+		B24CC26D2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC12B2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m */; };
+		B24CC26E2A84B40100FE7C60 /* CameraActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC12D2A84B40100FE7C60 /* CameraActionsTableViewController.m */; };
+		B24CC26F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC12F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib */; };
+		B24CC2702A84B40100FE7C60 /* CameraShootSinglePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1312A84B40100FE7C60 /* CameraShootSinglePhotoViewController.m */; };
+		B24CC2712A84B40100FE7C60 /* CameraISOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1332A84B40100FE7C60 /* CameraISOViewController.m */; };
+		B24CC2722A84B40100FE7C60 /* CameraPushInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1362A84B40100FE7C60 /* CameraPushInfoViewController.m */; };
+		B24CC2732A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1382A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m */; };
+		B24CC2742A84B40100FE7C60 /* CameraFPVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC13A2A84B40100FE7C60 /* CameraFPVViewController.xib */; };
+		B24CC2752A84B40100FE7C60 /* CameraFPVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC13C2A84B40100FE7C60 /* CameraFPVViewController.m */; };
+		B24CC2762A84B40100FE7C60 /* CameraSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC13D2A84B40100FE7C60 /* CameraSettingsViewController.m */; };
+		B24CC2772A84B40100FE7C60 /* CameraPlaybackCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC13F2A84B40100FE7C60 /* CameraPlaybackCommandViewController.m */; };
+		B24CC2782A84B40100FE7C60 /* CameraPlaybackCommandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1402A84B40100FE7C60 /* CameraPlaybackCommandViewController.xib */; };
+		B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1432A84B40100FE7C60 /* CameraFetchMediaViewController.m */; };
+		B24CC27A2A84B40100FE7C60 /* CameraFetchMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1452A84B40100FE7C60 /* CameraFetchMediaViewController.xib */; };
+		B24CC27B2A84B40100FE7C60 /* XT2CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1482A84B40100FE7C60 /* XT2CameraViewController.m */; };
+		B24CC27C2A84B40100FE7C60 /* XT2CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1492A84B40100FE7C60 /* XT2CameraViewController.xib */; };
+		B24CC27D2A84B40100FE7C60 /* CameraCalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC14C2A84B40100FE7C60 /* CameraCalibrateViewController.m */; };
+		B24CC27E2A84B40100FE7C60 /* CameraCalibrateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC14E2A84B40100FE7C60 /* CameraCalibrateViewController.xib */; };
+		B24CC27F2A84B40100FE7C60 /* CameraRecordVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1502A84B40100FE7C60 /* CameraRecordVideoViewController.xib */; };
+		B24CC2802A84B40100FE7C60 /* CameraRecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1522A84B40100FE7C60 /* CameraRecordVideoViewController.m */; };
+		B24CC2812A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1562A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m */; };
+		B24CC2822A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1572A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib */; };
+		B24CC2832A84B40100FE7C60 /* CameraMediaPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1582A84B40100FE7C60 /* CameraMediaPlaybackViewController.m */; };
+		B24CC2842A84B40100FE7C60 /* CameraMediaPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1592A84B40100FE7C60 /* CameraMediaPlaybackViewController.xib */; };
+		B24CC2852A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC15C2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m */; };
+		B24CC2862A84B40100FE7C60 /* CameraPlaybackDownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC15D2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.xib */; };
+		B24CC2872A84B40100FE7C60 /* AppActivationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1612A84B40100FE7C60 /* AppActivationViewController.xib */; };
+		B24CC2882A84B40100FE7C60 /* AppActivationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1632A84B40100FE7C60 /* AppActivationViewController.m */; };
+		B24CC2892A84B40100FE7C60 /* DemoCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1652A84B40100FE7C60 /* DemoCameraHelper.m */; };
+		B24CC28A2A84B40100FE7C60 /* DemoComponentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1662A84B40100FE7C60 /* DemoComponentHelper.m */; };
+		B24CC28B2A84B40100FE7C60 /* DemoUtilityMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1682A84B40100FE7C60 /* DemoUtilityMethod.m */; };
+		B24CC28C2A84B40100FE7C60 /* DemoPushInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC16B2A84B40100FE7C60 /* DemoPushInfoViewController.xib */; };
+		B24CC28D2A84B40100FE7C60 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC16C2A84B40100FE7C60 /* DemoTableViewController.m */; };
+		B24CC28E2A84B40100FE7C60 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC16E2A84B40100FE7C60 /* MBProgressHUD.m */; };
+		B24CC28F2A84B40100FE7C60 /* DemoScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC16F2A84B40100FE7C60 /* DemoScrollView.xib */; };
+		B24CC2902A84B40100FE7C60 /* DemoVirtualStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1772A84B40100FE7C60 /* DemoVirtualStickView.m */; };
+		B24CC2912A84B40100FE7C60 /* DemoGetSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1792A84B40100FE7C60 /* DemoGetSetViewController.m */; };
+		B24CC2922A84B40100FE7C60 /* DemoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC17A2A84B40100FE7C60 /* DemoScrollView.m */; };
+		B24CC2932A84B40100FE7C60 /* DemoComponentActionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC17B2A84B40100FE7C60 /* DemoComponentActionTableViewController.m */; };
+		B24CC2942A84B40100FE7C60 /* DemoSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC17C2A84B40100FE7C60 /* DemoSettingItem.m */; };
+		B24CC2952A84B40100FE7C60 /* DemoPushInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC17D2A84B40100FE7C60 /* DemoPushInfoViewController.m */; };
+		B24CC2962A84B40100FE7C60 /* DemoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC17E2A84B40100FE7C60 /* DemoAlertView.m */; };
+		B24CC2972A84B40100FE7C60 /* DemoGetSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC17F2A84B40100FE7C60 /* DemoGetSetViewController.xib */; };
+		B24CC2982A84B40100FE7C60 /* WaypointV2MapPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1832A84B40100FE7C60 /* WaypointV2MapPointsViewController.m */; };
+		B24CC2992A84B40100FE7C60 /* PayloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1852A84B40100FE7C60 /* PayloadViewController.xib */; };
+		B24CC29A2A84B40100FE7C60 /* PayloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1862A84B40100FE7C60 /* PayloadViewController.m */; };
+		B24CC29B2A84B40100FE7C60 /* PayloadTestChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1882A84B40100FE7C60 /* PayloadTestChannelViewController.xib */; };
+		B24CC29C2A84B40100FE7C60 /* PayloadTestChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC18A2A84B40100FE7C60 /* PayloadTestChannelViewController.m */; };
+		B24CC29D2A84B40100FE7C60 /* PipelineDuplexLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1902A84B40100FE7C60 /* PipelineDuplexLogic.m */; };
+		B24CC29E2A84B40100FE7C60 /* PipelinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1912A84B40100FE7C60 /* PipelinesViewController.m */; };
+		B24CC29F2A84B40100FE7C60 /* PipelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1932A84B40100FE7C60 /* PipelineTableViewCell.m */; };
+		B24CC2A02A84B40100FE7C60 /* PipelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1952A84B40100FE7C60 /* PipelineTableViewCell.xib */; };
+		B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1992A84B40100FE7C60 /* PipelineStatistical.m */; };
+		B24CC2A22A84B40100FE7C60 /* PipelinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC19B2A84B40100FE7C60 /* PipelinesViewController.xib */; };
+		B24CC2A32A84B40100FE7C60 /* VideoFeederViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC19D2A84B40100FE7C60 /* VideoFeederViewController.m */; };
+		B24CC2A42A84B40100FE7C60 /* DemoSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC19E2A84B40100FE7C60 /* DemoSelectView.m */; };
+		B24CC2A52A84B40100FE7C60 /* LidarActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1A12A84B40100FE7C60 /* LidarActionsTableViewController.m */; };
+		B24CC2A62A84B40100FE7C60 /* PointCloudRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1A42A84B40100FE7C60 /* PointCloudRecordViewController.m */; };
+		B24CC2A72A84B40100FE7C60 /* PointCloudRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1A52A84B40100FE7C60 /* PointCloudRecordViewController.xib */; };
+		B24CC2A82A84B40100FE7C60 /* PayloadWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1A62A84B40100FE7C60 /* PayloadWidgetViewController.m */; };
+		B24CC2A92A84B40100FE7C60 /* WaypointV2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1A72A84B40100FE7C60 /* WaypointV2.storyboard */; };
+		B24CC2AA2A84B40100FE7C60 /* RCHardwareStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1AA2A84B40100FE7C60 /* RCHardwareStateViewController.m */; };
+		B24CC2AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib */; };
+		B24CC2AC2A84B40100FE7C60 /* RCGimbalControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1AE2A84B40100FE7C60 /* RCGimbalControlViewController.m */; };
+		B24CC2AD2A84B40100FE7C60 /* RCGimbalControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1AF2A84B40100FE7C60 /* RCGimbalControlViewController.xib */; };
+		B24CC2AE2A84B40100FE7C60 /* RCActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1B12A84B40100FE7C60 /* RCActionsTableViewController.m */; };
+		B24CC2AF2A84B40100FE7C60 /* RCParingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1B32A84B40100FE7C60 /* RCParingViewController.m */; };
+		B24CC2B02A84B40100FE7C60 /* RCParingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1B42A84B40100FE7C60 /* RCParingViewController.xib */; };
+		B24CC2B12A84B40100FE7C60 /* ComponentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1B72A84B40100FE7C60 /* ComponentSelectionViewController.m */; };
+		B24CC2B22A84B40100FE7C60 /* VideoFeederViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1B82A84B40100FE7C60 /* VideoFeederViewController.xib */; };
+		B24CC2B32A84B40100FE7C60 /* TimelineMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1BC2A84B40100FE7C60 /* TimelineMissionViewController.m */; };
+		B24CC2B42A84B40100FE7C60 /* PanoramaMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1BE2A84B40100FE7C60 /* PanoramaMissionViewController.m */; };
+		B24CC2B52A84B40200FE7C60 /* MissionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1C02A84B40100FE7C60 /* MissionBaseViewController.m */; };
+		B24CC2B62A84B40200FE7C60 /* FollowMeMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1C22A84B40100FE7C60 /* FollowMeMissionViewController.m */; };
+		B24CC2B72A84B40200FE7C60 /* HotpointMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1C42A84B40100FE7C60 /* HotpointMissionViewController.m */; };
+		B24CC2B82A84B40200FE7C60 /* MissionBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1C52A84B40100FE7C60 /* MissionBaseViewController.xib */; };
+		B24CC2B92A84B40200FE7C60 /* WaypointMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1C72A84B40100FE7C60 /* WaypointMissionViewController.m */; };
+		B24CC2BA2A84B40200FE7C60 /* FCVirtualStickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1CA2A84B40100FE7C60 /* FCVirtualStickViewController.xib */; };
+		B24CC2BB2A84B40200FE7C60 /* FCVirtualStickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1CC2A84B40100FE7C60 /* FCVirtualStickViewController.m */; };
+		B24CC2BC2A84B40200FE7C60 /* FCFlightLimitationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1CE2A84B40100FE7C60 /* FCFlightLimitationViewController.xib */; };
+		B24CC2BD2A84B40200FE7C60 /* FCFlightLimitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1CF2A84B40100FE7C60 /* FCFlightLimitationViewController.m */; };
+		B24CC2BE2A84B40200FE7C60 /* FCActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1D12A84B40100FE7C60 /* FCActionsTableViewController.m */; };
+		B24CC2BF2A84B40200FE7C60 /* FCGeneralControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1D42A84B40100FE7C60 /* FCGeneralControlViewController.xib */; };
+		B24CC2C02A84B40200FE7C60 /* FCGeneralControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1D52A84B40100FE7C60 /* FCGeneralControlViewController.m */; };
+		B24CC2C12A84B40200FE7C60 /* FCIntelligentAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1D72A84B40100FE7C60 /* FCIntelligentAssistantViewController.m */; };
+		B24CC2C22A84B40200FE7C60 /* FCIntelligentAssistantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1D92A84B40100FE7C60 /* FCIntelligentAssistantViewController.xib */; };
+		B24CC2C32A84B40200FE7C60 /* FCLandingGearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1DB2A84B40100FE7C60 /* FCLandingGearViewController.m */; };
+		B24CC2C42A84B40200FE7C60 /* FCLandingGearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1DD2A84B40100FE7C60 /* FCLandingGearViewController.xib */; };
+		B24CC2C52A84B40200FE7C60 /* FCRTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1E02A84B40100FE7C60 /* FCRTKViewController.m */; };
+		B24CC2C62A84B40200FE7C60 /* FCRTKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1E22A84B40100FE7C60 /* FCRTKViewController.xib */; };
+		B24CC2C72A84B40200FE7C60 /* FCCompassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1E42A84B40100FE7C60 /* FCCompassViewController.xib */; };
+		B24CC2C82A84B40200FE7C60 /* FCCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1E52A84B40100FE7C60 /* FCCompassViewController.m */; };
+		B24CC2C92A84B40200FE7C60 /* FCOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1E92A84B40100FE7C60 /* FCOrientationViewController.m */; };
+		B24CC2CA2A84B40200FE7C60 /* FCOrientationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1EA2A84B40100FE7C60 /* FCOrientationViewController.xib */; };
+		B24CC2CB2A84B40200FE7C60 /* BluetoothConnectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1EC2A84B40100FE7C60 /* BluetoothConnectorViewController.m */; };
+		B24CC2CC2A84B40200FE7C60 /* BluetoothConnectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1EE2A84B40100FE7C60 /* BluetoothConnectorViewController.xib */; };
+		B24CC2CD2A84B40200FE7C60 /* SleepModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1F12A84B40100FE7C60 /* SleepModeViewController.m */; };
+		B24CC2CE2A84B40200FE7C60 /* SleepModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1F22A84B40100FE7C60 /* SleepModeViewController.xib */; };
+		B24CC2CF2A84B40200FE7C60 /* HandheldControllerActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1F52A84B40100FE7C60 /* HandheldControllerActionsTableViewController.m */; };
+		B24CC2D02A84B40200FE7C60 /* ComponentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1F72A84B40100FE7C60 /* ComponentSelectionViewController.xib */; };
+		B24CC2D12A84B40200FE7C60 /* CameraDetailSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1F82A84B40100FE7C60 /* CameraDetailSetViewController.m */; };
+		B24CC2D22A84B40200FE7C60 /* WaypointV2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1F92A84B40100FE7C60 /* WaypointV2ViewController.m */; };
+		B24CC2D32A84B40200FE7C60 /* LDMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1FB2A84B40100FE7C60 /* LDMViewController.m */; };
+		B24CC2D42A84B40200FE7C60 /* LDMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC1FD2A84B40100FE7C60 /* LDMViewController.xib */; };
+		B24CC2D52A84B40200FE7C60 /* KeyedInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2002A84B40100FE7C60 /* KeyedInterfaceViewController.m */; };
+		B24CC2D62A84B40200FE7C60 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2012A84B40100FE7C60 /* keys.plist */; };
+		B24CC2D72A84B40200FE7C60 /* KeyedInterfaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2032A84B40100FE7C60 /* KeyedInterfaceViewController.xib */; };
+		B24CC2D82A84B40200FE7C60 /* DJIWaypointAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2062A84B40100FE7C60 /* DJIWaypointAnnotationView.m */; };
+		B24CC2D92A84B40200FE7C60 /* DJIAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2082A84B40100FE7C60 /* DJIAnnotationView.m */; };
+		B24CC2DA2A84B40200FE7C60 /* DJIAircraftAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2092A84B40100FE7C60 /* DJIAircraftAnnotationView.m */; };
+		B24CC2DB2A84B40200FE7C60 /* DJIPOIAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC20A2A84B40100FE7C60 /* DJIPOIAnnotationView.m */; };
+		B24CC2DC2A84B40200FE7C60 /* DJIAircraftAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC20C2A84B40100FE7C60 /* DJIAircraftAnnotation.m */; };
+		B24CC2DD2A84B40200FE7C60 /* DJIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC20E2A84B40100FE7C60 /* DJIAnnotation.m */; };
+		B24CC2DE2A84B40200FE7C60 /* DJIWaypointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2132A84B40100FE7C60 /* DJIWaypointAnnotation.m */; };
+		B24CC2DF2A84B40200FE7C60 /* DJIMapPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2172A84B40100FE7C60 /* DJIMapPolygon.m */; };
+		B24CC2E02A84B40200FE7C60 /* DJIFlyLimitCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2182A84B40100FE7C60 /* DJIFlyLimitCircleView.m */; };
+		B24CC2E12A84B40200FE7C60 /* DJIPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2192A84B40100FE7C60 /* DJIPolygon.m */; };
+		B24CC2E22A84B40200FE7C60 /* DJIMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC21B2A84B40100FE7C60 /* DJIMapOverlay.m */; };
+		B24CC2E32A84B40200FE7C60 /* DJIFlyLimitPolygonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC21D2A84B40100FE7C60 /* DJIFlyLimitPolygonView.m */; };
+		B24CC2E42A84B40200FE7C60 /* DJIFlyZoneColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC21E2A84B40100FE7C60 /* DJIFlyZoneColorProvider.m */; };
+		B24CC2E52A84B40200FE7C60 /* DJIFlyLimitCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2222A84B40100FE7C60 /* DJIFlyLimitCircle.m */; };
+		B24CC2E62A84B40200FE7C60 /* DJIWhitelistOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2262A84B40100FE7C60 /* DJIWhitelistOverlay.m */; };
+		B24CC2E72A84B40200FE7C60 /* DJIWaypointV2FlightPathOverlays.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2272A84B40100FE7C60 /* DJIWaypointV2FlightPathOverlays.m */; };
+		B24CC2E82A84B40200FE7C60 /* DJICircle.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2282A84B40100FE7C60 /* DJICircle.m */; };
+		B24CC2E92A84B40200FE7C60 /* DJILimitSpaceOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2292A84B40100FE7C60 /* DJILimitSpaceOverlay.m */; };
+		B24CC2EA2A84B40200FE7C60 /* DJIMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC22C2A84B40100FE7C60 /* DJIMapView.m */; };
+		B24CC2EB2A84B40200FE7C60 /* BatteryActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC22E2A84B40100FE7C60 /* BatteryActionsTableViewController.m */; };
+		B24CC2EC2A84B40200FE7C60 /* BatterySelfDischargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2312A84B40100FE7C60 /* BatterySelfDischargeViewController.m */; };
+		B24CC2ED2A84B40200FE7C60 /* CameraParamSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2332A84B40100FE7C60 /* CameraParamSetting.storyboard */; };
+		B24CC2EE2A84B40200FE7C60 /* AccessoryAggregationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2352A84B40100FE7C60 /* AccessoryAggregationViewController.xib */; };
+		B24CC2EF2A84B40200FE7C60 /* SpotlightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2382A84B40100FE7C60 /* SpotlightViewController.xib */; };
+		B24CC2F02A84B40200FE7C60 /* SpotlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2392A84B40100FE7C60 /* SpotlightViewController.m */; };
+		B24CC2F12A84B40200FE7C60 /* SpeakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC23B2A84B40100FE7C60 /* SpeakerViewController.m */; };
+		B24CC2F22A84B40200FE7C60 /* RecordingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC23E2A84B40100FE7C60 /* RecordingHandler.m */; };
+		B24CC2F32A84B40200FE7C60 /* SpeakerAudioPlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2402A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.m */; };
+		B24CC2F42A84B40200FE7C60 /* SpeakerAudioPlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2412A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.xib */; };
+		B24CC2F52A84B40200FE7C60 /* SpeakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2442A84B40100FE7C60 /* SpeakerViewController.xib */; };
+		B24CC2F62A84B40200FE7C60 /* AccessoryAggregationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2452A84B40100FE7C60 /* AccessoryAggregationViewController.m */; };
+		B24CC2F72A84B40200FE7C60 /* BeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2482A84B40100FE7C60 /* BeaconViewController.m */; };
+		B24CC2F82A84B40200FE7C60 /* BeaconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC2492A84B40100FE7C60 /* BeaconViewController.xib */; };
+		B24CC2F92A84B40200FE7C60 /* AirLinkActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC24C2A84B40100FE7C60 /* AirLinkActionsTableViewController.m */; };
+		B24CC2FA2A84B40200FE7C60 /* RebootWiFiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC24E2A84B40100FE7C60 /* RebootWiFiViewController.m */; };
+		B24CC2FB2A84B40200FE7C60 /* RebootWiFiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC24F2A84B40100FE7C60 /* RebootWiFiViewController.xib */; };
+		B24CC2FC2A84B40200FE7C60 /* SetGetChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2522A84B40100FE7C60 /* SetGetChannelViewController.m */; };
+		B24CC2FD2A84B40200FE7C60 /* WiFiLinkSSIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC2572A84B40100FE7C60 /* WiFiLinkSSIDViewController.m */; };
+		B24CC2FE2A84B40200FE7C60 /* PayloadWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC25A2A84B40100FE7C60 /* PayloadWidgetViewController.xib */; };
+		B24CC3062A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3022A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m */; };
+		B24CC3072A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3032A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m */; };
+		B24CC3082A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */; };
 		B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */; };
 		B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */; };
 		B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AC2A68EDEA00A983E8 /* Constants.swift */; };
@@ -111,6 +278,290 @@
 		B21A487B2A722A1D000A147B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B21A487D2A7250F2000A147B /* ViewMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMission.swift; sourceTree = "<group>"; };
 		B21A48802A725567000A147B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentSelectionViewController.h; sourceTree = "<group>"; };
+		B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC1062A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalRotationInSpeedViewController.xib; sourceTree = "<group>"; };
+		B24CC1072A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalRotationInSpeedViewController.m; sourceTree = "<group>"; };
+		B24CC1082A84B40100FE7C60 /* GimbalRotationInSpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalRotationInSpeedViewController.h; sourceTree = "<group>"; };
+		B24CC10A2A84B40100FE7C60 /* GimbalPushInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalPushInfoViewController.m; sourceTree = "<group>"; };
+		B24CC10B2A84B40100FE7C60 /* GimbalPushInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalPushInfoViewController.h; sourceTree = "<group>"; };
+		B24CC10D2A84B40100FE7C60 /* GimbalCapabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalCapabilityViewController.h; sourceTree = "<group>"; };
+		B24CC10E2A84B40100FE7C60 /* GimbalCapabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalCapabilityViewController.xib; sourceTree = "<group>"; };
+		B24CC10F2A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DJIGimbal+CapabilityCheck.h"; sourceTree = "<group>"; };
+		B24CC1102A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DJIGimbal+CapabilityCheck.m"; sourceTree = "<group>"; };
+		B24CC1112A84B40100FE7C60 /* GimbalCapabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalCapabilityViewController.m; sourceTree = "<group>"; };
+		B24CC1122A84B40100FE7C60 /* GimbalActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC1142A84B40100FE7C60 /* VideoLiveStreamingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoLiveStreamingViewController.h; sourceTree = "<group>"; };
+		B24CC1152A84B40100FE7C60 /* VideoLiveStreamingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoLiveStreamingViewController.xib; sourceTree = "<group>"; };
+		B24CC1162A84B40100FE7C60 /* VideoLiveStreamingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoLiveStreamingViewController.m; sourceTree = "<group>"; };
+		B24CC1172A84B40100FE7C60 /* PayloadWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayloadWidgetViewController.h; sourceTree = "<group>"; };
+		B24CC1192A84B40100FE7C60 /* UpgradeManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeManagerViewController.xib; sourceTree = "<group>"; };
+		B24CC11B2A84B40100FE7C60 /* UpgradeComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeComponentViewController.xib; sourceTree = "<group>"; };
+		B24CC11C2A84B40100FE7C60 /* UpgradeComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeComponentViewController.m; sourceTree = "<group>"; };
+		B24CC11D2A84B40100FE7C60 /* UpgradeComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeComponentViewController.h; sourceTree = "<group>"; };
+		B24CC11E2A84B40100FE7C60 /* UpgradeManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeManagerViewController.m; sourceTree = "<group>"; };
+		B24CC11F2A84B40100FE7C60 /* UpgradeManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeManagerViewController.h; sourceTree = "<group>"; };
+		B24CC1202A84B40100FE7C60 /* DemoSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoSelectView.xib; sourceTree = "<group>"; };
+		B24CC1212A84B40100FE7C60 /* CameraDetailSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDetailSetViewController.h; sourceTree = "<group>"; };
+		B24CC1222A84B40100FE7C60 /* WaypointV2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointV2ViewController.h; sourceTree = "<group>"; };
+		B24CC1232A84B40100FE7C60 /* WaypointV2PointConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointV2PointConfigViewController.m; sourceTree = "<group>"; };
+		B24CC1252A84B40100FE7C60 /* MobileRemoteControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileRemoteControllerViewController.xib; sourceTree = "<group>"; };
+		B24CC1262A84B40100FE7C60 /* MobileRemoteControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileRemoteControllerViewController.h; sourceTree = "<group>"; };
+		B24CC1272A84B40100FE7C60 /* MobileRemoteControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileRemoteControllerViewController.m; sourceTree = "<group>"; };
+		B24CC1282A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointV2ConfigrationViewController.m; sourceTree = "<group>"; };
+		B24CC12B2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPlaybackPushInfoViewController.m; sourceTree = "<group>"; };
+		B24CC12C2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPlaybackPushInfoViewController.h; sourceTree = "<group>"; };
+		B24CC12D2A84B40100FE7C60 /* CameraActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC12F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraShootSinglePhotoViewController.xib; sourceTree = "<group>"; };
+		B24CC1302A84B40100FE7C60 /* CameraShootSinglePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraShootSinglePhotoViewController.h; sourceTree = "<group>"; };
+		B24CC1312A84B40100FE7C60 /* CameraShootSinglePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraShootSinglePhotoViewController.m; sourceTree = "<group>"; };
+		B24CC1332A84B40100FE7C60 /* CameraISOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraISOViewController.m; sourceTree = "<group>"; };
+		B24CC1342A84B40100FE7C60 /* CameraISOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraISOViewController.h; sourceTree = "<group>"; };
+		B24CC1362A84B40100FE7C60 /* CameraPushInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPushInfoViewController.m; sourceTree = "<group>"; };
+		B24CC1372A84B40100FE7C60 /* CameraPushInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPushInfoViewController.h; sourceTree = "<group>"; };
+		B24CC1382A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingItemCollectionViewCell.m; sourceTree = "<group>"; };
+		B24CC13A2A84B40100FE7C60 /* CameraFPVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraFPVViewController.xib; sourceTree = "<group>"; };
+		B24CC13B2A84B40100FE7C60 /* CameraFPVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFPVViewController.h; sourceTree = "<group>"; };
+		B24CC13C2A84B40100FE7C60 /* CameraFPVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFPVViewController.m; sourceTree = "<group>"; };
+		B24CC13D2A84B40100FE7C60 /* CameraSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingsViewController.m; sourceTree = "<group>"; };
+		B24CC13F2A84B40100FE7C60 /* CameraPlaybackCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPlaybackCommandViewController.m; sourceTree = "<group>"; };
+		B24CC1402A84B40100FE7C60 /* CameraPlaybackCommandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraPlaybackCommandViewController.xib; sourceTree = "<group>"; };
+		B24CC1412A84B40100FE7C60 /* CameraPlaybackCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPlaybackCommandViewController.h; sourceTree = "<group>"; };
+		B24CC1432A84B40100FE7C60 /* CameraFetchMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFetchMediaViewController.m; sourceTree = "<group>"; };
+		B24CC1442A84B40100FE7C60 /* CameraFetchMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFetchMediaViewController.h; sourceTree = "<group>"; };
+		B24CC1452A84B40100FE7C60 /* CameraFetchMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraFetchMediaViewController.xib; sourceTree = "<group>"; };
+		B24CC1472A84B40100FE7C60 /* XT2CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XT2CameraViewController.h; sourceTree = "<group>"; };
+		B24CC1482A84B40100FE7C60 /* XT2CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XT2CameraViewController.m; sourceTree = "<group>"; };
+		B24CC1492A84B40100FE7C60 /* XT2CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XT2CameraViewController.xib; sourceTree = "<group>"; };
+		B24CC14A2A84B40100FE7C60 /* CameraActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC14C2A84B40100FE7C60 /* CameraCalibrateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCalibrateViewController.m; sourceTree = "<group>"; };
+		B24CC14D2A84B40100FE7C60 /* CameraCalibrateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCalibrateViewController.h; sourceTree = "<group>"; };
+		B24CC14E2A84B40100FE7C60 /* CameraCalibrateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCalibrateViewController.xib; sourceTree = "<group>"; };
+		B24CC1502A84B40100FE7C60 /* CameraRecordVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraRecordVideoViewController.xib; sourceTree = "<group>"; };
+		B24CC1512A84B40100FE7C60 /* CameraRecordVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRecordVideoViewController.h; sourceTree = "<group>"; };
+		B24CC1522A84B40100FE7C60 /* CameraRecordVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRecordVideoViewController.m; sourceTree = "<group>"; };
+		B24CC1532A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingItemCollectionViewCell.h; sourceTree = "<group>"; };
+		B24CC1552A84B40100FE7C60 /* CameraMediaPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraMediaPlaybackViewController.h; sourceTree = "<group>"; };
+		B24CC1562A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = In2P4PCameraPlayBackViewController.m; sourceTree = "<group>"; };
+		B24CC1572A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = In2P4PCameraPlayBackViewController.xib; sourceTree = "<group>"; };
+		B24CC1582A84B40100FE7C60 /* CameraMediaPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraMediaPlaybackViewController.m; sourceTree = "<group>"; };
+		B24CC1592A84B40100FE7C60 /* CameraMediaPlaybackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraMediaPlaybackViewController.xib; sourceTree = "<group>"; };
+		B24CC15A2A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = In2P4PCameraPlayBackViewController.h; sourceTree = "<group>"; };
+		B24CC15C2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPlaybackDownloadViewController.m; sourceTree = "<group>"; };
+		B24CC15D2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraPlaybackDownloadViewController.xib; sourceTree = "<group>"; };
+		B24CC15E2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPlaybackDownloadViewController.h; sourceTree = "<group>"; };
+		B24CC15F2A84B40100FE7C60 /* CameraSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingsViewController.h; sourceTree = "<group>"; };
+		B24CC1612A84B40100FE7C60 /* AppActivationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppActivationViewController.xib; sourceTree = "<group>"; };
+		B24CC1622A84B40100FE7C60 /* AppActivationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppActivationViewController.h; sourceTree = "<group>"; };
+		B24CC1632A84B40100FE7C60 /* AppActivationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppActivationViewController.m; sourceTree = "<group>"; };
+		B24CC1652A84B40100FE7C60 /* DemoCameraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCameraHelper.m; sourceTree = "<group>"; };
+		B24CC1662A84B40100FE7C60 /* DemoComponentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoComponentHelper.m; sourceTree = "<group>"; };
+		B24CC1672A84B40100FE7C60 /* DemoUtilityMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtilityMacro.h; sourceTree = "<group>"; };
+		B24CC1682A84B40100FE7C60 /* DemoUtilityMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtilityMethod.m; sourceTree = "<group>"; };
+		B24CC1692A84B40100FE7C60 /* DemoCameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCameraHelper.h; sourceTree = "<group>"; };
+		B24CC16B2A84B40100FE7C60 /* DemoPushInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoPushInfoViewController.xib; sourceTree = "<group>"; };
+		B24CC16C2A84B40100FE7C60 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
+		B24CC16D2A84B40100FE7C60 /* DemoVirtualStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVirtualStickView.h; sourceTree = "<group>"; };
+		B24CC16E2A84B40100FE7C60 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B24CC16F2A84B40100FE7C60 /* DemoScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoScrollView.xib; sourceTree = "<group>"; };
+		B24CC1702A84B40100FE7C60 /* DemoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoAlertView.h; sourceTree = "<group>"; };
+		B24CC1712A84B40100FE7C60 /* DemoPushInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoPushInfoViewController.h; sourceTree = "<group>"; };
+		B24CC1722A84B40100FE7C60 /* DemoSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSettingItem.h; sourceTree = "<group>"; };
+		B24CC1732A84B40100FE7C60 /* DemoComponentActionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoComponentActionTableViewController.h; sourceTree = "<group>"; };
+		B24CC1742A84B40100FE7C60 /* DemoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoScrollView.h; sourceTree = "<group>"; };
+		B24CC1752A84B40100FE7C60 /* DemoGetSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoGetSetViewController.h; sourceTree = "<group>"; };
+		B24CC1762A84B40100FE7C60 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B24CC1772A84B40100FE7C60 /* DemoVirtualStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVirtualStickView.m; sourceTree = "<group>"; };
+		B24CC1782A84B40100FE7C60 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
+		B24CC1792A84B40100FE7C60 /* DemoGetSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoGetSetViewController.m; sourceTree = "<group>"; };
+		B24CC17A2A84B40100FE7C60 /* DemoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoScrollView.m; sourceTree = "<group>"; };
+		B24CC17B2A84B40100FE7C60 /* DemoComponentActionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoComponentActionTableViewController.m; sourceTree = "<group>"; };
+		B24CC17C2A84B40100FE7C60 /* DemoSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSettingItem.m; sourceTree = "<group>"; };
+		B24CC17D2A84B40100FE7C60 /* DemoPushInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoPushInfoViewController.m; sourceTree = "<group>"; };
+		B24CC17E2A84B40100FE7C60 /* DemoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAlertView.m; sourceTree = "<group>"; };
+		B24CC17F2A84B40100FE7C60 /* DemoGetSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoGetSetViewController.xib; sourceTree = "<group>"; };
+		B24CC1802A84B40100FE7C60 /* DemoUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtility.h; sourceTree = "<group>"; };
+		B24CC1812A84B40100FE7C60 /* DemoComponentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoComponentHelper.h; sourceTree = "<group>"; };
+		B24CC1822A84B40100FE7C60 /* DemoUtilityMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtilityMethod.h; sourceTree = "<group>"; };
+		B24CC1832A84B40100FE7C60 /* WaypointV2MapPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointV2MapPointsViewController.m; sourceTree = "<group>"; };
+		B24CC1852A84B40100FE7C60 /* PayloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayloadViewController.xib; sourceTree = "<group>"; };
+		B24CC1862A84B40100FE7C60 /* PayloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayloadViewController.m; sourceTree = "<group>"; };
+		B24CC1882A84B40100FE7C60 /* PayloadTestChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayloadTestChannelViewController.xib; sourceTree = "<group>"; };
+		B24CC1892A84B40100FE7C60 /* PayloadTestChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayloadTestChannelViewController.h; sourceTree = "<group>"; };
+		B24CC18A2A84B40100FE7C60 /* PayloadTestChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayloadTestChannelViewController.m; sourceTree = "<group>"; };
+		B24CC18B2A84B40100FE7C60 /* PayloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayloadViewController.h; sourceTree = "<group>"; };
+		B24CC18C2A84B40100FE7C60 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		B24CC18F2A84B40100FE7C60 /* PipelineDuplexLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipelineDuplexLogic.h; sourceTree = "<group>"; };
+		B24CC1902A84B40100FE7C60 /* PipelineDuplexLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipelineDuplexLogic.m; sourceTree = "<group>"; };
+		B24CC1912A84B40100FE7C60 /* PipelinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipelinesViewController.m; sourceTree = "<group>"; };
+		B24CC1932A84B40100FE7C60 /* PipelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipelineTableViewCell.m; sourceTree = "<group>"; };
+		B24CC1942A84B40100FE7C60 /* PipelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipelineTableViewCell.h; sourceTree = "<group>"; };
+		B24CC1952A84B40100FE7C60 /* PipelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PipelineTableViewCell.xib; sourceTree = "<group>"; };
+		B24CC1972A84B40100FE7C60 /* PipelineProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipelineProtocol.h; sourceTree = "<group>"; };
+		B24CC1992A84B40100FE7C60 /* PipelineStatistical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipelineStatistical.m; sourceTree = "<group>"; };
+		B24CC19A2A84B40100FE7C60 /* PipelineStatistical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipelineStatistical.h; sourceTree = "<group>"; };
+		B24CC19B2A84B40100FE7C60 /* PipelinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PipelinesViewController.xib; sourceTree = "<group>"; };
+		B24CC19C2A84B40100FE7C60 /* PipelinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipelinesViewController.h; sourceTree = "<group>"; };
+		B24CC19D2A84B40100FE7C60 /* VideoFeederViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoFeederViewController.m; sourceTree = "<group>"; };
+		B24CC19E2A84B40100FE7C60 /* DemoSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSelectView.m; sourceTree = "<group>"; };
+		B24CC1A02A84B40100FE7C60 /* LidarActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LidarActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC1A12A84B40100FE7C60 /* LidarActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LidarActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC1A32A84B40100FE7C60 /* PointCloudRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudRecordViewController.h; sourceTree = "<group>"; };
+		B24CC1A42A84B40100FE7C60 /* PointCloudRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointCloudRecordViewController.m; sourceTree = "<group>"; };
+		B24CC1A52A84B40100FE7C60 /* PointCloudRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointCloudRecordViewController.xib; sourceTree = "<group>"; };
+		B24CC1A62A84B40100FE7C60 /* PayloadWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayloadWidgetViewController.m; sourceTree = "<group>"; };
+		B24CC1A72A84B40100FE7C60 /* WaypointV2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WaypointV2.storyboard; sourceTree = "<group>"; };
+		B24CC1AA2A84B40100FE7C60 /* RCHardwareStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCHardwareStateViewController.m; sourceTree = "<group>"; };
+		B24CC1AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCHardwareStateViewController.xib; sourceTree = "<group>"; };
+		B24CC1AC2A84B40100FE7C60 /* RCHardwareStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHardwareStateViewController.h; sourceTree = "<group>"; };
+		B24CC1AE2A84B40100FE7C60 /* RCGimbalControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCGimbalControlViewController.m; sourceTree = "<group>"; };
+		B24CC1AF2A84B40100FE7C60 /* RCGimbalControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCGimbalControlViewController.xib; sourceTree = "<group>"; };
+		B24CC1B02A84B40100FE7C60 /* RCGimbalControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCGimbalControlViewController.h; sourceTree = "<group>"; };
+		B24CC1B12A84B40100FE7C60 /* RCActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC1B32A84B40100FE7C60 /* RCParingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCParingViewController.m; sourceTree = "<group>"; };
+		B24CC1B42A84B40100FE7C60 /* RCParingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCParingViewController.xib; sourceTree = "<group>"; };
+		B24CC1B52A84B40100FE7C60 /* RCParingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCParingViewController.h; sourceTree = "<group>"; };
+		B24CC1B62A84B40100FE7C60 /* RCActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC1B72A84B40100FE7C60 /* ComponentSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentSelectionViewController.m; sourceTree = "<group>"; };
+		B24CC1B82A84B40100FE7C60 /* VideoFeederViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoFeederViewController.xib; sourceTree = "<group>"; };
+		B24CC1B92A84B40100FE7C60 /* WaypointV2ConfigrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointV2ConfigrationViewController.h; sourceTree = "<group>"; };
+		B24CC1BB2A84B40100FE7C60 /* FollowMeMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowMeMissionViewController.h; sourceTree = "<group>"; };
+		B24CC1BC2A84B40100FE7C60 /* TimelineMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineMissionViewController.m; sourceTree = "<group>"; };
+		B24CC1BD2A84B40100FE7C60 /* HotpointMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotpointMissionViewController.h; sourceTree = "<group>"; };
+		B24CC1BE2A84B40100FE7C60 /* PanoramaMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramaMissionViewController.m; sourceTree = "<group>"; };
+		B24CC1BF2A84B40100FE7C60 /* WaypointMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointMissionViewController.h; sourceTree = "<group>"; };
+		B24CC1C02A84B40100FE7C60 /* MissionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionBaseViewController.m; sourceTree = "<group>"; };
+		B24CC1C12A84B40100FE7C60 /* TimelineMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineMissionViewController.h; sourceTree = "<group>"; };
+		B24CC1C22A84B40100FE7C60 /* FollowMeMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowMeMissionViewController.m; sourceTree = "<group>"; };
+		B24CC1C32A84B40100FE7C60 /* PanoramaMissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanoramaMissionViewController.h; sourceTree = "<group>"; };
+		B24CC1C42A84B40100FE7C60 /* HotpointMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotpointMissionViewController.m; sourceTree = "<group>"; };
+		B24CC1C52A84B40100FE7C60 /* MissionBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MissionBaseViewController.xib; sourceTree = "<group>"; };
+		B24CC1C62A84B40100FE7C60 /* MissionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionBaseViewController.h; sourceTree = "<group>"; };
+		B24CC1C72A84B40100FE7C60 /* WaypointMissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointMissionViewController.m; sourceTree = "<group>"; };
+		B24CC1CA2A84B40100FE7C60 /* FCVirtualStickViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCVirtualStickViewController.xib; sourceTree = "<group>"; };
+		B24CC1CB2A84B40100FE7C60 /* FCVirtualStickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCVirtualStickViewController.h; sourceTree = "<group>"; };
+		B24CC1CC2A84B40100FE7C60 /* FCVirtualStickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCVirtualStickViewController.m; sourceTree = "<group>"; };
+		B24CC1CE2A84B40100FE7C60 /* FCFlightLimitationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCFlightLimitationViewController.xib; sourceTree = "<group>"; };
+		B24CC1CF2A84B40100FE7C60 /* FCFlightLimitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFlightLimitationViewController.m; sourceTree = "<group>"; };
+		B24CC1D02A84B40100FE7C60 /* FCFlightLimitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFlightLimitationViewController.h; sourceTree = "<group>"; };
+		B24CC1D12A84B40100FE7C60 /* FCActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC1D32A84B40100FE7C60 /* FCGeneralControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGeneralControlViewController.h; sourceTree = "<group>"; };
+		B24CC1D42A84B40100FE7C60 /* FCGeneralControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCGeneralControlViewController.xib; sourceTree = "<group>"; };
+		B24CC1D52A84B40100FE7C60 /* FCGeneralControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGeneralControlViewController.m; sourceTree = "<group>"; };
+		B24CC1D72A84B40100FE7C60 /* FCIntelligentAssistantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCIntelligentAssistantViewController.m; sourceTree = "<group>"; };
+		B24CC1D82A84B40100FE7C60 /* FCIntelligentAssistantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCIntelligentAssistantViewController.h; sourceTree = "<group>"; };
+		B24CC1D92A84B40100FE7C60 /* FCIntelligentAssistantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCIntelligentAssistantViewController.xib; sourceTree = "<group>"; };
+		B24CC1DB2A84B40100FE7C60 /* FCLandingGearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLandingGearViewController.m; sourceTree = "<group>"; };
+		B24CC1DC2A84B40100FE7C60 /* FCLandingGearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLandingGearViewController.h; sourceTree = "<group>"; };
+		B24CC1DD2A84B40100FE7C60 /* FCLandingGearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLandingGearViewController.xib; sourceTree = "<group>"; };
+		B24CC1DE2A84B40100FE7C60 /* FCActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC1E02A84B40100FE7C60 /* FCRTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRTKViewController.m; sourceTree = "<group>"; };
+		B24CC1E12A84B40100FE7C60 /* FCRTKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRTKViewController.h; sourceTree = "<group>"; };
+		B24CC1E22A84B40100FE7C60 /* FCRTKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCRTKViewController.xib; sourceTree = "<group>"; };
+		B24CC1E42A84B40100FE7C60 /* FCCompassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCCompassViewController.xib; sourceTree = "<group>"; };
+		B24CC1E52A84B40100FE7C60 /* FCCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCompassViewController.m; sourceTree = "<group>"; };
+		B24CC1E62A84B40100FE7C60 /* FCCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCompassViewController.h; sourceTree = "<group>"; };
+		B24CC1E82A84B40100FE7C60 /* FCOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCOrientationViewController.h; sourceTree = "<group>"; };
+		B24CC1E92A84B40100FE7C60 /* FCOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOrientationViewController.m; sourceTree = "<group>"; };
+		B24CC1EA2A84B40100FE7C60 /* FCOrientationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCOrientationViewController.xib; sourceTree = "<group>"; };
+		B24CC1EC2A84B40100FE7C60 /* BluetoothConnectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothConnectorViewController.m; sourceTree = "<group>"; };
+		B24CC1ED2A84B40100FE7C60 /* BluetoothConnectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothConnectorViewController.h; sourceTree = "<group>"; };
+		B24CC1EE2A84B40100FE7C60 /* BluetoothConnectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluetoothConnectorViewController.xib; sourceTree = "<group>"; };
+		B24CC1F12A84B40100FE7C60 /* SleepModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepModeViewController.m; sourceTree = "<group>"; };
+		B24CC1F22A84B40100FE7C60 /* SleepModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleepModeViewController.xib; sourceTree = "<group>"; };
+		B24CC1F32A84B40100FE7C60 /* SleepModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepModeViewController.h; sourceTree = "<group>"; };
+		B24CC1F42A84B40100FE7C60 /* HandheldControllerActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandheldControllerActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC1F52A84B40100FE7C60 /* HandheldControllerActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandheldControllerActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC1F62A84B40100FE7C60 /* WaypointV2PointConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointV2PointConfigViewController.h; sourceTree = "<group>"; };
+		B24CC1F72A84B40100FE7C60 /* ComponentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComponentSelectionViewController.xib; sourceTree = "<group>"; };
+		B24CC1F82A84B40100FE7C60 /* CameraDetailSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDetailSetViewController.m; sourceTree = "<group>"; };
+		B24CC1F92A84B40100FE7C60 /* WaypointV2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointV2ViewController.m; sourceTree = "<group>"; };
+		B24CC1FB2A84B40100FE7C60 /* LDMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDMViewController.m; sourceTree = "<group>"; };
+		B24CC1FC2A84B40100FE7C60 /* LDMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDMViewController.h; sourceTree = "<group>"; };
+		B24CC1FD2A84B40100FE7C60 /* LDMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDMViewController.xib; sourceTree = "<group>"; };
+		B24CC1FE2A84B40100FE7C60 /* WaypointV2MapPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointV2MapPointsViewController.h; sourceTree = "<group>"; };
+		B24CC2002A84B40100FE7C60 /* KeyedInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyedInterfaceViewController.m; sourceTree = "<group>"; };
+		B24CC2012A84B40100FE7C60 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		B24CC2022A84B40100FE7C60 /* KeyedInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyedInterfaceViewController.h; sourceTree = "<group>"; };
+		B24CC2032A84B40100FE7C60 /* KeyedInterfaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyedInterfaceViewController.xib; sourceTree = "<group>"; };
+		B24CC2062A84B40100FE7C60 /* DJIWaypointAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIWaypointAnnotationView.m; sourceTree = "<group>"; };
+		B24CC2072A84B40100FE7C60 /* DJIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAnnotation.h; sourceTree = "<group>"; };
+		B24CC2082A84B40100FE7C60 /* DJIAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAnnotationView.m; sourceTree = "<group>"; };
+		B24CC2092A84B40100FE7C60 /* DJIAircraftAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotationView.m; sourceTree = "<group>"; };
+		B24CC20A2A84B40100FE7C60 /* DJIPOIAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIPOIAnnotationView.m; sourceTree = "<group>"; };
+		B24CC20B2A84B40100FE7C60 /* DJIWaypointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIWaypointAnnotation.h; sourceTree = "<group>"; };
+		B24CC20C2A84B40100FE7C60 /* DJIAircraftAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotation.m; sourceTree = "<group>"; };
+		B24CC20D2A84B40100FE7C60 /* DJIAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAnnotationView.h; sourceTree = "<group>"; };
+		B24CC20E2A84B40100FE7C60 /* DJIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAnnotation.m; sourceTree = "<group>"; };
+		B24CC20F2A84B40100FE7C60 /* DJIWaypointAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIWaypointAnnotationView.h; sourceTree = "<group>"; };
+		B24CC2102A84B40100FE7C60 /* DJIAircraftAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAircraftAnnotationView.h; sourceTree = "<group>"; };
+		B24CC2112A84B40100FE7C60 /* DJIPOIAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIPOIAnnotationView.h; sourceTree = "<group>"; };
+		B24CC2122A84B40100FE7C60 /* DJIAircraftAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAircraftAnnotation.h; sourceTree = "<group>"; };
+		B24CC2132A84B40100FE7C60 /* DJIWaypointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIWaypointAnnotation.m; sourceTree = "<group>"; };
+		B24CC2142A84B40100FE7C60 /* DJIMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIMapView.h; sourceTree = "<group>"; };
+		B24CC2162A84B40100FE7C60 /* DJIFlyLimitCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIFlyLimitCircle.h; sourceTree = "<group>"; };
+		B24CC2172A84B40100FE7C60 /* DJIMapPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIMapPolygon.m; sourceTree = "<group>"; };
+		B24CC2182A84B40100FE7C60 /* DJIFlyLimitCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIFlyLimitCircleView.m; sourceTree = "<group>"; };
+		B24CC2192A84B40100FE7C60 /* DJIPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIPolygon.m; sourceTree = "<group>"; };
+		B24CC21A2A84B40100FE7C60 /* DJIWhitelistOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIWhitelistOverlay.h; sourceTree = "<group>"; };
+		B24CC21B2A84B40100FE7C60 /* DJIMapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIMapOverlay.m; sourceTree = "<group>"; };
+		B24CC21C2A84B40100FE7C60 /* DJILimitSpaceOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJILimitSpaceOverlay.h; sourceTree = "<group>"; };
+		B24CC21D2A84B40100FE7C60 /* DJIFlyLimitPolygonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIFlyLimitPolygonView.m; sourceTree = "<group>"; };
+		B24CC21E2A84B40100FE7C60 /* DJIFlyZoneColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIFlyZoneColorProvider.m; sourceTree = "<group>"; };
+		B24CC21F2A84B40100FE7C60 /* DJICircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJICircle.h; sourceTree = "<group>"; };
+		B24CC2202A84B40100FE7C60 /* DJIWaypointV2FlightPathOverlays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIWaypointV2FlightPathOverlays.h; sourceTree = "<group>"; };
+		B24CC2212A84B40100FE7C60 /* DJIMapPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIMapPolygon.h; sourceTree = "<group>"; };
+		B24CC2222A84B40100FE7C60 /* DJIFlyLimitCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIFlyLimitCircle.m; sourceTree = "<group>"; };
+		B24CC2232A84B40100FE7C60 /* DJIPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIPolygon.h; sourceTree = "<group>"; };
+		B24CC2242A84B40100FE7C60 /* DJIFlyLimitCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIFlyLimitCircleView.h; sourceTree = "<group>"; };
+		B24CC2252A84B40100FE7C60 /* DJIMapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIMapOverlay.h; sourceTree = "<group>"; };
+		B24CC2262A84B40100FE7C60 /* DJIWhitelistOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIWhitelistOverlay.m; sourceTree = "<group>"; };
+		B24CC2272A84B40100FE7C60 /* DJIWaypointV2FlightPathOverlays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIWaypointV2FlightPathOverlays.m; sourceTree = "<group>"; };
+		B24CC2282A84B40100FE7C60 /* DJICircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJICircle.m; sourceTree = "<group>"; };
+		B24CC2292A84B40100FE7C60 /* DJILimitSpaceOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJILimitSpaceOverlay.m; sourceTree = "<group>"; };
+		B24CC22A2A84B40100FE7C60 /* DJIFlyLimitPolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIFlyLimitPolygonView.h; sourceTree = "<group>"; };
+		B24CC22B2A84B40100FE7C60 /* DJIFlyZoneColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIFlyZoneColorProvider.h; sourceTree = "<group>"; };
+		B24CC22C2A84B40100FE7C60 /* DJIMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIMapView.m; sourceTree = "<group>"; };
+		B24CC22E2A84B40100FE7C60 /* BatteryActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC22F2A84B40100FE7C60 /* BatteryActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC2312A84B40100FE7C60 /* BatterySelfDischargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatterySelfDischargeViewController.m; sourceTree = "<group>"; };
+		B24CC2322A84B40100FE7C60 /* BatterySelfDischargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatterySelfDischargeViewController.h; sourceTree = "<group>"; };
+		B24CC2332A84B40100FE7C60 /* CameraParamSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CameraParamSetting.storyboard; sourceTree = "<group>"; };
+		B24CC2352A84B40100FE7C60 /* AccessoryAggregationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryAggregationViewController.xib; sourceTree = "<group>"; };
+		B24CC2372A84B40100FE7C60 /* SpotlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightViewController.h; sourceTree = "<group>"; };
+		B24CC2382A84B40100FE7C60 /* SpotlightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotlightViewController.xib; sourceTree = "<group>"; };
+		B24CC2392A84B40100FE7C60 /* SpotlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightViewController.m; sourceTree = "<group>"; };
+		B24CC23B2A84B40100FE7C60 /* SpeakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerViewController.m; sourceTree = "<group>"; };
+		B24CC23D2A84B40100FE7C60 /* RecordingHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingHandler.h; sourceTree = "<group>"; };
+		B24CC23E2A84B40100FE7C60 /* RecordingHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingHandler.m; sourceTree = "<group>"; };
+		B24CC2402A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerAudioPlaylistTableViewCell.m; sourceTree = "<group>"; };
+		B24CC2412A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerAudioPlaylistTableViewCell.xib; sourceTree = "<group>"; };
+		B24CC2422A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerAudioPlaylistTableViewCell.h; sourceTree = "<group>"; };
+		B24CC2432A84B40100FE7C60 /* SpeakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerViewController.h; sourceTree = "<group>"; };
+		B24CC2442A84B40100FE7C60 /* SpeakerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerViewController.xib; sourceTree = "<group>"; };
+		B24CC2452A84B40100FE7C60 /* AccessoryAggregationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryAggregationViewController.m; sourceTree = "<group>"; };
+		B24CC2462A84B40100FE7C60 /* AccessoryAggregationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryAggregationViewController.h; sourceTree = "<group>"; };
+		B24CC2482A84B40100FE7C60 /* BeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconViewController.m; sourceTree = "<group>"; };
+		B24CC2492A84B40100FE7C60 /* BeaconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeaconViewController.xib; sourceTree = "<group>"; };
+		B24CC24A2A84B40100FE7C60 /* BeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconViewController.h; sourceTree = "<group>"; };
+		B24CC24C2A84B40100FE7C60 /* AirLinkActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirLinkActionsTableViewController.m; sourceTree = "<group>"; };
+		B24CC24E2A84B40100FE7C60 /* RebootWiFiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RebootWiFiViewController.m; sourceTree = "<group>"; };
+		B24CC24F2A84B40100FE7C60 /* RebootWiFiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RebootWiFiViewController.xib; sourceTree = "<group>"; };
+		B24CC2502A84B40100FE7C60 /* RebootWiFiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RebootWiFiViewController.h; sourceTree = "<group>"; };
+		B24CC2522A84B40100FE7C60 /* SetGetChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGetChannelViewController.m; sourceTree = "<group>"; };
+		B24CC2532A84B40100FE7C60 /* SetGetChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGetChannelViewController.h; sourceTree = "<group>"; };
+		B24CC2542A84B40100FE7C60 /* AirLinkActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirLinkActionsTableViewController.h; sourceTree = "<group>"; };
+		B24CC2562A84B40100FE7C60 /* WiFiLinkSSIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiFiLinkSSIDViewController.h; sourceTree = "<group>"; };
+		B24CC2572A84B40100FE7C60 /* WiFiLinkSSIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiFiLinkSSIDViewController.m; sourceTree = "<group>"; };
+		B24CC2582A84B40100FE7C60 /* DemoSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSelectView.h; sourceTree = "<group>"; };
+		B24CC2592A84B40100FE7C60 /* VideoFeederViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFeederViewController.h; sourceTree = "<group>"; };
+		B24CC25A2A84B40100FE7C60 /* PayloadWidgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayloadWidgetViewController.xib; sourceTree = "<group>"; };
+		B24CC3002A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoPreviewerSDKAdapter+Lightbridge2.h"; sourceTree = "<group>"; };
+		B24CC3012A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIDecodeImageCalibrateControlLogic.h; sourceTree = "<group>"; };
+		B24CC3022A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPreviewerSDKAdapter.m; sourceTree = "<group>"; };
+		B24CC3032A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIDecodeImageCalibrateControlLogic.m; sourceTree = "<group>"; };
+		B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VideoPreviewerSDKAdapter+Lightbridge2.m"; sourceTree = "<group>"; };
+		B24CC3052A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPreviewerSDKAdapter.h; sourceTree = "<group>"; };
 		B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasssword.swift; sourceTree = "<group>"; };
 		B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 		B257D6AC2A68EDEA00A983E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -251,6 +702,7 @@
 				B21A487B2A722A1D000A147B /* AppFlow.swift */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
+				B24CC1012A84B40100FE7C60 /* Demo */,
 				B29803C32A5EAC1B00A94612 /* Splashscreen */,
 				B257D6A72A68DB6300A983E8 /* Auth */,
 				B2E42EB22A5E819500D78AD1 /* Launchpad */,
@@ -259,6 +711,7 @@
 				B29803BC2A5EAAC700A94612 /* Components */,
 				B2AD6EE82A5FC82700BE1EB4 /* Services */,
 				B289FA7B2A80A50E004BC2F3 /* MainScreen */,
+				B2D526062A8374EE00993A02 /* DroneConnecter */,
 				53ECE276233DB88300E278CD /* Helpers */,
 				B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */,
 				B282E6D12A80A24D008B822E /* UXSDK */,
@@ -272,6 +725,841 @@
 				B21A48802A725567000A147B /* Profile.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B24CC1012A84B40100FE7C60 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2FF2A84B4C100FE7C60 /* VideoPreviewerAdapter */,
+				B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */,
+				B24CC1032A84B40100FE7C60 /* Gimbal */,
+				B24CC1132A84B40100FE7C60 /* Liveview */,
+				B24CC1172A84B40100FE7C60 /* PayloadWidgetViewController.h */,
+				B24CC1182A84B40100FE7C60 /* Upgrade */,
+				B24CC1202A84B40100FE7C60 /* DemoSelectView.xib */,
+				B24CC1212A84B40100FE7C60 /* CameraDetailSetViewController.h */,
+				B24CC1222A84B40100FE7C60 /* WaypointV2ViewController.h */,
+				B24CC1232A84B40100FE7C60 /* WaypointV2PointConfigViewController.m */,
+				B24CC1242A84B40100FE7C60 /* MobileRemoteController */,
+				B24CC1282A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m */,
+				B24CC1292A84B40100FE7C60 /* Camera */,
+				B24CC1602A84B40100FE7C60 /* AppActivation */,
+				B24CC1642A84B40100FE7C60 /* DemoUtility */,
+				B24CC1832A84B40100FE7C60 /* WaypointV2MapPointsViewController.m */,
+				B24CC1842A84B40100FE7C60 /* Payload */,
+				B24CC18C2A84B40100FE7C60 /* metamacros.h */,
+				B24CC18D2A84B40100FE7C60 /* Pipelines */,
+				B24CC19D2A84B40100FE7C60 /* VideoFeederViewController.m */,
+				B24CC19E2A84B40100FE7C60 /* DemoSelectView.m */,
+				B24CC19F2A84B40100FE7C60 /* Lidar */,
+				B24CC1A62A84B40100FE7C60 /* PayloadWidgetViewController.m */,
+				B24CC1A72A84B40100FE7C60 /* WaypointV2.storyboard */,
+				B24CC1A82A84B40100FE7C60 /* RemoteController */,
+				B24CC1B72A84B40100FE7C60 /* ComponentSelectionViewController.m */,
+				B24CC1B82A84B40100FE7C60 /* VideoFeederViewController.xib */,
+				B24CC1B92A84B40100FE7C60 /* WaypointV2ConfigrationViewController.h */,
+				B24CC1BA2A84B40100FE7C60 /* MissionManager */,
+				B24CC1C82A84B40100FE7C60 /* FlightController */,
+				B24CC1EB2A84B40100FE7C60 /* Bluetooth */,
+				B24CC1EF2A84B40100FE7C60 /* HandheldController */,
+				B24CC1F62A84B40100FE7C60 /* WaypointV2PointConfigViewController.h */,
+				B24CC1F72A84B40100FE7C60 /* ComponentSelectionViewController.xib */,
+				B24CC1F82A84B40100FE7C60 /* CameraDetailSetViewController.m */,
+				B24CC1F92A84B40100FE7C60 /* WaypointV2ViewController.m */,
+				B24CC1FA2A84B40100FE7C60 /* LDM */,
+				B24CC1FE2A84B40100FE7C60 /* WaypointV2MapPointsViewController.h */,
+				B24CC1FF2A84B40100FE7C60 /* Keyed Interface */,
+				B24CC2042A84B40100FE7C60 /* DJIMapView */,
+				B24CC22D2A84B40100FE7C60 /* Battery */,
+				B24CC2332A84B40100FE7C60 /* CameraParamSetting.storyboard */,
+				B24CC2342A84B40100FE7C60 /* Accessory */,
+				B24CC24B2A84B40100FE7C60 /* AirLink */,
+				B24CC2582A84B40100FE7C60 /* DemoSelectView.h */,
+				B24CC2592A84B40100FE7C60 /* VideoFeederViewController.h */,
+				B24CC25A2A84B40100FE7C60 /* PayloadWidgetViewController.xib */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		B24CC1032A84B40100FE7C60 /* Gimbal */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */,
+				B24CC1052A84B40100FE7C60 /* RotationInSpeed */,
+				B24CC1092A84B40100FE7C60 /* PushInfo */,
+				B24CC10C2A84B40100FE7C60 /* GimbalCapability */,
+				B24CC1122A84B40100FE7C60 /* GimbalActionsTableViewController.h */,
+			);
+			path = Gimbal;
+			sourceTree = "<group>";
+		};
+		B24CC1052A84B40100FE7C60 /* RotationInSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1062A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib */,
+				B24CC1072A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m */,
+				B24CC1082A84B40100FE7C60 /* GimbalRotationInSpeedViewController.h */,
+			);
+			path = RotationInSpeed;
+			sourceTree = "<group>";
+		};
+		B24CC1092A84B40100FE7C60 /* PushInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC10A2A84B40100FE7C60 /* GimbalPushInfoViewController.m */,
+				B24CC10B2A84B40100FE7C60 /* GimbalPushInfoViewController.h */,
+			);
+			path = PushInfo;
+			sourceTree = "<group>";
+		};
+		B24CC10C2A84B40100FE7C60 /* GimbalCapability */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC10D2A84B40100FE7C60 /* GimbalCapabilityViewController.h */,
+				B24CC10E2A84B40100FE7C60 /* GimbalCapabilityViewController.xib */,
+				B24CC10F2A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.h */,
+				B24CC1102A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.m */,
+				B24CC1112A84B40100FE7C60 /* GimbalCapabilityViewController.m */,
+			);
+			path = GimbalCapability;
+			sourceTree = "<group>";
+		};
+		B24CC1132A84B40100FE7C60 /* Liveview */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1142A84B40100FE7C60 /* VideoLiveStreamingViewController.h */,
+				B24CC1152A84B40100FE7C60 /* VideoLiveStreamingViewController.xib */,
+				B24CC1162A84B40100FE7C60 /* VideoLiveStreamingViewController.m */,
+			);
+			path = Liveview;
+			sourceTree = "<group>";
+		};
+		B24CC1182A84B40100FE7C60 /* Upgrade */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1192A84B40100FE7C60 /* UpgradeManagerViewController.xib */,
+				B24CC11A2A84B40100FE7C60 /* component */,
+				B24CC11E2A84B40100FE7C60 /* UpgradeManagerViewController.m */,
+				B24CC11F2A84B40100FE7C60 /* UpgradeManagerViewController.h */,
+			);
+			path = Upgrade;
+			sourceTree = "<group>";
+		};
+		B24CC11A2A84B40100FE7C60 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC11B2A84B40100FE7C60 /* UpgradeComponentViewController.xib */,
+				B24CC11C2A84B40100FE7C60 /* UpgradeComponentViewController.m */,
+				B24CC11D2A84B40100FE7C60 /* UpgradeComponentViewController.h */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		B24CC1242A84B40100FE7C60 /* MobileRemoteController */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1252A84B40100FE7C60 /* MobileRemoteControllerViewController.xib */,
+				B24CC1262A84B40100FE7C60 /* MobileRemoteControllerViewController.h */,
+				B24CC1272A84B40100FE7C60 /* MobileRemoteControllerViewController.m */,
+			);
+			path = MobileRemoteController;
+			sourceTree = "<group>";
+		};
+		B24CC1292A84B40100FE7C60 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC12A2A84B40100FE7C60 /* PlaybackPushInfo */,
+				B24CC12D2A84B40100FE7C60 /* CameraActionsTableViewController.m */,
+				B24CC12E2A84B40100FE7C60 /* ShootSinglePhoto */,
+				B24CC1322A84B40100FE7C60 /* SetGetISO */,
+				B24CC1352A84B40100FE7C60 /* SystemPushInfo */,
+				B24CC1382A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m */,
+				B24CC1392A84B40100FE7C60 /* fpv */,
+				B24CC13D2A84B40100FE7C60 /* CameraSettingsViewController.m */,
+				B24CC13E2A84B40100FE7C60 /* PlaybackCommand */,
+				B24CC1422A84B40100FE7C60 /* MediaFetchMedia */,
+				B24CC1462A84B40100FE7C60 /* XT2 */,
+				B24CC14A2A84B40100FE7C60 /* CameraActionsTableViewController.h */,
+				B24CC14B2A84B40100FE7C60 /* calibrate */,
+				B24CC14F2A84B40100FE7C60 /* RecordVideo */,
+				B24CC1532A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.h */,
+				B24CC1542A84B40100FE7C60 /* MediaVideoPlayback */,
+				B24CC15B2A84B40100FE7C60 /* PlaybackDownload */,
+				B24CC15F2A84B40100FE7C60 /* CameraSettingsViewController.h */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		B24CC12A2A84B40100FE7C60 /* PlaybackPushInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC12B2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m */,
+				B24CC12C2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.h */,
+			);
+			path = PlaybackPushInfo;
+			sourceTree = "<group>";
+		};
+		B24CC12E2A84B40100FE7C60 /* ShootSinglePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC12F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib */,
+				B24CC1302A84B40100FE7C60 /* CameraShootSinglePhotoViewController.h */,
+				B24CC1312A84B40100FE7C60 /* CameraShootSinglePhotoViewController.m */,
+			);
+			path = ShootSinglePhoto;
+			sourceTree = "<group>";
+		};
+		B24CC1322A84B40100FE7C60 /* SetGetISO */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1332A84B40100FE7C60 /* CameraISOViewController.m */,
+				B24CC1342A84B40100FE7C60 /* CameraISOViewController.h */,
+			);
+			path = SetGetISO;
+			sourceTree = "<group>";
+		};
+		B24CC1352A84B40100FE7C60 /* SystemPushInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1362A84B40100FE7C60 /* CameraPushInfoViewController.m */,
+				B24CC1372A84B40100FE7C60 /* CameraPushInfoViewController.h */,
+			);
+			path = SystemPushInfo;
+			sourceTree = "<group>";
+		};
+		B24CC1392A84B40100FE7C60 /* fpv */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC13A2A84B40100FE7C60 /* CameraFPVViewController.xib */,
+				B24CC13B2A84B40100FE7C60 /* CameraFPVViewController.h */,
+				B24CC13C2A84B40100FE7C60 /* CameraFPVViewController.m */,
+			);
+			path = fpv;
+			sourceTree = "<group>";
+		};
+		B24CC13E2A84B40100FE7C60 /* PlaybackCommand */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC13F2A84B40100FE7C60 /* CameraPlaybackCommandViewController.m */,
+				B24CC1402A84B40100FE7C60 /* CameraPlaybackCommandViewController.xib */,
+				B24CC1412A84B40100FE7C60 /* CameraPlaybackCommandViewController.h */,
+			);
+			path = PlaybackCommand;
+			sourceTree = "<group>";
+		};
+		B24CC1422A84B40100FE7C60 /* MediaFetchMedia */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1432A84B40100FE7C60 /* CameraFetchMediaViewController.m */,
+				B24CC1442A84B40100FE7C60 /* CameraFetchMediaViewController.h */,
+				B24CC1452A84B40100FE7C60 /* CameraFetchMediaViewController.xib */,
+			);
+			path = MediaFetchMedia;
+			sourceTree = "<group>";
+		};
+		B24CC1462A84B40100FE7C60 /* XT2 */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1472A84B40100FE7C60 /* XT2CameraViewController.h */,
+				B24CC1482A84B40100FE7C60 /* XT2CameraViewController.m */,
+				B24CC1492A84B40100FE7C60 /* XT2CameraViewController.xib */,
+			);
+			path = XT2;
+			sourceTree = "<group>";
+		};
+		B24CC14B2A84B40100FE7C60 /* calibrate */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC14C2A84B40100FE7C60 /* CameraCalibrateViewController.m */,
+				B24CC14D2A84B40100FE7C60 /* CameraCalibrateViewController.h */,
+				B24CC14E2A84B40100FE7C60 /* CameraCalibrateViewController.xib */,
+			);
+			path = calibrate;
+			sourceTree = "<group>";
+		};
+		B24CC14F2A84B40100FE7C60 /* RecordVideo */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1502A84B40100FE7C60 /* CameraRecordVideoViewController.xib */,
+				B24CC1512A84B40100FE7C60 /* CameraRecordVideoViewController.h */,
+				B24CC1522A84B40100FE7C60 /* CameraRecordVideoViewController.m */,
+			);
+			path = RecordVideo;
+			sourceTree = "<group>";
+		};
+		B24CC1542A84B40100FE7C60 /* MediaVideoPlayback */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1552A84B40100FE7C60 /* CameraMediaPlaybackViewController.h */,
+				B24CC1562A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m */,
+				B24CC1572A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib */,
+				B24CC1582A84B40100FE7C60 /* CameraMediaPlaybackViewController.m */,
+				B24CC1592A84B40100FE7C60 /* CameraMediaPlaybackViewController.xib */,
+				B24CC15A2A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.h */,
+			);
+			path = MediaVideoPlayback;
+			sourceTree = "<group>";
+		};
+		B24CC15B2A84B40100FE7C60 /* PlaybackDownload */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC15C2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m */,
+				B24CC15D2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.xib */,
+				B24CC15E2A84B40100FE7C60 /* CameraPlaybackDownloadViewController.h */,
+			);
+			path = PlaybackDownload;
+			sourceTree = "<group>";
+		};
+		B24CC1602A84B40100FE7C60 /* AppActivation */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1612A84B40100FE7C60 /* AppActivationViewController.xib */,
+				B24CC1622A84B40100FE7C60 /* AppActivationViewController.h */,
+				B24CC1632A84B40100FE7C60 /* AppActivationViewController.m */,
+			);
+			path = AppActivation;
+			sourceTree = "<group>";
+		};
+		B24CC1642A84B40100FE7C60 /* DemoUtility */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1652A84B40100FE7C60 /* DemoCameraHelper.m */,
+				B24CC1662A84B40100FE7C60 /* DemoComponentHelper.m */,
+				B24CC1672A84B40100FE7C60 /* DemoUtilityMacro.h */,
+				B24CC1682A84B40100FE7C60 /* DemoUtilityMethod.m */,
+				B24CC1692A84B40100FE7C60 /* DemoCameraHelper.h */,
+				B24CC16A2A84B40100FE7C60 /* UIUtility */,
+				B24CC1802A84B40100FE7C60 /* DemoUtility.h */,
+				B24CC1812A84B40100FE7C60 /* DemoComponentHelper.h */,
+				B24CC1822A84B40100FE7C60 /* DemoUtilityMethod.h */,
+			);
+			path = DemoUtility;
+			sourceTree = "<group>";
+		};
+		B24CC16A2A84B40100FE7C60 /* UIUtility */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC16B2A84B40100FE7C60 /* DemoPushInfoViewController.xib */,
+				B24CC16C2A84B40100FE7C60 /* DemoTableViewController.m */,
+				B24CC16D2A84B40100FE7C60 /* DemoVirtualStickView.h */,
+				B24CC16E2A84B40100FE7C60 /* MBProgressHUD.m */,
+				B24CC16F2A84B40100FE7C60 /* DemoScrollView.xib */,
+				B24CC1702A84B40100FE7C60 /* DemoAlertView.h */,
+				B24CC1712A84B40100FE7C60 /* DemoPushInfoViewController.h */,
+				B24CC1722A84B40100FE7C60 /* DemoSettingItem.h */,
+				B24CC1732A84B40100FE7C60 /* DemoComponentActionTableViewController.h */,
+				B24CC1742A84B40100FE7C60 /* DemoScrollView.h */,
+				B24CC1752A84B40100FE7C60 /* DemoGetSetViewController.h */,
+				B24CC1762A84B40100FE7C60 /* MBProgressHUD.h */,
+				B24CC1772A84B40100FE7C60 /* DemoVirtualStickView.m */,
+				B24CC1782A84B40100FE7C60 /* DemoTableViewController.h */,
+				B24CC1792A84B40100FE7C60 /* DemoGetSetViewController.m */,
+				B24CC17A2A84B40100FE7C60 /* DemoScrollView.m */,
+				B24CC17B2A84B40100FE7C60 /* DemoComponentActionTableViewController.m */,
+				B24CC17C2A84B40100FE7C60 /* DemoSettingItem.m */,
+				B24CC17D2A84B40100FE7C60 /* DemoPushInfoViewController.m */,
+				B24CC17E2A84B40100FE7C60 /* DemoAlertView.m */,
+				B24CC17F2A84B40100FE7C60 /* DemoGetSetViewController.xib */,
+			);
+			path = UIUtility;
+			sourceTree = "<group>";
+		};
+		B24CC1842A84B40100FE7C60 /* Payload */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1852A84B40100FE7C60 /* PayloadViewController.xib */,
+				B24CC1862A84B40100FE7C60 /* PayloadViewController.m */,
+				B24CC1872A84B40100FE7C60 /* channel */,
+				B24CC18B2A84B40100FE7C60 /* PayloadViewController.h */,
+			);
+			path = Payload;
+			sourceTree = "<group>";
+		};
+		B24CC1872A84B40100FE7C60 /* channel */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1882A84B40100FE7C60 /* PayloadTestChannelViewController.xib */,
+				B24CC1892A84B40100FE7C60 /* PayloadTestChannelViewController.h */,
+				B24CC18A2A84B40100FE7C60 /* PayloadTestChannelViewController.m */,
+			);
+			path = channel;
+			sourceTree = "<group>";
+		};
+		B24CC18D2A84B40100FE7C60 /* Pipelines */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC18E2A84B40100FE7C60 /* logic */,
+				B24CC1912A84B40100FE7C60 /* PipelinesViewController.m */,
+				B24CC1922A84B40100FE7C60 /* cell */,
+				B24CC1962A84B40100FE7C60 /* model */,
+				B24CC1982A84B40100FE7C60 /* statistical */,
+				B24CC19B2A84B40100FE7C60 /* PipelinesViewController.xib */,
+				B24CC19C2A84B40100FE7C60 /* PipelinesViewController.h */,
+			);
+			path = Pipelines;
+			sourceTree = "<group>";
+		};
+		B24CC18E2A84B40100FE7C60 /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC18F2A84B40100FE7C60 /* PipelineDuplexLogic.h */,
+				B24CC1902A84B40100FE7C60 /* PipelineDuplexLogic.m */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		B24CC1922A84B40100FE7C60 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1932A84B40100FE7C60 /* PipelineTableViewCell.m */,
+				B24CC1942A84B40100FE7C60 /* PipelineTableViewCell.h */,
+				B24CC1952A84B40100FE7C60 /* PipelineTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		B24CC1962A84B40100FE7C60 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1972A84B40100FE7C60 /* PipelineProtocol.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B24CC1982A84B40100FE7C60 /* statistical */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1992A84B40100FE7C60 /* PipelineStatistical.m */,
+				B24CC19A2A84B40100FE7C60 /* PipelineStatistical.h */,
+			);
+			path = statistical;
+			sourceTree = "<group>";
+		};
+		B24CC19F2A84B40100FE7C60 /* Lidar */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1A02A84B40100FE7C60 /* LidarActionsTableViewController.h */,
+				B24CC1A12A84B40100FE7C60 /* LidarActionsTableViewController.m */,
+				B24CC1A22A84B40100FE7C60 /* PointCloudRecord */,
+			);
+			path = Lidar;
+			sourceTree = "<group>";
+		};
+		B24CC1A22A84B40100FE7C60 /* PointCloudRecord */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1A32A84B40100FE7C60 /* PointCloudRecordViewController.h */,
+				B24CC1A42A84B40100FE7C60 /* PointCloudRecordViewController.m */,
+				B24CC1A52A84B40100FE7C60 /* PointCloudRecordViewController.xib */,
+			);
+			path = PointCloudRecord;
+			sourceTree = "<group>";
+		};
+		B24CC1A82A84B40100FE7C60 /* RemoteController */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1A92A84B40100FE7C60 /* RCHardwareState */,
+				B24CC1AD2A84B40100FE7C60 /* RCGimbalControl */,
+				B24CC1B12A84B40100FE7C60 /* RCActionsTableViewController.m */,
+				B24CC1B22A84B40100FE7C60 /* RCParing */,
+				B24CC1B62A84B40100FE7C60 /* RCActionsTableViewController.h */,
+			);
+			path = RemoteController;
+			sourceTree = "<group>";
+		};
+		B24CC1A92A84B40100FE7C60 /* RCHardwareState */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1AA2A84B40100FE7C60 /* RCHardwareStateViewController.m */,
+				B24CC1AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib */,
+				B24CC1AC2A84B40100FE7C60 /* RCHardwareStateViewController.h */,
+			);
+			path = RCHardwareState;
+			sourceTree = "<group>";
+		};
+		B24CC1AD2A84B40100FE7C60 /* RCGimbalControl */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1AE2A84B40100FE7C60 /* RCGimbalControlViewController.m */,
+				B24CC1AF2A84B40100FE7C60 /* RCGimbalControlViewController.xib */,
+				B24CC1B02A84B40100FE7C60 /* RCGimbalControlViewController.h */,
+			);
+			path = RCGimbalControl;
+			sourceTree = "<group>";
+		};
+		B24CC1B22A84B40100FE7C60 /* RCParing */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1B32A84B40100FE7C60 /* RCParingViewController.m */,
+				B24CC1B42A84B40100FE7C60 /* RCParingViewController.xib */,
+				B24CC1B52A84B40100FE7C60 /* RCParingViewController.h */,
+			);
+			path = RCParing;
+			sourceTree = "<group>";
+		};
+		B24CC1BA2A84B40100FE7C60 /* MissionManager */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1BB2A84B40100FE7C60 /* FollowMeMissionViewController.h */,
+				B24CC1BC2A84B40100FE7C60 /* TimelineMissionViewController.m */,
+				B24CC1BD2A84B40100FE7C60 /* HotpointMissionViewController.h */,
+				B24CC1BE2A84B40100FE7C60 /* PanoramaMissionViewController.m */,
+				B24CC1BF2A84B40100FE7C60 /* WaypointMissionViewController.h */,
+				B24CC1C02A84B40100FE7C60 /* MissionBaseViewController.m */,
+				B24CC1C12A84B40100FE7C60 /* TimelineMissionViewController.h */,
+				B24CC1C22A84B40100FE7C60 /* FollowMeMissionViewController.m */,
+				B24CC1C32A84B40100FE7C60 /* PanoramaMissionViewController.h */,
+				B24CC1C42A84B40100FE7C60 /* HotpointMissionViewController.m */,
+				B24CC1C52A84B40100FE7C60 /* MissionBaseViewController.xib */,
+				B24CC1C62A84B40100FE7C60 /* MissionBaseViewController.h */,
+				B24CC1C72A84B40100FE7C60 /* WaypointMissionViewController.m */,
+			);
+			path = MissionManager;
+			sourceTree = "<group>";
+		};
+		B24CC1C82A84B40100FE7C60 /* FlightController */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1C92A84B40100FE7C60 /* VirtualStick */,
+				B24CC1CD2A84B40100FE7C60 /* FlightLimitation */,
+				B24CC1D12A84B40100FE7C60 /* FCActionsTableViewController.m */,
+				B24CC1D22A84B40100FE7C60 /* General */,
+				B24CC1D62A84B40100FE7C60 /* IntelligentAssistant */,
+				B24CC1DA2A84B40100FE7C60 /* LandingGear */,
+				B24CC1DE2A84B40100FE7C60 /* FCActionsTableViewController.h */,
+				B24CC1DF2A84B40100FE7C60 /* RTK */,
+				B24CC1E32A84B40100FE7C60 /* Compass */,
+				B24CC1E72A84B40100FE7C60 /* OrientationMode */,
+			);
+			path = FlightController;
+			sourceTree = "<group>";
+		};
+		B24CC1C92A84B40100FE7C60 /* VirtualStick */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1CA2A84B40100FE7C60 /* FCVirtualStickViewController.xib */,
+				B24CC1CB2A84B40100FE7C60 /* FCVirtualStickViewController.h */,
+				B24CC1CC2A84B40100FE7C60 /* FCVirtualStickViewController.m */,
+			);
+			path = VirtualStick;
+			sourceTree = "<group>";
+		};
+		B24CC1CD2A84B40100FE7C60 /* FlightLimitation */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1CE2A84B40100FE7C60 /* FCFlightLimitationViewController.xib */,
+				B24CC1CF2A84B40100FE7C60 /* FCFlightLimitationViewController.m */,
+				B24CC1D02A84B40100FE7C60 /* FCFlightLimitationViewController.h */,
+			);
+			path = FlightLimitation;
+			sourceTree = "<group>";
+		};
+		B24CC1D22A84B40100FE7C60 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1D32A84B40100FE7C60 /* FCGeneralControlViewController.h */,
+				B24CC1D42A84B40100FE7C60 /* FCGeneralControlViewController.xib */,
+				B24CC1D52A84B40100FE7C60 /* FCGeneralControlViewController.m */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		B24CC1D62A84B40100FE7C60 /* IntelligentAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1D72A84B40100FE7C60 /* FCIntelligentAssistantViewController.m */,
+				B24CC1D82A84B40100FE7C60 /* FCIntelligentAssistantViewController.h */,
+				B24CC1D92A84B40100FE7C60 /* FCIntelligentAssistantViewController.xib */,
+			);
+			path = IntelligentAssistant;
+			sourceTree = "<group>";
+		};
+		B24CC1DA2A84B40100FE7C60 /* LandingGear */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1DB2A84B40100FE7C60 /* FCLandingGearViewController.m */,
+				B24CC1DC2A84B40100FE7C60 /* FCLandingGearViewController.h */,
+				B24CC1DD2A84B40100FE7C60 /* FCLandingGearViewController.xib */,
+			);
+			path = LandingGear;
+			sourceTree = "<group>";
+		};
+		B24CC1DF2A84B40100FE7C60 /* RTK */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1E02A84B40100FE7C60 /* FCRTKViewController.m */,
+				B24CC1E12A84B40100FE7C60 /* FCRTKViewController.h */,
+				B24CC1E22A84B40100FE7C60 /* FCRTKViewController.xib */,
+			);
+			path = RTK;
+			sourceTree = "<group>";
+		};
+		B24CC1E32A84B40100FE7C60 /* Compass */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1E42A84B40100FE7C60 /* FCCompassViewController.xib */,
+				B24CC1E52A84B40100FE7C60 /* FCCompassViewController.m */,
+				B24CC1E62A84B40100FE7C60 /* FCCompassViewController.h */,
+			);
+			path = Compass;
+			sourceTree = "<group>";
+		};
+		B24CC1E72A84B40100FE7C60 /* OrientationMode */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1E82A84B40100FE7C60 /* FCOrientationViewController.h */,
+				B24CC1E92A84B40100FE7C60 /* FCOrientationViewController.m */,
+				B24CC1EA2A84B40100FE7C60 /* FCOrientationViewController.xib */,
+			);
+			path = OrientationMode;
+			sourceTree = "<group>";
+		};
+		B24CC1EB2A84B40100FE7C60 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1EC2A84B40100FE7C60 /* BluetoothConnectorViewController.m */,
+				B24CC1ED2A84B40100FE7C60 /* BluetoothConnectorViewController.h */,
+				B24CC1EE2A84B40100FE7C60 /* BluetoothConnectorViewController.xib */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		B24CC1EF2A84B40100FE7C60 /* HandheldController */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1F02A84B40100FE7C60 /* SleepMode */,
+				B24CC1F42A84B40100FE7C60 /* HandheldControllerActionsTableViewController.h */,
+				B24CC1F52A84B40100FE7C60 /* HandheldControllerActionsTableViewController.m */,
+			);
+			path = HandheldController;
+			sourceTree = "<group>";
+		};
+		B24CC1F02A84B40100FE7C60 /* SleepMode */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1F12A84B40100FE7C60 /* SleepModeViewController.m */,
+				B24CC1F22A84B40100FE7C60 /* SleepModeViewController.xib */,
+				B24CC1F32A84B40100FE7C60 /* SleepModeViewController.h */,
+			);
+			path = SleepMode;
+			sourceTree = "<group>";
+		};
+		B24CC1FA2A84B40100FE7C60 /* LDM */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC1FB2A84B40100FE7C60 /* LDMViewController.m */,
+				B24CC1FC2A84B40100FE7C60 /* LDMViewController.h */,
+				B24CC1FD2A84B40100FE7C60 /* LDMViewController.xib */,
+			);
+			path = LDM;
+			sourceTree = "<group>";
+		};
+		B24CC1FF2A84B40100FE7C60 /* Keyed Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2002A84B40100FE7C60 /* KeyedInterfaceViewController.m */,
+				B24CC2012A84B40100FE7C60 /* keys.plist */,
+				B24CC2022A84B40100FE7C60 /* KeyedInterfaceViewController.h */,
+				B24CC2032A84B40100FE7C60 /* KeyedInterfaceViewController.xib */,
+			);
+			path = "Keyed Interface";
+			sourceTree = "<group>";
+		};
+		B24CC2042A84B40100FE7C60 /* DJIMapView */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2052A84B40100FE7C60 /* DJIAnnotationViews */,
+				B24CC2142A84B40100FE7C60 /* DJIMapView.h */,
+				B24CC2152A84B40100FE7C60 /* DJIOverlayViews */,
+				B24CC22C2A84B40100FE7C60 /* DJIMapView.m */,
+			);
+			path = DJIMapView;
+			sourceTree = "<group>";
+		};
+		B24CC2052A84B40100FE7C60 /* DJIAnnotationViews */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2062A84B40100FE7C60 /* DJIWaypointAnnotationView.m */,
+				B24CC2072A84B40100FE7C60 /* DJIAnnotation.h */,
+				B24CC2082A84B40100FE7C60 /* DJIAnnotationView.m */,
+				B24CC2092A84B40100FE7C60 /* DJIAircraftAnnotationView.m */,
+				B24CC20A2A84B40100FE7C60 /* DJIPOIAnnotationView.m */,
+				B24CC20B2A84B40100FE7C60 /* DJIWaypointAnnotation.h */,
+				B24CC20C2A84B40100FE7C60 /* DJIAircraftAnnotation.m */,
+				B24CC20D2A84B40100FE7C60 /* DJIAnnotationView.h */,
+				B24CC20E2A84B40100FE7C60 /* DJIAnnotation.m */,
+				B24CC20F2A84B40100FE7C60 /* DJIWaypointAnnotationView.h */,
+				B24CC2102A84B40100FE7C60 /* DJIAircraftAnnotationView.h */,
+				B24CC2112A84B40100FE7C60 /* DJIPOIAnnotationView.h */,
+				B24CC2122A84B40100FE7C60 /* DJIAircraftAnnotation.h */,
+				B24CC2132A84B40100FE7C60 /* DJIWaypointAnnotation.m */,
+			);
+			path = DJIAnnotationViews;
+			sourceTree = "<group>";
+		};
+		B24CC2152A84B40100FE7C60 /* DJIOverlayViews */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2162A84B40100FE7C60 /* DJIFlyLimitCircle.h */,
+				B24CC2172A84B40100FE7C60 /* DJIMapPolygon.m */,
+				B24CC2182A84B40100FE7C60 /* DJIFlyLimitCircleView.m */,
+				B24CC2192A84B40100FE7C60 /* DJIPolygon.m */,
+				B24CC21A2A84B40100FE7C60 /* DJIWhitelistOverlay.h */,
+				B24CC21B2A84B40100FE7C60 /* DJIMapOverlay.m */,
+				B24CC21C2A84B40100FE7C60 /* DJILimitSpaceOverlay.h */,
+				B24CC21D2A84B40100FE7C60 /* DJIFlyLimitPolygonView.m */,
+				B24CC21E2A84B40100FE7C60 /* DJIFlyZoneColorProvider.m */,
+				B24CC21F2A84B40100FE7C60 /* DJICircle.h */,
+				B24CC2202A84B40100FE7C60 /* DJIWaypointV2FlightPathOverlays.h */,
+				B24CC2212A84B40100FE7C60 /* DJIMapPolygon.h */,
+				B24CC2222A84B40100FE7C60 /* DJIFlyLimitCircle.m */,
+				B24CC2232A84B40100FE7C60 /* DJIPolygon.h */,
+				B24CC2242A84B40100FE7C60 /* DJIFlyLimitCircleView.h */,
+				B24CC2252A84B40100FE7C60 /* DJIMapOverlay.h */,
+				B24CC2262A84B40100FE7C60 /* DJIWhitelistOverlay.m */,
+				B24CC2272A84B40100FE7C60 /* DJIWaypointV2FlightPathOverlays.m */,
+				B24CC2282A84B40100FE7C60 /* DJICircle.m */,
+				B24CC2292A84B40100FE7C60 /* DJILimitSpaceOverlay.m */,
+				B24CC22A2A84B40100FE7C60 /* DJIFlyLimitPolygonView.h */,
+				B24CC22B2A84B40100FE7C60 /* DJIFlyZoneColorProvider.h */,
+			);
+			path = DJIOverlayViews;
+			sourceTree = "<group>";
+		};
+		B24CC22D2A84B40100FE7C60 /* Battery */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC22E2A84B40100FE7C60 /* BatteryActionsTableViewController.m */,
+				B24CC22F2A84B40100FE7C60 /* BatteryActionsTableViewController.h */,
+				B24CC2302A84B40100FE7C60 /* GetSetSelfDischargeDay */,
+			);
+			path = Battery;
+			sourceTree = "<group>";
+		};
+		B24CC2302A84B40100FE7C60 /* GetSetSelfDischargeDay */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2312A84B40100FE7C60 /* BatterySelfDischargeViewController.m */,
+				B24CC2322A84B40100FE7C60 /* BatterySelfDischargeViewController.h */,
+			);
+			path = GetSetSelfDischargeDay;
+			sourceTree = "<group>";
+		};
+		B24CC2342A84B40100FE7C60 /* Accessory */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2352A84B40100FE7C60 /* AccessoryAggregationViewController.xib */,
+				B24CC2362A84B40100FE7C60 /* spotlight */,
+				B24CC23A2A84B40100FE7C60 /* speaker */,
+				B24CC2452A84B40100FE7C60 /* AccessoryAggregationViewController.m */,
+				B24CC2462A84B40100FE7C60 /* AccessoryAggregationViewController.h */,
+				B24CC2472A84B40100FE7C60 /* beacon */,
+			);
+			path = Accessory;
+			sourceTree = "<group>";
+		};
+		B24CC2362A84B40100FE7C60 /* spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2372A84B40100FE7C60 /* SpotlightViewController.h */,
+				B24CC2382A84B40100FE7C60 /* SpotlightViewController.xib */,
+				B24CC2392A84B40100FE7C60 /* SpotlightViewController.m */,
+			);
+			path = spotlight;
+			sourceTree = "<group>";
+		};
+		B24CC23A2A84B40100FE7C60 /* speaker */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC23B2A84B40100FE7C60 /* SpeakerViewController.m */,
+				B24CC23C2A84B40100FE7C60 /* record */,
+				B24CC23F2A84B40100FE7C60 /* cell */,
+				B24CC2432A84B40100FE7C60 /* SpeakerViewController.h */,
+				B24CC2442A84B40100FE7C60 /* SpeakerViewController.xib */,
+			);
+			path = speaker;
+			sourceTree = "<group>";
+		};
+		B24CC23C2A84B40100FE7C60 /* record */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC23D2A84B40100FE7C60 /* RecordingHandler.h */,
+				B24CC23E2A84B40100FE7C60 /* RecordingHandler.m */,
+			);
+			path = record;
+			sourceTree = "<group>";
+		};
+		B24CC23F2A84B40100FE7C60 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2402A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.m */,
+				B24CC2412A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.xib */,
+				B24CC2422A84B40100FE7C60 /* SpeakerAudioPlaylistTableViewCell.h */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		B24CC2472A84B40100FE7C60 /* beacon */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2482A84B40100FE7C60 /* BeaconViewController.m */,
+				B24CC2492A84B40100FE7C60 /* BeaconViewController.xib */,
+				B24CC24A2A84B40100FE7C60 /* BeaconViewController.h */,
+			);
+			path = beacon;
+			sourceTree = "<group>";
+		};
+		B24CC24B2A84B40100FE7C60 /* AirLink */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC24C2A84B40100FE7C60 /* AirLinkActionsTableViewController.m */,
+				B24CC24D2A84B40100FE7C60 /* RebootWiFi */,
+				B24CC2512A84B40100FE7C60 /* SetGetChannel */,
+				B24CC2542A84B40100FE7C60 /* AirLinkActionsTableViewController.h */,
+				B24CC2552A84B40100FE7C60 /* WiFiSSID */,
+			);
+			path = AirLink;
+			sourceTree = "<group>";
+		};
+		B24CC24D2A84B40100FE7C60 /* RebootWiFi */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC24E2A84B40100FE7C60 /* RebootWiFiViewController.m */,
+				B24CC24F2A84B40100FE7C60 /* RebootWiFiViewController.xib */,
+				B24CC2502A84B40100FE7C60 /* RebootWiFiViewController.h */,
+			);
+			path = RebootWiFi;
+			sourceTree = "<group>";
+		};
+		B24CC2512A84B40100FE7C60 /* SetGetChannel */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2522A84B40100FE7C60 /* SetGetChannelViewController.m */,
+				B24CC2532A84B40100FE7C60 /* SetGetChannelViewController.h */,
+			);
+			path = SetGetChannel;
+			sourceTree = "<group>";
+		};
+		B24CC2552A84B40100FE7C60 /* WiFiSSID */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC2562A84B40100FE7C60 /* WiFiLinkSSIDViewController.h */,
+				B24CC2572A84B40100FE7C60 /* WiFiLinkSSIDViewController.m */,
+			);
+			path = WiFiSSID;
+			sourceTree = "<group>";
+		};
+		B24CC2FF2A84B4C100FE7C60 /* VideoPreviewerAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				B24CC3002A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.h */,
+				B24CC3012A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.h */,
+				B24CC3022A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m */,
+				B24CC3032A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m */,
+				B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */,
+				B24CC3052A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.h */,
+			);
+			path = VideoPreviewerAdapter;
 			sourceTree = "<group>";
 		};
 		B257D6A62A68DB5400A983E8 /* Password */ = {
@@ -436,6 +1724,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B2D526062A8374EE00993A02 /* DroneConnecter */ = {
+			isa = PBXGroup;
+			children = (
+				B261364B2A821FE300ABBE45 /* DroneConnector.swift */,
+			);
+			path = DroneConnecter;
+			sourceTree = "<group>";
+		};
 		B2E2C4A42A78E15700186BC6 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +1741,6 @@
 				B2E2C4A22A78DC1100186BC6 /* BottomsheetInteractive.swift */,
 				B2E2C49E2A78DBD500186BC6 /* BottomSheetTransition.swift */,
 				B2E2C4982A78DB7600186BC6 /* Dense.swift */,
-				B261364B2A821FE300ABBE45 /* DroneConnector.swift */,
 				B2E2C4A02A78DBF400186BC6 /* BottomsheetPresentation.swift */,
 				B2E2C4962A78DB5500186BC6 /* Sparse.swift */,
 				B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */,
@@ -544,31 +1839,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24CC28F2A84B40100FE7C60 /* DemoScrollView.xib in Resources */,
+				B24CC2C62A84B40200FE7C60 /* FCRTKViewController.xib in Resources */,
+				B24CC2ED2A84B40200FE7C60 /* CameraParamSetting.storyboard in Resources */,
+				B24CC2992A84B40100FE7C60 /* PayloadViewController.xib in Resources */,
+				B24CC27C2A84B40100FE7C60 /* XT2CameraViewController.xib in Resources */,
 				E7A4193E2A80A24E0004B30D /* giphy2.gif in Resources */,
+				B24CC2652A84B40100FE7C60 /* UpgradeComponentViewController.xib in Resources */,
+				B24CC2682A84B40100FE7C60 /* DemoSelectView.xib in Resources */,
 				B2AD6F322A5FF4FF00BE1EB4 /* Barlow-Bold.ttf in Resources */,
+				B24CC2D62A84B40200FE7C60 /* keys.plist in Resources */,
+				B24CC2A92A84B40100FE7C60 /* WaypointV2.storyboard in Resources */,
+				B24CC2BF2A84B40200FE7C60 /* FCGeneralControlViewController.xib in Resources */,
+				B24CC2BA2A84B40200FE7C60 /* FCVirtualStickViewController.xib in Resources */,
+				B24CC2F82A84B40200FE7C60 /* BeaconViewController.xib in Resources */,
 				B2AD6F312A5FF4FF00BE1EB4 /* Barlow-BoldItalic.ttf in Resources */,
+				B24CC2842A84B40100FE7C60 /* CameraMediaPlaybackViewController.xib in Resources */,
 				B282E6EE2A80A24D008B822E /* Widgets.storyboard in Resources */,
 				B2AD6F342A5FF4FF00BE1EB4 /* Barlow-SemiBold.ttf in Resources */,
+				B24CC2A02A84B40100FE7C60 /* PipelineTableViewCell.xib in Resources */,
 				B282E6F32A80A24D008B822E /* gitignore in Resources */,
 				B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */,
+				B24CC2BC2A84B40200FE7C60 /* FCFlightLimitationViewController.xib in Resources */,
+				B24CC28C2A84B40100FE7C60 /* DemoPushInfoViewController.xib in Resources */,
 				B2AD6F362A5FF4FF00BE1EB4 /* Barlow-Italic.ttf in Resources */,
+				B24CC2C42A84B40200FE7C60 /* FCLandingGearViewController.xib in Resources */,
+				B24CC27E2A84B40100FE7C60 /* CameraCalibrateViewController.xib in Resources */,
 				B289FA812A80A50E004BC2F3 /* Main.storyboard in Resources */,
 				B2AD6F382A5FF4FF00BE1EB4 /* Barlow-Medium.ttf in Resources */,
+				B24CC2AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib in Resources */,
+				B24CC26F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib in Resources */,
 				B2AD6F352A5FF4FF00BE1EB4 /* Barlow-Thin.ttf in Resources */,
 				B2AD6F3E2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf in Resources */,
 				B2AD6F3D2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf in Resources */,
 				E7D27A622A7CA89500D52FA1 /* bg.gif in Resources */,
 				B2AD6F2F2A5FF4FF00BE1EB4 /* Barlow-ExtraLight.ttf in Resources */,
+				B24CC25C2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.xib in Resources */,
 				B282E6E82A80A24D008B822E /* DefaultLayout.storyboard in Resources */,
+				B24CC2742A84B40100FE7C60 /* CameraFPVViewController.xib in Resources */,
+				B24CC2FB2A84B40200FE7C60 /* RebootWiFiViewController.xib in Resources */,
+				B24CC2A22A84B40100FE7C60 /* PipelinesViewController.xib in Resources */,
+				B24CC2F42A84B40200FE7C60 /* SpeakerAudioPlaylistTableViewCell.xib in Resources */,
+				B24CC25F2A84B40100FE7C60 /* GimbalCapabilityViewController.xib in Resources */,
+				B24CC2CC2A84B40200FE7C60 /* BluetoothConnectorViewController.xib in Resources */,
+				B24CC2872A84B40100FE7C60 /* AppActivationViewController.xib in Resources */,
+				B24CC2AD2A84B40100FE7C60 /* RCGimbalControlViewController.xib in Resources */,
 				B2AD6F2D2A5FF4FF00BE1EB4 /* Barlow-ExtraBold.ttf in Resources */,
+				B24CC2642A84B40100FE7C60 /* UpgradeManagerViewController.xib in Resources */,
+				B24CC29B2A84B40100FE7C60 /* PayloadTestChannelViewController.xib in Resources */,
+				B24CC2B22A84B40100FE7C60 /* VideoFeederViewController.xib in Resources */,
+				B24CC2622A84B40100FE7C60 /* VideoLiveStreamingViewController.xib in Resources */,
 				B2AD6F392A5FF4FF00BE1EB4 /* Barlow-MediumItalic.ttf in Resources */,
+				B24CC27F2A84B40100FE7C60 /* CameraRecordVideoViewController.xib in Resources */,
+				B24CC26A2A84B40100FE7C60 /* MobileRemoteControllerViewController.xib in Resources */,
+				B24CC2A72A84B40100FE7C60 /* PointCloudRecordViewController.xib in Resources */,
 				B282E6E62A80A24D008B822E /* DefaultLayoutCustomization.storyboard in Resources */,
 				B2AD6F3B2A5FF4FF00BE1EB4 /* Barlow-ThinItalic.ttf in Resources */,
+				B24CC2C72A84B40200FE7C60 /* FCCompassViewController.xib in Resources */,
+				B24CC2CA2A84B40200FE7C60 /* FCOrientationViewController.xib in Resources */,
+				B24CC27A2A84B40100FE7C60 /* CameraFetchMediaViewController.xib in Resources */,
 				B2AD6F372A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf in Resources */,
 				B2AD6F302A5FF4FF00BE1EB4 /* Barlow-Light.ttf in Resources */,
 				B2AD6F332A5FF4FF00BE1EB4 /* Barlow-Black.ttf in Resources */,
+				B24CC2D42A84B40200FE7C60 /* LDMViewController.xib in Resources */,
+				B24CC2B82A84B40200FE7C60 /* MissionBaseViewController.xib in Resources */,
+				B24CC2D72A84B40200FE7C60 /* KeyedInterfaceViewController.xib in Resources */,
+				B24CC2C22A84B40200FE7C60 /* FCIntelligentAssistantViewController.xib in Resources */,
+				B24CC2D02A84B40200FE7C60 /* ComponentSelectionViewController.xib in Resources */,
+				B24CC2CE2A84B40200FE7C60 /* SleepModeViewController.xib in Resources */,
 				B2AD6F3A2A5FF4FF00BE1EB4 /* Barlow-SemiBoldItalic.ttf in Resources */,
+				B24CC2FE2A84B40200FE7C60 /* PayloadWidgetViewController.xib in Resources */,
 				B282E6F22A80A24D008B822E /* MapWidget.storyboard in Resources */,
+				B24CC2F52A84B40200FE7C60 /* SpeakerViewController.xib in Resources */,
+				B24CC2782A84B40100FE7C60 /* CameraPlaybackCommandViewController.xib in Resources */,
+				B24CC2B02A84B40100FE7C60 /* RCParingViewController.xib in Resources */,
+				B24CC2EF2A84B40200FE7C60 /* SpotlightViewController.xib in Resources */,
+				B24CC2862A84B40100FE7C60 /* CameraPlaybackDownloadViewController.xib in Resources */,
+				B24CC2EE2A84B40200FE7C60 /* AccessoryAggregationViewController.xib in Resources */,
+				B24CC2822A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.xib in Resources */,
+				B24CC2972A84B40100FE7C60 /* DemoGetSetViewController.xib in Resources */,
 				A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */,
 				B2AD6F2E2A5FF4FF00BE1EB4 /* Barlow-BlackItalic.ttf in Resources */,
 			);
@@ -660,50 +2009,163 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24CC2942A84B40100FE7C60 /* DemoSettingItem.m in Sources */,
+				B24CC2762A84B40100FE7C60 /* CameraSettingsViewController.m in Sources */,
+				B24CC2B32A84B40100FE7C60 /* TimelineMissionViewController.m in Sources */,
+				B24CC2962A84B40100FE7C60 /* DemoAlertView.m in Sources */,
+				B24CC3072A84B4C100FE7C60 /* DJIDecodeImageCalibrateControlLogic.m in Sources */,
+				B24CC2FC2A84B40200FE7C60 /* SetGetChannelViewController.m in Sources */,
 				B282E6E72A80A24D008B822E /* DefaultLayoutViewController.swift in Sources */,
+				B24CC2AE2A84B40100FE7C60 /* RCActionsTableViewController.m in Sources */,
+				B24CC2902A84B40100FE7C60 /* DemoVirtualStickView.m in Sources */,
 				B2E2C4A32A78DC1100186BC6 /* BottomsheetInteractive.swift in Sources */,
+				B24CC2F72A84B40200FE7C60 /* BeaconViewController.m in Sources */,
+				B24CC2692A84B40100FE7C60 /* WaypointV2PointConfigViewController.m in Sources */,
 				B21A487A2A7219C8000A147B /* HorizontalView.swift in Sources */,
+				B24CC2B52A84B40200FE7C60 /* MissionBaseViewController.m in Sources */,
 				B2E2C49B2A78DB8F00186BC6 /* Table.swift in Sources */,
+				B24CC2B92A84B40200FE7C60 /* WaypointMissionViewController.m in Sources */,
+				B24CC2912A84B40100FE7C60 /* DemoGetSetViewController.m in Sources */,
+				B24CC2BB2A84B40200FE7C60 /* FCVirtualStickViewController.m in Sources */,
+				B24CC2D52A84B40200FE7C60 /* KeyedInterfaceViewController.m in Sources */,
+				B24CC2F32A84B40200FE7C60 /* SpeakerAudioPlaylistTableViewCell.m in Sources */,
+				B24CC2892A84B40100FE7C60 /* DemoCameraHelper.m in Sources */,
+				B24CC2602A84B40100FE7C60 /* DJIGimbal+CapabilityCheck.m in Sources */,
+				B24CC2D12A84B40200FE7C60 /* CameraDetailSetViewController.m in Sources */,
+				B24CC2922A84B40100FE7C60 /* DemoScrollView.m in Sources */,
+				B24CC2C12A84B40200FE7C60 /* FCIntelligentAssistantViewController.m in Sources */,
+				B24CC2CB2A84B40200FE7C60 /* BluetoothConnectorViewController.m in Sources */,
+				B24CC2752A84B40100FE7C60 /* CameraFPVViewController.m in Sources */,
+				B24CC29D2A84B40100FE7C60 /* PipelineDuplexLogic.m in Sources */,
 				B282E6E92A80A24D008B822E /* DefaultLayoutCustomizationViewController.swift in Sources */,
+				B24CC25D2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m in Sources */,
+				B24CC2EB2A84B40200FE7C60 /* BatteryActionsTableViewController.m in Sources */,
 				B21A48812A725567000A147B /* Profile.swift in Sources */,
 				B2E2C4972A78DB5500186BC6 /* Sparse.swift in Sources */,
+				B24CC2EC2A84B40200FE7C60 /* BatterySelfDischargeViewController.m in Sources */,
+				B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */,
+				B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */,
 				B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */,
 				B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */,
 				E7510BCB2A8356E7005F59B1 /* DateFormatter.swift in Sources */,
 				B282E6EC2A80A24D008B822E /* MyBatteryWidget.swift in Sources */,
 				B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */,
+				B24CC2D22A84B40200FE7C60 /* WaypointV2ViewController.m in Sources */,
+				B24CC2612A84B40100FE7C60 /* GimbalCapabilityViewController.m in Sources */,
 				B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */,
+				B24CC2932A84B40100FE7C60 /* DemoComponentActionTableViewController.m in Sources */,
+				B24CC2F12A84B40200FE7C60 /* SpeakerViewController.m in Sources */,
+				B24CC3082A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */,
+				B24CC2B12A84B40100FE7C60 /* ComponentSelectionViewController.m in Sources */,
+				B24CC2672A84B40100FE7C60 /* UpgradeManagerViewController.m in Sources */,
+				B24CC2AC2A84B40100FE7C60 /* RCGimbalControlViewController.m in Sources */,
+				B24CC2E92A84B40200FE7C60 /* DJILimitSpaceOverlay.m in Sources */,
 				E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */,
+				B24CC2EA2A84B40200FE7C60 /* DJIMapView.m in Sources */,
 				B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */,
+				B24CC2BE2A84B40200FE7C60 /* FCActionsTableViewController.m in Sources */,
 				B2E2C4992A78DB7600186BC6 /* Dense.swift in Sources */,
+				B24CC26D2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m in Sources */,
 				B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */,
+				B24CC29F2A84B40100FE7C60 /* PipelineTableViewCell.m in Sources */,
+				B24CC2BD2A84B40200FE7C60 /* FCFlightLimitationViewController.m in Sources */,
+				B24CC2F22A84B40200FE7C60 /* RecordingHandler.m in Sources */,
+				B24CC2E72A84B40200FE7C60 /* DJIWaypointV2FlightPathOverlays.m in Sources */,
+				B24CC2F92A84B40200FE7C60 /* AirLinkActionsTableViewController.m in Sources */,
+				B24CC2DD2A84B40200FE7C60 /* DJIAnnotation.m in Sources */,
+				B24CC2A32A84B40100FE7C60 /* VideoFeederViewController.m in Sources */,
+				B24CC2CD2A84B40200FE7C60 /* SleepModeViewController.m in Sources */,
+				B24CC2712A84B40100FE7C60 /* CameraISOViewController.m in Sources */,
+				B24CC2D92A84B40200FE7C60 /* DJIAnnotationView.m in Sources */,
 				B282E6F02A80A24D008B822E /* MapWidgetViewController.swift in Sources */,
+				B24CC26E2A84B40100FE7C60 /* CameraActionsTableViewController.m in Sources */,
+				B24CC29A2A84B40100FE7C60 /* PayloadViewController.m in Sources */,
+				B24CC29C2A84B40100FE7C60 /* PayloadTestChannelViewController.m in Sources */,
 				B282E6EA2A80A24D008B822E /* PanelsCollectionsViewController.swift in Sources */,
 				B29803BE2A5EAAF300A94612 /* TextLabel.swift in Sources */,
+				B24CC2802A84B40100FE7C60 /* CameraRecordVideoViewController.m in Sources */,
+				B24CC2A42A84B40100FE7C60 /* DemoSelectView.m in Sources */,
+				B24CC2B72A84B40200FE7C60 /* HotpointMissionViewController.m in Sources */,
 				B2AD6EF52A5FE2DD00BE1EB4 /* Colors.swift in Sources */,
 				B21A487E2A7250F2000A147B /* ViewMission.swift in Sources */,
+				B24CC2702A84B40100FE7C60 /* CameraShootSinglePhotoViewController.m in Sources */,
 				E7D27A5F2A7CA66500D52FA1 /* GifImage.swift in Sources */,
+				B24CC2C32A84B40200FE7C60 /* FCLandingGearViewController.m in Sources */,
+				B24CC2E42A84B40200FE7C60 /* DJIFlyZoneColorProvider.m in Sources */,
+				B24CC2C82A84B40200FE7C60 /* FCCompassViewController.m in Sources */,
+				B24CC2B62A84B40200FE7C60 /* FollowMeMissionViewController.m in Sources */,
+				B24CC27B2A84B40100FE7C60 /* XT2CameraViewController.m in Sources */,
+				B24CC2DE2A84B40200FE7C60 /* DJIWaypointAnnotation.m in Sources */,
+				B24CC2852A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m in Sources */,
+				B24CC27D2A84B40100FE7C60 /* CameraCalibrateViewController.m in Sources */,
+				B24CC2632A84B40100FE7C60 /* VideoLiveStreamingViewController.m in Sources */,
 				B2AD6EEF2A5FC9E500BE1EB4 /* AccountService.swift in Sources */,
+				B24CC2812A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m in Sources */,
+				B24CC2E82A84B40200FE7C60 /* DJICircle.m in Sources */,
+				B24CC26C2A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m in Sources */,
 				B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */,
 				B2E2C4A12A78DBF400186BC6 /* BottomsheetPresentation.swift in Sources */,
+				B24CC2E52A84B40200FE7C60 /* DJIFlyLimitCircle.m in Sources */,
+				B24CC2662A84B40100FE7C60 /* UpgradeComponentViewController.m in Sources */,
+				B24CC2DF2A84B40200FE7C60 /* DJIMapPolygon.m in Sources */,
+				B24CC29E2A84B40100FE7C60 /* PipelinesViewController.m in Sources */,
+				B24CC2DC2A84B40200FE7C60 /* DJIAircraftAnnotation.m in Sources */,
 				B282E6ED2A80A24D008B822E /* WidgetsViewController.swift in Sources */,
+				B24CC2CF2A84B40200FE7C60 /* HandheldControllerActionsTableViewController.m in Sources */,
+				B24CC25E2A84B40100FE7C60 /* GimbalPushInfoViewController.m in Sources */,
+				B24CC2C52A84B40200FE7C60 /* FCRTKViewController.m in Sources */,
+				B24CC2D32A84B40200FE7C60 /* LDMViewController.m in Sources */,
+				B24CC2A52A84B40100FE7C60 /* LidarActionsTableViewController.m in Sources */,
+				B24CC2AA2A84B40100FE7C60 /* RCHardwareStateViewController.m in Sources */,
+				B24CC28E2A84B40100FE7C60 /* MBProgressHUD.m in Sources */,
+				B24CC28D2A84B40100FE7C60 /* DemoTableViewController.m in Sources */,
 				B2E2C49D2A78DBA800186BC6 /* Lifecycle.swift in Sources */,
+				B24CC28B2A84B40100FE7C60 /* DemoUtilityMethod.m in Sources */,
+				B24CC2832A84B40100FE7C60 /* CameraMediaPlaybackViewController.m in Sources */,
 				E7772B7D2A81F8B3003E6936 /* CustomRadius.swift in Sources */,
+				B24CC2DA2A84B40200FE7C60 /* DJIAircraftAnnotationView.m in Sources */,
+				B24CC2A82A84B40100FE7C60 /* PayloadWidgetViewController.m in Sources */,
+				B24CC2722A84B40100FE7C60 /* CameraPushInfoViewController.m in Sources */,
+				B24CC2E02A84B40200FE7C60 /* DJIFlyLimitCircleView.m in Sources */,
+				B24CC3062A84B4C100FE7C60 /* VideoPreviewerSDKAdapter.m in Sources */,
 				B21A48782A721551000A147B /* TextEditor.swift in Sources */,
+				B24CC2E62A84B40200FE7C60 /* DJIWhitelistOverlay.m in Sources */,
 				B28FFA292A7CAA800067CA22 /* FloatingActionButton.swift in Sources */,
+				B24CC2772A84B40100FE7C60 /* CameraPlaybackCommandViewController.m in Sources */,
 				B289FA802A80A50E004BC2F3 /* MainViewController.swift in Sources */,
+				B24CC2E22A84B40200FE7C60 /* DJIMapOverlay.m in Sources */,
+				B24CC2B42A84B40100FE7C60 /* PanoramaMissionViewController.m in Sources */,
 				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
+				B24CC2DB2A84B40200FE7C60 /* DJIPOIAnnotationView.m in Sources */,
+				B24CC2E12A84B40200FE7C60 /* DJIPolygon.m in Sources */,
 				B261364C2A821FE300ABBE45 /* DroneConnector.swift in Sources */,
 				B2E2C49F2A78DBD500186BC6 /* BottomSheetTransition.swift in Sources */,
+				B24CC2C02A84B40200FE7C60 /* FCGeneralControlViewController.m in Sources */,
+				B24CC2F02A84B40200FE7C60 /* SpotlightViewController.m in Sources */,
+				B24CC2A62A84B40100FE7C60 /* PointCloudRecordViewController.m in Sources */,
 				B282E6EF2A80A24D008B822E /* ProductCommunicationService.swift in Sources */,
 				B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */,
+				B24CC2E32A84B40200FE7C60 /* DJIFlyLimitPolygonView.m in Sources */,
+				B24CC2F62A84B40200FE7C60 /* AccessoryAggregationViewController.m in Sources */,
+				B24CC2D82A84B40200FE7C60 /* DJIWaypointAnnotationView.m in Sources */,
 				B2E2C4932A78DA6800186BC6 /* BottomSheet.swift in Sources */,
 				B289FA822A80A50E004BC2F3 /* SimulationControlsViewController.swift in Sources */,
 				B282E6F12A80A24D008B822E /* CustomMapViewController.swift in Sources */,
 				B2E42EBF2A5E8FAC00D78AD1 /* MissionList.swift in Sources */,
+				B24CC2AF2A84B40100FE7C60 /* RCParingViewController.m in Sources */,
+				B24CC2C92A84B40200FE7C60 /* FCOrientationViewController.m in Sources */,
+				B24CC2732A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m in Sources */,
+				B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */,
+				B24CC2FA2A84B40200FE7C60 /* RebootWiFiViewController.m in Sources */,
+				B24CC2982A84B40100FE7C60 /* WaypointV2MapPointsViewController.m in Sources */,
+				B24CC2952A84B40100FE7C60 /* DemoPushInfoViewController.m in Sources */,
+				B24CC2882A84B40100FE7C60 /* AppActivationViewController.m in Sources */,
 				A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */,
+				B24CC2FD2A84B40200FE7C60 /* WiFiLinkSSIDViewController.m in Sources */,
+				B24CC26B2A84B40100FE7C60 /* MobileRemoteControllerViewController.m in Sources */,
 				B2AD6EEA2A5FC84500BE1EB4 /* APIService.swift in Sources */,
 				B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */,
+				B24CC28A2A84B40100FE7C60 /* DemoComponentHelper.m in Sources */,
 				B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,8 +2302,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test299;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -871,8 +2334,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test299;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

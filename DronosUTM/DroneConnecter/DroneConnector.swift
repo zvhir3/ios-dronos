@@ -11,32 +11,22 @@ final class DroneConnectorViewController: BottomSheetController {
     var contentView3: UIView!
     var contentView4: UIView!
     
+    var connectedImageView: UIImageView!
     var textLabel: UILabel!
     var connectionCheckTimer: Timer? // Timer variable to periodically check connection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        NotificationCenter.default.addObserver(self, selector: #selector(productCommunicationDidChange), name: Notification.Name(rawValue: ProductCommunicationServiceStateDidChange), object: nil)
-        
         // Start the connection check timer
         connectionCheckTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkConnection), userInfo: nil, repeats: true)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         var version = DJISDKManager.sdkVersion()
         if version == "" {
             version = "N/A"
-        }
-    }
-    
-    @objc func productCommunicationDidChange() {
-        if ProductCommunicationService.shared.connected {
-            textLabel.text = "Connected"
-        } else {
-            textLabel.text = "Please connect your mobile phone with registered drone"
         }
     }
     
@@ -47,12 +37,12 @@ final class DroneConnectorViewController: BottomSheetController {
             textLabel.text = "Connected"
             connectionCheckTimer?.invalidate()
             // Wait for 3 seconds and then display an alert
-           DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-               let storyboard = UIStoryboard(name: "DefaultLayout", bundle: nil)
-               if let mainViewController = storyboard.instantiateInitialViewController() {
-                   self.present(mainViewController, animated: true, completion: nil)
-               }
-           }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                let storyboard = UIStoryboard(name: "DefaultLayoutCustomization", bundle: nil)
+                if let mainViewController = storyboard.instantiateInitialViewController() {
+                    self.present(mainViewController, animated: true, completion: nil)
+                }
+            }
         } else {
             textLabel.text = "Please connect your mobile phone with registered drone"
         }
@@ -107,6 +97,21 @@ final class DroneConnectorViewController: BottomSheetController {
             textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20), // Add leading padding
             textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20), // Add trailing padding
             textLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -140) // Add padding at the bottom
+        ])
+        
+        // Create an image view for the "Connected" image
+        connectedImageView = UIImageView(image: UIImage(named: "connected")) // Replace "connected" with your image name
+        connectedImageView.contentMode = .scaleAspectFit
+        connectedImageView.translatesAutoresizingMaskIntoConstraints = false
+        connectedImageView.isHidden = true // Hide the image initially
+        view.addSubview(connectedImageView)
+        
+        // Create constraints for the connectedImageView
+        NSLayoutConstraint.activate([
+            connectedImageView.centerYAnchor.constraint(equalTo: textLabel.centerYAnchor),
+            connectedImageView.leadingAnchor.constraint(equalTo: textLabel.trailingAnchor, constant: 10), // Add spacing between image and text
+            connectedImageView.widthAnchor.constraint(equalToConstant: 20), // Set the width as needed
+            connectedImageView.heightAnchor.constraint(equalToConstant: 20) // Set the height as needed
         ])
         
     }

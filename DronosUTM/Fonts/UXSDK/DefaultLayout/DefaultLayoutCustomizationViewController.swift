@@ -46,6 +46,13 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
         }
     }
     
+    
+    // Override supported interface orientations
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape // Only support landscape orientation
+    }
+    
+    
     // Toggle for the content view for our button.  This will swap between our red view controller and the fpv view controller.
     @IBAction func switchContent(_ sender: UIButton) {
         if (isContentViewSwitched) {
@@ -63,5 +70,14 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize MQTT client
+//        mqtt = CocoaMQTT(clientID: "your-client-id", host: "your-mqtt-broker-host", port: 1883)
+//        mqtt.delegate = self // Set the delegate if needed
+//        mqtt.connect()
+//        let topic = "your-topic"
+//        let message = "Hello, MQTT!"
+//        mqtt.publish(topic, withString: message)
+        
     }
 }
