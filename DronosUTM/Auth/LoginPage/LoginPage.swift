@@ -36,6 +36,9 @@ struct LoginPage: View {
                     Launchpad()
                         .transition(.move(edge: .trailing))
                         .animation(.easeInOut(duration: 0.5), value: true)
+//                    let viewController = DenseContentSheetViewController()
+////                    viewController.preferredSheetSizing = .large
+//                    self.present(viewController, animated: true)
                 } else {
                     VStack {
                         Spacer()
@@ -264,11 +267,11 @@ struct LoginPage: View {
     }
 }
 
-struct LoginPage_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPage()
-    }
-}
+//struct LoginPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginPage()
+//    }
+//}
 
 func isValidEmail(_ email: String) -> Bool {
     let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
