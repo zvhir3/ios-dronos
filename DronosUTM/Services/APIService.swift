@@ -70,7 +70,6 @@ class APIService {
                    (response.statusCode == 200 || response.statusCode == 201) {
                     completion(true)
                 } else {
-                    let response = response as? HTTPURLResponse
                     completion(false)
                 }
             }
@@ -80,7 +79,6 @@ class APIService {
     // Logout
     static func deactivateAccount(token: String, userId: String, workspaceId: String, completion: @escaping (Bool) -> Void) {
         let urlString = Constants.baseURL + Constants.deactivateAccEndpoint + userId
-        print("sini", userId)
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             completion(false)
@@ -99,8 +97,6 @@ class APIService {
                    (response.statusCode == 200 || response.statusCode == 201) {
                     completion(true)
                 } else {
-                    let response = response as? HTTPURLResponse
-                    print("nak tengok response", response)
                     completion(false)
                 }
             }
