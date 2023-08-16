@@ -114,9 +114,69 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
       @objc func printToTerminal() {
           print("Live streaming is active...")
       }
-      
-    
-    
-    
-    
+//
+//    var isLiveStreaming = false
+//    var timer: Timer?
+//
+//    @IBOutlet weak var startStopButton: UIButton!
+//
+//    // MARK: - Lifecycle
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        configureUI()
+//    }
+//
+//    // MARK: - Configuration
+//
+//    func configureUI() {
+//        setStatusBarStyle(.lightContent)
+//        setSupportedInterfaceOrientations(.landscape)
+//    }
+//
+//    func setStatusBarStyle(_ style: UIStatusBarStyle) {
+//        overrideStatusBarStyle = style
+//        setNeedsStatusBarAppearanceUpdate()
+//    }
+//
+//    func setSupportedInterfaceOrientations(_ orientations: UIInterfaceOrientationMask) {
+//        overrideSupportedInterfaceOrientations = orientations
+//    }
+//
+//    // MARK: - Button Actions
+//
+//    @IBAction func switchContent(_ sender: UIButton) {
+//        isLiveStreaming.toggle()
+//        updateLiveStreamingUI()
+//
+//        if isLiveStreaming {
+//            startLiveStreaming()
+//        } else {
+//            stopLiveStreaming()
+//        }
+//    }
+//
+//    func updateLiveStreamingUI() {
+//        let color: UIColor = isLiveStreaming ? .red : .green
+//        startStopButton.setTitleColor(color, for: .normal)
+//        startStopButton.layer.borderWidth = 2.0
+//        startStopButton.layer.borderColor = color.cgColor
+//        startStopButton.setTitle(isLiveStreaming ? "Stop Live" : "Go Live", for: .normal)
+//    }
+//
+//    func startLiveStreaming() {
+//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(printToTerminal), userInfo: nil, repeats: true)
+//    }
+//
+//    func stopLiveStreaming() {
+//        timer?.invalidate()
+//        timer = nil
+//    }
+//
+//    @objc func printToTerminal() {
+//        print("Live streaming is active...")
+//    }
+
 }
+
+  
