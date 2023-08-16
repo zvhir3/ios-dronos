@@ -24,11 +24,14 @@ class APIService {
                    let response = response as? HTTPURLResponse,
                    (response.statusCode == 200 || response.statusCode == 201) {
                     // Successful login
-                    print("Login successful!", data)
+                    print("Login successful!", response)
+                    print("response data", try? JSONSerialization.jsonObject(with: data, options: []))
                     // let newToken = data.token
                     // UserDefaults.standard.set(newToken, forKey: "token")
                     if let responseData = try? JSONSerialization.jsonObject(with: data, options: []),
+                      
                        let tokenFull = (responseData as? [String: Any])?["token"] as? String {
+                        print("response data", responseData)
                         let prefix = "Bearer "
                         let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
                         // Access the token from the response data and save it to UserDefaults
@@ -40,6 +43,99 @@ class APIService {
                 } else {
                     // Login failed
                     print("Login failed!")
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
+    // Logout
+    static func logout(token: String, workspaceId: String, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.logoutEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        request.addValue(workspaceId, forHTTPHeaderField: "workspaceId")
+    
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse,
+                   (response.statusCode == 200 || response.statusCode == 201) {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
+    // Logout
+    static func deactivateAccount(token: String, userId: String, workspaceId: String, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.deactivateAccEndpoint + userId
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        request.addValue(workspaceId, forHTTPHeaderField: "workspaceId")
+    
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse,
+                   (response.statusCode == 200 || response.statusCode == 201) {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        }.resume()
+    }
+    
+    // Register API
+    static func register(_ data: RegisterData, completion: @escaping (Bool) -> Void) {
+        let urlString = Constants.baseURL + Constants.registerEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body = ["email": data.email, "password": data.password, "firstName": data.firstName, "lastName": data.lastName]
+        let jsonData = try! JSONSerialization.data(withJSONObject: body)
+        request.httpBody = jsonData
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data,
+                   let response = response as? HTTPURLResponse,
+                   (response.statusCode == 200 || response.statusCode == 201) {
+                    // Successful login
+                    print("Register successful!", data)
+                    // let newToken = data.token
+                    // UserDefaults.standard.set(newToken, forKey: "token")
+                    if let responseData = try? JSONSerialization.jsonObject(with: data, options: []) {
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                } else {
+                    // Login failed
+                    print("Login failed!", response)
                     completion(false)
                 }
             }
@@ -203,6 +299,91 @@ class APIService {
             }
         }.resume()
     }
+    
+    struct Member: Decodable {
+        let workspace: Workspace
+    }
+
+    struct Workspace: Decodable {
+        let _id: String
+    }
+    
+    struct Profile: Decodable {
+        let id: String
+        let firstName: String
+        let lastName: String
+        let email: String
+        let workspaceId: String
+        
+        enum CodingKeys: String, CodingKey {
+            case id = "_id"
+            case firstName
+            case lastName
+            case email
+            case members = "member"
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            id = try container.decode(String.self, forKey: .id)
+            firstName = try container.decode(String.self, forKey: .firstName)
+            lastName = try container.decode(String.self, forKey: .lastName)
+            email = try container.decode(String.self, forKey: .email)
+            
+            var membersContainer = try container.nestedUnkeyedContainer(forKey: .members)
+            let firstMember = try membersContainer.decode(Member.self)
+            workspaceId = firstMember.workspace._id
+        }
+    }
+
+    static func getProfile(token: String, completion: @escaping (Profile?) -> Void) {
+        let urlString = Constants.baseURL + Constants.getProfileEndpoint
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
+                    if let responseData = data {
+                        do {
+                            let profile = try JSONDecoder().decode(Profile.self, from: responseData)
+                            DispatchQueue.main.async {
+                                completion(profile)
+                            }
+                        } catch {
+                            print("Failed to decode JSON: \(error.localizedDescription)")
+                            completion(nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(nil)
+                        }
+                    }
+                } else {
+                    print("HTTP Error: \(httpResponse.statusCode)")
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            }
+        }.resume()
+    }
+
     
     // Fetch Mission API
     
@@ -392,4 +573,3 @@ enum APIError: Error {
 //        print("Error:", error)
 //    }
 //}
-

@@ -246,6 +246,7 @@
 		B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */; };
 		B2E42EBF2A5E8FAC00D78AD1 /* MissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */; };
 		E7510BCB2A8356E7005F59B1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7510BCA2A8356E7005F59B1 /* DateFormatter.swift */; };
+		E7510BCE2A862C94005F59B1 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7510BCD2A862C94005F59B1 /* RegisterPage.swift */; };
 		E7772B7D2A81F8B3003E6936 /* CustomRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7772B7C2A81F8B3003E6936 /* CustomRadius.swift */; };
 		E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7772B7E2A8201D4003E6936 /* TimeFormatter.swift */; };
 		E7A4193E2A80A24E0004B30D /* giphy2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7A4193D2A80A24E0004B30D /* giphy2.gif */; };
@@ -632,6 +633,7 @@
 		B2E42EBB2A5E8E4800D78AD1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		B2E42EBE2A5E8FAC00D78AD1 /* MissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionList.swift; sourceTree = "<group>"; };
 		E7510BCA2A8356E7005F59B1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		E7510BCD2A862C94005F59B1 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		E7772B7C2A81F8B3003E6936 /* CustomRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadius.swift; sourceTree = "<group>"; };
 		E7772B7E2A8201D4003E6936 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		E7A4193D2A80A24E0004B30D /* giphy2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy2.gif; sourceTree = "<group>"; };
@@ -1599,6 +1601,7 @@
 		B257D6A72A68DB6300A983E8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				E7510BCC2A862C6E005F59B1 /* RegisterPage */,
 				B2E42EBA2A5E8E3100D78AD1 /* LoginPage */,
 				B257D6A62A68DB5400A983E8 /* Password */,
 			);
@@ -1795,6 +1798,14 @@
 				B21A487D2A7250F2000A147B /* ViewMission.swift */,
 			);
 			path = Missions;
+			sourceTree = "<group>";
+		};
+		E7510BCC2A862C6E005F59B1 /* RegisterPage */ = {
+			isa = PBXGroup;
+			children = (
+				E7510BCD2A862C94005F59B1 /* RegisterPage.swift */,
+			);
+			path = RegisterPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2080,6 +2091,7 @@
 				B24CC2D22A84B40200FE7C60 /* WaypointV2ViewController.m in Sources */,
 				B24CC2612A84B40100FE7C60 /* GimbalCapabilityViewController.m in Sources */,
 				B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */,
+				E7510BCE2A862C94005F59B1 /* RegisterPage.swift in Sources */,
 				B24CC2932A84B40100FE7C60 /* DemoComponentActionTableViewController.m in Sources */,
 				B24CC2F12A84B40200FE7C60 /* SpeakerViewController.m in Sources */,
 				B24CC3082A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */,
@@ -2330,9 +2342,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2993;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/hidayatulnadhirah/Desktop/AERODYNE/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2363,9 +2375,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2992;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2993;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/hidayatulnadhirah/Desktop/AERODYNE/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

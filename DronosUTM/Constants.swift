@@ -14,8 +14,12 @@ enum Constants {
     
     static let baseURL = "https://dev-api.dronos.ai"
     static let loginEndpoint = "/account/auth/login"
+    static let logoutEndpoint = "/account/auth/logout"
+    static let registerEndpoint = "/account/users/signup"
+    static let deactivateAccEndpoint = "/account/users/"
     static let forgotPasswordEndpoint = "/account/auth/forgot-password"
     static let verifyOtpEndpoint = "/account/auth/verify-otp"
+    static let getProfileEndpoint = "/account/users/profile"
     static let resetPasswordEndpoint = "/account/auth/reset-password"
     static let fetchMissionEndpoint = "/mission/missions"
 }
