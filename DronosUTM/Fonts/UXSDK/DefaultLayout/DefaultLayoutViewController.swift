@@ -27,7 +27,7 @@
 import DJIUXSDK
 
 class DefaultLayoutViewController: DUXDefaultLayoutViewController {
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
     }
@@ -35,7 +35,7 @@ class DefaultLayoutViewController: DUXDefaultLayoutViewController {
     @IBAction func close() {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     // Override supported interface orientations
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape // Only support landscape orientation
@@ -44,8 +44,32 @@ class DefaultLayoutViewController: DUXDefaultLayoutViewController {
     // We are going to add focus adjustment to the default view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupVideoPreviewer()
         
         // Hide the navigation bar for this view controller
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    // Function to setup the video previewer
+    func setupVideoPreviewer() {
+        // Create a video preview view
+        let videoPreviewView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        videoPreviewView.backgroundColor = .black
+        view.addSubview(videoPreviewView)
+        view.sendSubviewToBack(videoPreviewView)
+        
+        // Configure the video previewer
+        DJIVideoPreviewer.instance()?.type = .autoAdapt
+        DJIVideoPreviewer.instance()?.start()
+        DJIVideoPreviewer.instance()?.reset()
+        DJIVideoPreviewer.instance()?.setView(videoPreviewView)
+        DJIVideoPreviewer.instance()?.enableHardwareDecode = true
+        
+        // Get the video feed from the primary video feed
+        if let videoFeed = DJISDKManager.videoFeeder()?.primaryVideoFeed {
+            let previewerAdapter = VideoPreviewerSDKAdapter(videoPreviewer: DJIVideoPreviewer.instance(), andVideoFeed: videoFeed)
+            previewerAdapter?.start()
+            previewerAdapter?.setupFrameControlHandler()
+        }
     }
 }
