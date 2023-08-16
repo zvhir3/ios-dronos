@@ -11,15 +11,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ProductCommunicationService.shared.registerWithProduct()
 
         let rootView: AnyView
-        if isLoggedIn() {
-            rootView = AnyView(Launchpad())
-        } else {
+//        if isLoggedIn() {
+//            rootView = AnyView(Launchpad())
+//        } else {
             rootView = AnyView(
                 LoginPage()
                     .transition(.move(edge: .trailing))
                     .animation(.easeInOut(duration: 0.5), value: true)
             )
-        }
+//        }
         
         
         let window = UIWindow(frame: UIScreen.main.bounds)

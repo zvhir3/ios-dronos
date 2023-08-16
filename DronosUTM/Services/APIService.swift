@@ -36,6 +36,15 @@ class APIService {
                         let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
                         // Access the token from the response data and save it to UserDefaults
                         UserDefaults.standard.set(token, forKey: "token")
+                        APIService.getProfile(token: token) { apiProfile in
+//                            print("tengok profile", apiProfile?.workspaceId)
+                            let optionalString: String? = apiProfile?.workspaceId
+
+                            if let unwrappedString = optionalString {
+                                UserDefaults.standard.set(apiProfile?.workspaceId, forKey: "workspaceId")
+                            }
+                            
+                        }
                         completion(true)
                     } else {
                         completion(false)
@@ -363,6 +372,7 @@ class APIService {
                         do {
                             let profile = try JSONDecoder().decode(Profile.self, from: responseData)
                             DispatchQueue.main.async {
+                                
                                 completion(profile)
                             }
                         } catch {
@@ -425,7 +435,12 @@ class APIService {
         let name: String
     }
     
-    static func fetchMissions(completion: @escaping ([Mission]) -> Void) {
+    static func fetchMissions(workspaceId: String, completion: @escaping ([Mission]) -> Void) {
+        guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
+            print("Token not found")
+            completion([])
+            return
+        }
         let urlString = Constants.baseURL + Constants.fetchMissionEndpoint
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
@@ -433,7 +448,16 @@ class APIService {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        print("awaq", savedToken)
+        print("awaq 2", workspaceId)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer " + savedToken, forHTTPHeaderField: "Authorization")
+        request.addValue(workspaceId, forHTTPHeaderField: "workspaceId")
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 if let error = error {
                     print("Error fetching missions: \(error)")

@@ -23,6 +23,7 @@ struct LoginPage: View {
     var body: some View {
         NavigationView {
             ZStack {
+                
                 if isLoggedIn {
                     Launchpad()
                         .transition(.move(edge: .trailing))
