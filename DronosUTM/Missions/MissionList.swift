@@ -64,14 +64,14 @@ struct Coordinate: Hashable {
 
 class MissionsViewModel: ObservableObject {
     @Published var missions: [Mission] = []
-//    @State private var isEmptyMission: Bool = false
-    
-    
-    
     
     func fetchMissions() {
+        guard let workspaceId = UserDefaults.standard.object(forKey: "workspaceId") as? String else {
+//            completion(nil)
+            return
+        }
         
-        APIService.fetchMissions { serviceMissions in
+        APIService.fetchMissions(workspaceId: workspaceId) { serviceMissions in
             DispatchQueue.main.async {
                
                     self.missions = serviceMissions.map(Mission.init(from:))
@@ -79,6 +79,8 @@ class MissionsViewModel: ObservableObject {
         }
         
     }
+    
+    
 }
 
 struct MissionsView: View {
