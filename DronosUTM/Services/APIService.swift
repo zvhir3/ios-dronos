@@ -415,11 +415,11 @@ class APIService {
         let longitude: String
         
         var latitudeDouble: Double {
-            return Double(latitude ?? "") ?? 0.0
+            return Double(longitude) ?? 0.0
         }
         
         var longitudeDouble: Double {
-            return Double(longitude ?? "") ?? 0.0
+            return Double(latitude) ?? 0.0
         }
     }
     

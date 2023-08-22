@@ -96,22 +96,12 @@ struct MissionsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 56 / 255, green: 65 / 255, blue: 76 / 255, opacity: 1)
+                Color(red: 0.13, green: 0.15, blue: 0.2).opacity(1)
                 VStack(spacing: 20) {
                     HStack() {
-                        Image("chevron-back")
-                            .frame(height: 24)
-                        //                            .padding(.horizontal, 10)
                         Text("Mission List")
                             .font(.system(size: 17, weight: .medium))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 98)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .padding(.horizontal, 20)
-                    .frame(width: 390, alignment: .leading)
-                    
                     HStack() {
                         HStack {
                             Image("search-icon") // SF Symbol for a magnifying glass
@@ -128,7 +118,7 @@ struct MissionsView: View {
                         .background(.white.opacity(0.1))
                         .cornerRadius(10)
 //                        .padding(.horizontal, 5)
-                        .padding(.vertical, 25)
+                        .padding(.vertical, 15)
                         
                         VStack(alignment: .center, spacing: 8) {
                             
@@ -162,8 +152,8 @@ struct MissionsView: View {
                         if viewModel.missions.isEmpty {
                             Text("No Mission available")
                                 .italic()
-                                .font(.system(size: 22))
-                                .foregroundColor(Color.white)
+                                .font(.system(size: 16))
+                                .foregroundColor(Color.white).opacity(0.5)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         } else {
                             ForEach(viewModel.missions) { mission in
@@ -208,6 +198,7 @@ struct MissionsView: View {
                     //                        }
                 }
                 .padding(.top, 90)
+                .padding(.bottom, 90)
                 .foregroundColor(.white)
                 
             }.ignoresSafeArea(.all)
@@ -250,13 +241,14 @@ struct MissionCardView: View {
                     .foregroundColor(Color(red: 0.69, green: 0.75, blue: 0.77))
             }
         }
-        .padding(.leading, 8)
+        .padding(.leading, 16)
         .padding(.trailing, 20)
         .padding(.vertical, 12)
         .frame(width: .infinity, alignment: .topLeading)
         .background(Color(red: 0.22, green: 0.25, blue: 0.3).opacity(0.8))
         .background(.white.opacity(0.05))
         .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 11)
+        .cornerRadius(5)
     }
 }
 

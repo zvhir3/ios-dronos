@@ -89,9 +89,9 @@ struct ProfilePage: View {
                                 Image("logout")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 30, height: 30)
                                     .padding(.trailing)
-                                    .padding(.top, 50)
+                                    .padding(.top, 60)
                             }
                         }
                         
@@ -111,6 +111,7 @@ struct ProfilePage: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                             .frame(width: 389, alignment: .center)
+                            .textCase(.uppercase)
                         VStack {
                             VStack(alignment: .leading) {
                                 //                            if let unwrappedProfile = profile {
@@ -118,7 +119,7 @@ struct ProfilePage: View {
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .foregroundColor(Color(red: 0.78, green: 0.78, blue: 0.78))
-                                    .padding(.top, 50)
+                                    .padding(.top, 30)
                                 
                                 TextField("FULLNAME", text: $fullName)
                                     .textEditorStyle()
@@ -159,7 +160,7 @@ struct ProfilePage: View {
                                     .foregroundColor(Color(red: 0, green: 0.94, blue: 1))
                                     .frame(maxWidth: .infinity, alignment: .top)
                                     .padding(.bottom, 30)
-                                    .padding(.top, 100)
+                                    .padding(.top, 50)
                                     .onTapGesture {
                                         print("aaaaaaa")
                                         showingDeleteAlert = true
@@ -211,7 +212,7 @@ struct ProfilePage: View {
                                     Spacer()
                                 }
                             }
-                            .padding(.top, -100)
+                            .padding(.top, -140)
                             .frame(height:500)
                             
                         }

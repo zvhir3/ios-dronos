@@ -16,6 +16,9 @@
 		B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487B2A722A1D000A147B /* AppFlow.swift */; };
 		B21A487E2A7250F2000A147B /* ViewMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487D2A7250F2000A147B /* ViewMission.swift */; };
 		B21A48812A725567000A147B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48802A725567000A147B /* Profile.swift */; };
+		B21D87912A944AF000FC8D79 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D87902A944AF000FC8D79 /* Telemetry.swift */; };
+		B21D87932A9485FE00FC8D79 /* TelemetryDrone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */; };
+		B21D87952A94860B00FC8D79 /* TelemetryDrone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */; };
 		B2417E0D2A85CB0B0040C99F /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */; };
 		B2417E0F2A85CB170040C99F /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2417E0E2A85CB170040C99F /* LiveView.storyboard */; };
 		B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */; };
@@ -283,6 +286,9 @@
 		B21A487B2A722A1D000A147B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B21A487D2A7250F2000A147B /* ViewMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMission.swift; sourceTree = "<group>"; };
 		B21A48802A725567000A147B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B21D87902A944AF000FC8D79 /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
+		B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TelemetryDrone.storyboard; sourceTree = "<group>"; };
+		B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryDrone.swift; sourceTree = "<group>"; };
 		B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		B2417E0E2A85CB170040C99F /* LiveView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveView.storyboard; sourceTree = "<group>"; };
 		B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentSelectionViewController.h; sourceTree = "<group>"; };
@@ -720,6 +726,7 @@
 				B257D6A72A68DB6300A983E8 /* Auth */,
 				B2E42EB22A5E819500D78AD1 /* Launchpad */,
 				B2E42EBD2A5E8FA200D78AD1 /* Missions */,
+				B21D878F2A944AD600FC8D79 /* Telemetry */,
 				B21A487F2A725555000A147B /* Profile */,
 				B29803BC2A5EAAC700A94612 /* Components */,
 				B2AD6EE82A5FC82700BE1EB4 /* Services */,
@@ -738,6 +745,16 @@
 				B21A48802A725567000A147B /* Profile.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B21D878F2A944AD600FC8D79 /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				B21D87902A944AF000FC8D79 /* Telemetry.swift */,
+				B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */,
+				B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */,
+			);
+			path = Telemetry;
 			sourceTree = "<group>";
 		};
 		B24CC1012A84B40100FE7C60 /* Demo */ = {
@@ -1844,7 +1861,7 @@
 				TargetAttributes = {
 					868A4ECF1E01FA53006FEE33 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = H3Y2UKTAZ9;
+						DevelopmentTeam = P5V26WT257;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -1937,6 +1954,7 @@
 				B2AD6F372A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf in Resources */,
 				B2AD6F302A5FF4FF00BE1EB4 /* Barlow-Light.ttf in Resources */,
 				B2AD6F332A5FF4FF00BE1EB4 /* Barlow-Black.ttf in Resources */,
+				B21D87932A9485FE00FC8D79 /* TelemetryDrone.storyboard in Resources */,
 				B24CC2D42A84B40200FE7C60 /* LDMViewController.xib in Resources */,
 				B24CC2B82A84B40200FE7C60 /* MissionBaseViewController.xib in Resources */,
 				B24CC2D72A84B40200FE7C60 /* KeyedInterfaceViewController.xib in Resources */,
@@ -2083,6 +2101,7 @@
 				B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */,
 				B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */,
 				B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */,
+				B21D87912A944AF000FC8D79 /* Telemetry.swift in Sources */,
 				B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */,
 				B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */,
 				E7510BCB2A8356E7005F59B1 /* DateFormatter.swift in Sources */,
@@ -2107,6 +2126,7 @@
 				B2E2C4992A78DB7600186BC6 /* Dense.swift in Sources */,
 				B24CC26D2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m in Sources */,
 				B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */,
+				B21D87952A94860B00FC8D79 /* TelemetryDrone.swift in Sources */,
 				B24CC29F2A84B40100FE7C60 /* PipelineTableViewCell.m in Sources */,
 				B24CC2BD2A84B40200FE7C60 /* FCFlightLimitationViewController.m in Sources */,
 				B24CC2F22A84B40200FE7C60 /* RecordingHandler.m in Sources */,
@@ -2323,7 +2343,7 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
+				DEVELOPMENT_TEAM = P5V26WT257;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "";
@@ -2342,9 +2362,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2993;
+				PRODUCT_BUNDLE_IDENTIFIER = group.aerodyne.dronos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/hidayatulnadhirah/Desktop/AERODYNE/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2357,7 +2377,7 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Y2UKTAZ9;
+				DEVELOPMENT_TEAM = P5V26WT257;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "";
@@ -2375,9 +2395,9 @@
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.UXSDKSwiftSample.test2993;
+				PRODUCT_BUNDLE_IDENTIFIER = group.aerodyne.dronos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/hidayatulnadhirah/Desktop/AERODYNE/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

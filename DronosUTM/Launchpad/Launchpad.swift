@@ -89,24 +89,24 @@ class ViewController: UIViewController {
                 anchor: .center
             )
             
-            if let iconImage = UIImage(named: "Pin") {
-                let iconImageView = UIImageView(image: iconImage.withRenderingMode(.alwaysOriginal))
-                iconImageView.contentMode = .center
-                
-                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pinImageTapped))
-                iconImageView.isUserInteractionEnabled = true
-                iconImageView.addGestureRecognizer(tapGestureRecognizer)
-                
-                // Associate mission ID with the pin image view
-                missionIDToPinImageView[missionID] = iconImageView
-                
-                // Associate text "abc" with the pin image view
-                missionIDToCoordinates[missionID] = coordinate
-                
-                
-                
-                try? mapView.viewAnnotations.add(iconImageView, options: options)
-            }
+                        if let iconImage = UIImage(named: "Pin") {
+                            let iconImageView = UIImageView(image: iconImage.withRenderingMode(.alwaysOriginal))
+                            iconImageView.contentMode = .center
+            
+                            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pinImageTapped))
+                            iconImageView.isUserInteractionEnabled = true
+                            iconImageView.addGestureRecognizer(tapGestureRecognizer)
+            
+                            // Associate mission ID with the pin image view
+                            missionIDToPinImageView[missionID] = iconImageView
+            
+                            // Associate text "abc" with the pin image view
+                            missionIDToCoordinates[missionID] = coordinate
+            
+            
+            
+                            try? mapView.viewAnnotations.add(iconImageView, options: options)
+                        }
         }
     }
     
@@ -134,71 +134,32 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc private func pinImageTapped(sender: UITapGestureRecognizer) {
-        // Retrieve the mission ID associated with the pin image view
-        if let missionID = missionIDToPinImageView.first(where: { $0.value == sender.view })?.key {
-            print("Text, Mission ID: \(missionID)")
-            
-            let missionDetail = missionDetails[missionID]
-            
-            // Retrieve the text associated with the mission ID
-            if let coordinate = missionIDToCoordinates[missionID] {
-                print("Text: \(coordinate)")
-                
-                let newCamera = CameraOptions(center: coordinate, padding: UIEdgeInsets(top: 0, left: 0, bottom: 500, right: 0), zoom: 15)
-                mapView.camera.ease(to: newCamera, duration: 1.0)
-                
-                
-                // Present the DenseContentSheetViewController
-                let viewController = DenseContentSheetViewController()
-                viewController.missionDetail = missionDetail
-                
-                self.present(viewController, animated: true)
+        @objc private func pinImageTapped(sender: UITapGestureRecognizer) {
+            // Retrieve the mission ID associated with the pin image view
+            if let missionID = missionIDToPinImageView.first(where: { $0.value == sender.view })?.key {
+                print("Text, Mission ID: \(missionID)")
+    
+                let missionDetail = missionDetails[missionID]
+    
+                // Retrieve the text associated with the mission ID
+                if let coordinate = missionIDToCoordinates[missionID] {
+                    print("Text: \(coordinate)")
+    
+                    let newCamera = CameraOptions(center: coordinate, padding: UIEdgeInsets(top: 0, left: 0, bottom: 500, right: 0), zoom: 15)
+                    mapView.camera.ease(to: newCamera, duration: 1.0)
+    
+    
+                    // Present the DenseContentSheetViewController
+                    let viewController = DenseContentSheetViewController()
+                    viewController.missionDetail = missionDetail
+    
+                    self.present(viewController, animated: true)
+                }
+    
             }
-            
         }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
-        let mapInitOptions = MapInitOptions(
-            resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
-            cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
-            styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
-        )
-
-        mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
-        mapView.ornaments.logoView.isHidden = true
-        mapView.ornaments.attributionButton.isHidden = true
-        mapView.ornaments.scaleBarView.isHidden = true
-        view.addSubview(mapView)
-
-        // Create the floating action button
-        let floatingActionButton = UIButton(type: .custom)
-        floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
-        floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
-
-        // Add the floating action button to the view
-        view.addSubview(floatingActionButton)
-
-        // Position the floating action button
-        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
-            floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
-        ])
-
-        Task {
-            await loadData()
-        }
-    }
-
-
+    
+    
     func getProfileAsync() async -> Profile? {
         return await withCheckedContinuation { continuation in
             getProfile { profile in
@@ -214,180 +175,104 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     
     func loadData() async {
         if let fetchedProfile = await getProfileAsync() {
             if !fetchedProfile.workspaceId.isEmpty {
                 let missions = await fetchMissionsAsync(workspaceId: fetchedProfile.workspaceId)
                 print("tengok workspace", missions)
-                DispatchQueue.main.async { [weak self] in
-                    if let firstMission = missions.first {
-                        self?.centerCoordinate = CLLocationCoordinate2D(
-                            latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
-                            longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
-                        
-                        // After fetching missions, set the new camera position
-                        if let centerCoordinate = self?.centerCoordinate {
-                            let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
-                            self?.mapView.camera.ease(to: newCamera, duration: 4.0)
-                        }
-                        var ringCoords1: [CLLocationCoordinate2D] = []
-                       
-                        for mission in missions {
-                            
-                            var isFirstCoordinate = true
-                            
-                            for coordinate in mission.area.coordinate {
-                                let latitude = coordinate.latitudeDouble
-                                let longitude = coordinate.longitudeDouble
-                                ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                                
-                                if isFirstCoordinate {
-                                    let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                                    self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
-                                    isFirstCoordinate = false
-                                }
-                            }
-                        }
-                        
-                        
-                        if let firstCoord = ringCoords1.first {
-                            ringCoords1.append(firstCoord)
-                        }
-                        
-                        // Create the Ring and Polygon for the first polygon
-                        let ring1 = Ring(coordinates: ringCoords1)
-                        let polygon1 = Polygon(outerRing: ring1)
-                        
-                        print("polygon", ringCoords1)
-                        
-                        // Create a new polygon annotation for the first polygon
-                        if let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager() {
-                            var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
-                            polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
-                            polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
-                            
-                            // Add the polygons to the map as annotations.
-                            polygonAnnotationManager.annotations = [polygonAnnotation1]
-                        }
-                        
-                        
-                        
-                    }
-                }
                 
-               
                 
-//                let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
-//                let mapInitOptions = MapInitOptions(
-//                    resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
-//                    cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
-//                    styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
-//                )
-//
-//                mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
-//                mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//                try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
-//                mapView.ornaments.logoView.isHidden = true
-//                mapView.ornaments.attributionButton.isHidden = true
-//                mapView.ornaments.scaleBarView.isHidden = true
-//                view.addSubview(mapView)
-//
-//                // Create the floating action button
-//                let floatingActionButton = UIButton(type: .custom)
-//                floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
-//                floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
-//
-//                // Add the floating action button to the view
-//                view.addSubview(floatingActionButton)
-//
-//                // Position the floating action button
-//                floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
-//                NSLayoutConstraint.activate([
-//                    floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//                    floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-//                    floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
-//                    floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
-//                ])
-            }
-        }
-    }
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        getProfile { [weak self] fetchedProfile in
-//            guard let self = self else { return }
-//
-//            self.workspaceId = fetchedProfile?.workspaceId ?? ""
-//            if !self.workspaceId.isEmpty {
-//                APIService.fetchMissions(workspaceId: self.workspaceId) { missions in
-//                    DispatchQueue.main.async {
-//
-//                    }
-//                }
-//            }
-//        }
-//
-//
-//    }
-
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        getProfile { fetchedProfile in
-//            self.workspaceId = fetchedProfile?.workspaceId ?? ""
-////            print("workspace", fetchedProfile?.workspaceId ?? "")
-//        }
-//        let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
-//
-//        let mapInitOptions = MapInitOptions(
-//            resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
-//            cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
-//            styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
-//        )
-//
-//        mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
-//        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
-//        mapView.ornaments.logoView.isHidden = true
-//        mapView.ornaments.attributionButton.isHidden = true
-//        mapView.ornaments.scaleBarView.isHidden = true
-//        view.addSubview(mapView)
-//            APIService.fetchMissions(workspaceId: workspaceId) { [weak self] missions in
-//                DispatchQueue.main.async {
+                //                        DispatchQueue.main.async {
+                //                            if let firstMission = missions.first {
+                //                                self?.centerCoordinate = CLLocationCoordinate2D(
+                //                                    latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
+                //                                    longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
+                //
+                //                                // After fetching missions, set the new camera position
+                //                                if let centerCoordinate = self?.centerCoordinate {
+                //                                    let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
+                //                                    self?.mapView.camera.ease(to: newCamera, duration: 4.0)
+                //                                }
+                //
+                //                                var ringCoords1: [CLLocationCoordinate2D] = []
+                //
+                //                                for mission in missions {
+                //
+                //                                    var isFirstCoordinate = true
+                //
+                //                                    for coordinate in mission.area.coordinate {
+                //                                        let latitude = coordinate.latitudeDouble
+                //                                        let longitude = coordinate.longitudeDouble
+                //                                        ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                //
+                //                                        if isFirstCoordinate {
+                //                                            let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                //                                            self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
+                //                                            isFirstCoordinate = false
+                //                                        }
+                //                                    }
+                //                                }
+                //
+                //
+                //                                // Create the Ring and Polygon for the first polygon
+                //                                let ring1 = Ring(coordinates: ringCoords1)
+                //                                let polygon1 = Polygon(outerRing: ring1)
+                //
+                //                                // Create a new polygon annotation for the first polygon
+                //                                var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
+                //                                polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+                //                                polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+                //
+                //                                // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
+                //                                let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
+                //
+                //                                // Add the polygons to the map as annotations.
+                //                                polygonAnnotationManager?.annotations = [polygonAnnotation1]
+                //
+                //
+                //                            }
+                //                        }
+                //                    }
+                
+//                DispatchQueue.main.async { [weak self] in
 //                    if let firstMission = missions.first {
 //                        self?.centerCoordinate = CLLocationCoordinate2D(
 //                            latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
 //                            longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
-//
+//                        
 //                        // After fetching missions, set the new camera position
 //                        if let centerCoordinate = self?.centerCoordinate {
 //                            let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
 //                            self?.mapView.camera.ease(to: newCamera, duration: 4.0)
 //                        }
-//
+//                        
 //                        var ringCoords1: [CLLocationCoordinate2D] = []
-//
+//                        
 //                        for mission in missions {
-//
+//                            
 //                            var isFirstCoordinate = true
-//
+//                            
 //                            for coordinate in mission.area.coordinate {
 //                                let latitude = coordinate.latitudeDouble
 //                                let longitude = coordinate.longitudeDouble
 //                                ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-//
+//                                
 //                                if isFirstCoordinate {
 //                                    let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 //                                    self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
 //                                    isFirstCoordinate = false
 //                                }
+//                                print("----------------------------")
+//                                print(ringCoords1)
+//                                print("----------------------------")
 //                            }
 //                        }
-//
-//
-//                        // Create the Ring and Polygon for the first polygon
+//                       
+//                        
+//                        
+////                         Create the Ring and Polygon for the first polygon
 //                        let ring1 = Ring(coordinates: ringCoords1)
 //                        let polygon1 = Polygon(outerRing: ring1)
 //
@@ -403,32 +288,202 @@ class ViewController: UIViewController {
 //                        polygonAnnotationManager?.annotations = [polygonAnnotation1]
 //
 //
+//                        
 //                    }
 //                }
-//            }
-//
-//
-//
-//        // Create the floating action button
-//        let floatingActionButton = UIButton(type: .custom)
-//        floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
-//        floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
-//
-//        // Add the floating action button to the view
-//        view.addSubview(floatingActionButton)
-//
-//        // Position the floating action button
-//        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-//            floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
-//            floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
-//        ])
-//
-//
-//    }
+//                
+//                
+                
+                //                let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
+                //                let mapInitOptions = MapInitOptions(
+                //                    resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
+                //                    cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
+                //                    styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
+                //                )
+                //
+                //                mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
+                //                mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                //                try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
+                //                mapView.ornaments.logoView.isHidden = true
+                //                mapView.ornaments.attributionButton.isHidden = true
+                //                mapView.ornaments.scaleBarView.isHidden = true
+                //                view.addSubview(mapView)
+                //
+                //                // Create the floating action button
+                //                let floatingActionButton = UIButton(type: .custom)
+                //                floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
+                //                floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
+                //
+                //                // Add the floating action button to the view
+                //                view.addSubview(floatingActionButton)
+                //
+                //                // Position the floating action button
+                //                floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+                //                NSLayoutConstraint.activate([
+                //                    floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+                //                    floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+                //                    floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
+                //                    floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
+                //                ])
+            }
+        }
+    }
     
+    //    override func viewDidLoad() {
+    //        super.viewDidLoad()
+    //        getProfile { [weak self] fetchedProfile in
+    //            guard let self = self else { return }
+    //
+    //            self.workspaceId = fetchedProfile?.workspaceId ?? ""
+    //            if !self.workspaceId.isEmpty {
+    //                APIService.fetchMissions(workspaceId: self.workspaceId) { missions in
+    //                    DispatchQueue.main.async {
+    //
+    //                    }
+    //                }
+    //            }
+    //        }
+    //
+    //
+    //    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
+        let mapInitOptions = MapInitOptions(
+            resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
+            cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
+            styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
+        )
+        
+        mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
+        mapView.ornaments.logoView.isHidden = true
+        mapView.ornaments.attributionButton.isHidden = true
+        mapView.ornaments.scaleBarView.isHidden = true
+        view.addSubview(mapView)
+        
+        // Create the floating action button
+        let floatingActionButton = UIButton(type: .custom)
+        floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
+        floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
+        
+        // Add the floating action button to the view
+        view.addSubview(floatingActionButton)
+        
+        // Position the floating action button
+        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
+            floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
+        ])
+        
+        Task {
+            await loadData()
+        }
+    }
+    
+    //    override func viewDidLoad() {
+    //        super.viewDidLoad()
+    //        getProfile { fetchedProfile in
+    //            self.workspaceId = fetchedProfile?.workspaceId ?? ""
+    ////            print("workspace", fetchedProfile?.workspaceId ?? "")
+    //        }
+    //        let startingCoordinate = CLLocationCoordinate2D(latitude: 1.543451683610689, longitude: 102.64933494285206)
+    //
+    //        let mapInitOptions = MapInitOptions(
+    //            resourceOptions: ResourceOptions(accessToken: Constants.MAPBOX_TOKEN),
+    //            cameraOptions: CameraOptions(center: startingCoordinate, zoom: 4),
+    //            styleURI: StyleURI(rawValue: Constants.MAPBOX_STYLE)
+    //        )
+    //
+    //        mapView = MapView(frame: view.bounds, mapInitOptions: mapInitOptions)
+    //        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    //        try? mapView.mapboxMap.style.setProjection(StyleProjection(name: .globe))
+    //        mapView.ornaments.logoView.isHidden = true
+    //        mapView.ornaments.attributionButton.isHidden = true
+    //        mapView.ornaments.scaleBarView.isHidden = true
+    //        view.addSubview(mapView)
+    //            APIService.fetchMissions(workspaceId: workspaceId) { [weak self] missions in
+    //                DispatchQueue.main.async {
+    //                    if let firstMission = missions.first {
+    //                        self?.centerCoordinate = CLLocationCoordinate2D(
+    //                            latitude: firstMission.area.coordinate.first?.latitudeDouble ?? 0,
+    //                            longitude: firstMission.area.coordinate.first?.longitudeDouble ?? 0)
+    //
+    //                        // After fetching missions, set the new camera position
+    //                        if let centerCoordinate = self?.centerCoordinate {
+    //                            let newCamera = CameraOptions(center: centerCoordinate, zoom: 11, pitch: 50)
+    //                            self?.mapView.camera.ease(to: newCamera, duration: 4.0)
+    //                        }
+    //
+    //                        var ringCoords1: [CLLocationCoordinate2D] = []
+    //
+    //                        for mission in missions {
+    //
+    //                            var isFirstCoordinate = true
+    //
+    //                            for coordinate in mission.area.coordinate {
+    //                                let latitude = coordinate.latitudeDouble
+    //                                let longitude = coordinate.longitudeDouble
+    //                                ringCoords1.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+    //
+    //                                if isFirstCoordinate {
+    //                                    let firstCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    //                                    self?.addViewAnnotations(coordinates: [firstCoordinate], missionID: mission.missionId)
+    //                                    isFirstCoordinate = false
+    //                                }
+    //                            }
+    //                        }
+    //
+    //
+    //                        // Create the Ring and Polygon for the first polygon
+    //                        let ring1 = Ring(coordinates: ringCoords1)
+    //                        let polygon1 = Polygon(outerRing: ring1)
+    //
+    //                        // Create a new polygon annotation for the first polygon
+    //                        var polygonAnnotation1 = PolygonAnnotation(polygon: polygon1)
+    //                        polygonAnnotation1.fillColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 0.2))
+    //                        polygonAnnotation1.fillOutlineColor = StyleColor(UIColor(red: 0, green: 0.94, blue: 1, alpha: 1))
+    //
+    //                        // Create the `PolygonAnnotationManager` which will be responsible for handling these annotations
+    //                        let polygonAnnotationManager = self?.mapView.annotations.makePolygonAnnotationManager()
+    //
+    //                        // Add the polygons to the map as annotations.
+    //                        polygonAnnotationManager?.annotations = [polygonAnnotation1]
+    //
+    //
+    //                    }
+    //                }
+    //            }
+    //
+    //
+    //
+    //        // Create the floating action button
+    //        let floatingActionButton = UIButton(type: .custom)
+    //        floatingActionButton.setBackgroundImage(UIImage(named: "fly"), for: .normal)
+    //        floatingActionButton.addTarget(self, action: #selector(floatingActionButtonTapped), for: .touchUpInside)
+    //
+    //        // Add the floating action button to the view
+    //        view.addSubview(floatingActionButton)
+    //
+    //        // Position the floating action button
+    //        floatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+    //        NSLayoutConstraint.activate([
+    //            floatingActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+    //            floatingActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+    //            floatingActionButton.widthAnchor.constraint(equalToConstant: 76),
+    //            floatingActionButton.heightAnchor.constraint(equalToConstant: 76)
+    //        ])
+    //
+    //
+    //    }
+    //
     func calculateCenterCoordinate(for coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D? {
         guard !coordinates.isEmpty else {
             return nil
