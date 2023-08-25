@@ -26,6 +26,11 @@ struct VerifyOTPPage: View {
     //MARK -> BODY
     var body: some View {
         ZStack {
+            Image(uiImage: UIImage(named: "earth")!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .opacity(1)
             VStack {
                 Spacer()
                 VStack {

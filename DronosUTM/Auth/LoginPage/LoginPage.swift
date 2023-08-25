@@ -10,7 +10,7 @@ struct LoginData {
 struct LoginPage: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isLoggedIn: Bool = true
+    @State private var isLoggedIn: Bool = false
     @State private var showAlert: Bool = false
     @State private var invalidEmail: Bool = false
     @State private var isInvalidPass: Bool = false
@@ -20,15 +20,23 @@ struct LoginPage: View {
     @FocusState private var isTextFieldFocused: Bool
     @FocusState private var isSecureFieldFocused: Bool
     
+    
+    
+    
     var body: some View {
         NavigationView {
             ZStack {
                 
                 if isLoggedIn {
-                    Launchpad()
+                    BottomNavigation()
                         .transition(.move(edge: .trailing))
                         .animation(.easeInOut(duration: 0.5), value: true)
                 } else {
+                    Image(uiImage: UIImage(named: "earth")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .opacity(1)
                     VStack {
                         Spacer()
                         VStack {
@@ -231,6 +239,7 @@ struct LoginPage: View {
                         .background(Color(red: 0.13, green: 0.15, blue: 0.2).opacity(0.6))
                         .cornerRadius(28)
                         .frame(width: .infinity)
+                        
                     }
                 }
             }
@@ -264,8 +273,8 @@ func isValidEmail(_ email: String) -> Bool {
 func isValidPassword(_ password: String) -> Bool {
     // Password requirements: at least one uppercase,
     // one symbol, at least 8 characters total
-//    let regex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{8,}"
-//    let pred = NSPredicate(format:"SELF MATCHES %@", regex)
-//    return pred.evaluate(with: password)
+    //    let regex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{8,}"
+    //    let pred = NSPredicate(format:"SELF MATCHES %@", regex)
+    //    return pred.evaluate(with: password)
     return true
 }

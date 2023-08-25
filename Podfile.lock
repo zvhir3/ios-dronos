@@ -1,4 +1,8 @@
 PODS:
+  - CocoaMQTT (2.1.6):
+    - CocoaMQTT/Core (= 2.1.6)
+  - CocoaMQTT/Core (2.1.6):
+    - MqttCocoaAsyncSocket (~> 1.0.8)
   - DJI-SDK-iOS (4.16.2)
   - DJI-UXSDK-iOS (4.16.2)
   - DJIFlySafeDatabaseResource (01.00.01.18)
@@ -13,9 +17,11 @@ PODS:
     - MapboxMobileEvents (= 1.0.10)
     - Turf (~> 2.0)
   - MapboxMobileEvents (1.0.10)
+  - MqttCocoaAsyncSocket (1.0.8)
   - Turf (2.6.1)
 
 DEPENDENCIES:
+  - CocoaMQTT
   - DJI-SDK-iOS (~> 4.16.2)
   - DJI-UXSDK-iOS (~> 4.16.2)
   - DJIFlySafeDatabaseResource (~> 01.00.01.18)
@@ -25,6 +31,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CocoaMQTT
     - DJI-SDK-iOS
     - DJI-UXSDK-iOS
     - DJIFlySafeDatabaseResource
@@ -34,9 +41,11 @@ SPEC REPOS:
     - MapboxCoreMaps
     - MapboxMaps
     - MapboxMobileEvents
+    - MqttCocoaAsyncSocket
     - Turf
 
 SPEC CHECKSUMS:
+  CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
   DJI-SDK-iOS: 44308a021c3b95a912be52c4e7a8e0a27e5434f5
   DJI-UXSDK-iOS: 8a9db4bda9fcc38ccf9861fb7d7ba30d44c7791c
   DJIFlySafeDatabaseResource: 400e1856340042bd6943e53c2d4b374ac8409702
@@ -46,8 +55,9 @@ SPEC CHECKSUMS:
   MapboxCoreMaps: eb07203bbb0b1509395db5ab89cd3ad6c2e3c04c
   MapboxMaps: af50ec61a7eb3b032c3f7962c6bd671d93d2a209
   MapboxMobileEvents: de50b3a4de180dd129c326e09cd12c8adaaa46d6
+  MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
   Turf: 469ce2c3d22e5e8e4818d5a3b254699a5c89efa4
 
-PODFILE CHECKSUM: 83778cc072982745031ea48456e7f34647570a68
+PODFILE CHECKSUM: 59bbd2f51a0b24eb9b915be296476350205c2fa9
 
 COCOAPODS: 1.12.1

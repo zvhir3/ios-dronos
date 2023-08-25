@@ -74,7 +74,7 @@ struct ProfilePage: View {
                 ZStack {
                     VStack {
                         ZStack(alignment: .topTrailing) { // Set the alignment to topTrailing
-                            Image("profile")
+                            Image("btn")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width, alignment: .top)

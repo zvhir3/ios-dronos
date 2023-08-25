@@ -8,4 +8,5 @@ target 'DronosUTM' do
   pod 'DJIFlySafeDatabaseResource', '~> 01.00.01.18'
   pod 'iOS-Color-Picker'
   pod 'MapboxMaps', '10.14.0'
+  pod 'CocoaMQTT'
 end

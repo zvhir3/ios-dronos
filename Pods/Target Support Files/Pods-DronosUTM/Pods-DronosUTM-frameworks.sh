@@ -176,11 +176,13 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework"
   install_framework "${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework"
   install_framework "${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UX_SDK/DJIUXSDK.framework"
   install_framework "${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MapboxMaps/MapboxMaps.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Turf/Turf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/MapboxCommon/MapboxCommon.framework"
@@ -188,11 +190,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework"
   install_framework "${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework"
   install_framework "${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UX_SDK/DJIUXSDK.framework"
   install_framework "${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MapboxMaps/MapboxMaps.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Turf/Turf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/MapboxCommon/MapboxCommon.framework"

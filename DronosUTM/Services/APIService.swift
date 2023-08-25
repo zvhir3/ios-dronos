@@ -29,17 +29,17 @@ class APIService {
                     // let newToken = data.token
                     // UserDefaults.standard.set(newToken, forKey: "token")
                     if let responseData = try? JSONSerialization.jsonObject(with: data, options: []),
-                      
-                       let tokenFull = (responseData as? [String: Any])?["token"] as? String {
+                       
+                        let tokenFull = (responseData as? [String: Any])?["token"] as? String {
                         print("response data", responseData)
                         let prefix = "Bearer "
                         let token = String(tokenFull.suffix(tokenFull.count - prefix.count))
                         // Access the token from the response data and save it to UserDefaults
                         UserDefaults.standard.set(token, forKey: "token")
                         APIService.getProfile(token: token) { apiProfile in
-//                            print("tengok profile", apiProfile?.workspaceId)
+                            //                            print("tengok profile", apiProfile?.workspaceId)
                             let optionalString: String? = apiProfile?.workspaceId
-
+                            
                             if let unwrappedString = optionalString {
                                 UserDefaults.standard.set(apiProfile?.workspaceId, forKey: "workspaceId")
                             }
@@ -72,7 +72,7 @@ class APIService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.addValue(workspaceId, forHTTPHeaderField: "workspaceId")
-    
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let response = response as? HTTPURLResponse,
@@ -99,7 +99,7 @@ class APIService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.addValue(workspaceId, forHTTPHeaderField: "workspaceId")
-    
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let response = response as? HTTPURLResponse,
@@ -312,7 +312,7 @@ class APIService {
     struct Member: Decodable {
         let workspace: Workspace
     }
-
+    
     struct Workspace: Decodable {
         let _id: String
     }
@@ -345,7 +345,7 @@ class APIService {
             workspaceId = firstMember.workspace._id
         }
     }
-
+    
     static func getProfile(token: String, completion: @escaping (Profile?) -> Void) {
         let urlString = Constants.baseURL + Constants.getProfileEndpoint
         guard let url = URL(string: urlString) else {
@@ -393,11 +393,12 @@ class APIService {
             }
         }.resume()
     }
-
+    
     
     // Fetch Mission API
     
     struct Mission: Decodable {
+        let id: String
         let missionId: String
         let name: String
         let schedules: [Schedule]
@@ -415,11 +416,11 @@ class APIService {
         let longitude: String
         
         var latitudeDouble: Double {
-            return Double(longitude) ?? 0.0
+            return Double(latitude) ?? 0.0
         }
         
         var longitudeDouble: Double {
-            return Double(latitude) ?? 0.0
+            return Double(longitude) ?? 0.0
         }
     }
     
@@ -477,13 +478,14 @@ class APIService {
                 }
                 
                 let missions = try records.map { record -> Mission in
+                    let id = record["id"] as? String ?? ""
                     let missionId = record["missionId"] as? String ?? ""
                     let name = record["name"] as? String ?? ""
                     let location = record["location"] as? String ?? ""
-                   
+                    
                     guard let areaDict = record["area"] as? [String: Any] else {
                         print("Error extracting 'area' from the record")
-                        return Mission(missionId: missionId, name: name, schedules: [], location: location, area: Area(coordinate: []), drones: [])
+                        return Mission(id: id, missionId: missionId, name: name, schedules: [], location: location, area: Area(coordinate: []), drones: [])
                     }
                     
                     let areaData = try JSONSerialization.data(withJSONObject: areaDict, options: [])
@@ -500,7 +502,7 @@ class APIService {
                     }
                     
                     let dronesDict = record["drones"] as? [[String: Any]] ?? []
-
+                    
                     let drones = dronesDict.compactMap { singleDroneDict -> Drones? in
                         if let droneIdDict = singleDroneDict["droneId"] as? [String: Any],
                            let catalogDict = droneIdDict["catalogId"] as? [String: Any] {
@@ -512,7 +514,7 @@ class APIService {
                     }
                     
                     
-                    return Mission(missionId: missionId, name: name, schedules: schedules, location: location, area: area, drones: drones)
+                    return Mission(id: id, missionId: missionId, name: name, schedules: schedules, location: location, area: area, drones: drones)
                 }
                 
                 DispatchQueue.main.async {
@@ -526,7 +528,6 @@ class APIService {
         
         task.resume()
     }
-
     
     func getData(url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

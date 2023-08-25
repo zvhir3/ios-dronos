@@ -83,7 +83,7 @@ class MissionsViewModel: ObservableObject {
     
 }
 
-struct MissionsView: View {
+struct MissionsPage: View {
     @StateObject private var viewModel = MissionsViewModel()
     @State private var searchMission: String = ""
     @State private var date = Date()

@@ -33,6 +33,11 @@ struct RegisterPage: View {
                         .transition(.move(edge: .trailing))
                         .animation(.easeInOut(duration: 0.5), value: true)
                 } else {
+                    Image(uiImage: UIImage(named: "earth")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .opacity(1)
                     VStack {
                         Spacer()
                         VStack {

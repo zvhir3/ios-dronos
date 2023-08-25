@@ -29,10 +29,11 @@
 import UIKit
 import DJIUXSDK
 import DJISDK
+import CocoaMQTT
 
 // We subclass the DUXRootViewController to inherit all its behavior.
 class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
-    
+
     var isContentViewSwitched = false
     
     var oldContentViewController: DUXFPVViewController?
@@ -49,16 +50,51 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
         super.viewDidLoad()
         
         fpvViewController = DUXFPVViewController()
-        
-        // Initialize MQTT client
-        //        mqtt = CocoaMQTT(clientID: "your-client-id", host: "your-mqtt-broker-host", port: 1883)
-        //        mqtt.delegate = self // Set the delegate if needed
-        //        mqtt.connect()
-        //        let topic = "your-topic"
-        //        let message = "Hello, MQTT!"
-        //        mqtt.publish(topic, withString: message)
-        
+//        Task {
+//            await publishTelemetry()
+//        }
     }
+    
+//    func publishTelemetry() async {
+//        print("try connect")
+//        let clientID = "utm_mobile"
+//        let host = "emqx-mqtt.dronos.ai"
+//        let username = "admin"
+//        let password = "tU$Cy*@&pcfZV7467Ebu"
+//
+//        let mqtt = CocoaMQTT(clientID: clientID, host: host, port: 1883)
+//        mqtt.username = username
+//        mqtt.password = password
+//        mqtt.keepAlive = 60
+//
+//        mqtt.didConnectAck = { mqtt, ack in
+//            if ack == .accept {
+//
+//                let topic = "thing/product/1581F5FHB22A70020AD8/osd"
+//
+//                print("Connected to MQTT brokerhhhh")
+//                mqtt.publish(topic, withString: "Connected to MQTT brokerhhhh")
+//
+//                let locationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation)
+//
+//                DJISDKManager.keyManager()?.startListeningForChanges(on: locationKey!, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
+//                    if newValue != nil {
+//                        // DJIFlightControllerParamAircraftLocation is associated with a DJISDKLocation object
+//                        let aircraftCoordinates = newValue!.value! as! CLLocation
+//
+//                        mqtt.publish(topic, withString: "Lat: \(aircraftCoordinates.coordinate.latitude) Long: \(aircraftCoordinates.coordinate.longitude) Alt: \(aircraftCoordinates.altitude) Speed: \(aircraftCoordinates.speed) Timestamp: \(aircraftCoordinates.timestamp)")
+//
+//                    }
+//                    else{
+//                        print("No data")
+//                    }
+//                })
+//            }
+//        }
+//        mqtt.connect()
+//
+//    }
+//
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent;
@@ -89,29 +125,12 @@ class DefaultLayoutCustomizationViewController: DUXDefaultLayoutViewController {
     }
     
     
+  
+
+
+
     func startLiveStreaming(button: UIButton) {
-        isLiveStreaming = true
-        button.setTitleColor(.red, for: .normal)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.red.cgColor
-        button.setTitle("Stop Live", for: .normal)
-        
-        let locationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation)
-        
-        DJISDKManager.keyManager()?.startListeningForChanges(on: locationKey!, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
-            if newValue != nil {
-                // DJIFlightControllerParamAircraftLocation is associated with a DJISDKLocation object
-                let aircraftCoordinates = newValue!.value! as! CLLocation
-           
-                button.setTitle("Lat: \(aircraftCoordinates.coordinate.latitude) Long: \(aircraftCoordinates.coordinate.longitude) Alt: \(aircraftCoordinates.altitude) ", for: .normal)
-                //print("Altitude: \(aircraftCoordinates.altitude) -  Speed: \(aircraftCoordinates.timestamp)")
-                print("Lat: \(aircraftCoordinates.coordinate.latitude) Long: \(aircraftCoordinates.coordinate.longitude) Alt: \(aircraftCoordinates.altitude) Speed: \(aircraftCoordinates.speed) Timestamp: \(aircraftCoordinates.timestamp)")
-   
-            }
-            else{
-                print("No data")
-            }
-        })
+//
     }
     
     func stopLiveStreaming(button: UIButton) {

@@ -11,6 +11,8 @@
 		A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A452DC252070D8CB00EFBA30 /* AppDelegate.swift */; };
 		A452DC392070D8CC00EFBA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A452DC262070D8CB00EFBA30 /* Assets.xcassets */; };
 		AFBABB417A88FF8A4BD5A255 /* Pods_DronosUTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EB3E525532EF9A0BBBE9D8 /* Pods_DronosUTM.framework */; };
+		B2067DC32A98471200ACC05A /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC22A98471200ACC05A /* BottomNavigation.swift */; };
+		B2067DC52A985EA200ACC05A /* MissionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC42A985EA200ACC05A /* MissionSheet.swift */; };
 		B21A48782A721551000A147B /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48772A721551000A147B /* TextEditor.swift */; };
 		B21A487A2A7219C8000A147B /* HorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48792A7219C8000A147B /* HorizontalView.swift */; };
 		B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487B2A722A1D000A147B /* AppFlow.swift */; };
@@ -235,6 +237,7 @@
 		B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */; };
 		B2AD6F3D2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */; };
 		B2AD6F3E2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */; };
+		B2B418332A94B66A0014DB22 /* TelemetryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B418322A94B66A0014DB22 /* TelemetryController.swift */; };
 		B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1D1B62A6A6BDE00D549CF /* ResetPassword.swift */; };
 		B2E2C4932A78DA6800186BC6 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */; };
 		B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2C4942A78DAD800186BC6 /* BottomSheetController.swift */; };
@@ -257,19 +260,6 @@
 		E7D27A622A7CA89500D52FA1 /* bg.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7D27A612A7CA89500D52FA1 /* bg.gif */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		38D2C4751E0B1EF2009A3831 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		33CF5BC7A8839D060573DEDB /* Pods-DronosUTM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DronosUTM.debug.xcconfig"; path = "Target Support Files/Pods-DronosUTM/Pods-DronosUTM.debug.xcconfig"; sourceTree = "<group>"; };
 		38D2C47F1E0B1F20009A3831 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -281,6 +271,8 @@
 		A452DC252070D8CB00EFBA30 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A452DC262070D8CB00EFBA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A452DC2F2070D8CB00EFBA30 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2067DC22A98471200ACC05A /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
+		B2067DC42A985EA200ACC05A /* MissionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSheet.swift; sourceTree = "<group>"; };
 		B21A48772A721551000A147B /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		B21A48792A7219C8000A147B /* HorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalView.swift; sourceTree = "<group>"; };
 		B21A487B2A722A1D000A147B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
@@ -625,6 +617,9 @@
 		B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
 		B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		B2B418322A94B66A0014DB22 /* TelemetryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryController.swift; sourceTree = "<group>"; };
+		B2B418342A94B8770014DB22 /* CocoaMQTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaMQTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B418372A94B8840014DB22 /* MqttCocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MqttCocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C1D1B62A6A6BDE00D549CF /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		B2E2C4942A78DAD800186BC6 /* BottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetController.swift; sourceTree = "<group>"; };
@@ -662,6 +657,8 @@
 		38D2C47E1E0B1F20009A3831 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2B418372A94B8840014DB22 /* MqttCocoaAsyncSocket.framework */,
+				B2B418342A94B8770014DB22 /* CocoaMQTT.framework */,
 				5300B461212BDE970015AF46 /* FFmpeg.framework */,
 				38D2C47F1E0B1F20009A3831 /* libz.tbd */,
 				69EB3E525532EF9A0BBBE9D8 /* Pods_DronosUTM.framework */,
@@ -724,6 +721,7 @@
 				B24CC1012A84B40100FE7C60 /* Demo */,
 				B29803C32A5EAC1B00A94612 /* Splashscreen */,
 				B257D6A72A68DB6300A983E8 /* Auth */,
+				B2067DC12A9846EF00ACC05A /* BottomNavigation */,
 				B2E42EB22A5E819500D78AD1 /* Launchpad */,
 				B2E42EBD2A5E8FA200D78AD1 /* Missions */,
 				B21D878F2A944AD600FC8D79 /* Telemetry */,
@@ -737,6 +735,14 @@
 				B282E6D12A80A24D008B822E /* UXSDK */,
 			);
 			path = DronosUTM;
+			sourceTree = "<group>";
+		};
+		B2067DC12A9846EF00ACC05A /* BottomNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				B2067DC22A98471200ACC05A /* BottomNavigation.swift */,
+			);
+			path = BottomNavigation;
 			sourceTree = "<group>";
 		};
 		B21A487F2A725555000A147B /* Profile */ = {
@@ -753,6 +759,7 @@
 				B21D87902A944AF000FC8D79 /* Telemetry.swift */,
 				B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */,
 				B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */,
+				B2B418322A94B66A0014DB22 /* TelemetryController.swift */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -1796,6 +1803,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E42EB82A5E849800D78AD1 /* Launchpad.swift */,
+				B2067DC42A985EA200ACC05A /* MissionSheet.swift */,
 			);
 			path = Launchpad;
 			sourceTree = "<group>";
@@ -1836,7 +1844,6 @@
 				868A4ECC1E01FA53006FEE33 /* Sources */,
 				868A4ECD1E01FA53006FEE33 /* Frameworks */,
 				868A4ECE1E01FA53006FEE33 /* Resources */,
-				38D2C4751E0B1EF2009A3831 /* Embed Frameworks */,
 				91BA5D54072B1D581C30C988 /* [CP] Embed Pods Frameworks */,
 				D383BFE78109CF0503FDAEC7 /* [CP] Copy Pods Resources */,
 			);
@@ -1877,6 +1884,8 @@
 				Base,
 			);
 			mainGroup = 868A4EC71E01FA53006FEE33;
+			packageReferences = (
+			);
 			productRefGroup = 868A4ED11E01FA53006FEE33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2010,11 +2019,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DronosUTM/Pods-DronosUTM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UX_SDK/DJIUXSDK.framework",
 				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
 				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
 				"${BUILT_PRODUCTS_DIR}/MapboxMaps/MapboxMaps.framework",
+				"${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
 				"${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MapboxCommon/MapboxCommon.framework/MapboxCommon",
@@ -2023,11 +2034,13 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMQTT.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMaps.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MqttCocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOS_Color_Picker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxCommon.framework",
@@ -2078,6 +2091,7 @@
 				B24CC2692A84B40100FE7C60 /* WaypointV2PointConfigViewController.m in Sources */,
 				B21A487A2A7219C8000A147B /* HorizontalView.swift in Sources */,
 				B24CC2B52A84B40200FE7C60 /* MissionBaseViewController.m in Sources */,
+				B2067DC52A985EA200ACC05A /* MissionSheet.swift in Sources */,
 				B2E2C49B2A78DB8F00186BC6 /* Table.swift in Sources */,
 				B24CC2B92A84B40200FE7C60 /* WaypointMissionViewController.m in Sources */,
 				B24CC2912A84B40100FE7C60 /* DemoGetSetViewController.m in Sources */,
@@ -2099,11 +2113,13 @@
 				B2E2C4972A78DB5500186BC6 /* Sparse.swift in Sources */,
 				B24CC2EC2A84B40200FE7C60 /* BatterySelfDischargeViewController.m in Sources */,
 				B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */,
+				B2B418332A94B66A0014DB22 /* TelemetryController.swift in Sources */,
 				B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */,
 				B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */,
 				B21D87912A944AF000FC8D79 /* Telemetry.swift in Sources */,
 				B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */,
 				B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */,
+				B2067DC32A98471200ACC05A /* BottomNavigation.swift in Sources */,
 				E7510BCB2A8356E7005F59B1 /* DateFormatter.swift in Sources */,
 				B282E6EC2A80A24D008B822E /* MyBatteryWidget.swift in Sources */,
 				B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */,

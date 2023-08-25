@@ -9,6 +9,14 @@
 import Foundation
 
 enum Constants {
+    
+    static let radius: CGFloat = 16
+    static let indicatorHeight: CGFloat = 6
+    static let indicatorWidth: CGFloat = 60
+    static let snapRatio: CGFloat = 0.25
+    static let minHeightRatio: CGFloat = 0.3
+    
+    
     static let MAPBOX_TOKEN = "pk.eyJ1IjoiaW50dWl0aXZlYmFkZ2VyIiwiYSI6ImNrOXZpeXZiNzBkN3Iza29saHhjOWo2OGwifQ.QOMbmOzi8OhYw6NYyDqBRQ"
     static let MAPBOX_STYLE = "mapbox://styles/intuitivebadger/clf659i6e003m01o9seb9u6l0"
     
@@ -22,5 +30,15 @@ enum Constants {
     static let getProfileEndpoint = "/account/users/profile"
     static let resetPasswordEndpoint = "/account/auth/reset-password"
     static let fetchMissionEndpoint = "/mission/missions"
+    static let fetchMissionDetailsEndpoint = "/mission/missions/"
+    
+    //}
+    //
+    //fileprivate enum Constants {
+    //    static let radius: CGFloat = 16
+    //    static let indicatorHeight: CGFloat = 6
+    //    static let indicatorWidth: CGFloat = 60
+    //    static let snapRatio: CGFloat = 0.25
+    //    static let minHeightRatio: CGFloat = 0.3
 }
-
+    
