@@ -20,15 +20,16 @@ class LaunchpadController: UIViewController {
     var connectionCheckTimer: Timer?
     @State private var profile: Profile? = nil
     @State private var workspaceId: String = ""
+    @State var isShowingBottomSheet = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                connectionCheckTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
-                    self?.publishTelemetry()
-                }
+        connectionCheckTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+            self?.publishTelemetry()
+        }
         
-                // Run the timer on the current run loop
-                RunLoop.current.add(connectionCheckTimer!, forMode: .common)
+        // Run the timer on the current run loop
+        RunLoop.current.add(connectionCheckTimer!, forMode: .common)
         
         let startingCoordinate = CLLocationCoordinate2D(latitude: 0.6664763562990147, longitude: 98.54248632886225)
         let mapInitOptions = MapInitOptions(
@@ -106,6 +107,11 @@ class LaunchpadController: UIViewController {
                 let newCamera = CameraOptions(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), padding: UIEdgeInsets(top: 0, left: 0, bottom: 300, right: 0), zoom: 10)
                 mapView.camera.ease(to: newCamera, duration: 5.0)
             }
+            
+            
+            let swiftUIView =  MissionSheet(isShowing: $isShowingBottomSheet, missionId: missionID)
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            present(hostingController, animated: true, completion: nil)
         }
     }
     
@@ -275,7 +281,6 @@ class LaunchpadController: UIViewController {
         self.present(viewController, animated: true)
     }
 }
-
 
 extension UIImage {
     func resized(to size: CGSize) -> UIImage? {

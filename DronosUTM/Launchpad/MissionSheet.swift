@@ -1,69 +1,133 @@
+//
+//  BottomNavigation.swift
+//  DronosUTM
+//
+//  Created by zvhir on 25/08/2023.
+//  Copyright © 2023 DJI. All rights reserved.
+//
+
 import SwiftUI
 
-
-
-struct BottomSheetView<Content: View>: View {
-    @Binding var isOpen: Bool
-
-    let maxHeight: CGFloat
-    let minHeight: CGFloat
-    let content: Content
-
-    @GestureState private var translation: CGFloat = 0
-
-    private var offset: CGFloat {
-        isOpen ? 0 : maxHeight - minHeight
-    }
-
-    private var indicator: some View {
-        RoundedRectangle(cornerRadius: Constants.radius)
-            .fill(Color.secondary)
-            .frame(
-                width: Constants.indicatorWidth,
-                height: Constants.indicatorHeight
-        ).onTapGesture {
-            self.isOpen.toggle()
-        }
-    }
-
-    init(isOpen: Binding<Bool>, maxHeight: CGFloat, @ViewBuilder content: () -> Content) {
-        self.minHeight = maxHeight * Constants.minHeightRatio
-        self.maxHeight = maxHeight
-        self.content = content()
-        self._isOpen = isOpen
-    }
-
+struct MissionSheet: View {
+    
+    @Binding var isShowing: Bool
+    var missionId: String
+    
+    
     var body: some View {
-        GeometryReader { geometry in
-            VStack(spacing: 0) {
-                self.indicator.padding()
-                self.content
+        ZStack(alignment: .bottom) {
+            if (isShowing) {
+                Text("Are you want to go offline? If yes then you can go offline or also you can snooz availability or stay online if not.")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(.black)
+                    .padding(.bottom, 24)
+                .padding(.bottom, 42)
+                .transition(.move(edge: .bottom))
+                .cornerRadius(16, corners: [.topLeft, .topRight])
             }
-            .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(Constants.radius)
-            .frame(height: geometry.size.height, alignment: .bottom)
-            .offset(y: max(self.offset + self.translation, 0))
-            .animation(.interactiveSpring())
-            .gesture(
-                DragGesture().updating(self.$translation) { value, state, _ in
-                    state = value.translation.height
-                }.onEnded { value in
-                    let snapDistance = self.maxHeight * Constants.snapRatio
-                    guard abs(value.translation.height) > snapDistance else {
-                        return
-                    }
-                    self.isOpen = value.translation.height < 0
-                }
-            )
         }
+        .frame(maxWidth: 500, maxHeight: .infinity, alignment: .bottom)
+        .ignoresSafeArea()
+        .animation(.easeInOut, value: isShowing)
     }
 }
 
-struct BottomSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomSheetView(isOpen: .constant(false), maxHeight: 600) {
-            Rectangle().fill(Color.red)
-        }.edgesIgnoringSafeArea(.all)
+struct RoundedSheetCorners: Shape {
+    
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
 }
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedSheetCorners(radius: radius, corners: corners) )
+    }
+}
+//
+//
+//import SwiftUI
+//
+//struct MissionSheet: View {
+//    
+//    @State var isShowingBottomSheet = false
+//    
+//    var body: some View {
+//        ZStack{
+//            
+//            Button{
+//                withAnimation{
+//                    isShowingBottomSheet.toggle()
+//                }
+//            } label: {
+//                Text("Open Bottom Sheet")
+//            }
+//            
+//            BottomSheet(isShowing: $isShowingBottomSheet)
+//        }
+//    }
+//}
+//
+//struct BottomSheet: View {
+//    
+//    @Binding var isShowing: Bool
+//    
+//    var body: some View {
+//        ZStack(alignment: .bottom) {
+//            if (isShowing) {
+//                Color.black
+//                    .opacity(0.3)
+//                    .ignoresSafeArea()
+//                    .onTapGesture {
+//                        isShowing.toggle()
+//                    }
+//                VStack(alignment: .leading) {
+//                    HStack {
+//                        Text("Go Online")
+//                            .foregroundColor(.black.opacity(0.9))
+//                            .font(.system(size: 20, weight: .bold))
+//                        
+//                        Spacer()
+//                    }
+//                    .padding(.top, 16)
+//                    .padding(.bottom, 4)
+//                    
+//                    Text("Are you want to go offline? If yes then you can go offline or also you can snooz availability or stay online if not.")
+//                        .font(.system(size: 16, weight: .bold))
+//                        .foregroundColor(.black.opacity(0.7))
+//                        .padding(.bottom, 24)
+//                }
+//                .padding(.bottom, 42)
+//                .transition(.move(edge: .bottom))
+//                .background(
+//                    Color(uiColor: .white)
+//                )
+//                .cornerRadius(16, corners: [.topLeft, .topRight])
+//            }
+//        }
+//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+//        .ignoresSafeArea()
+//        .animation(.easeInOut, value: isShowing)
+//    }
+//}
+//
+//struct RoundedSheetCorners: Shape {
+//    
+//    var radius: CGFloat = .infinity
+//    var corners: UIRectCorner = .allCorners
+//    
+//    func path(in rect: CGRect) -> Path {
+//        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+//        return Path(path.cgPath)
+//    }
+//}
+//
+//extension View {
+//    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+//        clipShape( RoundedSheetCorners(radius: radius, corners: corners) )
+//    }
+//}
