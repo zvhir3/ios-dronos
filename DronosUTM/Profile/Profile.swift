@@ -1,63 +1,30 @@
 import SwiftUI
-
-struct Profile {
-    let id: String
-    let firstName: String
-    let lastName: String
-    let email: String
-    let workspaceId: String
-}
-
-func getUserProfile(completion: @escaping (Profile?) -> Void) {
-    guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
-        completion(nil)
-        return
-    }
-    
-    APIService.getProfile(token: savedToken) { apiProfile in
-        guard let apiProfile = apiProfile else {
-            completion(nil)
-            return
-        }
-        
-        // Convert APIService.Profile to Profile
-        let convertedProfile = Profile(
-            id: apiProfile.id,
-            firstName: apiProfile.firstName,
-            lastName: apiProfile.lastName,
-            email: apiProfile.email,
-            workspaceId: apiProfile.workspaceId
-        )
-        
-        completion(convertedProfile)
-    }
-}
-
-func performLogout(workspace_id: String, completion: @escaping (Bool) -> Void) {
-    
-    guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
-        completion(false)
-        return
-    }
-    APIService.logout(token: savedToken, workspaceId: workspace_id) { result in
-        completion(result)
-    }
-}
-
-func performDeactivateAcc(user_id: String, workspace_id: String, completion: @escaping (Bool) -> Void) {
-    guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
-        completion(false)
-        return
-    }
-            
-    APIService.deactivateAccount(token: savedToken, userId: user_id, workspaceId: workspace_id) { result in
-        completion(result)
-    }
-}
-
+//
+//func performLogout(workspace_id: String, completion: @escaping (Bool) -> Void) {
+//    
+//    guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
+//        completion(false)
+//        return
+//    }
+//    APIService.logout(token: savedToken, workspaceId: workspace_id) { result in
+//        completion(result)
+//    }
+//}
+//
+//func performDeactivateAcc(user_id: String, workspace_id: String, completion: @escaping (Bool) -> Void) {
+//    guard let savedToken = UserDefaults.standard.object(forKey: "token") as? String else {
+//        completion(false)
+//        return
+//    }
+//    
+//    APIService.deactivateAccount(token: savedToken, userId: user_id, workspaceId: workspace_id) { result in
+//        completion(result)
+//    }
+//}
+//
 
 struct ProfilePage: View {
-    @State private var profile: Profile? = nil
+    
     @State private var email: String = ""
     @State private var id: String = ""
     @State private var fullName: String = ""
@@ -65,7 +32,8 @@ struct ProfilePage: View {
     @State private var showLogin: Bool = false
     @State private var showingDeleteAlert = false
     @State private var showingSuccessAlert = false
-
+    @State private var showLogoutAlert = false
+    
     var body: some View {
         if showLogin {
             LoginPage()
@@ -73,18 +41,13 @@ struct ProfilePage: View {
             NavigationView {
                 ZStack {
                     VStack {
-                        ZStack(alignment: .topTrailing) { // Set the alignment to topTrailing
+                        ZStack(alignment: .topTrailing) {
                             Image("btn")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width, alignment: .top)
                             Button(action: {
-                                performLogout(workspace_id: workspaceId) { success in
-                                    if success {
-                                        self.showLogin = true
-                                        UserDefaults.standard.removeObject(forKey: "token")
-                                    }
-                                }
+                                showLogoutAlert = true
                             }) {
                                 Image("logout")
                                     .resizable()
@@ -95,9 +58,27 @@ struct ProfilePage: View {
                             }
                         }
                         
-                        
                         Spacer()
                     }
+//                    .alert(isPresented: $showLogoutAlert) {
+//                        Alert(
+//                            title: Text("Logout"),
+//                            message: Text("Are you sure you want to logout?"),
+//                            primaryButton: .default(Text("Cancel")),
+//                            secondaryButton: .destructive(Text("Logout"), action: {
+//                                performLogout(workspace_id: workspaceId) { success in
+//                                    if success {
+//                                        self.showLogin = true
+//                                        UserDefaults.standard.removeObject(forKey: "token")
+//                                        
+//                                        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//                                            appDelegate.setInitialScreen()
+//                                        }
+//                                    }
+//                                }
+//                            })
+//                        )
+//                    }
                     VStack {
                         
                         Spacer()
@@ -165,31 +146,31 @@ struct ProfilePage: View {
                                         print("aaaaaaa")
                                         showingDeleteAlert = true
                                     }
-
+                                
                                 Button(action: { /* No action needed here */ }, label: { EmptyView() })
-                                    .alert(isPresented: $showingDeleteAlert) {
-                                        Alert(
-                                            title: Text("Warning"),
-                                            message: Text("Are you sure you want to delete your account? This action cannot be undone."),
-                                            primaryButton: .destructive(Text("Delete")) {
-                                                performDeactivateAcc(user_id: id, workspace_id: workspaceId) { success in
-                                                    if success {
-                                                        self.showingSuccessAlert = true
-                                                    }
-                                                }
-                                            },
-                                            secondaryButton: .cancel()
-                                        )
-                                    }
+//                                    .alert(isPresented: $showingDeleteAlert) {
+//                                        Alert(
+//                                            title: Text("Warning"),
+//                                            message: Text("Are you sure you want to delete your account? This action cannot be undone."),
+//                                            primaryButton: .destructive(Text("Delete")) {
+//                                                performDeactivateAcc(user_id: id, workspace_id: workspaceId) { success in
+//                                                    if success {
+//                                                        self.showingSuccessAlert = true
+//                                                    }
+//                                                }
+//                                            },
+//                                            secondaryButton: .cancel()
+//                                        )
+//                                    }
                                     .frame(width: 0, height: 0)
-
+                                
                                 Button(action: { /* No action needed here */ }, label: { EmptyView() })
                                     .alert(isPresented: $showingSuccessAlert) {
                                         Alert(title: Text("Account Deactivated"),
                                               message: Text("Your account has been successfully deactivated."),
                                               dismissButton: .default(Text("OK")) {
-                                                  self.showLogin = true
-                                              })
+                                            self.showLogin = true
+                                        })
                                     }
                                     .frame(width: 0, height: 0)
                                 HStack(alignment: .center, spacing: 0) {
@@ -222,15 +203,8 @@ struct ProfilePage: View {
                         .background(Color(red: 0.13, green: 0.15, blue: 0.2).opacity(1))
                         .cornerRadius(20)
                     }
-                                    .onAppear {
-                                        getUserProfile { fetchedProfile in
-                                            self.profile = fetchedProfile
-                                            self.id = fetchedProfile?.id ?? ""
-                                            self.email = fetchedProfile?.email ?? ""
-                                            self.fullName = "\(fetchedProfile?.firstName ?? "") \(fetchedProfile?.lastName ?? "")"
-                                            self.workspaceId = fetchedProfile?.workspaceId ?? ""
-                                        }
-                                    }
+                    .onAppear {
+                    }
                 }
                 .edgesIgnoringSafeArea(.all)
                 
@@ -240,9 +214,3 @@ struct ProfilePage: View {
         }
     }
 }
-//
-//struct ProfilePage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfilePage()
-//    }
-//}

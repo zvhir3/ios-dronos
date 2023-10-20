@@ -9,4 +9,17 @@ target 'DronosUTM' do
   pod 'iOS-Color-Picker'
   pod 'MapboxMaps', '10.14.0'
   pod 'CocoaMQTT'
+  pod 'CocoaMQTT/WebSockets'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'RealmSwift'
+  
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          target.build_configurations.each do |config|
+              config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+          end
+      end
+  end    
 end
+

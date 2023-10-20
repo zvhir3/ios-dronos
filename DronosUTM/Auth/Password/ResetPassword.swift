@@ -186,15 +186,15 @@ struct ResetPasswordPage: View {
                                 } else {
                                     isInvalidPass = false
                                     isInvalidConfirmPass = false
-                                    APIService.resetPassword(email: email, password: newPassword){ result in
-                                        if (result == true) {
-                                            print("Password Reset Successful")
-                                            navigateToLogin = true
-                                        }else{
-                                            print("Password Reset Failed")
-                                            showAlert = true
-                                        }
-                                    }
+//                                    APIService.resetPassword(email: email, password: newPassword){ result in
+//                                        if (result == true) {
+//                                            print("Password Reset Successful")
+//                                            navigateToLogin = true
+//                                        }else{
+//                                            print("Password Reset Failed")
+//                                            showAlert = true
+//                                        }
+//                                    }
                                 }
                                 
                             }, label: {

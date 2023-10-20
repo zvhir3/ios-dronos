@@ -1,8 +1,12 @@
 PODS:
+  - Alamofire (5.8.0)
   - CocoaMQTT (2.1.6):
     - CocoaMQTT/Core (= 2.1.6)
   - CocoaMQTT/Core (2.1.6):
     - MqttCocoaAsyncSocket (~> 1.0.8)
+  - CocoaMQTT/WebSockets (2.1.6):
+    - CocoaMQTT/Core
+    - Starscream (~> 3.1.1)
   - DJI-SDK-iOS (4.16.2)
   - DJI-UXSDK-iOS (4.16.2)
   - DJIFlySafeDatabaseResource (01.00.01.18)
@@ -18,19 +22,31 @@ PODS:
     - Turf (~> 2.0)
   - MapboxMobileEvents (1.0.10)
   - MqttCocoaAsyncSocket (1.0.8)
+  - Realm (10.43.0):
+    - Realm/Headers (= 10.43.0)
+  - Realm/Headers (10.43.0)
+  - RealmSwift (10.43.0):
+    - Realm (= 10.43.0)
+  - Starscream (3.1.1)
+  - SwiftyJSON (5.0.1)
   - Turf (2.6.1)
 
 DEPENDENCIES:
+  - Alamofire
   - CocoaMQTT
+  - CocoaMQTT/WebSockets
   - DJI-SDK-iOS (~> 4.16.2)
   - DJI-UXSDK-iOS (~> 4.16.2)
   - DJIFlySafeDatabaseResource (~> 01.00.01.18)
   - DJIWidget (~> 1.6.8)
   - iOS-Color-Picker
   - MapboxMaps (= 10.14.0)
+  - RealmSwift
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CocoaMQTT
     - DJI-SDK-iOS
     - DJI-UXSDK-iOS
@@ -42,9 +58,14 @@ SPEC REPOS:
     - MapboxMaps
     - MapboxMobileEvents
     - MqttCocoaAsyncSocket
+    - Realm
+    - RealmSwift
+    - Starscream
+    - SwiftyJSON
     - Turf
 
 SPEC CHECKSUMS:
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
   DJI-SDK-iOS: 44308a021c3b95a912be52c4e7a8e0a27e5434f5
   DJI-UXSDK-iOS: 8a9db4bda9fcc38ccf9861fb7d7ba30d44c7791c
@@ -56,8 +77,12 @@ SPEC CHECKSUMS:
   MapboxMaps: af50ec61a7eb3b032c3f7962c6bd671d93d2a209
   MapboxMobileEvents: de50b3a4de180dd129c326e09cd12c8adaaa46d6
   MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
+  Realm: fc65bea3f5c3da2ecdc76324f180e054e7cf4eb0
+  RealmSwift: a7d48361c585769690c175428cc2bf15e1074444
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Turf: 469ce2c3d22e5e8e4818d5a3b254699a5c89efa4
 
-PODFILE CHECKSUM: 59bbd2f51a0b24eb9b915be296476350205c2fa9
+PODFILE CHECKSUM: 3e1ae1414f0365c3b9f6e58783cd1ad25f5c2f88
 
 COCOAPODS: 1.12.1
