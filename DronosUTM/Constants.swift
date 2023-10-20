@@ -6,7 +6,7 @@
 //  Copyright © 2023 DJI. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 enum Constants {
     
@@ -23,6 +23,7 @@ enum Constants {
     static let baseURL = "https://dev-api.dronos.ai"
     static let loginEndpoint = "/account/auth/login"
     static let logoutEndpoint = "/account/auth/logout"
+    static let refreshTokenEndpoint = "/account/auth/refreshtoken"
     static let registerEndpoint = "/account/users/signup"
     static let deactivateAccEndpoint = "/account/users/"
     static let forgotPasswordEndpoint = "/account/auth/forgot-password"
@@ -31,6 +32,15 @@ enum Constants {
     static let resetPasswordEndpoint = "/account/auth/reset-password"
     static let fetchMissionEndpoint = "/mission/missions"
     static let fetchMissionDetailsEndpoint = "/mission/missions/"
+    
+    
+    static let DronosMainColor = Color(red: 0.13, green: 0.15, blue: 0.2)
+    static let DronosSecondaryColor = Color(red: 0.21, green: 0.24, blue: 0.27)
+    static let DronosAccentColor =  Color(red: 0.19, green: 0.88, blue: 0.93)
+    
+    static let keychainService = "com.yourapp.keychain"
+    static let keychainEmailKey = "email"
+    static let keychainPasswordKey = "password"
     
     //}
     //

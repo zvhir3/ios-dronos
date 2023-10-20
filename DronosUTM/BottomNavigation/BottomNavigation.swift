@@ -22,11 +22,11 @@ struct BottomNavigation: View {
                     Image(systemName: "skew")
                     Text("Launchpad")
                 }
-            MissionsPage()
-                .tabItem {
-                    Image(systemName: "map")
-                    Text("Missions")
-                }
+//            MissionsPage()
+//                .tabItem {
+//                    Image(systemName: "map")
+//                    Text("Missions")
+//                }
             ProfilePage()
                 .tabItem {
                     Image(systemName: "person")

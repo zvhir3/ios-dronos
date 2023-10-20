@@ -7,127 +7,131 @@
 //
 
 import SwiftUI
-
 struct MissionSheet: View {
     
-    @Binding var isShowing: Bool
     var missionId: String
+    var schedules: [MissionModel.Schedule]
+    @State var showSheet: Bool? = nil
+    @State private var selectedTab: Int = 0
     
+
+    
+    let tabs: [Tab] = [
+        .init(icon: Image(systemName: "music.note")),
+        .init(icon: Image(systemName: "film.fill")),
+        .init(icon: Image(systemName: "book.fill")),
+        .init(icon: Image(systemName: "book.fill"))
+    ]
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            if (isShowing) {
-                Text("Are you want to go offline? If yes then you can go offline or also you can snooz availability or stay online if not.")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.black)
-                    .padding(.bottom, 24)
-                .padding(.bottom, 42)
-                .transition(.move(edge: .bottom))
-                .cornerRadius(16, corners: [.topLeft, .topRight])
+        ZStack(alignment: .top) {
+            Constants.DronosMainColor
+            VStack(spacing: 10) {
+                ZStack(alignment: .bottom) {
+                    Image("mountain")
+                        .resizable()
+                        .scaledToFit()
+                    LinearGradient(gradient: Gradient(colors: [.clear,  Color(red: 0.13, green: 0.15, blue: 0.2).opacity(1)]), startPoint: .top, endPoint: .bottom)
+                        .frame(height: 100) // Adjust the height of the fading effect
+                    HStack() {
+                        VStack(alignment: .leading) {
+                            Text("Gas leak Detection")
+                                .font(.system(size: 18, weight: .medium, design: .rounded))
+                                .kerning(0.72)
+                                .foregroundColor(Color(red: 0.93, green: 0.96, blue: 0.97))
+                            Text("\(missionId)")
+                                .font(.system(size: 12, weight: .regular, design: .rounded))
+                                .kerning(4)
+                                .foregroundColor(.white.opacity(0.6))
+                        }
+                        
+                        Spacer() // Add spacing between columns
+                        
+                        Text("Not Started")
+                            .font(.system(size: 12, weight: .regular, design: .rounded))
+                            .foregroundColor(.white)
+                    }
+                    .padding(10)
+                    
+                }
+                NavigationView {
+                    GeometryReader { geo in
+                        VStack(spacing: 0) {
+                            // Tabs
+                            Tabs(tabs: tabs, geoWidth: geo.size.width, selectedTab: $selectedTab)
+                            
+                            // Views
+                            TabView(selection: $selectedTab,
+                                    content: {
+                                MissionSchedules(missionId: missionId, schedules: schedules)
+                                    .tag(0)
+                                MissionOperators(missionId: missionId, schedules: schedules)
+                                    .tag(1)
+                                MissionDrones(missionId: missionId, schedules: schedules)
+                                    .tag(2)
+                                MissionInformatics()
+                                    .tag(3)
+                            })
+                            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        }
+                        .background(Constants.DronosMainColor)
+                    }
+                }
+                .padding(10)
             }
         }
-        .frame(maxWidth: 500, maxHeight: .infinity, alignment: .bottom)
-        .ignoresSafeArea()
-        .animation(.easeInOut, value: isShowing)
     }
 }
 
-struct RoundedSheetCorners: Shape {
-    
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
+
+struct Tab {
+    var icon: Image?
+}
+
+struct Tabs: View {
+    var fixed = true
+    var tabs: [Tab]
+    var geoWidth: CGFloat
+    @Binding var selectedTab: Int
+    var body: some View {
+        VStack (alignment: .leading) {
+            HStack(spacing: 0) {
+                ForEach(0 ..< tabs.count, id: \.self) { row in
+                    Button(action: {
+                        withAnimation {
+                            selectedTab = row
+                        }
+                    }, label: {
+                        VStack(spacing: 0) {
+                            HStack {
+                                AnyView(tabs[row].icon)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: fixed ? (geoWidth / CGFloat(tabs.count)) : .none, height: 35)
+                        }
+                        .frame(height: 35)
+                        .background(selectedTab == row ? Constants.DronosAccentColor : Color.clear)
+                    })
+                    
+                    .cornerRadius(5)
+                    .buttonStyle(DefaultButtonStyle())
+                }
+            }
+            .background(Constants.DronosSecondaryColor)
+            .cornerRadius(5)
+        }
+        .onChange(of: selectedTab) { target in
+            withAnimation {
+                // Scroll to selected tab
+            }
+        }
+        .onAppear(perform: {
+            UIScrollView.appearance().backgroundColor = UIColor(Constants.DronosMainColor)
+            UIScrollView.appearance().bounces = fixed ? false : true
+        })
+        .onDisappear(perform: {
+            UIScrollView.appearance().bounces = true
+        })
     }
 }
 
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedSheetCorners(radius: radius, corners: corners) )
-    }
-}
-//
-//
-//import SwiftUI
-//
-//struct MissionSheet: View {
-//    
-//    @State var isShowingBottomSheet = false
-//    
-//    var body: some View {
-//        ZStack{
-//            
-//            Button{
-//                withAnimation{
-//                    isShowingBottomSheet.toggle()
-//                }
-//            } label: {
-//                Text("Open Bottom Sheet")
-//            }
-//            
-//            BottomSheet(isShowing: $isShowingBottomSheet)
-//        }
-//    }
-//}
-//
-//struct BottomSheet: View {
-//    
-//    @Binding var isShowing: Bool
-//    
-//    var body: some View {
-//        ZStack(alignment: .bottom) {
-//            if (isShowing) {
-//                Color.black
-//                    .opacity(0.3)
-//                    .ignoresSafeArea()
-//                    .onTapGesture {
-//                        isShowing.toggle()
-//                    }
-//                VStack(alignment: .leading) {
-//                    HStack {
-//                        Text("Go Online")
-//                            .foregroundColor(.black.opacity(0.9))
-//                            .font(.system(size: 20, weight: .bold))
-//                        
-//                        Spacer()
-//                    }
-//                    .padding(.top, 16)
-//                    .padding(.bottom, 4)
-//                    
-//                    Text("Are you want to go offline? If yes then you can go offline or also you can snooz availability or stay online if not.")
-//                        .font(.system(size: 16, weight: .bold))
-//                        .foregroundColor(.black.opacity(0.7))
-//                        .padding(.bottom, 24)
-//                }
-//                .padding(.bottom, 42)
-//                .transition(.move(edge: .bottom))
-//                .background(
-//                    Color(uiColor: .white)
-//                )
-//                .cornerRadius(16, corners: [.topLeft, .topRight])
-//            }
-//        }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-//        .ignoresSafeArea()
-//        .animation(.easeInOut, value: isShowing)
-//    }
-//}
-//
-//struct RoundedSheetCorners: Shape {
-//    
-//    var radius: CGFloat = .infinity
-//    var corners: UIRectCorner = .allCorners
-//    
-//    func path(in rect: CGRect) -> Path {
-//        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-//        return Path(path.cgPath)
-//    }
-//}
-//
-//extension View {
-//    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-//        clipShape( RoundedSheetCorners(radius: radius, corners: corners) )
-//    }
-//}

@@ -113,18 +113,18 @@ struct ForgotPasswordPage: View {
                                     alertButton = "Retry"
                                 } else {
                                     invalidEmail = false
-                                    APIService.forgotPassword(email: email) { success in
-                                        if success {
-                                            alertTitle = "OTP successfully sent!"
-                                            alertMessage = "Check your email and proceed to the next step."
-                                            alertButton = "Proceed"
-                                        } else {
-                                            alertTitle = "Hmm are you sure?"
-                                            alertMessage = "Seems that the email is invalid."
-                                            alertButton = "Retry"
-                                        }
-                                        showAlert = true
-                                    }
+//                                    APIService.forgotPassword(email: email) { success in
+//                                        if success {
+//                                            alertTitle = "OTP successfully sent!"
+//                                            alertMessage = "Check your email and proceed to the next step."
+//                                            alertButton = "Proceed"
+//                                        } else {
+//                                            alertTitle = "Hmm are you sure?"
+//                                            alertMessage = "Seems that the email is invalid."
+//                                            alertButton = "Retry"
+//                                        }
+//                                        showAlert = true
+//                                    }
                                 }
                                 
                             }) {

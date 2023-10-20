@@ -246,15 +246,15 @@ struct RegisterPage: View {
                                     
                                     if isValidEmail(email) && isValidPassword(password) {
                                         let data = RegisterData(email: email, password: password, firstName: firstName, lastName: lastName)
-                                        APIService.register(data) { result in
-                                            if (result == true) {
-                                                isLoggedIn = true
-                                            }else{
-                                                showAlert = true
-                                                title = "Register Failed"
-                                                message = "Please make sure your email and password is correct"
-                                            }
-                                        }
+//                                        APIService.register(data) { result in
+//                                            if (result == true) {
+//                                                isLoggedIn = true
+//                                            }else{
+//                                                showAlert = true
+//                                                title = "Register Failed"
+//                                                message = "Please make sure your email and password is correct"
+//                                            }
+//                                        }
                                     }
                                 }) {
                                     Text("REGISTER")

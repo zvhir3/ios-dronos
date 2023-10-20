@@ -13,14 +13,19 @@
 		AFBABB417A88FF8A4BD5A255 /* Pods_DronosUTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EB3E525532EF9A0BBBE9D8 /* Pods_DronosUTM.framework */; };
 		B2067DC32A98471200ACC05A /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC22A98471200ACC05A /* BottomNavigation.swift */; };
 		B2067DC52A985EA200ACC05A /* MissionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC42A985EA200ACC05A /* MissionSheet.swift */; };
+		B2067DC82A9DB4B000ACC05A /* MissionSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC72A9DB4B000ACC05A /* MissionSchedules.swift */; };
+		B2067DCA2A9DC6F100ACC05A /* MissionDrones.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DC92A9DC6F100ACC05A /* MissionDrones.swift */; };
+		B2067DCC2A9DC6FC00ACC05A /* MissionOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DCB2A9DC6FC00ACC05A /* MissionOperators.swift */; };
+		B2067DCE2A9DC72800ACC05A /* MissionInformatics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2067DCD2A9DC72800ACC05A /* MissionInformatics.swift */; };
+		B21337FC2ABD4768000CE0A0 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21337FB2ABD4768000CE0A0 /* MissionModel.swift */; };
 		B21A48782A721551000A147B /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48772A721551000A147B /* TextEditor.swift */; };
 		B21A487A2A7219C8000A147B /* HorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48792A7219C8000A147B /* HorizontalView.swift */; };
 		B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487B2A722A1D000A147B /* AppFlow.swift */; };
 		B21A487E2A7250F2000A147B /* ViewMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A487D2A7250F2000A147B /* ViewMission.swift */; };
 		B21A48812A725567000A147B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48802A725567000A147B /* Profile.swift */; };
-		B21D87912A944AF000FC8D79 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D87902A944AF000FC8D79 /* Telemetry.swift */; };
-		B21D87932A9485FE00FC8D79 /* TelemetryDrone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */; };
-		B21D87952A94860B00FC8D79 /* TelemetryDrone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */; };
+		B2334EB22ABBE26500A9A315 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2334EB12ABBE26500A9A315 /* ApiManager.swift */; };
+		B23A4DAE2ADCCF7B00088C8A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A4DAD2ADCCF7B00088C8A /* ProfileModel.swift */; };
+		B23A4DB02ADCE3EB00088C8A /* Ascii.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A4DAF2ADCE3EB00088C8A /* Ascii.swift */; };
 		B2417E0D2A85CB0B0040C99F /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */; };
 		B2417E0F2A85CB170040C99F /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2417E0E2A85CB170040C99F /* LiveView.storyboard */; };
 		B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC1042A84B40100FE7C60 /* GimbalActionsTableViewController.m */; };
@@ -192,10 +197,15 @@
 		B24CC3082A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC3042A84B4C100FE7C60 /* VideoPreviewerSDKAdapter+Lightbridge2.m */; };
 		B24CC3102A84C26300FE7C60 /* DJIRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24CC30E2A84C26300FE7C60 /* DJIRootViewController.xib */; };
 		B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CC30F2A84C26300FE7C60 /* DJIRootViewController.m */; };
+		B251C7712ACBD17700109E18 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7702ACBD17700109E18 /* LoginModel.swift */; };
+		B251C7742ACBD78A00109E18 /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7732ACBD78A00109E18 /* AuthSession.swift */; };
 		B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */; };
 		B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */; };
 		B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257D6AC2A68EDEA00A983E8 /* Constants.swift */; };
 		B261364C2A821FE300ABBE45 /* DroneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B261364B2A821FE300ABBE45 /* DroneConnector.swift */; };
+		B27D69182AC154FF003F438B /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D69172AC154FF003F438B /* MQTTManager.swift */; };
+		B27D691A2AC2754E003F438B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D69192AC2754E003F438B /* Home.storyboard */; };
+		B27DA6AB2AC3FC2900145C19 /* MQTTPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DA6AA2AC3FC2900145C19 /* MQTTPublisher.swift */; };
 		B282E6E62A80A24D008B822E /* DefaultLayoutCustomization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B282E6D32A80A24D008B822E /* DefaultLayoutCustomization.storyboard */; };
 		B282E6E72A80A24D008B822E /* DefaultLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282E6D42A80A24D008B822E /* DefaultLayoutViewController.swift */; };
 		B282E6E82A80A24D008B822E /* DefaultLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B282E6D52A80A24D008B822E /* DefaultLayout.storyboard */; };
@@ -209,15 +219,14 @@
 		B282E6F12A80A24D008B822E /* CustomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282E6E32A80A24D008B822E /* CustomMapViewController.swift */; };
 		B282E6F22A80A24D008B822E /* MapWidget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B282E6E42A80A24D008B822E /* MapWidget.storyboard */; };
 		B282E6F32A80A24D008B822E /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B282E6E52A80A24D008B822E /* gitignore */; };
-		B289FA802A80A50E004BC2F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289FA7C2A80A50E004BC2F3 /* MainViewController.swift */; };
-		B289FA812A80A50E004BC2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B289FA7D2A80A50E004BC2F3 /* Main.storyboard */; };
-		B289FA822A80A50E004BC2F3 /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289FA7F2A80A50E004BC2F3 /* SimulationControlsViewController.swift */; };
+		B28F4A702ACA6A0000516CCD /* TelemetryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F4A6B2ACA6A0000516CCD /* TelemetryController.swift */; };
 		B28FFA292A7CAA800067CA22 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FFA282A7CAA800067CA22 /* FloatingActionButton.swift */; };
 		B29803BE2A5EAAF300A94612 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29803BD2A5EAAF300A94612 /* TextLabel.swift */; };
 		B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29803C42A5EAC2900A94612 /* Splashscreen.swift */; };
-		B2AD6EEA2A5FC84500BE1EB4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EE92A5FC84500BE1EB4 /* APIService.swift */; };
-		B2AD6EEF2A5FC9E500BE1EB4 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EEE2A5FC9E500BE1EB4 /* AccountService.swift */; };
-		B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EF02A5FCA3D00BE1EB4 /* MQTTService.swift */; };
+		B29B529D2ABACEE3003C3998 /* SimulationControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B52982ABACEE3003C3998 /* SimulationControlsViewController.swift */; };
+		B29B529E2ABACEE3003C3998 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B52992ABACEE3003C3998 /* MainViewController.swift */; };
+		B29B52A22ABACF0B003C3998 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29B52A12ABACF0B003C3998 /* Main.storyboard */; };
+		B29B52A42ABACF31003C3998 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B52A32ABACF31003C3998 /* APIService.swift */; };
 		B2AD6EF52A5FE2DD00BE1EB4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */; };
 		B2AD6F2D2A5FF4FF00BE1EB4 /* Barlow-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1B2A5FF4FE00BE1EB4 /* Barlow-ExtraBold.ttf */; };
 		B2AD6F2E2A5FF4FF00BE1EB4 /* Barlow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F1C2A5FF4FE00BE1EB4 /* Barlow-BlackItalic.ttf */; };
@@ -237,7 +246,6 @@
 		B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */; };
 		B2AD6F3D2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */; };
 		B2AD6F3E2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */; };
-		B2B418332A94B66A0014DB22 /* TelemetryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B418322A94B66A0014DB22 /* TelemetryController.swift */; };
 		B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1D1B62A6A6BDE00D549CF /* ResetPassword.swift */; };
 		B2E2C4932A78DA6800186BC6 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2C4922A78DA6800186BC6 /* BottomSheet.swift */; };
 		B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2C4942A78DAD800186BC6 /* BottomSheetController.swift */; };
@@ -273,14 +281,19 @@
 		A452DC2F2070D8CB00EFBA30 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2067DC22A98471200ACC05A /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
 		B2067DC42A985EA200ACC05A /* MissionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSheet.swift; sourceTree = "<group>"; };
+		B2067DC72A9DB4B000ACC05A /* MissionSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSchedules.swift; sourceTree = "<group>"; };
+		B2067DC92A9DC6F100ACC05A /* MissionDrones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDrones.swift; sourceTree = "<group>"; };
+		B2067DCB2A9DC6FC00ACC05A /* MissionOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionOperators.swift; sourceTree = "<group>"; };
+		B2067DCD2A9DC72800ACC05A /* MissionInformatics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInformatics.swift; sourceTree = "<group>"; };
+		B21337FB2ABD4768000CE0A0 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
 		B21A48772A721551000A147B /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		B21A48792A7219C8000A147B /* HorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalView.swift; sourceTree = "<group>"; };
 		B21A487B2A722A1D000A147B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B21A487D2A7250F2000A147B /* ViewMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMission.swift; sourceTree = "<group>"; };
 		B21A48802A725567000A147B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		B21D87902A944AF000FC8D79 /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
-		B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TelemetryDrone.storyboard; sourceTree = "<group>"; };
-		B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryDrone.swift; sourceTree = "<group>"; };
+		B2334EB12ABBE26500A9A315 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		B23A4DAD2ADCCF7B00088C8A /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		B23A4DAF2ADCE3EB00088C8A /* Ascii.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ascii.swift; sourceTree = "<group>"; };
 		B2417E0C2A85CB0B0040C99F /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		B2417E0E2A85CB170040C99F /* LiveView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveView.storyboard; sourceTree = "<group>"; };
 		B24CC1022A84B40100FE7C60 /* ComponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentSelectionViewController.h; sourceTree = "<group>"; };
@@ -571,10 +584,15 @@
 		B24CC30D2A84C26300FE7C60 /* DJIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIRootViewController.h; sourceTree = "<group>"; };
 		B24CC30E2A84C26300FE7C60 /* DJIRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DJIRootViewController.xib; sourceTree = "<group>"; };
 		B24CC30F2A84C26300FE7C60 /* DJIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIRootViewController.m; sourceTree = "<group>"; };
+		B251C7702ACBD17700109E18 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		B251C7732ACBD78A00109E18 /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
 		B257D6A82A68DB9100A983E8 /* ForgotPasssword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasssword.swift; sourceTree = "<group>"; };
 		B257D6AA2A68E3B800A983E8 /* VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTP.swift; sourceTree = "<group>"; };
 		B257D6AC2A68EDEA00A983E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B261364B2A821FE300ABBE45 /* DroneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneConnector.swift; sourceTree = "<group>"; };
+		B27D69172AC154FF003F438B /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		B27D69192AC2754E003F438B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B27DA6AA2AC3FC2900145C19 /* MQTTPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTPublisher.swift; sourceTree = "<group>"; };
 		B282E6D32A80A24D008B822E /* DefaultLayoutCustomization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayoutCustomization.storyboard; sourceTree = "<group>"; };
 		B282E6D42A80A24D008B822E /* DefaultLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLayoutViewController.swift; sourceTree = "<group>"; };
 		B282E6D52A80A24D008B822E /* DefaultLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultLayout.storyboard; sourceTree = "<group>"; };
@@ -589,15 +607,14 @@
 		B282E6E32A80A24D008B822E /* CustomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapViewController.swift; sourceTree = "<group>"; };
 		B282E6E42A80A24D008B822E /* MapWidget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapWidget.storyboard; sourceTree = "<group>"; };
 		B282E6E52A80A24D008B822E /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
-		B289FA7C2A80A50E004BC2F3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B289FA7E2A80A50E004BC2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B289FA7F2A80A50E004BC2F3 /* SimulationControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationControlsViewController.swift; sourceTree = "<group>"; };
+		B28F4A6B2ACA6A0000516CCD /* TelemetryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelemetryController.swift; sourceTree = "<group>"; };
 		B28FFA282A7CAA800067CA22 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		B29803BD2A5EAAF300A94612 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		B29803C42A5EAC2900A94612 /* Splashscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
-		B2AD6EE92A5FC84500BE1EB4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		B2AD6EEE2A5FC9E500BE1EB4 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		B2AD6EF02A5FCA3D00BE1EB4 /* MQTTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTService.swift; sourceTree = "<group>"; };
+		B29B52982ABACEE3003C3998 /* SimulationControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationControlsViewController.swift; sourceTree = "<group>"; };
+		B29B52992ABACEE3003C3998 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B29B52A12ABACF0B003C3998 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B29B52A32ABACF31003C3998 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B2AD6EF42A5FE2DD00BE1EB4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2AD6F1B2A5FF4FE00BE1EB4 /* Barlow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B2AD6F1C2A5FF4FE00BE1EB4 /* Barlow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -617,7 +634,6 @@
 		B2AD6F2A2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
 		B2AD6F2B2A5FF4FF00BE1EB4 /* Barlow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		B2AD6F2C2A5FF4FF00BE1EB4 /* Barlow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		B2B418322A94B66A0014DB22 /* TelemetryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryController.swift; sourceTree = "<group>"; };
 		B2B418342A94B8770014DB22 /* CocoaMQTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaMQTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B418372A94B8840014DB22 /* MqttCocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MqttCocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C1D1B62A6A6BDE00D549CF /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
@@ -715,6 +731,7 @@
 				A452DC252070D8CB00EFBA30 /* AppDelegate.swift */,
 				B257D6AC2A68EDEA00A983E8 /* Constants.swift */,
 				B21A487B2A722A1D000A147B /* AppFlow.swift */,
+				B23A4DAF2ADCE3EB00088C8A /* Ascii.swift */,
 				B24CC30B2A84BBD400FE7C60 /* DronosUTM-Bridging-Header.h */,
 				A452DC262070D8CB00EFBA30 /* Assets.xcassets */,
 				A452DC2F2070D8CB00EFBA30 /* Info.plist */,
@@ -723,13 +740,13 @@
 				B257D6A72A68DB6300A983E8 /* Auth */,
 				B2067DC12A9846EF00ACC05A /* BottomNavigation */,
 				B2E42EB22A5E819500D78AD1 /* Launchpad */,
+				B2D526062A8374EE00993A02 /* DroneConnecter */,
 				B2E42EBD2A5E8FA200D78AD1 /* Missions */,
-				B21D878F2A944AD600FC8D79 /* Telemetry */,
+				B28F4A662ACA69D200516CCD /* Telemetry */,
 				B21A487F2A725555000A147B /* Profile */,
 				B29803BC2A5EAAC700A94612 /* Components */,
 				B2AD6EE82A5FC82700BE1EB4 /* Services */,
 				B289FA7B2A80A50E004BC2F3 /* MainScreen */,
-				B2D526062A8374EE00993A02 /* DroneConnecter */,
 				53ECE276233DB88300E278CD /* Helpers */,
 				B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */,
 				B282E6D12A80A24D008B822E /* UXSDK */,
@@ -745,6 +762,27 @@
 			path = BottomNavigation;
 			sourceTree = "<group>";
 		};
+		B2067DC62A9DB48900ACC05A /* MissionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B2067DC72A9DB4B000ACC05A /* MissionSchedules.swift */,
+				B2067DCD2A9DC72800ACC05A /* MissionInformatics.swift */,
+				B2067DC92A9DC6F100ACC05A /* MissionDrones.swift */,
+				B2067DCB2A9DC6FC00ACC05A /* MissionOperators.swift */,
+			);
+			path = MissionDetails;
+			sourceTree = "<group>";
+		};
+		B2067DCF2A9F0CE400ACC05A /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				B27D69172AC154FF003F438B /* MQTTManager.swift */,
+				B27DA6AA2AC3FC2900145C19 /* MQTTPublisher.swift */,
+				B29B52A32ABACF31003C3998 /* APIService.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
 		B21A487F2A725555000A147B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,15 +791,24 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		B21D878F2A944AD600FC8D79 /* Telemetry */ = {
+		B2334EB02ABBE24800A9A315 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				B21D87902A944AF000FC8D79 /* Telemetry.swift */,
-				B21D87922A9485FE00FC8D79 /* TelemetryDrone.storyboard */,
-				B21D87942A94860B00FC8D79 /* TelemetryDrone.swift */,
-				B2B418322A94B66A0014DB22 /* TelemetryController.swift */,
+				B251C7722ACBD77600109E18 /* RealmDB */,
+				B23A4DB12ADD15DA00088C8A /* Models */,
+				B2334EB12ABBE26500A9A315 /* ApiManager.swift */,
 			);
-			path = Telemetry;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		B23A4DB12ADD15DA00088C8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B251C7702ACBD17700109E18 /* LoginModel.swift */,
+				B21337FB2ABD4768000CE0A0 /* MissionModel.swift */,
+				B23A4DAD2ADCCF7B00088C8A /* ProfileModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B24CC1012A84B40100FE7C60 /* Demo */ = {
@@ -1612,6 +1659,14 @@
 			path = Startup;
 			sourceTree = "<group>";
 		};
+		B251C7722ACBD77600109E18 /* RealmDB */ = {
+			isa = PBXGroup;
+			children = (
+				B251C7732ACBD78A00109E18 /* AuthSession.swift */,
+			);
+			path = RealmDB;
+			sourceTree = "<group>";
+		};
 		B257D6A62A68DB5400A983E8 /* Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -1705,12 +1760,20 @@
 		B289FA7B2A80A50E004BC2F3 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B289FA7C2A80A50E004BC2F3 /* MainViewController.swift */,
-				B289FA7D2A80A50E004BC2F3 /* Main.storyboard */,
-				B289FA7F2A80A50E004BC2F3 /* SimulationControlsViewController.swift */,
+				B29B52992ABACEE3003C3998 /* MainViewController.swift */,
+				B29B52982ABACEE3003C3998 /* SimulationControlsViewController.swift */,
+				B29B52A12ABACF0B003C3998 /* Main.storyboard */,
 			);
 			name = MainScreen;
 			path = Services/MainScreen;
+			sourceTree = "<group>";
+		};
+		B28F4A662ACA69D200516CCD /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				B28F4A6B2ACA6A0000516CCD /* TelemetryController.swift */,
+			);
+			path = Telemetry;
 			sourceTree = "<group>";
 		};
 		B29803BC2A5EAAC700A94612 /* Components */ = {
@@ -1728,6 +1791,7 @@
 			isa = PBXGroup;
 			children = (
 				B29803C42A5EAC2900A94612 /* Splashscreen.swift */,
+				B27D69192AC2754E003F438B /* Home.storyboard */,
 			);
 			path = Splashscreen;
 			sourceTree = "<group>";
@@ -1735,19 +1799,10 @@
 		B2AD6EE82A5FC82700BE1EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B2AD6EED2A5FC9B400BE1EB4 /* SQLiteServices */,
-				B2AD6EF02A5FCA3D00BE1EB4 /* MQTTService.swift */,
-				B2AD6EE92A5FC84500BE1EB4 /* APIService.swift */,
+				B2334EB02ABBE24800A9A315 /* Alamofire */,
+				B2067DCF2A9F0CE400ACC05A /* MQTT */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		B2AD6EED2A5FC9B400BE1EB4 /* SQLiteServices */ = {
-			isa = PBXGroup;
-			children = (
-				B2AD6EEE2A5FC9E500BE1EB4 /* AccountService.swift */,
-			);
-			path = SQLiteServices;
 			sourceTree = "<group>";
 		};
 		B2AD6EF62A5FEFDA00BE1EB4 /* Fonts */ = {
@@ -1804,6 +1859,7 @@
 			children = (
 				B2E42EB82A5E849800D78AD1 /* Launchpad.swift */,
 				B2067DC42A985EA200ACC05A /* MissionSheet.swift */,
+				B2067DC62A9DB48900ACC05A /* MissionDetails */,
 			);
 			path = Launchpad;
 			sourceTree = "<group>";
@@ -1884,8 +1940,6 @@
 				Base,
 			);
 			mainGroup = 868A4EC71E01FA53006FEE33;
-			packageReferences = (
-			);
 			productRefGroup = 868A4ED11E01FA53006FEE33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1921,13 +1975,13 @@
 				B24CC2A02A84B40100FE7C60 /* PipelineTableViewCell.xib in Resources */,
 				B2417E0F2A85CB170040C99F /* LiveView.storyboard in Resources */,
 				B282E6F32A80A24D008B822E /* gitignore in Resources */,
+				B27D691A2AC2754E003F438B /* Home.storyboard in Resources */,
 				B2AD6F3C2A5FF4FF00BE1EB4 /* Barlow-Regular.ttf in Resources */,
 				B24CC2BC2A84B40200FE7C60 /* FCFlightLimitationViewController.xib in Resources */,
 				B24CC28C2A84B40100FE7C60 /* DemoPushInfoViewController.xib in Resources */,
 				B2AD6F362A5FF4FF00BE1EB4 /* Barlow-Italic.ttf in Resources */,
 				B24CC2C42A84B40200FE7C60 /* FCLandingGearViewController.xib in Resources */,
 				B24CC27E2A84B40100FE7C60 /* CameraCalibrateViewController.xib in Resources */,
-				B289FA812A80A50E004BC2F3 /* Main.storyboard in Resources */,
 				B2AD6F382A5FF4FF00BE1EB4 /* Barlow-Medium.ttf in Resources */,
 				B24CC2AB2A84B40100FE7C60 /* RCHardwareStateViewController.xib in Resources */,
 				B24CC26F2A84B40100FE7C60 /* CameraShootSinglePhotoViewController.xib in Resources */,
@@ -1963,7 +2017,7 @@
 				B2AD6F372A5FF4FF00BE1EB4 /* Barlow-LightItalic.ttf in Resources */,
 				B2AD6F302A5FF4FF00BE1EB4 /* Barlow-Light.ttf in Resources */,
 				B2AD6F332A5FF4FF00BE1EB4 /* Barlow-Black.ttf in Resources */,
-				B21D87932A9485FE00FC8D79 /* TelemetryDrone.storyboard in Resources */,
+				B29B52A22ABACF0B003C3998 /* Main.storyboard in Resources */,
 				B24CC2D42A84B40200FE7C60 /* LDMViewController.xib in Resources */,
 				B24CC2B82A84B40200FE7C60 /* MissionBaseViewController.xib in Resources */,
 				B24CC2D72A84B40200FE7C60 /* KeyedInterfaceViewController.xib in Resources */,
@@ -2019,6 +2073,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DronosUTM/Pods-DronosUTM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UX_SDK/DJIUXSDK.framework",
@@ -2026,6 +2081,10 @@
 				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
 				"${BUILT_PRODUCTS_DIR}/MapboxMaps/MapboxMaps.framework",
 				"${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
 				"${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MapboxCommon/MapboxCommon.framework/MapboxCommon",
@@ -2034,6 +2093,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMQTT.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
@@ -2041,6 +2101,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMaps.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MqttCocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOS_Color_Picker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxCommon.framework",
@@ -2105,27 +2169,28 @@
 				B24CC2C12A84B40200FE7C60 /* FCIntelligentAssistantViewController.m in Sources */,
 				B24CC2CB2A84B40200FE7C60 /* BluetoothConnectorViewController.m in Sources */,
 				B24CC2752A84B40100FE7C60 /* CameraFPVViewController.m in Sources */,
+				B28F4A702ACA6A0000516CCD /* TelemetryController.swift in Sources */,
 				B24CC29D2A84B40100FE7C60 /* PipelineDuplexLogic.m in Sources */,
 				B282E6E92A80A24D008B822E /* DefaultLayoutCustomizationViewController.swift in Sources */,
 				B24CC25D2A84B40100FE7C60 /* GimbalRotationInSpeedViewController.m in Sources */,
 				B24CC2EB2A84B40200FE7C60 /* BatteryActionsTableViewController.m in Sources */,
+				B2334EB22ABBE26500A9A315 /* ApiManager.swift in Sources */,
 				B21A48812A725567000A147B /* Profile.swift in Sources */,
 				B2E2C4972A78DB5500186BC6 /* Sparse.swift in Sources */,
 				B24CC2EC2A84B40200FE7C60 /* BatterySelfDischargeViewController.m in Sources */,
 				B24CC3112A84C26300FE7C60 /* DJIRootViewController.m in Sources */,
-				B2B418332A94B66A0014DB22 /* TelemetryController.swift in Sources */,
 				B24CC2A12A84B40100FE7C60 /* PipelineStatistical.m in Sources */,
+				B2067DC82A9DB4B000ACC05A /* MissionSchedules.swift in Sources */,
 				B24CC2792A84B40100FE7C60 /* CameraFetchMediaViewController.m in Sources */,
-				B21D87912A944AF000FC8D79 /* Telemetry.swift in Sources */,
 				B2E42EB92A5E849800D78AD1 /* Launchpad.swift in Sources */,
 				B2E42EBC2A5E8E4800D78AD1 /* LoginPage.swift in Sources */,
 				B2067DC32A98471200ACC05A /* BottomNavigation.swift in Sources */,
 				E7510BCB2A8356E7005F59B1 /* DateFormatter.swift in Sources */,
+				B23A4DAE2ADCCF7B00088C8A /* ProfileModel.swift in Sources */,
 				B282E6EC2A80A24D008B822E /* MyBatteryWidget.swift in Sources */,
 				B2E2C4952A78DAD800186BC6 /* BottomSheetController.swift in Sources */,
 				B24CC2D22A84B40200FE7C60 /* WaypointV2ViewController.m in Sources */,
 				B24CC2612A84B40100FE7C60 /* GimbalCapabilityViewController.m in Sources */,
-				B2AD6EF12A5FCA3D00BE1EB4 /* MQTTService.swift in Sources */,
 				E7510BCE2A862C94005F59B1 /* RegisterPage.swift in Sources */,
 				B24CC2932A84B40100FE7C60 /* DemoComponentActionTableViewController.m in Sources */,
 				B24CC2F12A84B40200FE7C60 /* SpeakerViewController.m in Sources */,
@@ -2136,19 +2201,21 @@
 				B24CC2E92A84B40200FE7C60 /* DJILimitSpaceOverlay.m in Sources */,
 				B2417E0D2A85CB0B0040C99F /* LiveViewController.swift in Sources */,
 				E7772B7F2A8201D4003E6936 /* TimeFormatter.swift in Sources */,
+				B2067DCE2A9DC72800ACC05A /* MissionInformatics.swift in Sources */,
 				B24CC2EA2A84B40200FE7C60 /* DJIMapView.m in Sources */,
 				B2C1D1B72A6A6BDE00D549CF /* ResetPassword.swift in Sources */,
 				B24CC2BE2A84B40200FE7C60 /* FCActionsTableViewController.m in Sources */,
 				B2E2C4992A78DB7600186BC6 /* Dense.swift in Sources */,
+				B2067DCC2A9DC6FC00ACC05A /* MissionOperators.swift in Sources */,
 				B24CC26D2A84B40100FE7C60 /* CameraPlaybackPushInfoViewController.m in Sources */,
 				B29803C52A5EAC2900A94612 /* Splashscreen.swift in Sources */,
-				B21D87952A94860B00FC8D79 /* TelemetryDrone.swift in Sources */,
 				B24CC29F2A84B40100FE7C60 /* PipelineTableViewCell.m in Sources */,
 				B24CC2BD2A84B40200FE7C60 /* FCFlightLimitationViewController.m in Sources */,
 				B24CC2F22A84B40200FE7C60 /* RecordingHandler.m in Sources */,
 				B24CC2E72A84B40200FE7C60 /* DJIWaypointV2FlightPathOverlays.m in Sources */,
 				B24CC2F92A84B40200FE7C60 /* AirLinkActionsTableViewController.m in Sources */,
 				B24CC2DD2A84B40200FE7C60 /* DJIAnnotation.m in Sources */,
+				B27DA6AB2AC3FC2900145C19 /* MQTTPublisher.swift in Sources */,
 				B24CC2A32A84B40100FE7C60 /* VideoFeederViewController.m in Sources */,
 				B24CC2CD2A84B40200FE7C60 /* SleepModeViewController.m in Sources */,
 				B24CC2712A84B40100FE7C60 /* CameraISOViewController.m in Sources */,
@@ -2159,6 +2226,7 @@
 				B24CC29C2A84B40100FE7C60 /* PayloadTestChannelViewController.m in Sources */,
 				B282E6EA2A80A24D008B822E /* PanelsCollectionsViewController.swift in Sources */,
 				B29803BE2A5EAAF300A94612 /* TextLabel.swift in Sources */,
+				B2067DCA2A9DC6F100ACC05A /* MissionDrones.swift in Sources */,
 				B24CC2802A84B40100FE7C60 /* CameraRecordVideoViewController.m in Sources */,
 				B24CC2A42A84B40100FE7C60 /* DemoSelectView.m in Sources */,
 				B24CC2B72A84B40200FE7C60 /* HotpointMissionViewController.m in Sources */,
@@ -2175,15 +2243,16 @@
 				B24CC2852A84B40100FE7C60 /* CameraPlaybackDownloadViewController.m in Sources */,
 				B24CC27D2A84B40100FE7C60 /* CameraCalibrateViewController.m in Sources */,
 				B24CC2632A84B40100FE7C60 /* VideoLiveStreamingViewController.m in Sources */,
-				B2AD6EEF2A5FC9E500BE1EB4 /* AccountService.swift in Sources */,
 				B24CC2812A84B40100FE7C60 /* In2P4PCameraPlayBackViewController.m in Sources */,
 				B24CC2E82A84B40200FE7C60 /* DJICircle.m in Sources */,
 				B24CC26C2A84B40100FE7C60 /* WaypointV2ConfigrationViewController.m in Sources */,
 				B257D6AB2A68E3B800A983E8 /* VerifyOTP.swift in Sources */,
 				B2E2C4A12A78DBF400186BC6 /* BottomsheetPresentation.swift in Sources */,
 				B24CC2E52A84B40200FE7C60 /* DJIFlyLimitCircle.m in Sources */,
+				B29B529E2ABACEE3003C3998 /* MainViewController.swift in Sources */,
 				B24CC2662A84B40100FE7C60 /* UpgradeComponentViewController.m in Sources */,
 				B24CC2DF2A84B40200FE7C60 /* DJIMapPolygon.m in Sources */,
+				B21337FC2ABD4768000CE0A0 /* MissionModel.swift in Sources */,
 				B24CC29E2A84B40100FE7C60 /* PipelinesViewController.m in Sources */,
 				B24CC2DC2A84B40200FE7C60 /* DJIAircraftAnnotation.m in Sources */,
 				B282E6ED2A80A24D008B822E /* WidgetsViewController.swift in Sources */,
@@ -2208,11 +2277,12 @@
 				B24CC2E62A84B40200FE7C60 /* DJIWhitelistOverlay.m in Sources */,
 				B28FFA292A7CAA800067CA22 /* FloatingActionButton.swift in Sources */,
 				B24CC2772A84B40100FE7C60 /* CameraPlaybackCommandViewController.m in Sources */,
-				B289FA802A80A50E004BC2F3 /* MainViewController.swift in Sources */,
+				B29B52A42ABACF31003C3998 /* APIService.swift in Sources */,
 				B24CC2E22A84B40200FE7C60 /* DJIMapOverlay.m in Sources */,
 				B24CC2B42A84B40100FE7C60 /* PanoramaMissionViewController.m in Sources */,
 				53ECE278233DB8B500E278CD /* Helpers.swift in Sources */,
 				B24CC2DB2A84B40200FE7C60 /* DJIPOIAnnotationView.m in Sources */,
+				B251C7742ACBD78A00109E18 /* AuthSession.swift in Sources */,
 				B24CC2E12A84B40200FE7C60 /* DJIPolygon.m in Sources */,
 				B261364C2A821FE300ABBE45 /* DroneConnector.swift in Sources */,
 				B2E2C49F2A78DBD500186BC6 /* BottomSheetTransition.swift in Sources */,
@@ -2222,42 +2292,33 @@
 				B282E6EF2A80A24D008B822E /* ProductCommunicationService.swift in Sources */,
 				B21A487C2A722A1D000A147B /* AppFlow.swift in Sources */,
 				B24CC2E32A84B40200FE7C60 /* DJIFlyLimitPolygonView.m in Sources */,
+				B27D69182AC154FF003F438B /* MQTTManager.swift in Sources */,
 				B24CC2F62A84B40200FE7C60 /* AccessoryAggregationViewController.m in Sources */,
 				B24CC2D82A84B40200FE7C60 /* DJIWaypointAnnotationView.m in Sources */,
 				B2E2C4932A78DA6800186BC6 /* BottomSheet.swift in Sources */,
-				B289FA822A80A50E004BC2F3 /* SimulationControlsViewController.swift in Sources */,
 				B282E6F12A80A24D008B822E /* CustomMapViewController.swift in Sources */,
 				B2E42EBF2A5E8FAC00D78AD1 /* MissionList.swift in Sources */,
 				B24CC2AF2A84B40100FE7C60 /* RCParingViewController.m in Sources */,
+				B251C7712ACBD17700109E18 /* LoginModel.swift in Sources */,
 				B24CC2C92A84B40200FE7C60 /* FCOrientationViewController.m in Sources */,
 				B24CC2732A84B40100FE7C60 /* CameraSettingItemCollectionViewCell.m in Sources */,
 				B24CC25B2A84B40100FE7C60 /* GimbalActionsTableViewController.m in Sources */,
 				B24CC2FA2A84B40200FE7C60 /* RebootWiFiViewController.m in Sources */,
+				B29B529D2ABACEE3003C3998 /* SimulationControlsViewController.swift in Sources */,
 				B24CC2982A84B40100FE7C60 /* WaypointV2MapPointsViewController.m in Sources */,
 				B24CC2952A84B40100FE7C60 /* DemoPushInfoViewController.m in Sources */,
 				B24CC2882A84B40100FE7C60 /* AppActivationViewController.m in Sources */,
 				A452DC382070D8CC00EFBA30 /* AppDelegate.swift in Sources */,
 				B24CC2FD2A84B40200FE7C60 /* WiFiLinkSSIDViewController.m in Sources */,
 				B24CC26B2A84B40100FE7C60 /* MobileRemoteControllerViewController.m in Sources */,
-				B2AD6EEA2A5FC84500BE1EB4 /* APIService.swift in Sources */,
 				B257D6A92A68DB9100A983E8 /* ForgotPasssword.swift in Sources */,
 				B24CC28A2A84B40100FE7C60 /* DemoComponentHelper.m in Sources */,
+				B23A4DB02ADCE3EB00088C8A /* Ascii.swift in Sources */,
 				B257D6AD2A68EDEA00A983E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B289FA7D2A80A50E004BC2F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B289FA7E2A80A50E004BC2F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		868A4EE21E01FA53006FEE33 /* Debug */ = {
@@ -2377,7 +2438,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = group.aerodyne.dronos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";
@@ -2410,7 +2471,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = group.aerodyne.dronos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zvhir/ios/DronosUTM-iOS/DronosUTM/DronosUTM-Bridging-Header.h";

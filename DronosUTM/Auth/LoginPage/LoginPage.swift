@@ -5,8 +5,6 @@ struct LoginData {
     let password: String
 }
 
-
-
 struct LoginPage: View {
     @State private var email: String = ""
     @State private var password: String = ""
@@ -17,16 +15,14 @@ struct LoginPage: View {
     @State private var title: String = ""
     @State private var message: String = ""
     @State private var keyboardOffset: CGFloat = 0
-    @FocusState private var isTextFieldFocused: Bool
+    @FocusState private var isTextFieldEmailFocused: Bool
+    @FocusState private var isTextFieldPasswordFocused: Bool
     @FocusState private var isSecureFieldFocused: Bool
-    
-    
-    
+    @State private var isPasswordVisible: Bool = false
     
     var body: some View {
         NavigationView {
             ZStack {
-                
                 if isLoggedIn {
                     BottomNavigation()
                         .transition(.move(edge: .trailing))
@@ -61,7 +57,8 @@ struct LoginPage: View {
                                 VStack(spacing: 15) {
                                     TextField("Email", text: $email)
                                         .textEditorStyle()
-                                        .focused($isTextFieldFocused)
+                                        .textInputAutocapitalization(.never)
+                                        .focused($isTextFieldEmailFocused)
                                         .overlay(
                                             invalidEmail ? AnyView(
                                                 ZStack {
@@ -76,7 +73,7 @@ struct LoginPage: View {
                                                     }
                                                 }
                                             ) :
-                                                isTextFieldFocused ?
+                                                isTextFieldEmailFocused ?
                                             AnyView(
                                                 ZStack {
                                                     RoundedRectangle(cornerRadius: 15)
@@ -99,54 +96,65 @@ struct LoginPage: View {
                                             )
                                         )
                                     
-                                    SecureField("Password", text: $password)
-                                        .secureFieldStyle()
-                                        .focused($isSecureFieldFocused)
-                                        .overlay(
-                                            isInvalidPass ? AnyView(
+                                    if(isPasswordVisible) {
+                                        SecureField("Password", text: $password)
+                                            .secureFieldStyle()
+                                            .focused($isSecureFieldFocused)
+                                            .overlay(
                                                 ZStack {
                                                     RoundedRectangle(cornerRadius: 15)
                                                         .inset(by: 0.5)
-                                                        .stroke(Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255), lineWidth: 0.5)
-                                                    HStack{
-                                                        Image("pass-err") // SF Symbol for a magnifying glass
+                                                        .stroke(isInvalidPass ? Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255) : (isSecureFieldFocused ? Color(red: 0, green: 0.94, blue: 1) : Color.clear), lineWidth: isInvalidPass || isSecureFieldFocused ? 1 : 0.5)
+                                                    
+                                                    HStack {
+                                                        Image("passwordIcon") // SF Symbol for a magnifying glass
                                                             .foregroundColor(.white)
                                                             .padding(.horizontal, 20) // Position the icon
+                                                        
                                                         Spacer()
-                                                        Image("visibility_off") // SF Symbol for a magnifying glass
-                                                            .foregroundColor(.white)
-                                                            .padding(.horizontal, 20) // Position the icon
+                                                        
+                                                        Button(action: {
+                                                            isPasswordVisible.toggle()
+                                                        }) {
+                                                            Image(systemName: isPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                                                                .foregroundColor(.white)
+                                                                .padding(.horizontal, 20)
+                                                        }
+                                                        .padding(.trailing, 10)
                                                     }
-                                                }
-                                            ) :
-                                                isSecureFieldFocused ?
-                                            AnyView(
-                                                ZStack {
-                                                    RoundedRectangle(cornerRadius: 15)
-                                                        .inset(by: 0.5)
-                                                        .stroke(Color(red: 0, green: 0.94, blue: 1), lineWidth: 1)
-                                                    HStack{
-                                                        Image("pass-active") // SF Symbol for a magnifying glass
-                                                            .foregroundColor(.white)
-                                                            .padding(.horizontal, 20) // Position the icon
-                                                        Spacer()
-                                                        Image("visibility_off") // SF Symbol for a magnifying glass
-                                                            .foregroundColor(.white)
-                                                            .padding(.horizontal, 20) // Position the icon
-                                                    }
-                                                }
-                                            ) : AnyView(
-                                                HStack{
-                                                    Image("passwordIcon") // SF Symbol for a magnifying glass
-                                                        .foregroundColor(.white)
-                                                        .padding(.horizontal, 20) // Position the icon
-                                                    Spacer()
-                                                    Image("visibility_off") // SF Symbol for a magnifying glass
-                                                        .foregroundColor(.white)
-                                                        .padding(.horizontal, 20) // Position the icon
                                                 }
                                             )
-                                        )
+                                    }else{
+                                        TextField("Password", text: $password)
+                                            .textEditorStyle()
+
+                                            .focused($isTextFieldPasswordFocused)
+                                            .overlay(
+                                                ZStack {
+                                                    RoundedRectangle(cornerRadius: 15)
+                                                        .inset(by: 0.5)
+                                                        .stroke(isInvalidPass ? Color(red: 189 / 255, green: 9 / 255, blue: 9 / 255) : (isSecureFieldFocused ? Color(red: 0, green: 0.94, blue: 1) : Color.clear), lineWidth: isInvalidPass || isSecureFieldFocused ? 1 : 0.5)
+                                                    
+                                                    HStack {
+                                                        Image("passwordIcon") // SF Symbol for a magnifying glass
+                                                            .foregroundColor(.white)
+                                                            .padding(.horizontal, 20) // Position the icon
+                                                        
+                                                        Spacer()
+                                                        
+                                                        Button(action: {
+                                                            isPasswordVisible.toggle()
+                                                        }) {
+                                                            Image(systemName: isPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                                                                .foregroundColor(.white)
+                                                                .padding(.horizontal, 20)
+                                                        }
+                                                        .padding(.trailing, 10)
+                                                    }
+                                                }
+                                            )
+                                    }
+                                    
                                     
                                 }
                                 
@@ -178,17 +186,17 @@ struct LoginPage: View {
                                     }
                                     
                                     if isValidEmail(email) && isValidPassword(password) {
-                                        let data = LoginData(email: email, password: password)
-                                        APIService.login(data) { result in
-                                            if (result == true) {
+                                        login(email: email, password: password) { success in
+                                            if success {
                                                 isLoggedIn = true
-                                            }else{
+                                            } else {
                                                 showAlert = true
                                                 title = "Login Failed"
                                                 message = "Please make sure your email and password is correct"
                                             }
                                         }
                                     }
+                                    
                                 }) {
                                     Text("Login")
                                         .frame(maxWidth: .infinity, minHeight: 58, maxHeight: 58, alignment: .center)
@@ -258,11 +266,8 @@ struct LoginPage: View {
     }
 }
 
-struct LoginPage_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPage()
-    }
-}
+//
+
 
 func isValidEmail(_ email: String) -> Bool {
     let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
